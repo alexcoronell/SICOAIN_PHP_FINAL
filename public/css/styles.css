@@ -254,6 +254,17 @@ box-formulario-empleados {
   text-align: center;
   line-height: 2em;
   border: 1px solid #004d40;
+  padding: 0.2rem 0.9rem !important;
+}
+
+.tabla-md th {
+  font-size: 0.8rem;
+}
+
+.tabla-md td {
+  width: 100%;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .tabla-md th {
@@ -265,4 +276,24 @@ box-formulario-empleados {
   font-size: 0.8em;
   min-width: 150px;
 }
+
+.searchbox input {
+  width: 85%;
+  float: left;
+}
+.searchbox button {
+  width: 12%;
+  float: right;
+  line-height: 2rem;
+  border: none;
+  font-size: 1.2rem;
+  color: #ced4da;
+  background-color: transparent;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.searchbox button:focus, .searchbox button:active {
+  border: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

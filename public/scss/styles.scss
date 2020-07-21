@@ -1,5 +1,7 @@
 $maincolor: #4db6ac;
 $secondarycolor: #004d40;
+$borderColor: #ced4da;
+
 * {
     font-size: 16px;
     text-decoration: none;
@@ -260,6 +262,17 @@ box-formulario-empleados {
     text-align: center;
     line-height: 2em;
     border: 1px solid $secondarycolor;
+    padding: .2rem 0.9rem !important;
+}
+
+.tabla-md th {
+    font-size: 0.8rem;
+}
+
+.tabla-md td {
+    width: 100%;
+    font-size: 0.7rem;
+    white-space: nowrap;
 }
 
 .tabla-md th {
@@ -270,4 +283,28 @@ box-formulario-empleados {
 #tabla-incidentes th {
     font-size: .8em;
     min-width: 150px;
+}
+
+.searchbox {
+    input {
+        width: 85%;
+        float: left;
+    }
+
+    button {
+        width: 12%;
+        float: right;
+        line-height: 2rem;
+        border: none;
+        font-size: 1.2rem;
+        color: $borderColor;
+        background-color: transparent;
+        padding: .2rem;
+        cursor: pointer;
+
+        &:focus,
+        &:active {
+            border: none;
+        }
+    }
 }

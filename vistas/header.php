@@ -9,6 +9,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
 
+    <!-- DATATABLES -->
+    <link rel="stylesheet" href="../public/datatables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../public/datatables/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="../public/datatables/select.dataTables.min.css">
+    <link rel="stylesheet" href="../public/datatables/editor.dataTables.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../public/css/font-awesome.min.css">
+
     <!-- My Styles -->
     <link rel="stylesheet" href="../public/css/styles.css">
 
