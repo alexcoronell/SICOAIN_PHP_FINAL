@@ -296,4 +296,9 @@ box-formulario-empleados {
   border: none;
 }
 
+#button_activar,
+#button_desactivar {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

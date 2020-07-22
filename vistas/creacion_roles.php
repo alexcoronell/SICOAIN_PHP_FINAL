@@ -22,7 +22,7 @@ require 'header.php';
                                     <ul>
                                         <li><a href="creacion_roles.php" class="active">Creación de Roles</a></li>
                                         <li><a href="edicion_roles.php">Edición de Roles</a></li>
-                                        <li><a href="eliminacion_roles.html">Eliminación de Roles</a></li>
+                                        <li><a href="act_desact_roles.php">Act/Desact. de Roles</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -98,4 +98,4 @@ require 'footer.php';
 
 ?>
 
-<script src="scripts/guardareditar-roles.js"></script>
+<script src="scripts/gestion-roles.js"></script>
