@@ -4,7 +4,7 @@ require_once "../modelos/Companias.php";
 
 $companias = new Compania();
 
-$id_compania = isset($_POST["id_compania"]) ? limpiarCadena($_POST["id_compania"]) : "";
+$id = isset($_POST["id"]) ? limpiarCadena($_POST["id"]) : "";
 $compania = isset($_POST["compania"]) ? limpiarCadena($_POST["compania"]) : "";
 $telefono_compania = isset($_POST["telefono_compania"]) ? limpiarCadena($_POST["telefono_compania"]) : "";
 $direccion_compania = isset($_POST["direccion_compania"]) ? limpiarCadena($_POST["direccion_compania"]) : "";
@@ -12,29 +12,29 @@ $direccion_compania = isset($_POST["direccion_compania"]) ? limpiarCadena($_POST
 switch ($_GET["op"])
 {
     case 'guardaryeditar' :
-        if (empty($id_compania))
+        if (empty($id))
         {
             $rspta = $companias -> insertar($compania, $telefono_compania, $direccion_compania);
             echo $rspta ? "Compañía registrada correctamente" : "Compañía no se pudo registrar";
         } else
         {
-            $rspta = $companias -> editar($id_compania, $compania, $telefono_compania, $direccion_compania);
+            $rspta = $companias -> editar($id, $compania, $telefono_compania, $direccion_compania);
             echo $rspta ? "Compañía actualizada correctamente" : "Compañía no se pudo actualizar";
         }
     break;
 
     case 'desactivar':
-        $rspta = $companias -> desactivar($id_compania);
+        $rspta = $companias -> desactivar($id);
         echo $rspta ? "Compañía Desactivada" : "Compañía no se pudo Desactivar";
     break;
 
     case 'activar':
-        $rspta = $companias -> activar($id_compania);
+        $rspta = $companias -> activar($id);
         echo $rspta ? "Compañía Activada" : "Compañía no se pudo Activar";
     break;
 
     case 'mostrar':
-        $rspta = $companias -> mostrar($id_compania);
+        $rspta = $companias -> mostrar($id);
         // Codificación del resultado usando Json
         echo json_encode($rspta);
     break;
@@ -47,7 +47,7 @@ switch ($_GET["op"])
         while ($reg = $rspta -> fetch_object())
         {
             $data[] = array(
-                "0" => $reg -> id_c,
+                "0" => $reg -> id,
                 "1" => $reg -> compania, 
                 "2" => $reg -> telefono_compania,
                 "3" => $reg -> direccion_compania,
