@@ -29,7 +29,7 @@ class Cargo
         return ejecutarConsulta($sql);
     }
 
-    // Método para desactivar roles
+    // Método para desactivar cargos
     public function desactivar($id_cargo)
     {
         $sql = "UPDATE cargo SET condicion = '0'
@@ -37,7 +37,7 @@ class Cargo
         return ejecutarConsulta($sql);
     }
 
-    // Método para activar roles
+    // Método para activar cargos
     public function activar($id_cargo)
     {
         $sql = "UPDATE cargo SET condicion = '1'

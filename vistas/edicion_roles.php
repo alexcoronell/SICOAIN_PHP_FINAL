@@ -104,4 +104,4 @@ require 'footer.php';
 
 ?>
 
-<script src="scripts/gestion-roles.js"></script>
+<script src="scripts/gestion_roles.js"></script>

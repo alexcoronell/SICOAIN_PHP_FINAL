@@ -66,4 +66,4 @@ require 'footer.php';
 
 ?>
 
-<script src="scripts/reporte-roles.js"></script>
+<script src="scripts/reporte_roles.js"></script>
