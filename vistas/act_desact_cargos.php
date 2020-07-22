@@ -13,17 +13,24 @@ require 'header.php';
             <div class="col-4">
                 <div class="menu-box">
                     <div class="title-menu">
-                        <h2>Administración de Roles</h2>
+                        <h2>Menú de Empleados</h2>
                     </div>
                     <h1 class="display-4 text-center">SICOAIN</h1>
                     <nav>
                         <ul>
-                            <li>Administración de Usuarios
-                                <ul>
-                                    <li><a href="creacion_roles.php">Creación de Roles</a></li>
-                                    <li><a href="edicion_roles.php">Edición de Roles</a></li>
-                                    <li><a href="act_desact_roles.php" class="active">Act/Desact. de Roles</a></li>
-                                </ul>
+                            <li>Administración de Empleados
+                            <ul>
+                                        <li><a href="creacion_empleados.php">Creación de Empleados</a></li>
+                                        <li><a href="edicion_empleados.php">Edición de Empleados</a></li>
+                                        <li><a href="eliminacion_empleados.php">Eliminación de Empleados</a></li>
+                                    </ul>
+                                </li>
+                                <li>Administración de Cargos
+                                    <ul>
+                                        <li><a href="creacion_cargos.php">Creación de Cargos</a></li>
+                                        <li><a href="edicion_cargos.php">Edición de Cargos</a></li>
+                                        <li><a href="act_desact_cargos.php" class="active">Act/Desact. de Cargos</a></li>
+                                    </ul>
                             </li>
                         </ul>
                     </nav>
@@ -32,23 +39,20 @@ require 'header.php';
             </div>
             <div class="col-8">
                 <div class="box-formulario container mt-5">
-                    <h2 class="text-center title-formularios">Activación y Desactivación de Roles</h2>
-                    <!-- Busqueda -->
-                    <div class="form-group row">
-                        <label for="buscarrol" class="col-4">Buscar Rol: *</label>
-                        <div class="col-8 searchbox">
-                            <input type="search" class="form-control" name="buscarrol" id="buscarrol" placeholder="Nro. de Rol">
-                            <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
-                        </div>
-                    </div>
-
-                    <!-- Empieza el formulario -->
+                    <h2 class="text-center title-formularios">Activación y Desactivación de Cargos</h2>
                     <form name="formulario" id="formulario" method="POST">
+                    <div class="form-group row">
+                                <label for="rol" class="col-4">Buscar cargo:</label>
+                                <div class="col-8 searchbox">
+                                <input type="search" class="form-control" name="buscarcargo" id="buscarcargo">
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
                         <div class="form-group row">
-                            <label for="rol" class="col-4">Nombre Rol: *</label>
+                            <label for="cargo" class="col-4">Nombre Cargo:</label>
                             <div class="col-8">
-                                <input type="hidden" name="id_rol" id="id_rol">
-                                <input type="text" class="form-control" name="rol" id="rol">
+                            <input type="hidden" name="id_cargo" id="id_cargo">
+                                <input type="text" class="form-control" name="cargo" id="cargo" disabled>
                             </div>
                         </div>
                     </form>
@@ -64,7 +68,6 @@ require 'header.php';
                             <button type="button" class="btn btn-light" onclick="limpiar()">Cancelar</button>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -77,4 +80,4 @@ require 'footer.php';
 
 ?>
 
-<script src="scripts/gestion_roles.js"></script>
+<script src="scripts/gestion_cargos.js"></script>
