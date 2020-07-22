@@ -3,26 +3,42 @@
 require 'header.php';
 
 ?>
-<div class="container-fluid main-box">
-    <div class="title-page">
-        <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Login</h1>
-    </div>
-    <div class="login-box">
-        <div class="title-login">
-            <h2>Ingrese su usuario</h2>
-        </div>
-        <form action="">
-            <div class="form-inputs">
-                <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
-                <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña">
-                <button type="submit" id="acceder" class="btn btn-primary"><a href="principal.html">Acceder</a></button>
-                <button type="button" id="salir" class="btn btn-light">Salir</button>
-            </div>
-        </form>
-    </div>
-</div>
 
-<?php
+    <div class="container-fluid main-box">
+        <div class="title-page">
+            <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Administración de Roles</h1>
+        </div>
+        <div class="main-content container">
+            <div class="row">
+                <div class="col">
+                    <div class="menu-box">
+                        <div class="title-menu">
+                            <h2>Menú de Roles</h2>
+                        </div>
+                        <h1 class="display-4 text-center">SICOAIN</h1>
+                        <nav>
+                            <ul>
+                                <li>Administración de Roles
+                                <ul>
+                                        <li><a href="creacion_roles.php">Creación de Roles</a></li>
+                                        <li><a href="edicion_roles.php">Edición de Roles</a></li>
+                                        <li><a href="act_desact_roles.php">Act/Desact. de Roles</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                    </div>
+                </div>
+                <div class="col"></div>
+                <div class="col calendar">
+                    <img src="img/calendar.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
 
 require 'footer.php';
 

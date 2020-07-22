@@ -38,11 +38,11 @@ require 'header.php';
                 </div>
             </div>
             <div class="col-8">
+            <h2 class="text-center title-formularios">Reporte de Roles</h2>
                 <div class="box-reporte-md container panel-body table-responsive mt-5" id="listadoregistros">
-                    <h2 class="text-center title-formularios">Reporte de Roles</h2>
                     <table class="tabla-md table-striped table-bordered table-condensed table-hover" id="tbllistado">
                         <thead>
-                            <th>Opciones</th>
+                            <th>Id</th>
                             <th>Nombre</th>
                             <th>Descripción</th>
                             <th>Superusuario</th>
