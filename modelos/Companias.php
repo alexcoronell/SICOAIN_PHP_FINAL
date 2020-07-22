@@ -3,7 +3,7 @@
 //Conexión a la base de datos
 require "../config/conexion.php";
 
-class Conpania 
+class Compania
 {
 
     // Se implementa el constructor
@@ -29,7 +29,7 @@ class Conpania
         return ejecutarConsulta($sql);
     }
 
-    // Método para desactivar cargos
+    // Método para desactivar Compañías
     public function desactivar($id_compania)
     {
         $sql = "UPDATE compania SET condicion = '0'
@@ -37,7 +37,7 @@ class Conpania
         return ejecutarConsulta($sql);
     }
 
-    // Método para activar cargos
+    // Método para activar Compañías
     public function activar($id_compania)
     {
         $sql = "UPDATE compania SET condicion = '1'
