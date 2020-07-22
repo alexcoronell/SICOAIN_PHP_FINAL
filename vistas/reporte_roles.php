@@ -19,22 +19,22 @@ require 'header.php';
                     <nav>
                         <ul>
                             <li>Reportes
-                                <ul>
-                                    <li><a href="reporte-usuarios.html">Usuarios</a></li>
-                                    <li><a href="reporte-roles.html" class="active">Roles</a></li>
-                                    <li><a href="reporte-empleados.html">Empleados</a></li>
-                                    <li><a href="reporte-cargos.html">Cargos</a></li>
-                                    <li><a href="reporte-companias.html">Compañías</a></li>
-                                    <li><a href="reporte-sedes.html">Sedes</a></li>
-                                    <li><a href="reporte-eps.html">EPS</a></li>
-                                    <li><a href="reporte-arl.html">ARL</a></li>
-                                    <li><a href="reporte-incidentes.html">Incidentes</a></li>
-                                    <li><a href="reporte-sucesos.html">Sucesos</a></li>
-                                </ul>
+                            <ul>
+                                        <li><a href="reporte_usuarios.php">Usuarios</a></li>
+                                        <li><a href="reporte_roles.php" class="active">Roles</a></li>
+                                        <li><a href="reporte-empleados.php">Empleados</a></li>
+                                        <li><a href="reporte_cargos.php">Cargos</a></li>
+                                        <li><a href="reporte_companias.php">Compañías</a></li>
+                                        <li><a href="reporte_sedes.php">Sedes</a></li>
+                                        <li><a href="reporte_eps.php">EPS</a></li>
+                                        <li><a href="reporte_arl.php">ARL</a></li>
+                                        <li><a href="reporte_incidentes.php">Incidentes</a></li>
+                                        <li><a href="reporte_sucesos.php">Sucesos</a></li>
+                                    </ul>
                             </li>
                         </ul>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="menu-reportes.html">Regresar</a></button>
+                    <button class="btn btn-light salir-menu"><a href="menu_reportes.php">Regresar</a></button>
                 </div>
             </div>
             <div class="col-8">
