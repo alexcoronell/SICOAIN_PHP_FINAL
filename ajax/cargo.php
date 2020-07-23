@@ -4,36 +4,36 @@ require_once "../modelos/Cargo.php";
 
 $cargos = new Cargo();
 
-$id_cargo = isset($_POST["id_cargo"]) ? limpiarCadena($_POST["id_cargo"]) : "";
+$id = isset($_POST["id"]) ? limpiarCadena($_POST["id"]) : "";
 $cargo = isset($_POST["cargo"]) ? limpiarCadena($_POST["cargo"]) : "";
 $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
 
 switch ($_GET["op"])
 {
     case 'guardaryeditar' :
-        if (empty($id_cargo))
+        if (empty($id))
         {
             $rspta = $cargos -> insertar($cargo, $descripcion);
             echo $rspta ? "Cargo registrado correctamente" : "Cargo no se pudo registrar";
         } else
         {
-            $rspta = $cargos -> editar($id_cargo, $cargo, $descripcion);
+            $rspta = $cargos -> editar($id, $cargo, $descripcion);
             echo $rspta ? "Cargo actualizado correctamente" : "Cargo no se pudo actualizar";
         }
     break;
 
     case 'desactivar':
-        $rspta = $cargos -> desactivar($id_cargo);
+        $rspta = $cargos -> desactivar($id);
         echo $rspta ? "Cargo Desactivado" : "Cargo no se pudo Desactivar";
     break;
 
     case 'activar':
-        $rspta = $cargos -> activar($id_cargo);
+        $rspta = $cargos -> activar($id);
         echo $rspta ? "Cargo Activado" : "Cargo no se pudo Activar";
     break;
 
     case 'mostrar':
-        $rspta = $cargos -> mostrar($id_cargo);
+        $rspta = $cargos -> mostrar($id);
         // Codificación del resultado usando Json
         echo json_encode($rspta);
     break;
@@ -46,7 +46,7 @@ switch ($_GET["op"])
         while ($reg = $rspta -> fetch_object())
         {
             $data[] = array(
-                "0" => $reg -> id_cargo,
+                "0" => $reg -> id,
                 "1" => $reg -> cargo, 
                 "2" => $reg -> descripcion, 
                 "3" => $reg -> condicion

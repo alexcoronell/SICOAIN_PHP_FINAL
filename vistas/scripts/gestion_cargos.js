@@ -9,10 +9,11 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
-    $("#id_cargo").val("");
+    $("#id").val("");
     $("#cargo").val("");
     $('#descripcion').val("");
     $('#condicion').val("");
+    $("#buscarId").val("");
 }
 
 
@@ -42,25 +43,25 @@ function guardaryeditar(e) {
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
-function mostrar(id_cargo) {
+function mostrar(id) {
     $.post("../ajax/cargo.php?op=mostrar", {
-        id_cargo: id_cargo
+        id: id
     }, function(data, status) {
         data = JSON.parse(data);
 
-        $("#id_cargo").val(data.id_cargo);
+        $("#id").val(data.id);
         $('#cargo').val(data.cargo);
         $('#descripcion').val(data.descripcion);
     })
 }
 
 // Función para mostrar los datos en el formulario de activación o desactivación de Cargos
-function mostrarAct(id_cargo) {
+function mostrarAct(id) {
     $.post("../ajax/cargo.php?op=mostrar", {
-        id_cargo: id_cargo
+        id: id
     }, function(data, status) {
         data = JSON.parse(data);
-        $("#id_cargo").val(data.id_cargo);
+        $("#id").val(data.id);
         $('#cargo').val(data.cargo);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
@@ -69,51 +70,44 @@ function mostrarAct(id_cargo) {
 
 // Función para buscar en el formulario de edición de Cargos
 function buscar() {
-    id_cargoBuscar = $("#buscarcargo").val();
-    mostrar(id_cargoBuscar);
-    $('#buscarcargo').val("");
+    id_Buscar = $("#buscarId").val();
+    mostrar(id_Buscar);
+    $('#buscarId').val("");
 }
 
 // Función para buscar en el formulario de Activación o desactivación de Cargos
 function buscarAct() {
-    id_cargoBuscar = $("#buscarcargo").val();
-    mostrarAct(id_cargoBuscar);
+    id_Buscar = $("#buscarId").val();
+    mostrarAct(id_Buscar);
 }
 
 // Función para activar Cargos
 function activar() {
-    let id_cargo = $('#id_cargo').val();
+    let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este cargo?", function(result) {
         $.post("../ajax/cargo.php?op=activar", {
-            id_cargo: id_cargo
+            id: id
         }, function(e) {
             bootbox.alert(e);
         })
     })
-    $('#button_activar').hide();
-    $('#button_desactivar').hide();
-    $('#button_default').show();
-    limpiar();
-    $("#buscarcargo").val("");
+    MostrarDefault();
+    $("#buscarId").val("");
 }
 
 // Función para desactivar Cargos
 function desactivar() {
-    let id_cargo = $('#id_cargo').val();
+    let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de desactivar este cargo?", function(result) {
         if (result) {
             $.post("../ajax/cargo.php?op=desactivar", {
-                id_cargo: id_cargo
+                id: id
             }, function(e) {
                 bootbox.alert(e);
             })
         }
     })
-    $('#button_activar').hide();
-    $('#button_desactivar').hide();
-    $('#button_default').show();
-    limpiar();
-    $("#buscarcargo").val("");
+    $("#buscarId").val("");
 }
 
 // Función para mostrar boton de activar y ocultar los otros
@@ -128,6 +122,13 @@ function MostrarDesactivar() {
     $('#button_default').hide();
     $('#button_activar').hide();
     $('#button_desactivar').show();
+}
+
+function MostrarDefault() {
+    $('#button_default').show();
+    $('#button_activar').hide();
+    $('#button_desactivar').hide();
+    limpiar();
 }
 
 init();

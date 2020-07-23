@@ -7,7 +7,7 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
-    $("#id_cargo").val("");
+    $("#id").val("");
     $("#cargo").val("");
     $('#descripcion').val("");
 }

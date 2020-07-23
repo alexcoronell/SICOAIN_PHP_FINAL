@@ -7,7 +7,7 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
-    $("#id_rol").val("");
+    $("#id").val("");
     $("#rol").val("");
     $('#descripcion').val("");
     $('#superusuario').prop("checked", false);

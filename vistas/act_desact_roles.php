@@ -37,7 +37,7 @@ require 'header.php';
                     <div class="form-group row">
                         <label for="buscarrol" class="col-4">Buscar Rol: *</label>
                         <div class="col-8 searchbox">
-                            <input type="search" class="form-control" name="buscarrol" id="buscarrol" placeholder="Nro. de Rol">
+                            <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
                             <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
@@ -47,7 +47,7 @@ require 'header.php';
                         <div class="form-group row">
                             <label for="rol" class="col-4">Nombre Rol: *</label>
                             <div class="col-8">
-                                <input type="hidden" name="id_rol" id="id_rol">
+                                <input type="hidden" name="id" id="id">
                                 <input type="text" class="form-control" name="rol" id="rol">
                             </div>
                         </div>
@@ -61,7 +61,7 @@ require 'header.php';
                             <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
                         </div>
                         <div class="col-4 text-right">
-                            <button type="button" class="btn btn-light" onclick="limpiar()">Cancelar</button>
+                            <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
                         </div>
                     </div>
                     

@@ -4,7 +4,7 @@ require_once "../modelos/Roles.php";
 
 $roles = new Roles();
 
-$id_rol = isset($_POST["id_rol"]) ? limpiarCadena($_POST["id_rol"]) : "";
+$id = isset($_POST["id"]) ? limpiarCadena($_POST["id"]) : "";
 $rol = isset($_POST["rol"]) ? limpiarCadena($_POST["rol"]) : "";
 $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
 $superusuario = isset($_POST["superusuario"]) ? limpiarCadena($_POST["superusuario"]) : "";
@@ -15,29 +15,29 @@ $consultas = isset($_POST["consultas"]) ? limpiarCadena($_POST["consultas"]) : "
 switch ($_GET["op"])
 {
     case 'guardaryeditar' :
-        if (empty($id_rol))
+        if (empty($id))
         {
             $rspta = $roles -> insertar($rol, $descripcion, $superusuario, $administrador, $analista_asistente, $consultas);
             echo $rspta ? "Rol registrado correctamente" : "Rol no se pudo registrar";
         } else
         {
-            $rspta = $roles -> editar($id_rol, $rol, $descripcion, $superusuario, $administrador, $analista_asistente, $consultas);
+            $rspta = $roles -> editar($id, $rol, $descripcion, $superusuario, $administrador, $analista_asistente, $consultas);
             echo $rspta ? "Rol actualizado correctamente" : "Rol no se pudo actualizar";
         }
     break;
 
     case 'desactivar':
-        $rspta = $roles -> desactivar($id_rol);
+        $rspta = $roles -> desactivar($id);
         echo $rspta ? "Rol Desactivado" : "Rol no se pudo Desactivar";
     break;
 
     case 'activar':
-        $rspta = $roles -> activar($id_rol);
+        $rspta = $roles -> activar($id);
         echo $rspta ? "Rol Activado" : "Rol no se pudo Activar";
     break;
 
     case 'mostrar':
-        $rspta = $roles -> mostrar($id_rol);
+        $rspta = $roles -> mostrar($id);
         // Codificación del resultado usando Json
         echo json_encode($rspta);
     break;
@@ -50,7 +50,7 @@ switch ($_GET["op"])
         while ($reg = $rspta -> fetch_object())
         {
             $data[] = array(
-                "0" => $reg -> id_rol,
+                "0" => $reg -> id,
                 "1" => $reg -> rol, 
                 "2" => $reg -> descripcion,
                 "3" => $reg -> superusuario, 

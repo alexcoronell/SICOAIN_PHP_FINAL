@@ -43,12 +43,13 @@ require 'header.php';
                             <div class="form-group row">
                                 <label for="buscarcargo" class="col-4 deshabilitado">Buscar cargo:</label>
                                 <div class="col-8">
-                                    <input type="search" class="form-control" name="buscarcargo" id="buscarcargo" disabled>
+                                    <input type="search" class="form-control" name="buscarId" id="buscarId" disabled>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="cargo" class="col-4">Nombre Cargo:*</label>
                                 <div class="col-8">
+                                <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" maxlength="30" name="cargo" id="cargo" required>
                                 </div>
                             </div>

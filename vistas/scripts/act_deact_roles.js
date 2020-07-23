@@ -10,7 +10,7 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
-    $("#id_rol").val("");
+    $("#id").val("");
     $("#rol").val("");
     $('#condicion').val("");
 }
@@ -40,22 +40,22 @@ function guardaryeditar(e) {
     limpiar();
 }
 
-function mostrar(id_rol) {
+function mostrar(id) {
     $.post("../ajax/roles.php?op=mostrar", {
-        id_rol: id_rol
+        id: id
     }, function(data, status) {
         data = JSON.parse(data);
 
-        $("#id_rol").val(data.id_rol);
+        $("#id").val(data.id);
         $('#rol').val(data.rol);
         $('#condicion').val(data.condicion);
     })
 }
 
 function buscarAct() {
-    id_rolBuscar = $("#buscarrol").val();
-    console.log(id_rolBuscar);
-    mostrar(id_rolBuscar);
+    id_Buscar = $("#buscarId").val();
+    console.log(id_Buscar);
+    mostrar(id_Buscar);
     if ($('#condicion').val == 1) {
         console.log("Funciono si");
         $('#button_default').hide();
@@ -67,16 +67,16 @@ function buscarAct() {
         $('#button_desactivar').hide();
         $('#button_activar').show();
     }
-    $('#buscarrol').val("");
+    $('#buscarId').val("");
 }
 
 
-function desactivar(id_rol, e) {
+function desactivar(id, e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     bootbox.confirm("¿Estas seguro de desactivar este rol?", function(result) {
         if (result) {
             $.post("../ajax/roles.php?op=desactivar", {
-                id_rol: id_rol
+                id: id
             }, function(e) {
                 bootbox.alert(e);
             })
@@ -84,12 +84,12 @@ function desactivar(id_rol, e) {
     })
 }
 
-function activar(id_rol, e) {
+function activar(id, e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     bootbox.confirm("¿Estas seguro de activar este rol?", function(result) {
         if (result) {
             $.post("../ajax/roles.php?op=activar", {
-                id_rol: id_rol
+                id: id
             }, function(e) {
                 bootbox.alert(e);
             })

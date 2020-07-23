@@ -11,7 +11,7 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
-    $("#id_rol").val("");
+    $("#id").val("");
     $("#rol").val("");
     $('#descripcion').val("");
     $('#superusuario').prop("checked", false);
@@ -19,6 +19,7 @@ function limpiar() {
     $('#analista_asistente').prop("checked", false);
     $('#consultas').prop("checked", false);
     $('#condicion').val("");
+    $("#buscarId").val("");
 }
 
 
@@ -48,13 +49,13 @@ function guardaryeditar(e) {
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
-function mostrar(id_rol) {
+function mostrar(id) {
     $.post("../ajax/roles.php?op=mostrar", {
-        id_rol: id_rol
+        id: id
     }, function(data, status) {
         data = JSON.parse(data);
 
-        $("#id_rol").val(data.id_rol);
+        $("#id").val(data.id);
         $('#rol').val(data.rol);
         $('#descripcion').val(data.descripcion);
         data.superusuario == 1 ? $('#superusuario').prop("checked", true) : $('#superusuario').prop("checked", false);
@@ -65,12 +66,12 @@ function mostrar(id_rol) {
 }
 
 // Función para mostrar los datos en el formulario de activación o desactivación de roles
-function mostrarAct(id_rol) {
+function mostrarAct(id) {
     $.post("../ajax/roles.php?op=mostrar", {
-        id_rol: id_rol
+        id: id
     }, function(data, status) {
         data = JSON.parse(data);
-        $("#id_rol").val(data.id_rol);
+        $("#id").val(data.id);
         $('#rol').val(data.rol);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
@@ -79,52 +80,45 @@ function mostrarAct(id_rol) {
 
 // Función para buscar en el formulario de edición de roles
 function buscar() {
-    id_rolBuscar = $("#buscarrol").val();
-    mostrar(id_rolBuscar);
-    $('#buscarrol').val("");
+    id_Buscar = $("#buscarId").val();
+    mostrar(id_Buscar);
+    $('#buscarId').val("");
 }
 
 // Función para buscar en el formulario de Activación o desactivación de roles
 function buscarAct() {
-    id_rolBuscar = $("#buscarrol").val();
-    mostrarAct(id_rolBuscar);
+    idBuscar = $("#buscarId").val();
+    mostrarAct(idBuscar);
 }
 
 // Función para activar roles
 function activar() {
-    let id_rol = $('#id_rol').val();
+    let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este rol?", function(result) {
         $.post("../ajax/roles.php?op=activar", {
-            id_rol: id_rol
+            id: id
         }, function(e) {
             bootbox.alert(e);
         })
     })
-    $('#button_activar').hide();
-    $('#button_desactivar').hide();
-    $('#button_default').show();
-    limpiar();
-    $("#buscarrol").val("");
+    MostrarDefault();
+
 }
 
 // Función para desactivar roles
 function desactivar() {
-    let id_rol = $('#id_rol').val();
-    console.log(id_rol);
+    let id = $('#id').val();
+    console.log(id);
     bootbox.confirm("¿Estas seguro de desactivar este rol?", function(result) {
         if (result) {
             $.post("../ajax/roles.php?op=desactivar", {
-                id_rol: id_rol
+                id: id
             }, function(e) {
                 bootbox.alert(e);
             })
         }
     })
-    $('#button_activar').hide();
-    $('#button_desactivar').hide();
-    $('#button_default').show();
-    limpiar();
-    $("#buscarrol").val("");
+    MostrarDefault()
 }
 
 // Función para mostrar boton de activar y ocultar los otros
@@ -139,6 +133,13 @@ function MostrarDesactivar() {
     $('#button_default').hide();
     $('#button_activar').hide();
     $('#button_desactivar').show();
+}
+
+function MostrarDefault() {
+    $('#button_default').show();
+    $('#button_activar').hide();
+    $('#button_desactivar').hide();
+    limpiar();
 }
 
 init();

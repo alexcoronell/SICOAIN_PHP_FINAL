@@ -39,18 +39,18 @@ require 'header.php';
                 <div class="col-8">
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Edición de Cargos</h2>
-                        <form name="formulario" id="formulario" method="POST">
-                            <div class="form-group row">
+                        <div class="form-group row">
                                 <label for="rol" class="col-4">Buscar cargo:</label>
                                 <div class="col-8 searchbox">
-                                <input type="search" class="form-control" name="buscarcargo" id="buscarcargo">
+                                <input type="search" class="form-control" name="buscarId" id="buscarId">
                                 <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </div>
                             </div>
+                        <form name="formulario" id="formulario" method="POST">
                             <div class="form-group row">
                                 <label for="cargo" class="col-4">Nombre Cargo:</label>
                                 <div class="col-8">
-                                <input type="hidden" name="id_cargo" id="id_cargo">
+                                <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="cargo" id="cargo" required>
                                 </div>
                             </div>
@@ -65,11 +65,12 @@ require 'header.php';
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
                                 <div class="col-4">
-                                    <button type="button" class="btn btn-light">Cancelar</button>
-                                </div>
+                                <button type="button" class="btn btn-light" onclick="limpiar()">Cancelar</button>
+                        </div>
                             </div>
 
                         </form>
+                        
                     </div>
                 </div>
             </div>

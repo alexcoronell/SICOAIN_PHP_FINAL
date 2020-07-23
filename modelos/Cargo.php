@@ -22,34 +22,34 @@ class Cargo
     }
 
     // Método para editar registros
-    public function editar($id_cargo, $cargo, $descripcion)
+    public function editar($id, $cargo, $descripcion)
     {
         $sql = "UPDATE cargo SET cargo = '$cargo', descripcion = '$descripcion'
-        WHERE id_cargo = '$id_cargo'";
+        WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
 
     // Método para desactivar cargos
-    public function desactivar($id_cargo)
+    public function desactivar($id)
     {
         $sql = "UPDATE cargo SET condicion = '0'
-        WHERE id_cargo = '$id_cargo'";
+        WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
 
     // Método para activar cargos
-    public function activar($id_cargo)
+    public function activar($id)
     {
         $sql = "UPDATE cargo SET condicion = '1'
-        WHERE id_cargo = '$id_cargo'";
+        WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
 
     // Método para mostrar los datos de un registro a modificar
-    public function mostrar($id_cargo) 
+    public function mostrar($id) 
     {
         $sql = "SELECT * FROM cargo
-        WHERE id_cargo = '$id_cargo'";
+        WHERE id = '$id'";
         return ejecutarConsultaSimpleFila($sql);
     }
 

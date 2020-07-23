@@ -39,7 +39,7 @@ require 'header.php';
                             <div class="form-group row">
                                 <label for="rol" class="col-4">Nombre Rol: *</label>
                                 <div class="col-8">
-                                    <input type="hidden" name="id_rol" id="id_rol">
+                                    <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="rol" id="rol" maxlength="30" required>
                                 </div>
                             </div>
