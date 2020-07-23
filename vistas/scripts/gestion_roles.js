@@ -118,7 +118,7 @@ function desactivar() {
             })
         }
     })
-    MostrarDefault()
+    MostrarDefault();
 }
 
 // Función para mostrar boton de activar y ocultar los otros

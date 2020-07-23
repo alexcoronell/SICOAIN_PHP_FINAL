@@ -14,6 +14,7 @@ function limpiar() {
     $('#telefono_compania').val("");
     $('#direccion_compania').val("");
     $('#condicion').val("");
+    $("#buscarId").val("");
 }
 
 
@@ -92,11 +93,7 @@ function activar() {
             bootbox.alert(e);
         })
     })
-    $('#button_activar').hide();
-    $('#button_desactivar').hide();
-    $('#button_default').show();
-    limpiar();
-    $("#buscarcompania").val("");
+    MostrarDefault();
 }
 
 // Función para desactivar Compañías
@@ -111,12 +108,17 @@ function desactivar() {
             })
         }
     })
+    MostrarDefault();
+}
+
+function MostrarDefault() {
+    $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
-    $('#button_default').show();
     limpiar();
-    $("#buscarcompania").val("");
 }
+
+init();
 
 // Función para mostrar boton de activar y ocultar los otros
 function MostrarActivar() {
