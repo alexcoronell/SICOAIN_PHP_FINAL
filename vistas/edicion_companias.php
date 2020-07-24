@@ -33,7 +33,7 @@ require 'header.php';
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Edición de Compañías</h2>
                         <div class="form-group row">
-                                <label for="rol" class="col-4">Buscar cargo:</label>
+                                <label for="rol" class="col-4">Buscar Compañía:</label>
                                 <div class="col-8 searchbox">
                                 <input type="search" class="form-control" name="buscarId" id="buscarId">
                                 <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
