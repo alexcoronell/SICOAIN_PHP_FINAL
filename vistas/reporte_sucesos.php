@@ -25,10 +25,10 @@ require 'header.php';
                                     <li><a href="reporte_cargos.php">Cargos</a></li>
                                     <li><a href="reporte_companias.php">Compañías</a></li>
                                     <li><a href="reporte_sedes.php">Sedes</a></li>
-                                    <li><a href="reporte_eps.php" class="active">EPS</a></li>
+                                    <li><a href="reporte_eps.php">EPS</a></li>
                                     <li><a href="reporte_arl.php">ARL</a></li>
                                     <li><a href="reporte_incidentes.php">Incidentes</a></li>
-                                    <li><a href="reporte_sucesos.php">Sucesos</a></li>
+                                    <li><a href="reporte_sucesos.php" class="active">Sucesos</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -37,15 +37,12 @@ require 'header.php';
                 </div>
             </div>
             <div class="col-8">
-                <div class="box-reporte-md container mt-5">
-                    <h2 class="text-center title-formularios">Reporte de EPS</h2>
+                <div class="box-reporte-xs container mt-5">
+                    <h2 class="text-center title-formularios">Reporte de Sucesos</h2>
                     <table class="tabla-md table-striped table-bordered table-condensed table-hover" id="tbllistado">
                         <thead>
                             <th>Id</th>
                             <th>Nombre</th>
-                            <th>Teléfono</th>
-                            <th>email</th>
-                            <th>Dirección</th>
                             <th>Condición</th>
                         </thead>
                         <tbody></tbody>
@@ -64,4 +61,4 @@ require 'footer.php';
 
 ?>
 
-<script src="scripts/reporte_eps.js"></script>
+<script src="scripts/reporte_sucesos.js"></script>
