@@ -4,6 +4,8 @@ var condicionActual;
 function init() {
     limpiar();
 
+    $('#formulario').disableAutoFill();
+
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     });

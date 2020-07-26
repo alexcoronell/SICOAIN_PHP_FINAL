@@ -49,7 +49,7 @@ require 'header.php';
                             <label for="usuario" class="col-4">usuario:</label>
                             <div class="col-8">
                                 <input type="hidden" name="id" id="id">
-                                <input type="text" class="form-control" name="usuario" id="usuario">
+                                <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
                             </div>
                         </div>
 
@@ -66,24 +66,24 @@ require 'header.php';
                             <label class="col-4">Roles: *</label>
                             <div class="col-8">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="superusuario" value="1" name="superusuario" id="superusuario">
-                                    <label class="form-check-label" for="superusuario">Superusuario</label>
+                                    <input class="form-check-input" type="checkbox" id="superusuario" value="1" name="superusuario" id="superusuario" title="Acceso total">
+                                    <label class="form-check-label" for="superusuario" title="Acceso total">Superusuario</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="administrador" value="1" name="administrador" id="administrador">
-                                    <label class="form-check-label" for="administrador">Administrador</label>
+                                    <input class="form-check-input" type="checkbox" id="administrador" value="1" name="administrador" id="administrador" title="Gestion de empleados, cargos, compañías, sedes, EPS, ARL y Gestión de Incidentes y Sucesos">
+                                    <label class="form-check-label" for="administrador" title="Gestion de empleados, cargos, compañías, sedes, EPS, ARL y Gestión de Incidentes y Sucesos">Administrador</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="analista" value="1" name="analista" id="analista">
-                                    <label class="form-check-label" for="analista_asistente">Analista</label>
+                                    <input class="form-check-input" type="checkbox" id="analista" value="1" name="analista" id="analista" title="Gestion de empleados, EPS, ARL y Gestión de Incidentes y Sucesos">
+                                    <label class="form-check-label" for="analista_asistente" title="Gestion de empleados, EPS, ARL y Gestión de Incidentes y Sucesos">Analista</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="asistente" value="1" name="asistente" id="asistente">
-                                    <label class="form-check-label" for="analista_asistente">Asistente</label>
+                                    <input class="form-check-input" type="checkbox" id="asistente" value="1" name="asistente" id="asistente" title="Gestión de Incidentes y Sucesos">
+                                    <label class="form-check-label" for="analista_asistente" title="Gestión de Incidentes y Sucesos">Asistente</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="consultas" value="1" name="consultas" id="consultas">
-                                    <label class="form-check-label" for="consultas">Consultas</label>
+                                    <input class="form-check-input" type="checkbox" id="consultas" value="1" name="consultas" id="consultas" title="Acceso a reportes">
+                                    <label class="form-check-label" for="consultas" title="Acceso a reportes">Consultas</label>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ require 'header.php';
                         <div class="form-group row">
                             <label for="contrasena" class="col-4">Contraseña: *</label>
                             <div class="col-8">
-                                <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="FALSE">
+                                <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
                             </div>
                         </div>
 

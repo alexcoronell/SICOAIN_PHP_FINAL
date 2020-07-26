@@ -49,7 +49,7 @@ require 'header.php';
                             <label for="usuario" class="col-4">usuario: *</label>
                             <div class="col-8">
                                 <input type="hidden" name="id" id="id">
-                                <input type="text" class="form-control" name="usuario" id="usuario" disabled>
+                                <input type="text" class="form-control" name="usuario" id="usuario" disabled autocomplete="off">
                             </div>
                         </div>
 

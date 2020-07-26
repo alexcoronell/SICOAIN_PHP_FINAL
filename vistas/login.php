@@ -11,7 +11,7 @@ require 'header.php';
         <div class="title-login">
             <h2>Ingrese su usuario</h2>
         </div>
-        <form action="">
+        <form action="" autocomplete="off">
             <div class="form-inputs">
                 <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario">
                 <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña">
