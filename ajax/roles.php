@@ -69,6 +69,16 @@ switch ($_GET["op"])
 
     break;
 
+    case 'selectRol':
+
+        $rspta = $roles -> select();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> rol . '</option>';
+        }
+    break;
+
 }
 
 ?>

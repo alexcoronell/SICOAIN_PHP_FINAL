@@ -53,6 +53,7 @@ class Roles
         return ejecutarConsultaSimpleFila($sql);
     }
 
+    // Método para listar todos los registros
     public function listar()
     {
         $sql = "SELECT * FROM roles";

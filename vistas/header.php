@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="../public/datatables/select.dataTables.min.css">
     <link rel="stylesheet" href="../public/datatables/editor.dataTables.min.css">
 
+    <!-- Bootstrap Select -->
+    <!-- <link rel="stylesheet" href="../public/css/bootstrap-select.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../public/css/font-awesome.min.css">
 
