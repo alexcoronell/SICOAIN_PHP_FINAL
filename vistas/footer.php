@@ -23,9 +23,6 @@
 <!-- Librería Bootbox (Para los alert) -->
 <script src="../public/js/bootbox.min.js"></script>
 
-<!-- Deshabilitar el autorelleno de los formularios -->
-<script src="../public/js/jquery.disableAutoFill.min.js"></script>
-
 </body>
 
 </html>
