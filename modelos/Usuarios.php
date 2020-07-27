@@ -57,6 +57,15 @@ class Usuarios
         $sql = "SELECT * FROM usuarios";
         return ejecutarConsulta($sql);
     }
+
+    // Función para verificar el acceso al sistema
+    public function verificar($usuario, $contrasena)
+    {
+        $sql = "SELECT id, nombre, superusuario, administrador, analista, asistente, consultas
+        FROM usuarios
+        WHERE usuario = '$usuario' AND contrasena = '$contrasena' AND condicion = '1'";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

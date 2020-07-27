@@ -25,6 +25,6 @@
     <!-- My Styles -->
     <link rel="stylesheet" href="../public/css/styles.css">
 
-    <title>SICOAIN - Sistema de Control de Accidentes e Incidentes - Login</title>
+    <title>SICOAIN - Sistema de Control de Accidentes e Incidentes</title>
 </head>
 <body>

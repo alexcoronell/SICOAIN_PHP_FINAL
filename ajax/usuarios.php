@@ -72,4 +72,25 @@ switch ($_GET["op"])
         echo json_encode($results);
 
     break;
+
+    case 'verificar':
+        $usuario = $_POST['usuario'];
+        $contrasena = $_POST['contrasena'];
+
+        $rspta = $usuarios -> verificar($usuario, $contrasena);
+
+        $fetch = $rspta -> fetch_object();
+
+        if (isset($fetch))
+        {
+            //Declaración de variables de sesión
+            $_SESSION['id']=$fetch -> id;
+            $_SESSION['nombre']=$fetch -> nombre;
+            $_SESSION['superusuario']=$fetch -> superusuario;
+            $_SESSION['administrador']=$fetch -> administrador;
+            $_SESSION['analista']=$fetch -> analista;
+            $_SESSION['consultas']=$fetch -> consultas;
+        }
+        echo json_encode($fetch);
+    break;
 }
