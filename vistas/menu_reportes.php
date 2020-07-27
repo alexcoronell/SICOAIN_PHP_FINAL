@@ -1,6 +1,15 @@
 <?php
 
-require 'header.php';
+// Se activa almacenamiento de la sesión
+ob_start();
+session_start();
+
+if (!isset($_SESSION['nombre'])) {
+    header("location: login.html");
+} else {
+    require 'header.php';
+
+    if ($_SESSION['superusuario'] == 1) {
 
 ?>
 
@@ -35,10 +44,15 @@ require 'header.php';
 
             </div>
         </div>
-    </div>
+        </div>
 
-    <?php
+<?php
+    } else {
+        require 'noacceso.php';
+    }
 
-require 'footer.php';
+    require 'footer.php';
+}
+ob_end_flush();
 
 ?>

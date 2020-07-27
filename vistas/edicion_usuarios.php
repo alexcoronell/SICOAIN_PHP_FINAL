@@ -9,6 +9,8 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
+    if ($_SESSION['superusuario'] == 1) {
+
 ?>
 
     <div class="main-content container">
@@ -119,10 +121,13 @@ if (!isset($_SESSION['nombre'])) {
 </div>
 
 <?php
+    } else {
+        require 'noacceso.php';
+    }
 
-require 'footer.php';
+    require 'footer.php';
 
-?>
+    ?>
 
 <script src="scripts/gestion_usuarios.js"></script>
 
