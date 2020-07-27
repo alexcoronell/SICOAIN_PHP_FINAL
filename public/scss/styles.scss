@@ -38,9 +38,19 @@ h6 {
     border: 2px solid $secondarycolor;
 }
 
-.title-page>h1 {
-    margin: 0 1em;
-    line-height: 2em;
+.title-page>.container>h1 {}
+
+.title-page {
+    .container {
+        h1 {
+            margin: 0 1em;
+        }
+
+        h1,
+        p {
+            line-height: 2em;
+        }
+    }
 }
 
 .login-box {

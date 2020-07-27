@@ -1,3 +1,9 @@
+<?php
+
+if (strlen(session_id()) < 1)
+    session_start();
+?>
+
 <!doctype html>
 <html lang="es">
 
@@ -28,3 +34,10 @@
     <title>SICOAIN - Sistema de Control de Accidentes e Incidentes</title>
 </head>
 <body>
+<div class="container-fluid main-box">
+            <div class="title-page">
+                <div class="container">
+                <h1 class="d-inline">SICOAIN - Sistema de Control de Accidentes e Incidentes</h1>
+                <p class="float-right mr-5">Usuario: <?php echo $_SESSION['nombre']; ?></p>
+                </div>
+            </div>

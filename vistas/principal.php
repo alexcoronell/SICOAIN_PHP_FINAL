@@ -10,10 +10,7 @@ if (!isset($_SESSION['nombre'])) {
     require 'header.php';
 
 ?>
-    <div class="container-fluid main-box">
-        <div class="title-page">
-            <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Menú Principal</h1>
-        </div>
+
         <div class="main-content container">
             <div class="row">
                 <div class="col">
@@ -38,7 +35,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <li><a href="menu_reportes.php">Reportes</a></li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="index.html">Salir</a></button>
+                        <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión</a></button>
                     </div>
                 </div>
                 <div class="col"></div>

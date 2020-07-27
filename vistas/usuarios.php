@@ -12,13 +12,10 @@ if (!isset($_SESSION['nombre'])) {
     if ($_SESSION['superusuario'] == 1) {
 
 ?>
-        <div class="container-fluid main-box">
-            <div class="title-page">
-                <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Administración de Usuarios</h1>
-            </div>
+
             <div class="main-content container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-5">
                         <div class="menu-box">
                             <div class="title-menu">
                                 <h2>Menú de Usuarios</h2>
@@ -35,7 +32,7 @@ if (!isset($_SESSION['nombre'])) {
                                     </li>
                                 </ul>
                             </nav>
-                            <button class="btn btn-light salir-menu"><a href="principal.html">php</a></button>
+                            <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                         </div>
                     </div>
                     <div class="col"></div>
