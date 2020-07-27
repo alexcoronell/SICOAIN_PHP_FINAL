@@ -3,10 +3,7 @@
 require 'header.php';
 
 ?>
-    <div class="container-fluid main-box">
-        <div class="title-page">
-            <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Reportes</h1>
-        </div>
+
         <div class="main-content container">
             <div class="row">
                 <div class="col-4">
@@ -20,7 +17,6 @@ require 'header.php';
                                 <li>Reportes
                                     <ul>
                                         <li><a href="reporte_usuarios.php">Usuarios</a></li>
-                                        <li><a href="reporte_roles.php">Roles</a></li>
                                         <li><a href="reporte_empleados.php">Empleados</a></li>
                                         <li><a href="reporte_cargos.php">Cargos</a></li>
                                         <li><a href="reporte_companias.php">Compañías</a></li>
@@ -33,7 +29,7 @@ require 'header.php';
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
 

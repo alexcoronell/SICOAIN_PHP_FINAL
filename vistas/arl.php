@@ -9,33 +9,29 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
-?>
+    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1))) {
 
+?>
         <div class="main-content container">
             <div class="row">
                 <div class="col-5">
                     <div class="menu-box">
                         <div class="title-menu">
-                            <h2>Menú Principal</h2>
+                            <h2>Menú de ARL</h2>
                         </div>
                         <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
-                                <li>Administración General
+                                <li>Administración de ARL
                                     <ul>
-                                        <li><a href="usuarios.php">Usuarios</a></li>
-                                        <li><a href="empleados.php">Empleados y Cargos</a></li>
-                                        <li><a href="companias.php">Compañías</a></li>
-                                        <li><a href="sedes.php">Sedes</a></li>
-                                        <li><a href="eps.php">EPS</a></li>
-                                        <li><a href="arl.php">ARL</a></li>
+                                        <li><a href="creacion_arl.html">Creación de ARL</a></li>
+                                        <li><a href="edicion_arl.html">Edición de ARL</a></li>
+                                        <li><a href="act_desact_arl.php">Act/Desact. de ARL</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="menu_incidentes.php">Administración de Incidentes</a></li>
-                                <li><a href="menu_reportes.php">Reportes</a></li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col"></div>
@@ -47,6 +43,9 @@ if (!isset($_SESSION['nombre'])) {
     </div>
 
     <?php
+    } else {
+        require 'noacceso.php';
+    }
 
     require 'footer.php';
 
