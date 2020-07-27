@@ -24,8 +24,8 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de EPS
                                     <ul>
-                                        <li><a href="creacion_eps.html">Creación de EPS</a></li>
-                                        <li><a href="edicion_eps.html">Edición de EPS</a></li>
+                                        <li><a href="creacion_eps.php">Creación de EPS</a></li>
+                                        <li><a href="edicion_eps.php">Edición de EPS</a></li>
                                         <li><a href="act_desact_eps.php">Act/Desact. de EPS</a></li>
                                     </ul>
                                 </li>

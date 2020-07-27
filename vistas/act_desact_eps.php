@@ -19,14 +19,14 @@ require 'header.php';
                         <ul>
                             <li>Administración de EPS
                                 <ul>
-                                    <li><a href="creacion_eps.html">Creación de EPS</a></li>
-                                    <li><a href="edicion_eps.html">Edición de EPS</a></li>
-                                    <li><a href="eliminacion_eps.html" class="active">Eliminación de EPS</a></li>
+                                    <li><a href="creacion_eps.php">Creación de EPS</a></li>
+                                    <li><a href="edicion_eps.php">Edición de EPS</a></li>
+                                    <li><a href="eliminacion_eps.php" class="active">Eliminación de EPS</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                    <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
             <div class="col-8">

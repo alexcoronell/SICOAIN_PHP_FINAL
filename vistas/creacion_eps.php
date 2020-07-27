@@ -27,19 +27,13 @@ require 'header.php';
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Creación de EPS</h2>
                         <form name="formulario" id="formulario" method="POST">
-                            <!-- <div class="form-group row">
-                                <label for="buscarId" class="col-4 deshabilitado">Buscar:</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" disabled>
-                                </div>
-                            </div> -->
 
                             <!-- Id - Nombre -->
                             <div class="form-group row">

@@ -20,7 +20,6 @@ require 'header.php';
                             <li>Reportes
                                 <ul>
                                     <li><a href="reporte_usuarios.php" class="active">Usuarios</a></li>
-                                    <li><a href="reporte_roles.php">Roles</a></li>
                                     <li><a href="reporte-empleados.php">Empleados</a></li>
                                     <li><a href="reporte_cargos.php">Cargos</a></li>
                                     <li><a href="reporte_companias.php">Compañías</a></li>
