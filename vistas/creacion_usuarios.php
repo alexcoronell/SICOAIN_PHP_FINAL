@@ -1,6 +1,13 @@
 <?php
 
-require 'header.php';
+// Se activa almacenamiento de la sesión
+ob_start();
+session_start();
+
+if (!isset($_SESSION['nombre'])) {
+    header("location: login.html");
+} else {
+    require 'header.php';
 
 ?>
 <div class="container-fluid main-box">
@@ -26,7 +33,7 @@ require 'header.php';
                             </li>
                         </ul>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                    <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
             <div class="col-8">
@@ -114,3 +121,8 @@ require 'footer.php';
 ?>
 
 <script src="scripts/gestion_usuarios.js"></script>
+
+<?php
+}
+ob_end_flush();
+?>

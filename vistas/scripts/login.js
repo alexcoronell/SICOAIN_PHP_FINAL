@@ -8,7 +8,7 @@ $('#formularioAcceso').on('submit', function(e) {
         contrasena: contrasena
     }, function(data) {
         if (data != "null") {
-            $(location).attr('href', 'menu_reportes.php');
+            $(location).attr('href', 'principal.php');
         } else {
             bootbox.alert("Usuario y/o Contraseña incorrectos");
         }
