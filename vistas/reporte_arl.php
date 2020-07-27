@@ -33,7 +33,7 @@ require 'header.php';
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="menu-reportes.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="menu_reportes.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">
