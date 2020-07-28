@@ -3,9 +3,8 @@
 //Conexión a la base de datos
 require "../config/conexion.php";
 
-class Sedes
+class Sedes 
 {
-
     // Se implementa el constructor
 
     public function __construct()
@@ -16,7 +15,7 @@ class Sedes
     // Método para insertar registros
     public function insertar($fo_compania, $nombre, $telefono, $direccion, $notas) 
     {
-        $sql = "INSERT INTO sede (fo_compania, telefono, direccion, notas, condicion)
+        $sql = "INSERT INTO sede (fo_compania, nombre, telefono, direccion, notas, condicion)
         VALUES ('$fo_compania', '$nombre', '$telefono', '$direccion', '$notas', '1')";
         return ejecutarConsulta($sql);
     }
@@ -29,7 +28,7 @@ class Sedes
         return ejecutarConsulta($sql);
     }
 
-    // Método para desactivar Compañías
+    // Método para desactivar Usuarios
     public function desactivar($id)
     {
         $sql = "UPDATE sede SET condicion = '0'
@@ -37,7 +36,7 @@ class Sedes
         return ejecutarConsulta($sql);
     }
 
-    // Método para activar Compañías
+    // Método para activar Usuarios
     public function activar($id)
     {
         $sql = "UPDATE sede SET condicion = '1'
@@ -55,7 +54,20 @@ class Sedes
 
     public function listar()
     {
-        $sql = "SELECT * FROM sede";
+        $sql = "SELECT
+        s.id, s.fo_compania, c.compania, s.nombre, s.telefono, s.direccion, s.notas, s.condicion
+        FROM sede s
+        INNER JOIN compania c
+        ON s.fo_compania = c.id";
+        return ejecutarConsulta($sql);
+    }
+
+    // Función para verificar el acceso al sistema
+    public function verificar($usuario, $contrasena)
+    {
+        $sql = "SELECT id, nombre, superusuario, administrador, analista, asistente, consultas
+        FROM usuarios
+        WHERE usuario = '$usuario' AND contrasena = '$contrasena' AND condicion = '1'";
         return ejecutarConsulta($sql);
     }
 }

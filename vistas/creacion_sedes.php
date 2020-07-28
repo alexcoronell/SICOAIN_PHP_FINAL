@@ -38,15 +38,17 @@ if (!isset($_SESSION['nombre'])) {
                 <div class="col-7">
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Creación de Sedes</h2>
+
+
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST" autocomplete="nope">
+                        <form name="formulario" id="formulario" method="POST">
 
                             <!-- Compañía -->
                             <div class="form-group row">
+                                <input type="hidden" name="id" id="id">
                                 <label for="fo_compania" class="col-4">Compañía:</label>
                                 <div class="col-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <select name="fo_compania" id="fo_compania" class="form-control"></select>
+                                    <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
                                 </div>
                             </div>
 
@@ -54,7 +56,7 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="nombre" class="col-4">Nombre:*</label>
                                 <div class="col-8">
-                                <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off">
+                                    <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off" maxlength="30">
                                 </div>
                             </div>
 
@@ -63,7 +65,7 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="telefono" class="col-4">Teléfono:*</label>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" name="telefono" id="telefono">
+                                    <input type="text" class="form-control" name="telefono" id="telefono" maxlength="12">
                                 </div>
                             </div>
 
@@ -84,14 +86,14 @@ if (!isset($_SESSION['nombre'])) {
                             </div>
 
                             <!-- Botones de formulario -->
-                        <div class="form-group row">
-                            <div class="offset-4 col-4">
-                                <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                            <div class="form-group row">
+                                <div class="offset-4 col-4">
+                                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
-                            </div>
-                        </div>
 
                         </form>
                     </div>

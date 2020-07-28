@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../modelos/Sedes.php";
 
 $sede = new Sedes();
@@ -11,63 +11,60 @@ $telefono = isset($_POST["telefono"]) ? limpiarCadena($_POST["telefono"]) : "";
 $direccion = isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "";
 $notas = isset($_POST["notas"]) ? limpiarCadena($_POST["notas"]) : "";
 
-switch ($_GET["op"])
-{
-    case 'guardaryeditar' :
-        if (empty($id))
-        {
-            $rspta = $sede -> insertar($fo_compania, $nombre, $telefono, $direccion, $notas);
-            echo $rspta ? "Sede registrada correctamente" : "Sede no se pudo registrar";
-        } else
-        {
-            $rspta = $sede -> editar($id, $fo_compania, $nombre, $telefono, $direccion, $notas);
-            echo $rspta ? "Sede actualizada correctamente" : "Sede no se pudo actualizar";
+switch ($_GET["op"]) {
+    case 'guardaryeditar':
+        if (empty($id)) {
+            $rspta = $sede->insertar($fo_compania, $nombre, $telefono, $direccion, $notas);
+            echo $rspta ? "Sede registrado correctamente" : "Sede no se pudo registrar";
+        break;
+        } else {
+            $rspta = $sede->editar($id, $fo_compania, $nombre, $telefono, $direccion, $notas);
+            echo $rspta ? "Sede actualizado correctamente" : "Sede no se pudo actualizar";
+        break;
         }
-    break;
+        break;
 
     case 'desactivar':
-        $rspta = $sede -> desactivar($id);
+        $rspta = $sede->desactivar($id);
         echo $rspta ? "Sede Desactivada" : "Sede no se pudo Desactivar";
-    break;
+        break;
 
     case 'activar':
-        $rspta = $sede -> activar($id);
+        $rspta = $sede->activar($id);
         echo $rspta ? "Sede Activada" : "Sede no se pudo Activar";
-    break;
+        break;
 
     case 'mostrar':
-        $rspta = $sede -> mostrar($id);
+        $rspta = $sede->mostrar($id);
         // Codificación del resultado usando Json
         echo json_encode($rspta);
-    break;
+        break;
 
     case 'listar':
-        $rspta = $sede -> listar();
+        $rspta = $sede->listar();
         // Declaración de Array que contendrá todos los datos
-        $data = Array();
+        $data = array();
 
-        while ($reg = $rspta -> fetch_object())
-        {
+        while ($reg = $rspta->fetch_object()) {
             $data[] = array(
-                "0" => $reg -> id,
-                "1" => $reg -> fo_compania, 
-                "2" => $reg -> nombre,
-                "3" => $reg -> telefono,
-                "4" => $reg -> direccion,
-                "5" => $reg -> notas,
-                "6" => $reg -> condicion
+                "0" => $reg->id,
+                "1" => $reg->compania,
+                "2" => $reg->nombre,
+                "3" => $reg->telefono,
+                "4" => $reg->direccion,
+                "5" => $reg->notas,
+                "6" => $reg->condicion
             );
         }
-        $results = array (
+        $results = array(
             "sEcho" => 1, // Información para la tabla
             "iTotalRecords" => count($data), // Envío del total de registros a la tabla
             "iTotalDisplayRecords" => count($data), // Total de registros a visualizar
-            "aaData" => $data);
+            "aaData" => $data
+        );
         echo json_encode($results);
 
-    break;
+        break;
+
 
 }
-
-?>
-

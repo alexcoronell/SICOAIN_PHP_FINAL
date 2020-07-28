@@ -63,6 +63,15 @@ switch ($_GET["op"])
 
     break;
 
+    case "selectCompania":
+        $rspta = $companias -> select();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> compania . '</option>';
+        }
+    break;
+
 }
 
 ?>

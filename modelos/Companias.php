@@ -58,6 +58,11 @@ class Compania
         $sql = "SELECT * FROM compania";
         return ejecutarConsulta($sql);
     }
-}
 
-?>
+    // Metodo para listar las compañías activas (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM compania WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
+}

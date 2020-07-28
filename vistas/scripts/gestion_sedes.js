@@ -5,12 +5,19 @@ function init() {
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    // Carga de opciones en el select Compañías
+    $.post("../ajax/companias.php?op=selectCompania", function(r) {
+        $('#fo_compania').html(r);
+        $('#fo_compania').selectpicker('refresh');
+    })
 }
 
 // Función para limpiar el formulario
 function limpiar() {
     $("#id").val("");
     $("#fo_compania").val("");
+    $('#fo_compania').selectpicker('refresh');
     $('#nombre').val("");
     $('#telefono').val("");
     $('#direccion').val("");
@@ -54,6 +61,7 @@ function mostrar(id) {
 
         $("#id").val(data.id);
         $('#fo_compania').val(data.fo_compania);
+        $('#fo_compania').selectpicker('refresh');
         $('#nombre').val(data.nombre);
         $('#telefono').val(data.telefono);
         $('#direccion').val(data.direccion);

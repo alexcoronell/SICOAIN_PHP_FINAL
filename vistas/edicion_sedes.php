@@ -25,37 +25,37 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de Sedes
                                     <ul>
-                                    <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
+                                        <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
                                         <li><a href="edicion_sedes.php" class="active">Edición de Sedes</a></li>
                                         <li><a href="act_desact_sedes.php">Act/Desact. de Sedes</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-7">
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Edición de Sedes</h2>
                         <!-- Busqueda -->
-                    <div class="form-group row">
-                        <label for="rol" class="col-4">Buscar:</label>
-                        <div class="col-8 searchbox">
-                            <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
-                            <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <div class="form-group row">
+                            <label for="buscarId" class="col-4">Buscar:</label>
+                            <div class="col-8 searchbox">
+                                <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Buscar...">
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Formulario -->
-                    <form name="formulario" id="formulario" method="POST">
+                        <!-- Formulario -->
+                        <form name="formulario" id="formulario" method="POST" autocomplete="off">
 
                             <!-- Compañía -->
                             <div class="form-group row">
                                 <label for="fo_compania" class="col-4">Compañía:</label>
                                 <div class="col-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <select name="fo_compania" id="fo_compania" class="form-control"></select>
+                                    <input type="text" name="id" id="id">
+                                    <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
                                 </div>
                             </div>
 
@@ -63,10 +63,9 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="nombre" class="col-4">Nombre:*</label>
                                 <div class="col-8">
-                                <input type="text" class="form-control" name="nombre" id="nombre" autocomplete="off">
+                                    <input type="text" class="form-control" name="nombre" id="nombre">
                                 </div>
                             </div>
-
 
                             <!-- Teléfono -->
                             <div class="form-group row">
@@ -92,6 +91,7 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
                             </div>
 
+
                             <!-- Botones de formulario -->
                         <div class="form-group row">
                             <div class="offset-4 col-4">
@@ -107,7 +107,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <?php
     } else {

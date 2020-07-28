@@ -40,9 +40,9 @@ if (!isset($_SESSION['nombre'])) {
                     <h2 class="text-center title-formularios">Edición de Usuarios</h2>
                     <!-- Busqueda -->
                     <div class="form-group row">
-                        <label for="rol" class="col-4">Buscar Usuario:</label>
+                        <label for="buscarId" class="col-4">Buscar:</label>
                         <div class="col-8 searchbox">
-                            <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
+                            <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Buscar...">
                             <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </div>
                     </div>
