@@ -13,10 +13,7 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="container-fluid main-box">
-            <div class="title-page">
-                <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Reportes</h1>
-            </div>
+
             <div class="main-content container">
                 <div class="row">
                     <div class="col-4">
