@@ -40,18 +40,14 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
-    <?php
+<?php
     } else {
         require 'noacceso.php';
     }
 
     require 'footer.php';
-
-    ?>
-
-<?php
 }
 ob_end_flush();
 ?>

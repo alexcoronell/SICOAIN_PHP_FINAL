@@ -24,8 +24,8 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de ARL
                                     <ul>
-                                        <li><a href="creacion_arl.html">Creación de ARL</a></li>
-                                        <li><a href="edicion_arl.html">Edición de ARL</a></li>
+                                        <li><a href="creacion_arl.php">Creación de ARL</a></li>
+                                        <li><a href="edicion_arl.php">Edición de ARL</a></li>
                                         <li><a href="act_desact_arl.php">Act/Desact. de ARL</a></li>
                                     </ul>
                                 </li>
@@ -40,7 +40,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <?php
     } else {

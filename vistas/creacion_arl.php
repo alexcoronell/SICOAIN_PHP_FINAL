@@ -1,12 +1,18 @@
 <?php
 
-require 'header.php';
+// Se activa almacenamiento de la sesión
+ob_start();
+session_start();
+
+if (!isset($_SESSION['nombre'])) {
+    header("location: login.html");
+} else {
+    require 'header.php';
+
+    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1))) {
 
 ?>
-    <div class="container-fluid main-box">
-        <div class="title-page">
-            <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Administración de ARL</h1>
-        </div>
+
         <div class="main-content container">
             <div class="row">
                 <div class="col-4">
@@ -90,12 +96,21 @@ require 'header.php';
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
     <?php
 
-require 'footer.php';
+    } else {
+        require 'noacceso.php';
+    }
 
+    require 'footer.php';
+
+    ?>
+
+    <script src="scripts/gestion_arl.js"></script>
+
+<?php
+}
+ob_end_flush();
 ?>
-
-<script src="scripts/gestion_arl.js"></script>
