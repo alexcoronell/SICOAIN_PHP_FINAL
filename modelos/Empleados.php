@@ -61,7 +61,9 @@ class Empleados
         INNER JOIN sede sede ON em.fo_sede = sede.nombre
         INNER JOIN cargo cargo ON em.fo_cargo = cargo.cargo
         INNER JOIN departamentos dep ON em.fo_departamento = dep.departamento
-        INNER JOIN ciudad ciudad ON em.fo_ciudad = ciudad.ciudad";
+        INNER JOIN ciudad ciudad ON em.fo_ciudad = ciudad.ciudad
+        INNER JOIN eps eps ON em.fo_eps = eps.nombre_eps
+        INNER JOIN arl arl ON em.fo_arl = arl.nombre_arl";
         return ejecutarConsulta($sql);
     }
 
@@ -69,12 +71,3 @@ class Empleados
 }
 
 ?>
-public function listar()
-    {
-        $sql = "SELECT
-        s.id, s.fo_compania, c.compania, s.nombre, s.telefono, s.direccion, s.notas, s.condicion
-        FROM sede s
-        INNER JOIN compania c
-        ON s.fo_compania = c.id";
-        return ejecutarConsulta($sql);
-    }
