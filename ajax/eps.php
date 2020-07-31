@@ -5,7 +5,7 @@ require_once "../modelos/Eps.php";
 $eps = new Eps();
 
 $id = isset($_POST["id"]) ? limpiarCadena($_POST["id"]) : "";
-$nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
+$nombre_eps = isset($_POST["nombre_eps"]) ? limpiarCadena($_POST["nombre_eps"]) : "";
 $telefono = isset($_POST["telefono"]) ? limpiarCadena($_POST["telefono"]) : "";
 $direccion = isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "";
 $email = isset($_POST["email"]) ? limpiarCadena($_POST["email"]) : "";
@@ -15,11 +15,11 @@ switch ($_GET["op"])
     case 'guardaryeditar' :
         if (empty($id))
         {
-            $rspta = $eps -> insertar($nombre, $telefono, $direccion, $email);
+            $rspta = $eps -> insertar($nombre_eps, $telefono, $direccion, $email);
             echo $rspta ? "EPS registrada correctamente" : "EPS no se pudo registrar";
         } else
         {
-            $rspta = $eps -> editar($id, $nombre, $telefono, $direccion, $email);
+            $rspta = $eps -> editar($id, $nombre_eps, $telefono, $direccion, $email);
             echo $rspta ? "EPS actualizada correctamente" : "EPS no se pudo actualizar";
         }
     break;
@@ -49,7 +49,7 @@ switch ($_GET["op"])
         {
             $data[] = array(
                 "0" => $reg -> id,
-                "1" => $reg -> nombre, 
+                "1" => $reg -> nombre_eps, 
                 "2" => $reg -> telefono,
                 "3" => $reg -> direccion, 
                 "4" => $reg -> email, 

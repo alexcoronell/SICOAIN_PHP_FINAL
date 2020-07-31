@@ -43,10 +43,10 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Id - Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-4">Nombre:*</label>
+                                <label for="nombre_eps" class="col-4">Nombre:*</label>
                                 <div class="col-8">
                                     <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
+                                    <input type="text" class="form-control" name="nombre_eps" id="nombre_eps" maxlength="30" required>
                                 </div>
                             </div>
 

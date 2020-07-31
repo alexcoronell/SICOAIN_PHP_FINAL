@@ -12,7 +12,7 @@ function init() {
 // Función para limpiar el formulario
 function limpiar() {
     $("#id").val("");
-    $("#nombre").val("");
+    $("#nombre_eps").val("");
     $('#telefono').val("");
     $('#direccion').val("");
     $('#email').val("");
@@ -54,7 +54,7 @@ function mostrar(id) {
         data = JSON.parse(data);
 
         $("#id").val(data.id);
-        $('#nombre').val(data.nombre);
+        $('#nombre_eps').val(data.nombre_eps);
         $('#telefono').val(data.telefono);
         $('#direccion').val(data.direccion);
         $('#email').val(data.email);
@@ -68,7 +68,7 @@ function mostrarAct(id) {
     }, function(data, status) {
         data = JSON.parse(data);
         $("#id").val(data.id);
-        $('#nombre').val(data.nombre);
+        $('#nombre_eps').val(data.nombre_eps);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })

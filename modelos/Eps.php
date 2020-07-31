@@ -16,15 +16,15 @@ class Eps
     // Método para insertar registros
     public function insertar($nombre, $telefono, $direccion, $email) 
     {
-        $sql = "INSERT INTO eps (nombre, telefono, direccion, email, condicion)
-        VALUES ('$nombre', '$telefono', '$direccion', '$email', '1')";
+        $sql = "INSERT INTO eps (nombre_eps, telefono, direccion, email, condicion)
+        VALUES ('$nombre_eps', '$telefono', '$direccion', '$email', '1')";
         return ejecutarConsulta($sql);
     }
 
     // Método para editar registros
-    public function editar($id, $nombre, $telefono, $direccion, $email)
+    public function editar($id, $nombre_eps, $telefono, $direccion, $email)
     {
-        $sql = "UPDATE eps SET nombre = '$nombre', telefono = '$telefono', direccion = '$direccion', email = '$email'
+        $sql = "UPDATE eps SET nombre_eps = '$nombre_eps', telefono = '$telefono', direccion = '$direccion', email = '$email'
         WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
