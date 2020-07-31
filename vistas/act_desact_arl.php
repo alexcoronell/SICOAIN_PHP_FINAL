@@ -54,10 +54,10 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Nombre -->
                                 <div class="form-group row">
-                                    <label for="nombre" class="col-4">Nombre:</label>
+                                    <label for="nombre_arl" class="col-4">Nombre:</label>
                                     <div class="col-8">
                                         <input type="hidden" name="id" id="id">
-                                        <input type="text" class="form-control" name="nombre" id="nombre">
+                                        <input type="text" class="form-control" name="nombre_arl" id="nombre_arl" disabled>
                                     </div>
                                 </div>
                             </form>

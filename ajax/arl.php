@@ -5,7 +5,7 @@ require_once "../modelos/Arl.php";
 $arl = new Arl();
 
 $id = isset($_POST["id"]) ? limpiarCadena($_POST["id"]) : "";
-$nombre = isset($_POST["nombre"]) ? limpiarCadena($_POST["nombre"]) : "";
+$nombre_arl = isset($_POST["nombre_arl"]) ? limpiarCadena($_POST["nombre_arl"]) : "";
 $telefono = isset($_POST["telefono"]) ? limpiarCadena($_POST["telefono"]) : "";
 $direccion = isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "";
 $email = isset($_POST["email"]) ? limpiarCadena($_POST["email"]) : "";
@@ -15,11 +15,11 @@ switch ($_GET["op"])
     case 'guardaryeditar' :
         if (empty($id))
         {
-            $rspta = $arl -> insertar($nombre, $telefono, $direccion, $email);
+            $rspta = $arl -> insertar($nombre_arl, $telefono, $direccion, $email);
             echo $rspta ? "ARL registrada correctamente" : "ARL no se pudo registrar";
         } else
         {
-            $rspta = $arl -> editar($id, $nombre, $telefono, $direccion, $email);
+            $rspta = $arl -> editar($id, $nombre_arl, $telefono, $direccion, $email);
             echo $rspta ? "ARL actualizada correctamente" : "ARL no se pudo actualizar";
         }
     break;
@@ -49,7 +49,7 @@ switch ($_GET["op"])
         {
             $data[] = array(
                 "0" => $reg -> id,
-                "1" => $reg -> nombre, 
+                "1" => $reg -> nombre_arl, 
                 "2" => $reg -> telefono,
                 "3" => $reg -> direccion, 
                 "4" => $reg -> email, 

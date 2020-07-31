@@ -39,19 +39,13 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Creación de ARL</h2>
                         <form name="formulario" id="formulario" method="POST">
-                            <!-- <div class="form-group row">
-                                <label for="buscararl" class="col-4 deshabilitado">Buscar:</label>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" name="buscararl" id="buscararl" disabled>
-                                </div>
-                            </div> -->
 
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-4">Nombre:*</label>
+                                <label for="nombre_arl" class="col-4">Nombre:*</label>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30">
+                                    <input type="text" class="form-control" name="nombre_arl" id="nombre_arl" maxlength="30">
                                 </div>
                             </div>
 
