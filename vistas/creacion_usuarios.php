@@ -40,7 +40,7 @@ if (!isset($_SESSION['nombre'])) {
 
 
                     <!-- Formulario -->
-                    <form name="formulario" id="formulario" method="POST" autocomplete="nope">
+                    <form name="formulario" id="formulario" method="POST" autocomplete="off">
 
                         <!-- Usuario -->
                         <div class="form-group row">

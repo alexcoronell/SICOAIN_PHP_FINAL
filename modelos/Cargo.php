@@ -58,6 +58,13 @@ class Cargo
         $sql = "SELECT * FROM cargo";
         return ejecutarConsulta($sql);
     }
+
+    // Metodo para listar las Cargos activos (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM cargo WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

@@ -65,6 +65,15 @@ switch ($_GET["op"])
 
     break;
 
+    case "selectEPS":
+        $rspta = $eps -> select();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> nombre_eps . '</option>';
+        }
+    break;
+
 }
 
 ?>

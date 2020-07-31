@@ -1,3 +1,5 @@
+var condicionActual;
+
 // Función que se ejecuta al inicio
 function init() {
     limpiar();
@@ -5,22 +7,104 @@ function init() {
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     });
-}
+
+    // Carga de opciones en el select Tipo de Identificación
+    $.post("../ajax/tipo_identificacion.php?op=selectIdentificacion", function(r) {
+        $('#fo_tipo_identificacion').html(r);
+        $('#fo_tipo_identificacion').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select Departamentos
+    $.post("../ajax/departamentos.php?op=selectDepartamento", function(r) {
+        $('#fo_departamento').html(r);
+        $('#fo_departamento').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select Ciudad (Todas las ciudades)
+    $.post("../ajax/ciudades.php?op=selectAll", function(r) {
+        $('#fo_ciudad').html(r);
+        $('#fo_ciudad').selectpicker('refresh');
+    })
+
+    // Carga de opciones filtradas por departamento en el select Ciudad
+    $('#fo_departamento').change(function() {
+        var NroDepartamento = $('#fo_departamento').val();
+        console.log(NroDepartamento);
+        /* $.post("../ajax/ciudades.php?op=selectCiudad", {
+            NroDepartamento: NroDepartamento
+        }, function(r) {
+            $('#fo_ciudad').html(r);
+            $('#fo_ciudad').selectpicker('refresh');
+        }) */
+    })
+
+    // Carga de opciones en el select Compañías
+    $.post("../ajax/companias.php?op=selectCompania", function(r) {
+        $('#fo_compania').html(r);
+        $('#fo_compania').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select Sedes
+    $.post("../ajax/sedes.php?op=selectSede", function(r) {
+        $('#fo_sede').html(r);
+        $('#fo_sede').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select Cargos
+    $.post("../ajax/cargo.php?op=selectCargo", function(r) {
+        $('#fo_cargo').html(r);
+        $('#fo_cargo').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select EPS
+    $.post("../ajax/eps.php?op=selectEPS", function(r) {
+        $('#fo_eps').html(r);
+        $('#fo_eps').selectpicker('refresh');
+    })
+
+    // Carga de opciones en el select ARL
+    $.post("../ajax/arl.php?op=selectARL", function(r) {
+        $('#fo_arl').html(r);
+        $('#fo_arl').selectpicker('refresh');
+    })
+
+
+
+} // Fin función INIT
 
 // Función para limpiar el formulario
 function limpiar() {
     $("#id").val("");
-    $("#usuario").val("");
-    $("#nombre").val("");
-    $('#superusuario').prop("checked", false);
-    $('#administrador').prop("checked", false);
-    $('#analista').prop("checked", false);
-    $('#asistente').prop("checked", false);
-    $('#consultas').prop("checked", false);
-    $('#contrasena').val("");
-    $('#condicion').val("");
+    $("#fo_tipo_identificacion").val("");
+    $('#fo_tipo_identificacion').selectpicker('refresh');
+    $("#numero_identificacion").val("");
+    $("#nombres").val("");
+    $("#apellidos").val("");
+    $("#fo_departamento").val("");
+    $('#fo_departamento').selectpicker('refresh');
+    $("#fo_ciudad").val("");
+    $('#fo_ciudad').selectpicker('refresh');
+    $("#direccion").val("");
+    $("#telefono_fijo").val("");
+    $("#telefono_celular").val("");
+    $("#email").val("");
+    $("#fo_compania").val("");
+    $('#fo_compania').selectpicker('refresh');
+    $("#fo_sede").val("");
+    $('#fo_sede').selectpicker('refresh');
+    $("#fo_cargo").val("");
+    $('#fo_cargo').selectpicker('refresh');
+    $("#fo_eps").val("");
+    $('#fo_eps').selectpicker('refresh');
+    $("#fo_arl").val("");
+    $('#fo_arl').selectpicker('refresh');
+    $("#nombre_contacto_emergencia").val("");
+    $("#telefono_contacto_emergencia").val("");
+    $('#parentesco_contacto_emergencia').val("");
+    $('#comentarios').val("");
     $("#buscarId").val("");
 }
+
 
 
 // Función para cancelar el formulario
@@ -88,9 +172,12 @@ function buscar() {
 }
 
 // Función para buscar en el formulario de Activación o desactivación de EPS
-function buscarAct() {
-    idBuscar = $("#buscarId").val();
-    mostrarAct(idBuscar);
+function buscarCiudad() {
+    console.log("Me ejecuto");
+    $.post("../ajax/ciudades.php?op=selectCiudad", function(r) {
+        $('#fo_ciudad').html(r);
+        $('#fo_ciudad').selectpicker('refresh');
+    })
 }
 
 // Función para activar Usuarios

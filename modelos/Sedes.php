@@ -61,6 +61,13 @@ class Sedes
         ON s.fo_compania = c.id";
         return ejecutarConsulta($sql);
     }
+
+    // Metodo para listar las Sedes activas (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM sede WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

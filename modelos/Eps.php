@@ -58,6 +58,13 @@ class Eps
         $sql = "SELECT * FROM eps";
         return ejecutarConsulta($sql);
     }
+
+    // Metodo para listar las EPS activas (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM eps WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>
