@@ -26,36 +26,37 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de Empleados
                                     <ul>
-                                        <li><a href="creacion_empleados.html" class="active">Creación de Empleados</a></li>
-                                        <li><a href="edicion_empleados.html">Edición de Empleados</a></li>
-                                        <li><a href="eliminacion_empleados.html">Eliminación de Empleados</a></li>
+                                        <li><a href="creacion_empleados.php" class="active">Creación de Empleados</a></li>
+                                        <li><a href="edicion_empleados.php">Edición de Empleados</a></li>
+                                        <li><a href="act_desact_empleados.php">Eliminación de Empleados</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Cargos
                                     <ul>
-                                        <li><a href="creacion_cargos.html">Creación de Cargos</a></li>
-                                        <li><a href="edicion_cargos.html">Edición de Cargos</a></li>
-                                        <li><a href="eliminacion_cargos.html">Eliminación de Cargos</a></li>
+                                        <li><a href="creacion_cargos.php">Creación de Cargos</a></li>
+                                        <li><a href="edicion_cargos.php">Edición de Cargos</a></li>
+                                        <li><a href="act_desact_cargos.php">Eliminación de Cargos</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-7 p-0">
                     <div class="box-formulario-empleados container mt-1 p-0">
                         <h2 class="text-center title-formularios">Creación de Empleados</h2>
-                        <form name="formulario" id="formulario" method="POST" autocomplete="off">
+                        <form name="formulario" id="formulario" method="POST">
+                            <input type="hidden" name="id" id="id">
                             <div class="row">
                                 <div class="col-6 empleados-col-1">
                                     <div class="form-group row">
 
                                         <!-- Tipo de Identificación -->
-                                        <label for="tipoidentificacion" class="col-4">Tipo identificación:*</label>
+                                        <label for="fo_tipo_identificacion" class="col-4">Tipo identificación:*</label>
                                         <div class="col-8">
-                                            <input type="hidden" name="id" id="id">
-                                            <select name="fo_tipo_identificacion" id="fo_tipo_identificacion" class="form-control selectpicker" title="Seleccione..."></select>
+
+                                            <select name="fo_tipo_identificacion" id="fo_tipo_identificacion" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -63,7 +64,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="numero_identificacion" class="col-4">Nro. identificación:*</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="numero_identificacion" id="numero_identificacion">
+                                            <input type="text" class="form-control" name="numero_identificacion" id="numero_identificacion" required>
                                         </div>
                                     </div>
 
@@ -71,7 +72,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="nombres" class="col-4">Nombres: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="nombres" id="nombres">
+                                            <input type="text" class="form-control" name="nombres" id="nombres" required>
                                         </div>
                                     </div>
 
@@ -79,7 +80,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="apellidos" class="col-4">Apellidos: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="apellidos" id="apellidos">
+                                            <input type="text" class="form-control" name="apellidos" id="apellidos" required>
                                         </div>
                                     </div>
 
@@ -87,7 +88,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_departamento" class="col-4">Departamento: *</label>
                                         <div class="col-8">
-                                            <select name="fo_departamento" id="fo_departamento" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_departamento" id="fo_departamento" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -95,7 +96,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_ciudad" class="col-4">Ciudad: *</label>
                                         <div class="col-8">
-                                            <select name="fo_ciudad" id="fo_ciudad" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_ciudad" id="fo_ciudad" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -103,7 +104,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="direccion" class="col-4">Direccion: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="direccion" id="direccion">
+                                            <input type="text" class="form-control" name="direccion" id="direccion" maxlength="256" required>
                                         </div>
                                     </div>
 
@@ -111,7 +112,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_fijo" class="col-4">Teléfono: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo">
+                                            <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo" required>
                                         </div>
                                     </div>
 
@@ -119,7 +120,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_celular" class="col-4">Teléfono Celular: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="telefono_celular" id="telefono_celular">
+                                            <input type="text" class="form-control" name="telefono_celular" id="telefono_celular" required>
                                         </div>
                                     </div>
 
@@ -127,7 +128,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="email" class="col-4">email: *</label>
                                         <div class="col-8">
-                                            <input type="email" class="form-control" name="email" id="email">
+                                            <input type="email" class="form-control" name="email" id="email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -144,7 +145,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_compania" class="col-4">Compañía: *</label>
                                         <div class="col-8">
-                                            <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
 
                                             </select>
                                         </div>
@@ -154,7 +155,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_sede" class="col-4">Sede: *</label>
                                         <div class="col-8">
-                                            <select name="fo_sede" id="fo_sede" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_sede" id="fo_sede" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -162,7 +163,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_cargo" class="col-4">Cargo: *</label>
                                         <div class="col-8">
-                                            <select name="fo_cargo" id="fo_cargo" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_cargo" id="fo_cargo" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -170,7 +171,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_eps" class="col-4">EPS: *</label>
                                         <div class="col-8">
-                                            <select name="fo_eps" id="fo_eps" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_eps" id="fo_eps" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -178,7 +179,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="fo_arl" class="col-4">ARL: *</label>
                                         <div class="col-8">
-                                            <select name="fo_arl" id="fo_arl" class="form-control selectpicker" title="Seleccione..."></select>
+                                            <select name="fo_arl" id="fo_arl" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
@@ -188,7 +189,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="nombre_contacto_emergencia" class="col-4">Nombre: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia">
+                                            <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -196,7 +197,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_contacto_emergencia" class="col-4">Teléfono: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia">
+                                            <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -204,7 +205,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="parentesco_contacto_emergencia" class="col-4">Parentesco: *</label>
                                         <div class="col-8">
-                                            <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia">
+                                            <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -213,7 +214,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="comentarios" class="col-4">Comentarios: *</label>
                                         <div class="col-8">
-                                            <textarea name="comentarios" id="comentarios" cols="30" rows="3" class="form-control"></textarea>
+                                            <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>

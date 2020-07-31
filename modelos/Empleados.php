@@ -13,17 +13,17 @@ class Empleados
     }
 
     // Método para insertar registros
-    public function insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_compañia, $fo_cargo, $fo_sede,  $fo_departamento, $fo_ciudad, $direccion, $fo_eps, $fo_arl, $telefono_fijo, $telefono_celular, $email, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios) 
+    public function insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_cargo, $fo_sede, $fo_eps, $fo_arl,  $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios) 
     {
-        $sql = "INSERT INTO empleado (fo_tipo_identificacion, numero_identificacion, nombres, apellidos, fo_compañia, fo_cargo, fo_sede, fo_departamento, fo_ciudad, direccion, fo_eps, fo_arl, telefono_fijo, telefono_celular, email, nombre_contacto_emergencia, telefono_contacto_emergencia, parentesco_contacto_emergencia, comentarios)
-        VALUES ('$fo_tipo_identificacion', '$numero_identificacion', '$nombres, $apellidos', '$fo_compañia', '$fo_cargo', '$fo_sede',  '$fo_departamento', '$fo_ciudad', '$direccion', '$fo_eps', '$fo_arl', '$telefono_fijo', '$telefono_celular', '$email', '$nombre_contacto_emergencia', '$telefono_contacto_emergencia', '$parentesco_contacto_emergencia', '$comentarios', '1')";
+        $sql = "INSERT INTO empleado (fo_tipo_identificacion, numero_identificacion, nombres, apellidos, fo_departamento, fo_ciudad, direccion, telefono_fijo, telefono_celular, email, fo_compania, fo_cargo, fo_sede, fo_eps, fo_arl,  nombre_contacto_emergencia, telefono_contacto_emergencia, parentesco_contacto_emergencia, comentarios, condicion)
+        VALUES ('$fo_tipo_identificacion', '$numero_identificacion', '$nombres', '$apellidos', '$fo_departamento', '$fo_ciudad', '$direccion', '$telefono_fijo', '$telefono_celular', '$email', '$fo_compania', '$fo_cargo', '$fo_sede', '$fo_eps', '$fo_arl', '$nombre_contacto_emergencia', '$telefono_contacto_emergencia', '$parentesco_contacto_emergencia', '$comentarios', '1')";
         return ejecutarConsulta($sql);
     }
 
     // Método para editar registros
-    public function editar($id, $fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_compañia, $fo_cargo, $fo_sede,  $fo_departamento, $fo_ciudad, $direccion, $fo_eps, $fo_arl, $telefono_fijo, $telefono_celular, $email, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios)
+    public function editar($id, $fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_cargo, $fo_sede, $fo_eps, $fo_arl,  $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios)
     {
-        $sql = "UPDATE empleado SET fo_tipo_identificacion = '$fo_tipo_identificacion', numero_identificacion = '$numero_identificacion', nombres = '$nombres, apellidos = $apellidos', fo_compañia = '$fo_compañia', fo_cargo = '$fo_cargo', fo_sede = '$fo_sede', fo_departamento = '$fo_departamento', fo_ciudad = '$fo_ciudad', direccion = '$direccion', fo_eps = '$fo_eps', '$fo_arl', '$telefono_fijo', '$telefono_celular', '$email', nombre_contacto_emergencia = '$nombre_contacto_emergencia', telefono_contacto_emergencia = '$telefono_contacto_emergencia', parentesco_contacto_emergencia = '$parentesco_contacto_emergencia', comentarios = '$comentarios'
+        $sql = "UPDATE empleado SET fo_tipo_identificacion = '$fo_tipo_identificacion', numero_identificacion = '$numero_identificacion', nombres = '$nombres, apellidos = $apellidos', fo_compania = '$fo_compania', fo_cargo = '$fo_cargo', fo_sede = '$fo_sede', fo_departamento = '$fo_departamento', fo_ciudad = '$fo_ciudad', direccion = '$direccion', fo_eps = '$fo_eps', '$fo_arl', '$telefono_fijo', '$telefono_celular', '$email', nombre_contacto_emergencia = '$nombre_contacto_emergencia', telefono_contacto_emergencia = '$telefono_contacto_emergencia', parentesco_contacto_emergencia = '$parentesco_contacto_emergencia', comentarios = '$comentarios'
         WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }

@@ -70,7 +70,10 @@ function init() {
 
 
 
-} // Fin función INIT
+}
+/************************************************FIN DE LA FUNCION INIT **********************************************/
+
+
 
 // Función para limpiar el formulario
 function limpiar() {
@@ -112,6 +115,7 @@ function cancelarFormulario() {
     limpiar();
 }
 
+
 // Función para guardar o editar
 function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
@@ -119,7 +123,7 @@ function guardaryeditar(e) {
     var formData = new FormData($("#formulario")[0]);
 
     $.ajax({
-        url: "../ajax/usuarios.php?op=guardaryeditar",
+        url: "../ajax/empleados.php?op=guardaryeditar",
         type: "POST",
         data: formData,
         contentType: false,
@@ -134,7 +138,7 @@ function guardaryeditar(e) {
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
 function mostrar(id) {
-    $.post("../ajax/usuarios.php?op=mostrar", {
+    $.post("../ajax/empleados.php?op=mostrar", {
         id: id
     }, function(data, status) {
         data = JSON.parse(data);
@@ -153,7 +157,7 @@ function mostrar(id) {
 
 // Función para mostrar los datos en el formulario de activación o desactivación de EPS
 function mostrarAct(id) {
-    $.post("../ajax/usuarios.php?op=mostrar", {
+    $.post("../ajax/empleados.php?op=mostrar", {
         id: id
     }, function(data, status) {
         data = JSON.parse(data);
@@ -184,7 +188,7 @@ function buscarCiudad() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este Usuario?", function(result) {
-        $.post("../ajax/usuarios.php?op=activar", {
+        $.post("../ajax/empleados.php?op=activar", {
             id: id
         }, function(e) {
             bootbox.alert(e);
@@ -200,7 +204,7 @@ function desactivar() {
     console.log(id);
     bootbox.confirm("¿Estas seguro de desactivar est Usuario?", function(result) {
         if (result) {
-            $.post("../ajax/usuarios.php?op=desactivar", {
+            $.post("../ajax/empleados.php?op=desactivar", {
                 id: id
             }, function(e) {
                 bootbox.alert(e);

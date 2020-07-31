@@ -9,17 +9,17 @@ $fo_tipo_identificacion = isset($_POST["fo_tipo_identificacion"]) ? limpiarCaden
 $numero_identificacion = isset($_POST["numero_identificacion"]) ? limpiarCadena($_POST["numero_identificacion"]) : "";
 $nombres = isset($_POST["nombres"]) ? limpiarCadena($_POST["nombres"]) : "";
 $apellidos = isset($_POST["apellidos"]) ? limpiarCadena($_POST["apellidos"]) : "";
-$fo_compañia = isset($_POST["fo_compañia"]) ? limpiarCadena($_POST["fo_compañia"]) : "";
-$fo_cargo = isset($_POST["fo_cargo"]) ? limpiarCadena($_POST["fo_cargo"]) : "";
-$fo_sede = isset($_POST["fo_sede"]) ? limpiarCadena($_POST["fo_sede"]) : "";
 $fo_departamento = isset($_POST["fo_departamento"]) ? limpiarCadena($_POST["fo_departamento"]) : "";
 $fo_ciudad = isset($_POST["fo_ciudad"]) ? limpiarCadena($_POST["fo_ciudad"]) : "";
 $direccion = isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "";
-$fo_eps = isset($_POST["fo_eps"]) ? limpiarCadena($_POST["fo_eps"]) : "";
-$fo_arl = isset($_POST["fo_arl"]) ? limpiarCadena($_POST["fo_arl"]) : "";
 $telefono_fijo = isset($_POST["telefono_fijo"]) ? limpiarCadena($_POST["telefono_fijo"]) : "";
 $telefono_celular = isset($_POST["telefono_celular"]) ? limpiarCadena($_POST["telefono_celular"]) : "";
 $email = isset($_POST["email"]) ? limpiarCadena($_POST["email"]) : "";
+$fo_compania = isset($_POST["fo_compania"]) ? limpiarCadena($_POST["fo_compania"]) : "";
+$fo_sede = isset($_POST["fo_sede"]) ? limpiarCadena($_POST["fo_sede"]) : "";
+$fo_cargo = isset($_POST["fo_cargo"]) ? limpiarCadena($_POST["fo_cargo"]) : "";
+$fo_eps = isset($_POST["fo_eps"]) ? limpiarCadena($_POST["fo_eps"]) : "";
+$fo_arl = isset($_POST["fo_arl"]) ? limpiarCadena($_POST["fo_arl"]) : "";
 $nombre_contacto_emergencia = isset($_POST["nombre_contacto_emergencia"]) ? limpiarCadena($_POST["nombre_contacto_emergencia"]) : "";
 $telefono_contacto_emergencia = isset($_POST["telefono_contacto_emergencia"]) ? limpiarCadena($_POST["telefono_contacto_emergencia"]) : "";
 $parentesco_contacto_emergencia = isset($_POST["parentesco_contacto_emergencia"]) ? limpiarCadena($_POST["parentesco_contacto_emergencia"]) : "";
@@ -29,10 +29,10 @@ $comentarios = isset($_POST["comentarios"]) ? limpiarCadena($_POST["comentarios"
 switch ($_GET["op"]) {
     case 'guardaryeditar':
         if (empty($id)) {
-            $rspta = $empleado->insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_compañia, $fo_cargo, $fo_sede,  $fo_departamento, $fo_ciudad, $direccion, $fo_eps, $fo_arl, $telefono_fijo, $telefono_celular, $email, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios);
+            $rspta = $empleado->insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_cargo, $fo_sede, $fo_eps, $fo_arl, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios);
             echo $rspta ? "Empleado registrado correctamente" : "Empleado no se pudo registrar";
         } else {
-            $rspta = $empleado->editar($id, $fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_compañia, $fo_cargo, $fo_sede,  $fo_departamento, $fo_ciudad, $direccion, $fo_eps, $fo_arl, $telefono_fijo, $telefono_celular, $email, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios);
+            $rspta = $empleado->editar($id, $fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_cargo, $fo_sede, $fo_eps, $fo_arl,  $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios);
             echo $rspta ? "Empleado actualizado correctamente" : "Empleado no se pudo actualizar";
         }
         break;
