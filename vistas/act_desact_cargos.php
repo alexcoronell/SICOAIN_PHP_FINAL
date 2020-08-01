@@ -4,13 +4,10 @@ require 'header.php';
 
 ?>
 
-<div class="container-fluid main-box">
-    <div class="title-page">
-        <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Administración de Roles</h1>
-    </div>
+
     <div class="main-content container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-5">
                 <div class="menu-box">
                     <div class="title-menu">
                         <h2>Menú de Empleados</h2>
@@ -22,7 +19,7 @@ require 'header.php';
                             <ul>
                                         <li><a href="creacion_empleados.php">Creación de Empleados</a></li>
                                         <li><a href="edicion_empleados.php">Edición de Empleados</a></li>
-                                        <li><a href="eliminacion_empleados.php">Eliminación de Empleados</a></li>
+                                        <li><a href="act_desact_empleados.php">Act/Desact. de Empleados</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Cargos
@@ -34,10 +31,10 @@ require 'header.php';
                             </li>
                         </ul>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                    <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-7">
                 <div class="box-formulario container mt-5">
                     <h2 class="text-center title-formularios">Activación y Desactivación de Cargos</h2>
                     <form name="formulario" id="formulario" method="POST">
