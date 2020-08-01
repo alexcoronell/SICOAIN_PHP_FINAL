@@ -24,16 +24,16 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de Incidentes
                                     <ul>
-                                        <li><a href="creacion_registro.html">Creación de Registro</a></li>
-                                        <li><a href="edicion_registro.html">Edición de Registro</a></li>
-                                        <li><a href="act_desact_registro.php">Act/Desact. de Registro</a></li>
+                                        <li><a href="creacion_registro.php">Creación de Registros</a></li>
+                                        <li><a href="edicion_registro.php">Edición de Registros</a></li>
+                                        <li><a href="anulación_registro.php">Anulación de Registros</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Sucesos
                                     <ul>
-                                        <li><a href="creacion_sucesos.html">Creación de Sucesos</a></li>
-                                        <li><a href="edicion_sucesos.html">Edición de Sucesos</a></li>
-                                        <li><a href="act_desact_sucesos.php">Act/Desact. de Registro</a></li>
+                                        <li><a href="creacion_sucesos.php">Creación de Sucesos</a></li>
+                                        <li><a href="edicion_sucesos.php">Edición de Sucesos</a></li>
+                                        <li><a href="act_desact_sucesos.php">Act/Desact. de Sucesos</a></li>
                                     </ul>
                                 </li>
                             </ul>
