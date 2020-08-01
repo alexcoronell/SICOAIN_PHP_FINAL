@@ -15,7 +15,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-5">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Empleados y Cargos</h2>
@@ -27,14 +27,14 @@ if (!isset($_SESSION['nombre'])) {
                                     <ul>
                                         <li><a href="creacion_empleados.php">Creación de Empleados</a></li>
                                         <li><a href="edicion_empleados.php" class="active">Edición de Empleados</a></li>
-                                        <li><a href="act_desact_empleados.php">Eliminación de Empleados</a></li>
+                                        <li><a href="act_desact_empleados.php">Act/Desact. de Empleados</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Cargos
                                     <ul>
                                         <li><a href="creacion_cargos.php">Creación de Cargos</a></li>
                                         <li><a href="edicion_cargos.php">Edición de Cargos</a></li>
-                                        <li><a href="act_desact_cargos.php">Eliminación de Cargos</a></li>
+                                        <li><a href="act_desact_cargos.php">Act/Desact. de Cargos</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 p-0">
+                <div class="col-7 p-0">
                     <div class="box-formulario-empleados container mt-1 p-0">
                         <h2 class="text-center title-formularios">Edición de Empleados</h2>
 
@@ -62,7 +62,7 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Formulario -->
                                 <form name="formulario" id="formulario" method="POST">
-                                    <input type="text" name="id" id="id">
+                                    <input type="hidden" name="id" id="id">
 
                                     <!-- Tipo de Identificación -->
                                     <div class="form-group row">
@@ -154,9 +154,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="form-group row">
                                     <label for="fo_compania" class="col-4">Compañía: *</label>
                                     <div class="col-8">
-                                        <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-
-                                        </select>
+                                        <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select></select>
                                     </div>
                                 </div>
 

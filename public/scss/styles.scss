@@ -227,6 +227,26 @@ box-formulario-empleados {
     text-align: center;
 }
 
+.bootstrap-select {
+    .filter-option-inner-inner {
+        font-size: 0.8em !important;
+    }
+}
+
+.dropdown-menu {
+    .bs-searchbox {
+        input {
+            font-size: 0.8em !important;
+        }
+    }
+
+    .text {
+        font-size: 0.8em !important;
+    }
+
+}
+
+
 .empleados-col-1 label {
     padding-left: 0;
     padding-right: 0;

@@ -1,0 +1,4 @@
+Problemas por solucionar
+
+Edición de empleados no ejecuta correctamente la consulta
+Problemas de doble ejecución de formulario en Creación y Edición de Sedes

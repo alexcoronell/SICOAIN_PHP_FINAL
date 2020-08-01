@@ -38,6 +38,8 @@ if (!isset($_SESSION['nombre'])) {
                 <div class="col-8">
                     <div class="box-formulario container mt-5">
                         <h2 class="text-center title-formularios">Eliminación de EPS</h2>
+
+                        <!-- Búsqueda -->
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar EPS: *</label>
                             <div class="col-8 searchbox">

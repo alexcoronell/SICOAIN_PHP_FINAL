@@ -28,14 +28,14 @@ if (!isset($_SESSION['nombre'])) {
                                     <ul>
                                         <li><a href="creacion_empleados.php" class="active">Creación de Empleados</a></li>
                                         <li><a href="edicion_empleados.php">Edición de Empleados</a></li>
-                                        <li><a href="act_desact_empleados.php">Eliminación de Empleados</a></li>
+                                        <li><a href="act_desact_empleados.php">Act/Desact. de Empleados</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Cargos
                                     <ul>
                                         <li><a href="creacion_cargos.php">Creación de Cargos</a></li>
                                         <li><a href="edicion_cargos.php">Edición de Cargos</a></li>
-                                        <li><a href="act_desact_cargos.php">Eliminación de Cargos</a></li>
+                                        <li><a href="act_desact_cargos.php">Act/Desact. de Cargos</a></li>
                                     </ul>
                                 </li>
                             </ul>

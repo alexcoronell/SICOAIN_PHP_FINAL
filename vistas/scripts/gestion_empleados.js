@@ -170,8 +170,6 @@ function mostrar(id) {
         $("#telefono_contacto_emergencia").val(data.telefono_contacto_emergencia);
         $("#parentesco_contacto_emergencia").val(data.parentesco_contacto_emergencia);
         $("#comentarios").val(data.comentarios);
-
-
     })
 }
 
@@ -182,7 +180,11 @@ function mostrarAct(id) {
     }, function(data, status) {
         data = JSON.parse(data);
         $("#id").val(data.id);
-        $('#usuario').val(data.usuario);
+        $("#fo_tipo_identificacion").val(data.fo_tipo_identificacion);
+        $("#fo_tipo_identificacion").selectpicker('refresh');
+        $("#numero_identificacion").val(data.numero_identificacion);
+        $("#nombres").val(data.nombres);
+        $("#apellidos").val(data.apellidos);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
@@ -194,6 +196,12 @@ function buscar() {
     id_Buscar = $("#buscarId").val();
     mostrar(id_Buscar);
     $('#buscarId').val("");
+}
+
+// Función para buscar en el formulario de Activación o desactivación de Compañías
+function buscarAct() {
+    id_Buscar = $("#buscarId").val();
+    mostrarAct(id_Buscar);
 }
 
 // Función para buscar en el formulario de Activación o desactivación de EPS

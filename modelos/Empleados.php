@@ -27,7 +27,7 @@ class Empleados
         fo_tipo_identificacion = '$fo_tipo_identificacion',
         numero_identificacion = '$numero_identificacion', 
         nombres = '$nombres', 
-        apellidos = '$apellidos', 
+        apellidos = '$apellidos',
         fo_departamento = '$fo_departamento', 
         fo_ciudad = '$fo_ciudad', 
         direccion = '$direccion', 
