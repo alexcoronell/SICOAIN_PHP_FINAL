@@ -13,21 +13,20 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-
         <div class="main-content container">
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
-                            <h2>Menú de Empleados</h2>
+                            <h2>Menú de Empleados y Cargos</h2>
                         </div>
                         <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
                                 <li>Administración de Empleados
                                     <ul>
-                                        <li><a href="creacion_empleados.php" class="active">Creación de Empleados</a></li>
-                                        <li><a href="edicion_empleados.php">Edición de Empleados</a></li>
+                                        <li><a href="creacion_empleados.php">Creación de Empleados</a></li>
+                                        <li><a href="edicion_empleados.php" class="active">Edición de Empleados</a></li>
                                         <li><a href="act_desact_empleados.php">Eliminación de Empleados</a></li>
                                     </ul>
                                 </li>
@@ -43,13 +42,27 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-7 p-0">
+                <div class="col-8 p-0">
                     <div class="box-formulario-empleados container mt-1 p-0">
-                        <h2 class="text-center title-formularios">Creación de Empleados</h2>
-                        <form name="formulario" id="formulario" method="POST">
-                            <input type="hidden" name="id" id="id">
-                            <div class="row">
-                                <div class="col-6 empleados-col-1">
+                        <h2 class="text-center title-formularios">Edición de Empleados</h2>
+
+
+
+                        <div class="row">
+                            <div class="col-6 empleados-col-1">
+
+                                <!-- Busqueda -->
+                                <div class="form-group row">
+                                    <label for="buscarId" class="col-4">Buscar:</label>
+                                    <div class="col-8 searchbox">
+                                        <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Buscar...">
+                                        <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- Formulario -->
+                                <form name="formulario" id="formulario" method="POST">
+                                    <input type="text" name="id" id="id">
 
                                     <!-- Tipo de Identificación -->
                                     <div class="form-group row">
@@ -59,6 +72,7 @@ if (!isset($_SESSION['nombre'])) {
                                         </div>
                                     </div>
 
+
                                     <!-- Número de Identificación -->
                                     <div class="form-group row">
                                         <label for="numero_identificacion" class="col-4">Nro. identificación:*</label>
@@ -66,6 +80,7 @@ if (!isset($_SESSION['nombre'])) {
                                             <input type="text" class="form-control" name="numero_identificacion" id="numero_identificacion" required>
                                         </div>
                                     </div>
+
 
                                     <!-- Nombres -->
                                     <div class="form-group row">
@@ -130,108 +145,103 @@ if (!isset($_SESSION['nombre'])) {
                                             <input type="email" class="form-control" name="email" id="email" required>
                                         </div>
                                     </div>
-                                </div>
+                            </div>
+                            <!-- Inicia segunda columna -->
 
+                            <div class="col-6 pl-1">
 
+                                <!-- Compañía -->
+                                <div class="form-group row">
+                                    <label for="fo_compania" class="col-4">Compañía: *</label>
+                                    <div class="col-8">
+                                        <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
 
-
-                                <!-- Inicia segunda columna -->
-
-                                <div class="col-6 pl-1">
-
-
-                                    <!-- Compañía -->
-                                    <div class="form-group row">
-                                        <label for="fo_compania" class="col-4">Compañía: *</label>
-                                        <div class="col-8">
-                                            <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Sede -->
-                                    <div class="form-group row">
-                                        <label for="fo_sede" class="col-4">Sede: *</label>
-                                        <div class="col-8">
-                                            <select name="fo_sede" id="fo_sede" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-                                        </div>
-                                    </div>
-
-                                    <!-- Cargo -->
-                                    <div class="form-group row">
-                                        <label for="fo_cargo" class="col-4">Cargo: *</label>
-                                        <div class="col-8">
-                                            <select name="fo_cargo" id="fo_cargo" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-                                        </div>
-                                    </div>
-
-                                    <!-- EPS -->
-                                    <div class="form-group row">
-                                        <label for="fo_eps" class="col-4">EPS: *</label>
-                                        <div class="col-8">
-                                            <select name="fo_eps" id="fo_eps" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-                                        </div>
-                                    </div>
-
-                                    <!-- ARL -->
-                                    <div class="form-group row">
-                                        <label for="fo_arl" class="col-4">ARL: *</label>
-                                        <div class="col-8">
-                                            <select name="fo_arl" id="fo_arl" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-                                        </div>
-                                    </div>
-
-                                    <p class="text-center mb-0 mt-1">Contacto de Emergencia: *</p>
-
-                                    <!-- Nombre Contacto de Emergencia -->
-                                    <div class="form-group row">
-                                        <label for="nombre_contacto_emergencia" class="col-4">Nombre: *</label>
-                                        <div class="col-8">
-                                            <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
-                                        </div>
-                                    </div>
-
-                                    <!-- Teléfono Contacto de Emergencia -->
-                                    <div class="form-group row">
-                                        <label for="telefono_contacto_emergencia" class="col-4">Teléfono: *</label>
-                                        <div class="col-8">
-                                            <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
-                                        </div>
-                                    </div>
-
-                                    <!-- Parentesco Contacto de Emergencia -->
-                                    <div class="form-group row">
-                                        <label for="parentesco_contacto_emergencia" class="col-4">Parentesco: *</label>
-                                        <div class="col-8">
-                                            <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Comentarios -->
-                                    <div class="form-group row">
-                                        <label for="comentarios" class="col-4">Comentarios: *</label>
-                                        <div class="col-8">
-                                            <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
-                                        </div>
+                                        </select>
                                     </div>
                                 </div>
 
-                                <!-- Botones de formulario -->
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <div class="offset-4 col-4">
-                                            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
-                                        </div>
-                                        <div class="col-4">
-                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
-                                        </div>
+                                <!-- Sede -->
+                                <div class="form-group row">
+                                    <label for="fo_sede" class="col-4">Sede: *</label>
+                                    <div class="col-8">
+                                        <select name="fo_sede" id="fo_sede" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                     </div>
                                 </div>
 
+                                <!-- Cargo -->
+                                <div class="form-group row">
+                                    <label for="fo_cargo" class="col-4">Cargo: *</label>
+                                    <div class="col-8">
+                                        <select name="fo_cargo" id="fo_cargo" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
+                                    </div>
+                                </div>
+
+                                <!-- EPS -->
+                                <div class="form-group row">
+                                    <label for="fo_eps" class="col-4">EPS: *</label>
+                                    <div class="col-8">
+                                        <select name="fo_eps" id="fo_eps" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
+                                    </div>
+                                </div>
+
+                                <!-- ARL -->
+                                <div class="form-group row">
+                                    <label for="fo_arl" class="col-4">ARL: *</label>
+                                    <div class="col-8">
+                                        <select name="fo_arl" id="fo_arl" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
+                                    </div>
+                                </div>
+
+                                <p class="text-center mb-0 mt-1">Contacto de Emergencia: *</p>
+
+                                <!-- Nombre Contacto de Emergencia -->
+                                <div class="form-group row">
+                                    <label for="nombre_contacto_emergencia" class="col-4">Nombre: *</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
+                                    </div>
+                                </div>
+
+                                <!-- Teléfono Contacto de Emergencia -->
+                                <div class="form-group row">
+                                    <label for="telefono_contacto_emergencia" class="col-4">Teléfono: *</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
+                                    </div>
+                                </div>
+
+                                <!-- Parentesco Contacto de Emergencia -->
+                                <div class="form-group row">
+                                    <label for="parentesco_contacto_emergencia" class="col-4">Parentesco: *</label>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
+                                    </div>
+                                </div>
+
+
+                                <!-- Comentarios -->
+                                <div class="form-group row">
+                                    <label for="comentarios" class="col-4">Comentarios: *</label>
+                                    <div class="col-8">
+                                        <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
+                                    </div>
+                                </div>
 
                             </div>
+                            <!-- Botones de formulario -->
+                            <div class="col-12">
+                                <div class="form-group row">
+                                    <div class="offset-4 col-4">
+                                        <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                                    </div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
                         </form>
                     </div>
                 </div>

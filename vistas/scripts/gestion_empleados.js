@@ -142,16 +142,36 @@ function mostrar(id) {
         id: id
     }, function(data, status) {
         data = JSON.parse(data);
-
         $("#id").val(data.id);
-        $('#usuario').val(data.usuario);
-        $('#nombre').val(data.nombre);
-        data.superusuario == 1 ? $('#superusuario').prop("checked", true) : $('#superusuario').prop("checked", false);
-        data.administrador == 1 ? $('#administrador').prop("checked", true) : $('#administrador').prop("checked", false);
-        data.analista == 1 ? $('#analista').prop("checked", true) : $('#analista').prop("checked", false);
-        data.asistente == 1 ? $('#asistente').prop("checked", true) : $('#asistente').prop("checked", false);
-        data.consultas == 1 ? $('#consultas').prop("checked", true) : $('#consultas').prop("checked", false);
-        $('#contrasena').val(data.contrasena);
+        $("#fo_tipo_identificacion").val(data.fo_tipo_identificacion);
+        $('#fo_tipo_identificacion').selectpicker('refresh');
+        $("#numero_identificacion").val(data.numero_identificacion);
+        $("#nombres").val(data.nombres);
+        $("#apellidos").val(data.apellidos);
+        $("#fo_departamento").val(data.fo_departamento);
+        $('#fo_departamento').selectpicker('refresh');
+        $("#fo_ciudad").val(data.fo_ciudad);
+        $('#fo_ciudad').selectpicker('refresh');
+        $("#direccion").val(data.direccion);
+        $("#telefono_fijo").val(data.telefono_fijo);
+        $("#telefono_celular").val(data.telefono_celular);
+        $("#email").val(data.email);
+        $("#fo_compania").val(data.fo_compania);
+        $('#fo_compania').selectpicker('refresh');
+        $("#fo_sede").val(data.fo_sede);
+        $('#fo_sede').selectpicker('refresh');
+        $("#fo_cargo").val(data.fo_cargo);
+        $('#fo_cargo').selectpicker('refresh');
+        $("#fo_eps").val(data.fo_eps);
+        $('#fo_eps').selectpicker('refresh');
+        $("#fo_arl").val(data.fo_arl);
+        $('#fo_arl').selectpicker('refresh');
+        $("#nombre_contacto_emergencia").val(data.nombre_contacto_emergencia);
+        $("#telefono_contacto_emergencia").val(data.telefono_contacto_emergencia);
+        $('#parentesco_contacto_emergencia').val(data.parentesco_contacto_emergencia);
+        $('#comentarios').val(data.comentarios);
+
+
     })
 }
 
