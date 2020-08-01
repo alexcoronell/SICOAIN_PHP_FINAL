@@ -228,6 +228,8 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
 
                             </div>
+
+                            
                             <!-- Botones de formulario -->
                             <div class="col-12">
                                 <div class="form-group row">

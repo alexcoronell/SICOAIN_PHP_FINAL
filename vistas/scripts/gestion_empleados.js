@@ -144,32 +144,32 @@ function mostrar(id) {
         data = JSON.parse(data);
         $("#id").val(data.id);
         $("#fo_tipo_identificacion").val(data.fo_tipo_identificacion);
-        $('#fo_tipo_identificacion').selectpicker('refresh');
+        $("#fo_tipo_identificacion").selectpicker('refresh');
         $("#numero_identificacion").val(data.numero_identificacion);
         $("#nombres").val(data.nombres);
         $("#apellidos").val(data.apellidos);
         $("#fo_departamento").val(data.fo_departamento);
-        $('#fo_departamento').selectpicker('refresh');
+        $("#fo_departamento").selectpicker('refresh');
         $("#fo_ciudad").val(data.fo_ciudad);
-        $('#fo_ciudad').selectpicker('refresh');
+        $("#fo_ciudad").selectpicker('refresh');
         $("#direccion").val(data.direccion);
         $("#telefono_fijo").val(data.telefono_fijo);
         $("#telefono_celular").val(data.telefono_celular);
         $("#email").val(data.email);
         $("#fo_compania").val(data.fo_compania);
-        $('#fo_compania').selectpicker('refresh');
+        $("#fo_compania").selectpicker('refresh');
         $("#fo_sede").val(data.fo_sede);
-        $('#fo_sede').selectpicker('refresh');
+        $("#fo_sede").selectpicker('refresh');
         $("#fo_cargo").val(data.fo_cargo);
-        $('#fo_cargo').selectpicker('refresh');
+        $("#fo_cargo").selectpicker('refresh');
         $("#fo_eps").val(data.fo_eps);
-        $('#fo_eps').selectpicker('refresh');
+        $("#fo_eps").selectpicker('refresh');
         $("#fo_arl").val(data.fo_arl);
-        $('#fo_arl').selectpicker('refresh');
+        $("#fo_arl").selectpicker('refresh');
         $("#nombre_contacto_emergencia").val(data.nombre_contacto_emergencia);
         $("#telefono_contacto_emergencia").val(data.telefono_contacto_emergencia);
-        $('#parentesco_contacto_emergencia').val(data.parentesco_contacto_emergencia);
-        $('#comentarios').val(data.comentarios);
+        $("#parentesco_contacto_emergencia").val(data.parentesco_contacto_emergencia);
+        $("#comentarios").val(data.comentarios);
 
 
     })
@@ -190,6 +190,7 @@ function mostrarAct(id) {
 
 // Función para buscar en el formulario de edición de EPS
 function buscar() {
+    console.log("Funciono");
     id_Buscar = $("#buscarId").val();
     mostrar(id_Buscar);
     $('#buscarId').val("");
