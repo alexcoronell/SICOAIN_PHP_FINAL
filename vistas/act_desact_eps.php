@@ -13,35 +13,30 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
                 <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de EPS</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
-                                <li>Administración de EPS
-                                    <ul>
-                                        <li><a href="creacion_eps.php">Creación de EPS</a></li>
-                                        <li><a href="edicion_eps.php">Edición de EPS</a></li>
-                                        <li><a href="eliminacion_eps.php" class="active">Eliminación de EPS</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="creacion_eps.php">Creación de EPS</a></li>
+                                <li><a href="edicion_eps.php">Edición de EPS</a></li>
+                                <li><a href="act_desact_eps.php" class="active">Act/Desact de EPS</a></li>
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="box-formulario container mt-5">
-                        <h2 class="text-center title-formularios">Eliminación de EPS</h2>
+                    <div class="box-formulario container mt-1 ml-1">
+                        <h2 class="text-center title-formularios">Activación/Desactivación de EPS</h2>
 
                         <!-- Búsqueda -->
                         <div class="form-group row">
-                            <label for="rol" class="col-4">Buscar EPS: *</label>
+                            <label for="rol" class="col-4">Buscar: *</label>
                             <div class="col-8 searchbox">
                                 <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
                                 <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
