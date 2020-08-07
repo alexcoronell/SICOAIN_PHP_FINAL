@@ -5,14 +5,13 @@ require 'header.php';
 ?>
 
 
-    <div class="main-content container">
+    <div class="main-content container-fluid">
         <div class="row">
-            <div class="col-5">
+            <div class="col-4">
                 <div class="menu-box">
                     <div class="title-menu">
                         <h2>Menú de Empleados</h2>
                     </div>
-                    <h1 class="display-4 text-center">SICOAIN</h1>
                     <nav>
                         <ul>
                             <li>Administración de Empleados
@@ -34,8 +33,8 @@ require 'header.php';
                     <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
-            <div class="col-7">
-                <div class="box-formulario container mt-5">
+            <div class="col-8">
+                <div class="box-formulario container mt-1 ml-1">
                     <h2 class="text-center title-formularios">Activación y Desactivación de Cargos</h2>
                     <form name="formulario" id="formulario" method="POST">
                     <div class="form-group row">

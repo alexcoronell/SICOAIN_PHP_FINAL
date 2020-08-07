@@ -41,8 +41,8 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 p-5 display-4">
-                    <h1 class="textoMainColor">Administración de Empleados y Cargos</h1>
+                <div class="col-8 pt-5 pl-0 ml-0">
+                    <h1 class="textoMainColor positionFixed display-4">Administración de Empleados y Cargos</h1>
                 </div>
             </div>
         </div>

@@ -30,7 +30,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
             <div class="col-8">
-                <div class="box-formulario container mt-3 ml-1">
+                <div class="box-formulario container mt-1 ml-1">
                     <h2 class="text-center title-formularios">Creación de Usuarios</h2>
 
 

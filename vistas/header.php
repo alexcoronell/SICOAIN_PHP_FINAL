@@ -45,3 +45,4 @@ if (strlen(session_id()) < 1)
                 <p class="float-right mr-5">Usuario: <?php echo $_SESSION['nombre']; ?></p>
             </div>
         </div>
+        <div class="posicionador"></div>
