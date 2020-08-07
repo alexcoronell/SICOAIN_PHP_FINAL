@@ -13,30 +13,25 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
                 <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de ARL</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
-                                <li>Administración de ARL
-                                    <ul>
                                         <li><a href="creacion_arl.php">Creación de ARL</a></li>
                                         <li><a href="edicion_arl.php" class="active">Edición de ARL</a></li>
                                         <li><a href="act_desact_arl.php">Act/Desact de ARL</a></li>
-                                    </ul>
-                                </li>
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="box-formulario container mt-5">
+                    <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de ARL</h2>
                         <!-- Busqueda -->
                         <div class="form-group row">
