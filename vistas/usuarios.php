@@ -22,11 +22,9 @@ if (!isset($_SESSION['nombre'])) {
                         </div>
                         <nav>
                             <ul>
-
                                 <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
                                 <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
                                 <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
-
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>

@@ -261,6 +261,68 @@ box-formulario-empleados {
   font-size: 1em;
 }
 
+table,
+thead,
+tbody,
+th,
+tr,
+td {
+  border: none !important;
+}
+
+.box-reporte-md {
+  width: 100% !important;
+}
+
+.box-reporte-xs {
+  width: 400px;
+}
+
+.box-reporte {
+  overflow-x: hidden;
+}
+
+.tabla-md {
+  width: 100%;
+}
+
+.tabla-md tr {
+  height: 2em !important;
+}
+
+.tabla-md th,
+.tabla-md td {
+  text-align: center;
+  line-height: 1.7em;
+  padding: 0.2rem 0.9rem !important;
+}
+
+.tabla-md td {
+  width: 100%;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.tabla-md th {
+  background-color: white;
+  font-size: 0.8rem;
+}
+
+thead,
+th {
+  border-bottom: 3px double #004d40 !important;
+}
+
+.id-col {
+  width: 10px !important;
+}
+
+#tabla-empleados th,
+#tabla-incidentes th {
+  font-size: 0.8em;
+  min-width: 150px;
+}
+
 /**************************** FOOTER *******************************/
 .Footer {
   width: 100%;
@@ -312,54 +374,6 @@ box-formulario-empleados {
   display: inline-block;
   margin-left: auto;
   border-color: #42b983;
-}
-
-.box-reporte-md {
-  width: 600px;
-}
-
-.box-reporte-xs {
-  width: 350px;
-}
-
-.box-reporte {
-  overflow-x: hidden;
-}
-
-.tabla-md {
-  width: 100%;
-}
-
-.tabla-md tr {
-  height: 2.3em !important;
-}
-
-.tabla-md th,
-.tabla-md td {
-  text-align: center;
-  line-height: 2em;
-  border: 1px solid #004d40;
-  padding: 0.2rem 0.9rem !important;
-}
-
-.tabla-md th {
-  font-size: 0.8rem;
-}
-
-.tabla-md td {
-  width: 100%;
-  font-size: 0.7rem;
-  white-space: nowrap;
-}
-
-.tabla-md th {
-  background-color: #42b983;
-}
-
-#tabla-empleados th,
-#tabla-incidentes th {
-  font-size: 0.8em;
-  min-width: 150px;
 }
 
 .searchbox input {
