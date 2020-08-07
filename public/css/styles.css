@@ -20,26 +20,31 @@ h6 {
   opacity: 0.6;
 }
 
-.main-box {
-  padding: 0;
-  min-height: 100vh;
+.textoMainColor {
+  color: #42b983;
 }
 
-.main-content > .row {
-  min-height: 90Vh;
+.textoSecondaryColor {
+  color: #004d40;
 }
 
 .title-page {
-  background-color: #4db6ac;
-  border: 2px solid #004d40;
+  border-bottom: 3px double #42b983;
+  padding: 0.7rem;
+  background-color: white;
 }
-
 .title-page .container h1 {
   margin: 0 1em;
 }
 .title-page .container h1,
 .title-page .container p {
-  line-height: 2em;
+  margin: 0 1em;
+}
+
+.login-page {
+  background-image: url(../images/background02.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
 }
 
 .login-box {
@@ -50,13 +55,22 @@ h6 {
 }
 
 .title-login {
-  background-color: #4db6ac;
+  background-color: #42b983;
   border-bottom: 2px solid #004d40;
 }
 
 .title-login > h2 {
   margin: 0 1em;
   line-height: 2em;
+}
+
+.main-box {
+  padding: 0;
+  min-height: 100vh;
+}
+
+.main-content > .row {
+  min-height: 90Vh;
 }
 
 ul > li {
@@ -86,13 +100,13 @@ ul > li > ul > li:last-child {
 }
 
 .btn-primary {
-  background-color: #4db6ac !important;
+  background-color: #42b983 !important;
   border: none;
   opacity: 0.8;
 }
 
 .btn-light {
-  border-color: #4db6ac;
+  border-color: #42b983;
 }
 
 .btn-primary:hover {
@@ -102,7 +116,7 @@ ul > li > ul > li:last-child {
 .form-inputs > #salir {
   display: inline-block;
   margin-left: auto;
-  border-color: #4db6ac;
+  border-color: #42b983;
 }
 
 /* MENU PRINCIPAL */
@@ -111,7 +125,7 @@ ul > li > ul > li:last-child {
 }
 
 .title-menu {
-  background-color: #4db6ac;
+  background-color: #42b983;
   border-bottom: 2px solid #004d40;
 }
 
@@ -159,7 +173,7 @@ ul {
   margin-top: auto;
   margin-right: 0.8em;
   margin-bottom: 0.8em;
-  border-color: #4db6ac;
+  border-color: #42b983;
   padding-left: 2.2em;
   padding-right: 2.2em;
 }
@@ -284,7 +298,7 @@ box-formulario-empleados {
 }
 
 .tabla-md th {
-  background-color: #4db6ac;
+  background-color: #42b983;
 }
 
 #tabla-empleados th,
@@ -315,6 +329,17 @@ box-formulario-empleados {
 #button_activar,
 #button_desactivar {
   display: none;
+}
+
+/**************************** FOOTER *******************************/
+.Footer {
+  width: 100%;
+  border-top: 3px double #42b983;
+  padding: 0.7rem;
+  background-color: white;
+}
+.Footer h5 {
+  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

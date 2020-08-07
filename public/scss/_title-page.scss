@@ -1,0 +1,16 @@
+.title-page {
+    border-bottom: 3px double $maincolor;
+    padding: 0.7rem;
+    background-color: white;
+
+    .container {
+        h1 {
+            margin: 0 1em;
+        }
+
+        h1,
+        p {
+            margin: 0 1em;
+        }
+    }
+}

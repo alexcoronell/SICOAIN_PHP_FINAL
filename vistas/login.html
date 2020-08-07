@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Reset Estilos -->
+    <link rel="stylesheet" href="../public/css/reset.css">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../public/css/bootstrap.min.css">
 
@@ -19,9 +22,11 @@
 </head>
 
 <body>
-    <div class="container-fluid main-box">
+    <div class="main-box login-page">
         <div class="title-page">
-            <h1>SICOAIN - Sistema de Control de Accidentes e Incidentes - Login</h1>
+            <div class="container text-center">
+                <h1 class="textoSecondaryColor">SICOAIN - Sistema de Control de Accidentes e Incidentes</h1>
+            </div>
         </div>
         <div class="login-box">
             <div class="title-login">
@@ -29,13 +34,16 @@
             </div>
             <form method="POST" id="formularioAcceso" autocomplete="off">
                 <div class="form-inputs">
-                    <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="nada">
-                    <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" autocomplete="nada">
+                    <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off">
+                    <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" autocomplete="off">
                     <button type="submit" id="acceder" class="btn btn-primary">Acceder</button>
                     <button type="button" id="salir" class="btn btn-light">Salir</button>
                 </div>
             </form>
         </div>
+        <footer class="Footer fixed-bottom text-center">
+            <h5 class="textoSecondaryColor">Desarrollado por Alexander Coronell</h5>
+        </footer>
     </div>
 
 

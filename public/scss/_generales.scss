@@ -1,0 +1,31 @@
+// Estilos Generales
+
+* {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 1.1em;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.deshabilitado {
+    opacity: .6;
+}
+
+.textoMainColor {
+    color: $maincolor;
+}
+
+.textoSecondaryColor {
+    color: $secondarycolor;
+}

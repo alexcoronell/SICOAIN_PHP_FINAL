@@ -1,28 +1,8 @@
-$maincolor: #4db6ac;
-$secondarycolor: #004d40;
-$borderColor: #ced4da;
+@import './variables';
+@import './generales';
+@import './_title-page';
+@import './login-page';
 
-* {
-    font-size: 16px;
-    text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-size: 1.1em;
-}
-
-.active {
-    font-weight: bold;
-}
-
-.deshabilitado {
-    opacity: .6;
-}
 
 .main-box {
     padding: 0;
@@ -33,42 +13,12 @@ h6 {
     min-height: 90Vh;
 }
 
-.title-page {
-    background-color: $maincolor;
-    border: 2px solid $secondarycolor;
-}
 
-.title-page>.container>h1 {}
+//**************************** TITTLE PAGE ******************************/
 
-.title-page {
-    .container {
-        h1 {
-            margin: 0 1em;
-        }
 
-        h1,
-        p {
-            line-height: 2em;
-        }
-    }
-}
 
-.login-box {
-    border: 2px solid $secondarycolor;
-    width: 40%;
-    margin: auto;
-    margin-top: 10%;
-}
 
-.title-login {
-    background-color: $maincolor;
-    border-bottom: 2px solid $secondarycolor;
-}
-
-.title-login>h2 {
-    margin: 0 1em;
-    line-height: 2em;
-}
 
 ul>li {
     margin-top: .5em;
@@ -344,4 +294,16 @@ box-formulario-empleados {
 #button_activar,
 #button_desactivar {
     display: none;
+}
+
+/**************************** FOOTER *******************************/
+.Footer {
+    width: 100%;
+    border-top: 3px double $maincolor;
+    padding: 0.7rem;
+    background-color: white;
+
+    h5 {
+        margin-bottom: 0;
+    }
 }

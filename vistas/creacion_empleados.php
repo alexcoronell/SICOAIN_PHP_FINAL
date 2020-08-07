@@ -225,7 +225,7 @@ if (!isset($_SESSION['nombre'])) {
                                             <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                         </div>
                                         <div class="col-4">
-                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                         </div>
                                     </div>
                                 </div>

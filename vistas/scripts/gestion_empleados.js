@@ -192,7 +192,6 @@ function mostrarAct(id) {
 
 // Función para buscar en el formulario de edición de EPS
 function buscar() {
-    console.log("Funciono");
     id_Buscar = $("#buscarId").val();
     mostrar(id_Buscar);
     $('#buscarId').val("");

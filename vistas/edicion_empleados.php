@@ -146,6 +146,7 @@ if (!isset($_SESSION['nombre'])) {
                                         </div>
                                     </div>
                             </div>
+                            
                             <!-- Inicia segunda columna -->
 
                             <div class="col-6 pl-1">
@@ -227,7 +228,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             </div>
 
-                            
+
                             <!-- Botones de formulario -->
                             <div class="col-12">
                                 <div class="form-group row">
@@ -235,7 +236,7 @@ if (!isset($_SESSION['nombre'])) {
                                         <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                     </div>
                                     <div class="col-4">
-                                        <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                        <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                     </div>
                                 </div>
                             </div>

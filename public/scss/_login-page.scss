@@ -1,0 +1,24 @@
+// Estilos especiales de la página de login
+
+.login-page {
+    background-image: url(../images/background02.jpg);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+.login-box {
+    border: 2px solid $secondarycolor;
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.title-login {
+    background-color: $maincolor;
+    border-bottom: 2px solid $secondarycolor;
+}
+
+.title-login>h2 {
+    margin: 0 1em;
+    line-height: 2em;
+}
