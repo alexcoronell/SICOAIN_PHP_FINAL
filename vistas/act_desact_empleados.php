@@ -13,14 +13,13 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
                 <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Empleados</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
                                 <li>Administración de Empleados
@@ -43,7 +42,7 @@ if (!isset($_SESSION['nombre'])) {
                     </div>
                 </div>
                 <div class="col-8 p-0">
-                    <div class="box-formulario-empleados box-formulario container mt-2 p-0">
+                    <div class="box-formulario-empleados box-formulario container mt-1 p-0 ml-0">
                         <h2 class="text-center title-formularios">Activación/Desactivación de Empleados</h2>
                         <!-- Búsqueda -->
                         <div class="form-group row">

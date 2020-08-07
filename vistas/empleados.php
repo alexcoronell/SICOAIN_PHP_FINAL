@@ -13,14 +13,13 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Empleados y Cargos</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
                                 <li>Administración de Empleados
@@ -42,14 +41,14 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col"></div>
-                <div class="col calendar">
-                    <img src="img/calendar.png" alt="" class="img-fluid">
+                <div class="col-8 p-5 display-4">
+                    <h1 class="textoMainColor">Administración de Empleados y Cargos</h1>
                 </div>
             </div>
         </div>
     </div>
 
+    <div class="mainBackground2"></div>
     <?php
     } else {
         require 'noacceso.php';

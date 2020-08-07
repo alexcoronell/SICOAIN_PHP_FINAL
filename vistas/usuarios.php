@@ -33,7 +33,7 @@ if (!isset($_SESSION['nombre'])) {
                     </div>
                 </div>
                 <div class="col-8 p-5 display-4">
-                    <h1 class="textoMainColor">Administración de Usuarios</h1>
+                    <h1 class="textoMainColor positionFixed">Administración de Usuarios</h1>
                 </div>
 
             </div>

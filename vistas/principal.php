@@ -34,7 +34,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
             <div class="col-8 p-5">
-                <img src="../public/images/logo1.png" alt="">
+                <img src="../public/images/logo1.png" class="positionFixed">
             </div>
         </div>
     </div>

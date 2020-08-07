@@ -36,10 +36,10 @@ if (strlen(session_id()) < 1)
 
 <body>
     <div class="container-fluid main-box">
-        <div class="title-page">
+        <div class="title-page fixed-top">
             <div class="container-fluic">
                 <div class="logo-box ml-5">
-                    <img src="../public/images/logo1.png" alt="Logo del programa" title="SICOAIN">
+                    <img src="../public/images/logo1.png" title="SICOAIN">
                 </div>
                 <!-- <h1 class="d-inline">SICOAIN - Sistema de Control de Accidentes e Incidentes</h1> -->
                 <p class="float-right mr-5">Usuario: <?php echo $_SESSION['nombre']; ?></p>
