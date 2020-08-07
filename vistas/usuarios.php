@@ -13,35 +13,32 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-            <div class="main-content container">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="menu-box">
-                            <div class="title-menu">
-                                <h2>Menú de Usuarios</h2>
-                            </div>
-                            <h1 class="display-4 text-center">SICOAIN</h1>
-                            <nav>
-                                <ul>
-                                    <li>Administración de Usuarios
-                                        <ul>
-                                            <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
-                                            <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
-                                            <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
+        <div class="main-content container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <div class="menu-box">
+                        <div class="title-menu">
+                            <h2>Menú de Usuarios</h2>
                         </div>
-                    </div>
-                    <div class="col"></div>
-                    <div class="col calendar">
-                        <img src="img/calendar.png" alt="" class="img-fluid">
+                        <nav>
+                            <ul>
+
+                                <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
+                                <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
+                                <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
+
+                            </ul>
+                        </nav>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
+                <div class="col-8 p-5 display-4">
+                    <h1 class="textoMainColor">Administración de Usuarios</h1>
+                </div>
+
             </div>
         </div>
+        <div class="mainBackground2"></div>
 
     <?php
     } else {

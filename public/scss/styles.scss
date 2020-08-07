@@ -2,6 +2,9 @@
 @import './generales';
 @import './_title-page';
 @import './login-page';
+@import './menu';
+@import './forms';
+@import './footer';
 
 
 .main-box {
@@ -9,29 +12,8 @@
     min-height: 100vh;
 }
 
-.main-content>.row {
-    min-height: 90Vh;
-}
 
 
-//**************************** TITTLE PAGE ******************************/
-
-
-
-
-
-ul>li {
-    margin-top: .5em;
-    margin-bottom: .5em;
-}
-
-ul>li>ul {
-    margin-bottom: .5em;
-}
-
-ul>li>ul>li:last-child {
-    margin-bottom: 1em;
-}
 
 .form-inputs {
     width: 70%;
@@ -67,156 +49,8 @@ ul>li>ul>li:last-child {
 }
 
 
-/* MENU PRINCIPAL */
-
-.menu-box {
-    margin-left: 2em;
-}
-
-.title-menu {
-    background-color: $maincolor;
-    border-bottom: 2px solid $secondarycolor;
-}
-
-.title-menu>h2 {
-    margin: 0 1em;
-    line-height: 2em;
-}
-
-.menu-box {
-    width: 75%;
-    margin-top: 1.5em;
-    border: 2px solid $secondarycolor;
-    padding: 0;
-}
-
-.display-4 {
-    font-size: 2.5em;
-}
-
-nav>ul>li>ul>li>a,
-nav>ul>li>a {
-    text-decoration: none;
-    color: inherit;
-}
-
-nav>ul>li>ul>li>a:hover,
-nav>ul>li>a:hover {
-    text-decoration: none;
-    color: $secondarycolor;
-}
-
-ul {
-    list-style: none;
-    margin-left: -1.4em;
-}
-
-.btn a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.salir-menu {
-    display: block;
-    margin-left: auto;
-    margin-top: auto;
-    margin-right: .8em;
-    margin-bottom: .8em;
-    border-color: $maincolor;
-    padding-left: 2.2em;
-    padding-right: 2.2em;
-}
-
-.calendar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-}
-
-.calendar>img {
-    margin-bottom: .5em;
-}
-
-// Formularios
-.box-formulario {
-    width: 450px;
-}
-
-.title-formularios {
-    font-size: 1.8em;
-}
-
-box-formulario-empleados {
-    width: 100%;
-}
-
-.box-formulario-empleados .col-6 {
-    padding-left: .1em;
-}
-
-.box-formulario-empleados label {
-    font-size: .8em;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.box-formulario-empleados .form-group {
-    margin-top: .5em !important;
-    margin-bottom: .5em !important;
-}
-
-.box-formulario-empleados input,
-.box-formulario-empleados select {
-    padding: 0;
-    line-height: 1em;
-    height: 2em;
-}
-
-.box-formulario-empleados select {
-    text-align: center;
-}
-
-.bootstrap-select {
-    .filter-option-inner-inner {
-        font-size: 0.8em !important;
-    }
-}
-
-.dropdown-menu {
-    .bs-searchbox {
-        input {
-            font-size: 0.8em !important;
-        }
-    }
-
-    .text {
-        font-size: 0.8em !important;
-    }
-
-}
 
 
-.empleados-col-1 label {
-    padding-left: 0;
-    padding-right: 0;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-}
-
-.box-formulario-registros {
-    width: 600px;
-}
-
-.generadores {
-    font-size: .8em;
-    margin-bottom: .4em;
-    width: 120px;
-}
-
-.generadores i {
-    font-size: 1em;
-}
 
 // Reportes
 .box-reporte-md {
@@ -294,16 +128,4 @@ box-formulario-empleados {
 #button_activar,
 #button_desactivar {
     display: none;
-}
-
-/**************************** FOOTER *******************************/
-.Footer {
-    width: 100%;
-    border-top: 3px double $maincolor;
-    padding: 0.7rem;
-    background-color: white;
-
-    h5 {
-        margin-bottom: 0;
-    }
 }

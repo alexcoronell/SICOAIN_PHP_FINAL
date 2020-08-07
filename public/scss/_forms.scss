@@ -1,0 +1,80 @@
+// Formularios
+.box-formulario {
+    width: 450px;
+}
+
+.title-formularios {
+    font-size: 1.8em;
+    color: $secondarycolor;
+}
+
+box-formulario-empleados {
+    width: 100%;
+}
+
+.box-formulario-empleados .col-6 {
+    padding-left: .1em;
+}
+
+.box-formulario-empleados label {
+    font-size: .8em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.box-formulario-empleados .form-group {
+    margin-top: .5em !important;
+    margin-bottom: .5em !important;
+}
+
+.box-formulario-empleados input,
+.box-formulario-empleados select {
+    padding: 0;
+    line-height: 1em;
+    height: 2em;
+}
+
+.box-formulario-empleados select {
+    text-align: center;
+}
+
+.bootstrap-select {
+    .filter-option-inner-inner {
+        font-size: 0.8em !important;
+    }
+}
+
+.dropdown-menu {
+    .bs-searchbox {
+        input {
+            font-size: 0.8em !important;
+        }
+    }
+
+    .text {
+        font-size: 0.8em !important;
+    }
+
+}
+
+
+.empleados-col-1 label {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+
+.box-formulario-registros {
+    width: 600px;
+}
+
+.generadores {
+    font-size: .8em;
+    margin-bottom: .4em;
+    width: 120px;
+}
+
+.generadores i {
+    font-size: 1em;
+}

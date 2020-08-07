@@ -1,16 +1,36 @@
-.title-page {
+.title-page-login {
     border-bottom: 3px double $maincolor;
     padding: 0.7rem;
     background-color: white;
 
-    .container {
-        h1 {
-            margin: 0 1em;
-        }
+    h1 {
+        margin-bottom: 0;
+    }
+}
 
-        h1,
-        p {
-            margin: 0 1em;
+.title-page {
+    border-bottom: 3px double $maincolor;
+    padding: 0.2rem;
+    background-color: white;
+
+    .logo-box {
+        padding: 0.1rem;
+        display: inline;
+
+        img {
+            width: 180px;
         }
     }
+
+    h1 {
+        margin: 0 1em;
+    }
+
+    h1,
+    p {
+        margin-top: 4rem;
+        margin-bottom: 0;
+        font-size: .7rem;
+    }
+
 }

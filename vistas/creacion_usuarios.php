@@ -12,30 +12,25 @@ if (!isset($_SESSION['nombre'])) {
     if ($_SESSION['superusuario'] == 1) {
 
 ?>
-    <div class="main-content container">
+    <div class="main-content container-fluid">
         <div class="row">
-            <div class="col-5">
+            <div class="col-4">
                 <div class="menu-box">
                     <div class="title-menu">
-                        <h2>Menú Principal</h2>
+                        <h2>Menú de Usuarios</h2>
                     </div>
-                    <h1 class="display-4 text-center">SICOAIN</h1>
                     <nav>
                         <ul>
-                            <li>Administración de Usuarios
-                                <ul>
                                     <li><a href="creacion_usuarios.php" class="active">Creación de Usuarios</a></li>
                                     <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
                                     <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                     <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
-            <div class="col-7">
-                <div class="box-formulario container mt-5">
+            <div class="col-8">
+                <div class="box-formulario container mt-3 ml-1">
                     <h2 class="text-center title-formularios">Creación de Usuarios</h2>
 
 

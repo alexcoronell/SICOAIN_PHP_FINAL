@@ -1,4 +1,7 @@
-   
+<footer class="Footer fixed-bottom text-center">
+    <h5 class="textoSecondaryColor">Desarrollado por Alexander Coronell</h5>
+</footer>
+</div>
 <!-- DATATABLES -->
 <script src="../public/datatables/jquery-3.5.1.js"></script>
 <script src="../public/datatables/jquery.dataTables.min.js"></script>

@@ -14,6 +14,11 @@ h6 {
 
 .active {
   font-weight: bold;
+  color: #004d40;
+}
+
+.active:hover {
+  color: #004d40;
 }
 
 .deshabilitado {
@@ -28,23 +33,61 @@ h6 {
   color: #004d40;
 }
 
-.title-page {
+.mainBackground {
+  background-image: url(../images/background02.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 35px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: -999999999;
+}
+
+.mainBackground2 {
+  background-image: url(../images/background03.jpg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 35px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: -999999999;
+}
+
+.title-page-login {
   border-bottom: 3px double #42b983;
   padding: 0.7rem;
   background-color: white;
 }
-.title-page .container h1 {
-  margin: 0 1em;
-}
-.title-page .container h1,
-.title-page .container p {
-  margin: 0 1em;
+.title-page-login h1 {
+  margin-bottom: 0;
 }
 
-.login-page {
-  background-image: url(../images/background02.jpg);
-  background-position: bottom right;
-  background-repeat: no-repeat;
+.title-page {
+  border-bottom: 3px double #42b983;
+  padding: 0.2rem;
+  background-color: white;
+}
+.title-page .logo-box {
+  padding: 0.1rem;
+  display: inline;
+}
+.title-page .logo-box img {
+  width: 180px;
+}
+.title-page h1 {
+  margin: 0 1em;
+}
+.title-page h1,
+.title-page p {
+  margin-top: 4rem;
+  margin-bottom: 0;
+  font-size: 0.7rem;
 }
 
 .login-box {
@@ -64,15 +107,6 @@ h6 {
   line-height: 2em;
 }
 
-.main-box {
-  padding: 0;
-  min-height: 100vh;
-}
-
-.main-content > .row {
-  min-height: 90Vh;
-}
-
 ul > li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -84,39 +118,6 @@ ul > li > ul {
 
 ul > li > ul > li:last-child {
   margin-bottom: 1em;
-}
-
-.form-inputs {
-  width: 70%;
-  margin: 2em auto;
-}
-
-.form-inputs > input {
-  margin: 0.5em auto;
-}
-
-.form-inputs > .btn {
-  width: 49%;
-}
-
-.btn-primary {
-  background-color: #42b983 !important;
-  border: none;
-  opacity: 0.8;
-}
-
-.btn-light {
-  border-color: #42b983;
-}
-
-.btn-primary:hover {
-  opacity: 1;
-}
-
-.form-inputs > #salir {
-  display: inline-block;
-  margin-left: auto;
-  border-color: #42b983;
 }
 
 /* MENU PRINCIPAL */
@@ -141,14 +142,10 @@ ul > li > ul > li:last-child {
   padding: 0;
 }
 
-.display-4 {
-  font-size: 2.5em;
-}
-
 nav > ul > li > ul > li > a,
 nav > ul > li > a {
   text-decoration: none;
-  color: inherit;
+  color: #42b983;
 }
 
 nav > ul > li > ul > li > a:hover,
@@ -178,23 +175,13 @@ ul {
   padding-right: 2.2em;
 }
 
-.calendar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-}
-
-.calendar > img {
-  margin-bottom: 0.5em;
-}
-
 .box-formulario {
   width: 450px;
 }
 
 .title-formularios {
   font-size: 1.8em;
+  color: #004d40;
 }
 
 box-formulario-empleados {
@@ -257,6 +244,55 @@ box-formulario-empleados {
 
 .generadores i {
   font-size: 1em;
+}
+
+/**************************** FOOTER *******************************/
+.Footer {
+  width: 100%;
+  border-top: 3px double #42b983;
+  padding: 0.7rem;
+  background-color: white;
+}
+.Footer h5 {
+  margin-bottom: 0;
+}
+
+.main-box {
+  padding: 0;
+  min-height: 100vh;
+}
+
+.form-inputs {
+  width: 70%;
+  margin: 2em auto;
+}
+
+.form-inputs > input {
+  margin: 0.5em auto;
+}
+
+.form-inputs > .btn {
+  width: 49%;
+}
+
+.btn-primary {
+  background-color: #42b983 !important;
+  border: none;
+  opacity: 0.8;
+}
+
+.btn-light {
+  border-color: #42b983;
+}
+
+.btn-primary:hover {
+  opacity: 1;
+}
+
+.form-inputs > #salir {
+  display: inline-block;
+  margin-left: auto;
+  border-color: #42b983;
 }
 
 .box-reporte-md {
@@ -329,17 +365,6 @@ box-formulario-empleados {
 #button_activar,
 #button_desactivar {
   display: none;
-}
-
-/**************************** FOOTER *******************************/
-.Footer {
-  width: 100%;
-  border-top: 3px double #42b983;
-  padding: 0.7rem;
-  background-color: white;
-}
-.Footer h5 {
-  margin-bottom: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
