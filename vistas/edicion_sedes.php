@@ -13,30 +13,25 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Sedes</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
-                                <li>Administración de Sedes
-                                    <ul>
-                                        <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
-                                        <li><a href="edicion_sedes.php" class="active">Edición de Sedes</a></li>
-                                        <li><a href="act_desact_sedes.php">Act/Desact. de Sedes</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
+                                <li><a href="edicion_sedes.php" class="active">Edición de Sedes</a></li>
+                                <li><a href="act_desact_sedes.php">Act/Desact. de Sedes</a></li>
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="box-formulario container mt-5">
+                <div class="col-8">
+                    <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Sedes</h2>
                         <!-- Busqueda -->
                         <div class="form-group row">
@@ -54,7 +49,7 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="fo_compania" class="col-4">Compañía:</label>
                                 <div class="col-8">
-                                    <input type="text" name="id" id="id">
+                                    <input type="hidden" name="id" id="id">
                                     <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
                                 </div>
                             </div>
@@ -93,14 +88,14 @@ if (!isset($_SESSION['nombre'])) {
 
 
                             <!-- Botones de formulario -->
-                        <div class="form-group row">
-                            <div class="offset-4 col-4">
-                                <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                            <div class="form-group row">
+                                <div class="offset-4 col-4">
+                                    <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                </div>
                             </div>
-                            <div class="col-4">
-                                <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
-                            </div>
-                        </div>
 
                         </form>
                     </div>

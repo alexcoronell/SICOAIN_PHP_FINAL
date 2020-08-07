@@ -13,33 +13,30 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
 
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Compañías</h2>
                         </div>
-                        <h1 class="display-4 text-center">SICOAIN</h1>
                         <nav>
                             <ul>
-                                <li>Administración de Compañías
-                                    <ul>
+
                                         <li><a href="creacion_companias.php">Creación de Compañías</a></li>
                                         <li><a href="edicion_companias.php" class="active">Edición de Compañías</a></li>
                                         <li><a href="act_desact_companias.php">Act/Desact de Compañías</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-7">
-                    <div class="box-formulario container mt-5">
+                    <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Compañías</h2>
                         <div class="form-group row">
-                            <label for="rol" class="col-4">Buscar Compañía:</label>
+                            <label for="rol" class="col-4">Buscar:</label>
                             <div class="col-8 searchbox">
                                 <input type="search" class="form-control" name="buscarId" id="buscarId">
                                 <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
