@@ -17,6 +17,11 @@ h6 {
   width: 100%;
 }
 
+.posicionador-bottom {
+  height: 50px;
+  width: 100%;
+}
+
 .active {
   font-weight: bold;
   color: #004d40;

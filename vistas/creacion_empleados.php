@@ -237,6 +237,7 @@ if (!isset($_SESSION['nombre'])) {
             </div>
         </div>
         </div>
+        <div class="posicionador-bottom"></div>
 
     <?php
 

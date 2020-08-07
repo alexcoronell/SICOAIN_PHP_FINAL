@@ -145,7 +145,7 @@ if (!isset($_SESSION['nombre'])) {
                                         </div>
                                     </div>
                             </div>
-                            
+
                             <!-- Inicia segunda columna -->
 
                             <div class="col-6 pl-1">
@@ -248,7 +248,7 @@ if (!isset($_SESSION['nombre'])) {
             </div>
         </div>
         </div>
-
+        <div class="posicionador-bottom"></div>
     <?php
 
     } else {
