@@ -77,6 +77,10 @@ h6 {
   font-size: 2.5rem !important;
 }
 
+.positionFixed {
+  position: fixed;
+}
+
 .title-page-login {
   border-bottom: 3px double #42b983;
   padding: 0.7rem;
@@ -266,6 +270,63 @@ box-formulario-empleados {
   font-size: 1em;
 }
 
+.form-inputs {
+  width: 70%;
+  margin: 2em auto;
+}
+
+.form-inputs > input {
+  margin: 0.5em auto;
+}
+
+.form-inputs > .btn {
+  width: 49%;
+}
+
+.btn-primary {
+  background-color: #42b983 !important;
+  border: none;
+  opacity: 0.8;
+}
+
+.btn-light {
+  border-color: #42b983;
+}
+
+.btn-primary:hover {
+  opacity: 1;
+}
+
+.form-inputs > #salir {
+  display: inline-block;
+  margin-left: auto;
+  border-color: #42b983;
+}
+
+.searchbox input {
+  width: 85%;
+  float: left;
+}
+.searchbox button {
+  width: 12%;
+  float: right;
+  line-height: 2rem;
+  border: none;
+  font-size: 1.2rem;
+  color: #ced4da;
+  background-color: transparent;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.searchbox button:focus, .searchbox button:active {
+  border: none;
+}
+
+#button_activar,
+#button_desactivar {
+  display: none;
+}
+
 table,
 thead,
 tbody,
@@ -337,72 +398,6 @@ th {
 }
 .Footer h5 {
   margin-bottom: 0;
-}
-
-.main-box {
-  padding: 0;
-  min-height: 100vh;
-}
-
-.positionFixed {
-  position: fixed;
-}
-
-.form-inputs {
-  width: 70%;
-  margin: 2em auto;
-}
-
-.form-inputs > input {
-  margin: 0.5em auto;
-}
-
-.form-inputs > .btn {
-  width: 49%;
-}
-
-.btn-primary {
-  background-color: #42b983 !important;
-  border: none;
-  opacity: 0.8;
-}
-
-.btn-light {
-  border-color: #42b983;
-}
-
-.btn-primary:hover {
-  opacity: 1;
-}
-
-.form-inputs > #salir {
-  display: inline-block;
-  margin-left: auto;
-  border-color: #42b983;
-}
-
-.searchbox input {
-  width: 85%;
-  float: left;
-}
-.searchbox button {
-  width: 12%;
-  float: right;
-  line-height: 2rem;
-  border: none;
-  font-size: 1.2rem;
-  color: #ced4da;
-  background-color: transparent;
-  padding: 0.2rem;
-  cursor: pointer;
-}
-.searchbox button:focus, .searchbox button:active {
-  border: none;
-}
-
-#button_activar,
-#button_desactivar {
-  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
