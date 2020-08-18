@@ -58,7 +58,13 @@ switch ($_GET["op"])
         echo json_encode($results);
 
     break;
+    case "selectSuceso":
+        $rspta = $suceso->select();
 
+        while ($reg = $rspta->fetch_object()) {
+            echo '<option value=' . $reg->id . '>' . $reg->nombre . '</option>';
+        }
+        break;
 }
 
 ?>

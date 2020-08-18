@@ -13,7 +13,7 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
         <div class="main-content container-fluid">
-            <div class="row">
+            <div class="row pr-5">
                 <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
@@ -42,7 +42,7 @@ if (!isset($_SESSION['nombre'])) {
                     </div>
                 </div>
                 <div class="col-8">
-                    <div class="box-formulario mt-1 ml-1 w-75">
+                    <div class="box-formulario mt-1 ml-1 w-100 pr-5">
                         <h2 class="text-center title-formularios">Edición de Registros</h2>
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar:</label>
@@ -65,9 +65,12 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Empleado -->
                             <div class="form-group row">
-                                <label for="fo_empleado" class="col-4">Empleado: </label>
+                                <label for="fo_empleado" class="col-4">Número Identificación Empleado: </label>
                                 <div class="col-8">
                                     <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
+                                </div>
+                                <div class="offset-4 col-8">
+                                    <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
                                 </div>
                             </div>
 

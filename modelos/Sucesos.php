@@ -58,6 +58,13 @@ class Sucesos
         $sql = "SELECT * FROM suceso";
         return ejecutarConsulta($sql);
     }
+
+    // Metodo para listar las Sucesos activos (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM suceso WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

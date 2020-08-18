@@ -13,7 +13,7 @@ if (!isset($_SESSION['nombre'])) {
 
 ?>
         <div class="main-content container-fluid">
-            <div class="row">
+            <div class="row pr-5">
                 <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
@@ -38,11 +38,11 @@ if (!isset($_SESSION['nombre'])) {
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8">
-                    <div class="box-formulario mt-1 ml-1 w-75">
+                <div class="col-8 pr-5">
+                    <div class="box-formulario mt-1 ml-1 w-100">
                         <h2 class="text-center title-formularios">Creación de Registros</h2>
                         <form name="formulario" id="formulario" method="POST">
 
@@ -59,6 +59,9 @@ if (!isset($_SESSION['nombre'])) {
                                 <label for="fo_empleado" class="col-4">Empleado: </label>
                                 <div class="col-8">
                                     <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
+                                </div>
+                                <div class="offset-4 col-8">
+                                    <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
                                 </div>
                             </div>
 
@@ -90,7 +93,7 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Usuario Creador -->
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                    <input type="hidden" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled>
+                                    <input type="text" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled>
                                 </div>
                             </div>
 
@@ -133,7 +136,7 @@ if (!isset($_SESSION['nombre'])) {
 
     ?>
 
-    <script src="scripts/gestion_sedes.js"></script>
+    <script src="scripts/gestion_registros.js"></script>
 
 <?php
 }

@@ -88,6 +88,22 @@ class Empleados
         return ejecutarConsulta($sql);
     }
 
+    // Metodo para listar las Empleados activos (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM empleado WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
+
+    // Metodo para listar las Empleados activos (Condición = 1)
+    public function consultaNA($numero_identificacion)
+    {
+        $sql = "SELECT * 
+        FROM empleado 
+        WHERE numero_identificacion = $numero_identificacion";
+        return ejecutarConsultaSimpleFila($sql);
+    }
+
 
 }
 
