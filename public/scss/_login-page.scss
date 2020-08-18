@@ -1,5 +1,14 @@
 // Estilos especiales de la página de login
 
+.logo-loginpage {
+    position: absolute;
+    padding: 0.7rem;
+
+    img {
+        width: 300px;
+    }
+}
+
 .login-box {
     border: 2px solid $secondarycolor;
     width: 40%;
