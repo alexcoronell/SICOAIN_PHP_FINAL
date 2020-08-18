@@ -81,6 +81,10 @@ h6 {
   position: fixed;
 }
 
+.oculto {
+  display: none !important;
+}
+
 .title-page-login {
   border-bottom: 3px double #42b983;
   padding: 0.7rem;
