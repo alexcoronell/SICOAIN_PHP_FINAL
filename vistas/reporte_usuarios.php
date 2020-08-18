@@ -55,7 +55,6 @@ if (!isset($_SESSION['nombre'])) {
                                     <th>Analista</th>
                                     <th>Asistente</th>
                                     <th>Consultas</th>
-                                    <th>Contraseña</th>
                                     <th>Condicion</th>
                                 </thead>
                                 <tbody></tbody>

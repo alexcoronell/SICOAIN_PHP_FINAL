@@ -56,8 +56,7 @@ switch ($_GET["op"]) {
                 "5" => $reg->analista,
                 "6" => $reg->asistente,
                 "7" => $reg->consultas,
-                "8" => $reg->contrasena,
-                "9" => $reg->condicion
+                "8" => $reg->condicion
             );
         }
         $results = array(
