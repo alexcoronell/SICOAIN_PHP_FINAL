@@ -4,9 +4,9 @@ require 'header.php';
 
 ?>
 
-<div class="main-content container">
+<div class="main-content container-fluid">
     <div class="row">
-        <div class="col-5">
+        <div class="col-4">
             <div class="menu-box">
                 <div class="title-menu">
                     <h2>Menú de Incidentes y Sucesos</h2>
@@ -16,9 +16,9 @@ require 'header.php';
                     <ul>
                         <li>Administración de Incidentes
                             <ul>
-                                <li><a href="creacion_registro.php">Creación de Registros</a></li>
-                                <li><a href="edicion_registro.php">Edición de Registros</a></li>
-                                <li><a href="anulacion_registro.php">Anulación de Registros</a></li>
+                                <li><a href="creacion_registros.php">Creación de Registros</a></li>
+                                <li><a href="edicion_registros.php">Edición de Registros</a></li>
+                                <li><a href="anulacion_registros.php">Anulación de Registros</a></li>
                             </ul>
                         </li>
                         <li>Administración de Sucesos
@@ -33,8 +33,8 @@ require 'header.php';
                 <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
             </div>
         </div>
-        <div class="col-7">
-            <div class="box-formulario container mt-5">
+        <div class="col-8">
+            <div class="box-formulario container mt-1 ml-1">
                 <h2 class="text-center title-formularios">Act/Desact. de Sucesos</h2>
                 <!-- Busqueda -->
                 <div class="form-group row">

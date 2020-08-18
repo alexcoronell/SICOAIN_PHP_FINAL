@@ -12,9 +12,9 @@ if (!isset($_SESSION['nombre'])) {
     if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1))) {
 
 ?>
-        <div class="main-content container">
+        <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Incidentes y Sucesos</h2>
@@ -24,9 +24,9 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li>Administración de Incidentes
                                     <ul>
-                                        <li><a href="creacion_registro.php">Creación de Registros</a></li>
-                                        <li><a href="edicion_registro.php">Edición de Registros</a></li>
-                                        <li><a href="anulación_registro.php">Anulación de Registros</a></li>
+                                        <li><a href="creacion_registros.php">Creación de Registros</a></li>
+                                        <li><a href="edicion_registros.php">Edición de Registros</a></li>
+                                        <li><a href="anulación_registros.php">Anulación de Registros</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Sucesos
@@ -41,14 +41,13 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col"></div>
-                <div class="col calendar">
-                    <img src="img/calendar.png" alt="" class="img-fluid">
+                <div class="col-8 pt-5 pl-0 ml-0">
+                    <h1 class="textoMainColor positionFixed display-4">Administración de Incidentes y Sucesos</h1>
                 </div>
             </div>
         </div>
-    </div>
-
+        </div>
+        <div class="mainBackground2"></div>
     <?php
     } else {
         require 'noacceso.php';
