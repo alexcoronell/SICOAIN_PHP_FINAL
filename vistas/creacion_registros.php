@@ -8,7 +8,6 @@ if (!isset($_SESSION['nombre'])) {
     header("location: login.html");
 } else {
     require 'header.php';
-
     if ($_SESSION['superusuario'] == 1) {
 
 ?>
@@ -77,8 +76,8 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="fecha_incidente" class="col-4">Fecha de Incidente:</label>
                                 <div class="col-8">
-                                    <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
-                                    <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente">
+                                    <input type="hidden" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
+                                    <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" required>
                                 </div>
                             </div>
 
@@ -93,7 +92,7 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Usuario Creador -->
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                    <input type="text" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled value="Prueba">
+                                    <input type="hidden" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled value="<?php echo $_SESSION['nombre']; ?>">
                                 </div>
                             </div>
 
@@ -136,7 +135,7 @@ if (!isset($_SESSION['nombre'])) {
 
     ?>
 
-    <script src="scripts/gestion_registros.js"></script>
+    <script src="scripts/creacion_registros.js"></script>
 
 <?php
 }

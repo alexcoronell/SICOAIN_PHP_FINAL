@@ -38,12 +38,14 @@ if (!isset($_SESSION['nombre'])) {
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">
                     <div class="box-formulario mt-1 ml-1 w-100 pr-5">
                         <h2 class="text-center title-formularios">Edición de Registros</h2>
+
+                        <!-- Búsqueda -->
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar:</label>
                             <div class="col-8 searchbox">
@@ -95,7 +97,15 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="evidencia_digital" class="col-4">Evidencia digital:</label>
                                 <div class="col-8">
+                                    <input type="text" class="form-control" name="evidencia_actual" id="evidencia_actual">
                                     <input type="file" class="form-control" name="evidencia_digital" id="evidencia_digital">
+                                </div>
+                            </div>
+
+                            <!-- Usuario Creador -->
+                            <div class="form-group row">
+                                <div class="offset-4 col-8">
+                                    <input type="hidden" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled>
                                 </div>
                             </div>
 
@@ -144,7 +154,7 @@ if (!isset($_SESSION['nombre'])) {
 
     ?>
 
-    <script src="scripts/gestion_sedes.js"></script>
+    <script src="scripts/edicion_registros.js"></script>
 
 <?php
 }

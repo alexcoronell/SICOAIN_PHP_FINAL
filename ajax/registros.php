@@ -10,35 +10,39 @@ $fo_empleado = isset($_POST["fo_empleado"]) ? limpiarCadena($_POST["fo_empleado"
 $fecha_registro = isset($_POST["fecha_registro"]) ? limpiarCadena($_POST["fecha_registro"]) : "";
 $fecha_incidente = isset($_POST["fecha_incidente"]) ? limpiarCadena($_POST["fecha_incidente"]) : "";
 $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"]) : "";
+$evidencia_actual = isset($_POST["evidencia_actual"]) ? limpiarCadena($_POST["evidencia_actual"]) : "";
 $evidencia_digital = isset($_POST["evidencia_digital"]) ? limpiarCadena($_POST["evidencia_digital"]) : "";
-$fo_usuario_creador = isset($_POST["fo_usuario_creador"]) ? limpiarCadena($_POST["fo_usuario_creador"]) : "";
-$fo_usuario_modificador = isset($_POST["fo_usuario_modificador"]) ? limpiarCadena($_POST["fo_usuario_modificador"]) : "";
+$usuario_creador = isset($_POST["usuario_creador"]) ? limpiarCadena($_POST["usuario_creador"]) : "";
+$usuario_modificador = isset($_POST["usuario_modificador"]) ? limpiarCadena($_POST["usuario_modificador"]) : "";
 $motivo_anulacion = isset($_POST["motivo_anulacion"]) ? limpiarCadena($_POST["motivo_anulacion"]) : "";
 
 switch ($_GET["op"]) {
-    case 'guardaryeditar':
-        if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name']))
-        {
-            $evidencia_digital = "";
-        }
-        else
-        {
+    case 'guardar':
+        if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name'])) {
+            $evidencia_digital = $evidencia_actual;
+        } else {
             $ext = explode('.', $_FILES['evidencia_digital']['name']);
-            if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf')
-            {
+            if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
                 $evidencia_digital = round(microtime(true)) . '.' . end($ext);
                 move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
             }
-        } 
-        if (empty($id_registro)) {
-            $rspta = $registro->insertar($fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $fo_usuario_creador);
-            echo $rspta ? "Registro guardado correctamente" : "Registro no se pudo guardar";
-        } 
-        else
-        {
-            $rspta = $registro->editar($id_registro, $fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital, $fo_usuario_creador, $fo_usuario_modificador);
-            echo $rspta ? "Registro actualizado correctamente" : "Registro no se pudo actualizar";
         }
+        $rspta = $registro->insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador);
+        echo $rspta ? "Registro guardado correctamente" : "Registro no se pudo guardar";
+        break;
+
+    case 'editar':
+        if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name'])) {
+            $evidencia_digital = "";
+        } else {
+            $ext = explode('.', $_FILES['evidencia_digital']['name']);
+            if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
+                $evidencia_digital = round(microtime(true)) . '.' . end($ext);
+                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
+            }
+        }
+        $rspta = $registro->editar($id_registro, $fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital, $fo_usuario_creador, $usuario_modificador);
+        echo $rspta ? "Registro actualizado correctamente" : "Registro no se pudo actualizar";
         break;
 
     case 'anular':
@@ -81,4 +85,4 @@ switch ($_GET["op"]) {
         echo json_encode($results);
 
         break;
-    }
+}

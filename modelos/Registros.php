@@ -13,25 +13,27 @@ class Registros
     }
 
     // Método para insertar registros
-    public function insertar($fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $fo_usuario_creador) 
+    public function insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador) 
     {
-        $sql = "INSERT INTO registros (fo_suceso, fo_empleado, fecha_registro, fecha_incidente, evidencia_digital, descripcion, fo_usuario_creador, condicion)
-        VALUES ('$fo_suceso', '$fo_empleado', '$fecha_registro', '$fecha_incidente', '$evidencia_digital', '$descripcion', '$fo_usuario_creador', '1')";
+        $sql = "INSERT INTO 
+        registros (fo_empleado, fo_suceso, fecha_registro, fecha_incidente, descripcion, evidencia_digital, usuario_creador, condicion)
+
+        VALUES ('$fo_empleado', '$fo_suceso', '$fecha_registro', '$fecha_incidente', '$descripcion','$evidencia_digital',  '$usuario_creador', '1')";
         return ejecutarConsulta($sql);
     }
 
     // Método para editar registros
-    public function editar($id_registro, $fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $fo_usuario_creador, $fo_usuario_modificador)
+    public function editar($id_registro, $fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador, $usuario_modificador)
     {
-        $sql = "UPDATE registros SET 
+        $sql = "UPDATE registros SET
+        fo_empleado = '$fo_empleado',  
         fo_suceso = '$fo_suceso', 
-        fo_empleado = '$fo_empleado', 
         fecha_registro = '$fecha_registro', 
         fecha_incidente = '$fecha_incidente',
         evidencia_digital = '$evidencia_digital',  
         descripcion = '$descripcion', 
-        fo_usuario_creador = '$fo_usuario_creador', 
-        fo_usuario_modificador = '$fo_usuario_modificador'
+        usuario_creador = '$usuario_creador', 
+        usuario_modificador = '$usuario_modificador'
         WHERE id_registro = '$id_registro'";
         return ejecutarConsulta($sql);
     }
