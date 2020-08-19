@@ -24,7 +24,7 @@ switch ($_GET["op"]) {
             $ext = explode('.', $_FILES['evidencia_digital']['name']);
             if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
                 $evidencia_digital = round(microtime(true)) . '.' . end($ext);
-                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
+                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias/' . $evidencia_digital);
             }
         }
         $rspta = $registro->insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador);

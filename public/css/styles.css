@@ -339,6 +339,17 @@ box-formulario-empleados {
   display: none;
 }
 
+.formulario-registros label,
+.formulario-registros input {
+  font-size: 0.8rem;
+}
+.formulario-registros .inputFile {
+  font-size: 0.6rem;
+}
+.formulario-registros #nombresApellidos {
+  margin-top: -1.95rem;
+}
+
 table,
 thead,
 tbody,
