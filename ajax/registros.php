@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../modelos/Usuarios.php";
+require_once "../modelos/Registros.php";
 
 $registro = new Registros();
 
@@ -13,13 +13,29 @@ $descripcion = isset($_POST["descripcion"]) ? limpiarCadena($_POST["descripcion"
 $evidencia_digital = isset($_POST["evidencia_digital"]) ? limpiarCadena($_POST["evidencia_digital"]) : "";
 $fo_usuario_creador = isset($_POST["fo_usuario_creador"]) ? limpiarCadena($_POST["fo_usuario_creador"]) : "";
 $fo_usuario_modificador = isset($_POST["fo_usuario_modificador"]) ? limpiarCadena($_POST["fo_usuario_modificador"]) : "";
+$motivo_anulacion = isset($_POST["motivo_anulacion"]) ? limpiarCadena($_POST["motivo_anulacion"]) : "";
 
 switch ($_GET["op"]) {
     case 'guardaryeditar':
-        if (empty($id)) {
-            $rspta = $registro->insertar($fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital, $fo_usuario_creador);
+        if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name']))
+        {
+            $evidencia_digital = "";
+        }
+        else
+        {
+            $ext = explode('.', $_FILES['evidencia_digital']['name']);
+            if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf')
+            {
+                $evidencia_digital = round(microtime(true)) . '.' . end($ext);
+                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
+            }
+        } 
+        if (empty($id_registro)) {
+            $rspta = $registro->insertar($fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $fo_usuario_creador);
             echo $rspta ? "Registro guardado correctamente" : "Registro no se pudo guardar";
-        } else {
+        } 
+        else
+        {
             $rspta = $registro->editar($id_registro, $fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital, $fo_usuario_creador, $fo_usuario_modificador);
             echo $rspta ? "Registro actualizado correctamente" : "Registro no se pudo actualizar";
         }

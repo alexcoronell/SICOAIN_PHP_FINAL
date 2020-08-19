@@ -56,7 +56,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Empleado -->
                             <div class="form-group row">
-                                <label for="fo_empleado" class="col-4">Empleado: </label>
+                                <label for="fo_empleado" class="col-4">Número Identificación Empleado:</label>
                                 <div class="col-8">
                                     <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                 </div>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="fecha_incidente" class="col-4">Fecha de Incidente:</label>
                                 <div class="col-8">
-                                    <input type="hidden" class="form-control oculto" name="fecha_registro" id="fecha_registro" disabled>
+                                    <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
                                     <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente">
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Usuario Creador -->
                             <div class="form-group row">
                                 <div class="offset-4 col-8">
-                                    <input type="text" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled>
+                                    <input type="text" class="form-control" name="fo_usuario_creador" id="fo_usuario_creador" disabled value="Prueba">
                                 </div>
                             </div>
 

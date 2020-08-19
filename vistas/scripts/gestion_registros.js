@@ -50,12 +50,14 @@ function limpiar() {
     $("#id").val("");
     $("#fo_empleado").val("");
     $('#fo_empleado').selectpicker('refresh');
+    $("#nombresApellidos").val("");
     $("#fo_suceso").val("");
     $('#fo_suceso').selectpicker('refresh');
-    $("#fecha_incidente").val("");
+    $("#fecha_registro").val(hoy);
     $("#fecha_incidente").val("");
     $("#evidencia_digital").val("");
     $("#descripcion").val("");
+    $("#motivo_anulacion").val("");
     $("#buscarId").val("");
 }
 
@@ -72,7 +74,7 @@ function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     $("btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
-
+    console.log(formData.text);
     $.ajax({
         url: "../ajax/registros.php?op=guardaryeditar",
         type: "POST",
