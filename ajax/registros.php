@@ -64,16 +64,18 @@ switch ($_GET["op"]) {
         while ($reg = $rspta->fetch_object()) {
             $data[] = array(
                 "0" => $reg->id_registro,
-                "1" => $reg->fo_suceso,
-                "2" => $reg->fo_empleado,
-                "3" => $reg->fecha_registro,
-                "4" => $reg->fecha_incidente,
-                "5" => $reg->descripcion,
-                "6" => $reg->evidencia_digital,
-                "7" => $reg->fo_usuario_creador,
-                "8" => $reg->fo_usuario_modificador,
-                "9" => $reg->motivo_anulacion,
-                "10" => $reg->condidion
+                "1" => $reg->numero_identificacion,
+                "2" => $reg->nombres,
+                "3" => $reg->apellidos,
+                "4" => $reg->nombre,
+                "5" => $reg->fecha_registro,
+                "6" => $reg->fecha_incidente,
+                "7" => $reg->descripcion,
+                "8" => $reg->evidencia_digital,
+                "9" => $reg->usuario_creador,
+                "10" => $reg->usuario_modificador,
+                "11" => $reg->motivo_anulacion,
+                "12" => $reg->condidion
             );
         }
         $results = array(

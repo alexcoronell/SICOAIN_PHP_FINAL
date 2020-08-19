@@ -29,7 +29,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <li><a href="reporte_sedes.php">Sedes</a></li>
                                 <li><a href="reporte_eps.php" class="active">EPS</a></li>
                                 <li><a href="reporte_arl.php">ARL</a></li>
-                                <li><a href="reporte_incidentes.php">Incidentes</a></li>
+                                <li><a href="reporte_registros.php">Incidentes</a></li>
                                 <li><a href="reporte_sucesos.php">Sucesos</a></li>
                             </ul>
                         </nav>
