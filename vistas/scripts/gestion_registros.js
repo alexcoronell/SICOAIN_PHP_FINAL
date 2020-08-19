@@ -74,7 +74,6 @@ function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     $("btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
-    console.log(formData.text);
     $.ajax({
         url: "../ajax/registros.php?op=guardaryeditar",
         type: "POST",
