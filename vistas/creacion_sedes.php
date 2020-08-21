@@ -80,7 +80,7 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
                             </div>
 
-                            <!-- Botones de formulario -->
+                            <<!-- Botones de formulario -->
                             <div class="form-group row">
                                 <div class="offset-4 col-4">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>

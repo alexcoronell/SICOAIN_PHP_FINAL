@@ -37,7 +37,6 @@ function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     $("btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
-
     $.ajax({
         url: "../ajax/sedes.php?op=guardaryeditar",
         type: "POST",
@@ -47,9 +46,11 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Sede registrada correctamente" || datos == "Sede actualizada correctamente") {
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -129,8 +130,6 @@ function MostrarDefault() {
     $('#button_desactivar').hide();
     limpiar();
 }
-
-init();
 
 // Función para mostrar boton de activar y ocultar los otros
 function MostrarActivar() {

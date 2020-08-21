@@ -12,17 +12,17 @@ $direccion = isset($_POST["direccion"]) ? limpiarCadena($_POST["direccion"]) : "
 $notas = isset($_POST["notas"]) ? limpiarCadena($_POST["notas"]) : "";
 
 switch ($_GET["op"]) {
-    case 'guardaryeditar':
-        if (empty($id)) {
-            $rspta = $sede->insertar($fo_compania, $nombre, $telefono, $direccion, $notas);
-            echo $rspta ? "Sede registrado correctamente" : "Sede no se pudo registrar";
-        break;
-        } else {
-            $rspta = $sede->editar($id, $fo_compania, $nombre, $telefono, $direccion, $notas);
-            echo $rspta ? "Sede actualizado correctamente" : "Sede no se pudo actualizar";
-        break;
+    case 'guardaryeditar' :
+        if (empty($id))
+        {
+            $rspta = $sede -> insertar($fo_compania, $nombre, $telefono, $direccion, $notas);
+            echo $rspta ? "Sede registrada correctamente" : "Compañía no se pudo registrar";
+        } else
+        {
+            $rspta = $sede -> editar($id, $fo_compania, $nombre, $telefono, $direccion, $notas);
+            echo $rspta ? "Sede actualizada correctamente" : "Compañía no se pudo actualizar";
         }
-        break;
+    break;
 
     case 'desactivar':
         $rspta = $sede->desactivar($id);
