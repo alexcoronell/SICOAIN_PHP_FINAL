@@ -26,18 +26,6 @@ function init() {
         $('#fo_ciudad').selectpicker('refresh');
     })
 
-    // Carga de opciones filtradas por departamento en el select Ciudad
-    $('#fo_departamento').change(function() {
-        var NroDepartamento = $('#fo_departamento').val();
-        console.log(NroDepartamento);
-        /* $.post("../ajax/ciudades.php?op=selectCiudad", {
-            NroDepartamento: NroDepartamento
-        }, function(r) {
-            $('#fo_ciudad').html(r);
-            $('#fo_ciudad').selectpicker('refresh');
-        }) */
-    })
-
     // Carga de opciones en el select Compañías
     $.post("../ajax/companias.php?op=selectCompania", function(r) {
         $('#fo_compania').html(r);
@@ -68,8 +56,18 @@ function init() {
         $('#fo_arl').selectpicker('refresh');
     })
 
+    // Carga los números de cédula de Empleados
+    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
+        $('#numero_identificacion').html(r);
+        $('#numero_identificacion').selectpicker('refresh');
+    })
 
-
+    // Carga la información del empleado
+    $('#numero_identificacion').on('changed.bs.select', function(e) {
+        let numero_identificacion = $('select[name="numero_identificacion"] option:selected').text();
+        habilitarFormulario();
+        mostrar(numero_identificacion);
+    })
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
 
@@ -81,6 +79,7 @@ function limpiar() {
     $("#fo_tipo_identificacion").val("");
     $('#fo_tipo_identificacion').selectpicker('refresh');
     $("#numero_identificacion").val("");
+    $('#numero_identificacion').selectpicker('refresh');
     $("#nombres").val("");
     $("#apellidos").val("");
     $("#fo_departamento").val("");
@@ -106,6 +105,27 @@ function limpiar() {
     $('#parentesco_contacto_emergencia').val("");
     $('#comentarios').val("");
     $("#buscarId").val("");
+
+    $("#fo_tipo_identificacion").prop('disabled', true);
+    $("#nombres").prop('disabled', true);
+    $("#apellidos").prop('disabled', true);
+    $("#fo_departamento").prop('disabled', true);
+    $("#fo_ciudad").prop('disabled', true);
+    $("#direccion").prop('disabled', true);
+    $("#telefono_fijo").prop('disabled', true);
+    $("#telefono_celular").prop('disabled', true);
+    $("#email").prop('disabled', true);
+    $("#fo_compania").prop('disabled', true);
+    $("#fo_sede").prop('disabled', true);
+    $("#fo_cargo").prop('disabled', true);
+    $("#fo_eps").prop('disabled', true);
+    $("#fo_arl").prop('disabled', true);
+    $("#nombre_contacto_emergencia").prop('disabled', true);
+    $("#telefono_contacto_emergencia").prop('disabled', true);
+    $("#parentesco_contacto_emergencia").prop('disabled', true);
+    $("#comentarios").prop('disabled', true);
+
+
 }
 
 
@@ -121,7 +141,6 @@ function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     $("btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
-
     $.ajax({
         url: "../ajax/empleados.php?op=guardaryeditar",
         type: "POST",
@@ -131,21 +150,24 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Empleado actualizado correctamente" || datos == "Empleado registrado correctamente") {
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
+
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
-function mostrar(id) {
+function mostrar(numero_identificacion) {
     $.post("../ajax/empleados.php?op=mostrar", {
-        id: id
+        numero_identificacion: numero_identificacion
     }, function(data, status) {
+
         data = JSON.parse(data);
         $("#id").val(data.id);
         $("#fo_tipo_identificacion").val(data.fo_tipo_identificacion);
         $("#fo_tipo_identificacion").selectpicker('refresh');
-        $("#numero_identificacion").val(data.numero_identificacion);
         $("#nombres").val(data.nombres);
         $("#apellidos").val(data.apellidos);
         $("#fo_departamento").val(data.fo_departamento);
@@ -173,7 +195,7 @@ function mostrar(id) {
     })
 }
 
-// Función para mostrar los datos en el formulario de activación o desactivación de EPS
+// Función para mostrar los datos en el formulario de activación o desactivación de Empleados
 function mostrarAct(id) {
     $.post("../ajax/empleados.php?op=mostrar", {
         id: id
@@ -203,14 +225,6 @@ function buscarAct() {
     mostrarAct(id_Buscar);
 }
 
-// Función para buscar en el formulario de Activación o desactivación de EPS
-function buscarCiudad() {
-    console.log("Me ejecuto");
-    $.post("../ajax/ciudades.php?op=selectCiudad", function(r) {
-        $('#fo_ciudad').html(r);
-        $('#fo_ciudad').selectpicker('refresh');
-    })
-}
 
 // Función para activar Usuarios
 function activar() {
@@ -223,7 +237,6 @@ function activar() {
         })
     })
     MostrarDefault();
-
 }
 
 // Función para desactivar Usuarios
@@ -261,6 +274,27 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function habilitarFormulario() {
+    $("#fo_tipo_identificacion").prop('disabled', false);
+    $("#nombres").prop('disabled', false);
+    $("#apellidos").prop('disabled', false);
+    $("#fo_departamento").prop('disabled', false);
+    $("#fo_ciudad").prop('disabled', false);
+    $("#direccion").prop('disabled', false);
+    $("#telefono_fijo").prop('disabled', false);
+    $("#telefono_celular").prop('disabled', false);
+    $("#email").prop('disabled', false);
+    $("#fo_compania").prop('disabled', false);
+    $("#fo_sede").prop('disabled', false);
+    $("#fo_cargo").prop('disabled', false);
+    $("#fo_eps").prop('disabled', false);
+    $("#fo_arl").prop('disabled', false);
+    $("#nombre_contacto_emergencia").prop('disabled', false);
+    $("#telefono_contacto_emergencia").prop('disabled', false);
+    $("#parentesco_contacto_emergencia").prop('disabled', false);
+    $("#comentarios").prop('disabled', false);
 }
 
 init();

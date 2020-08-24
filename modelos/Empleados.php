@@ -13,20 +13,40 @@ class Empleados
     }
 
     // Método para insertar registros
-    public function insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_cargo, $fo_sede, $fo_eps, $fo_arl,  $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios) 
+    public function insertar($fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_sede, $fo_cargo, $fo_eps, $fo_arl, $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios) 
     {
-        $sql = "INSERT INTO empleado (fo_tipo_identificacion, numero_identificacion, nombres, apellidos, fo_departamento, fo_ciudad, direccion, telefono_fijo, telefono_celular, email, fo_compania, fo_cargo, fo_sede, fo_eps, fo_arl,  nombre_contacto_emergencia, telefono_contacto_emergencia, parentesco_contacto_emergencia, comentarios, condicion)
+        $sql = "INSERT INTO empleado (fo_tipo_identificacion, numero_identificacion, nombres, apellidos, fo_departamento, fo_ciudad, direccion, telefono_fijo, telefono_celular, email, fo_compania, fo_sede, fo_cargo, fo_eps, fo_arl,  nombre_contacto_emergencia, telefono_contacto_emergencia, parentesco_contacto_emergencia, comentarios, condicion)
         VALUES ('$fo_tipo_identificacion', '$numero_identificacion', '$nombres', '$apellidos', '$fo_departamento', '$fo_ciudad', '$direccion', '$telefono_fijo', '$telefono_celular', '$email', '$fo_compania', '$fo_sede', '$fo_cargo', '$fo_eps', '$fo_arl', '$nombre_contacto_emergencia', '$telefono_contacto_emergencia', '$parentesco_contacto_emergencia', '$comentarios', '1')";
         return ejecutarConsulta($sql);
     }
 
 
     // Método para editar registros
-    public function editar($id, $fo_tipo_identificacion, $numero_identificacion, $nombres, $apellidos, $fo_departamento, $fo_ciudad, $direccion, $telefono_fijo, $telefono_celular, $email, $fo_compania, $fo_sede, $fo_cargo, $fo_eps, $fo_arl,  $nombre_contacto_emergencia, $telefono_contacto_emergencia, $parentesco_contacto_emergencia, $comentarios) 
+    public function editar(
+        $id, 
+        $fo_tipo_identificacion, 
+        $numero_identificacion, 
+        $nombres, 
+        $apellidos, 
+        $fo_departamento, 
+        $fo_ciudad, 
+        $direccion, 
+        $telefono_fijo, 
+        $telefono_celular, 
+        $email, 
+        $fo_compania, 
+        $fo_sede, 
+        $fo_cargo, 
+        $fo_eps, 
+        $fo_arl, 
+        $nombre_contacto_emergencia, 
+        $telefono_contacto_emergencia, 
+        $parentesco_contacto_emergencia, 
+        $comentarios) 
     {
-        $sql = "UPDATE empleado SET 
-        fo_tipo_identificacion = '$fo_tipo_identificacion', 
-        numero_identificacion = '$numero_identificacion', 
+        $sql = "UPDATE empleado SET
+        fo_tipo_identificacion = '$fo_tipo_identificacion',
+        numero_identificacion = '$numero_identificacion',
         nombres = '$nombres', 
         apellidos = '$apellidos', 
         fo_departamento = '$fo_departamento', 
@@ -34,16 +54,12 @@ class Empleados
         direccion = '$direccion', 
         telefono_fijo = '$telefono_fijo', 
         telefono_celular = '$telefono_celular', 
-        email = '$email', 
-        fo_compania = '$fo_compania', 
-        fo_sede = '$fo_sede', 
-        fo_cargo = '$fo_cargo', 
-        fo_eps = '$fo_eps', 
-        fo_arl = '$fo_arl', 
-        nombre_contacto_emergencia = '$nombre_contacto_emergencia', 
-        telefono_contacto_emergencia = '$telefono_contacto_emergencia', 
-        parentesco_contacto_emergencia = '$parentesco_contacto_emergencia', 
-        comentarios = '$comentarios' 
+        email = '$email',
+        fo_compania = '$fo_compania',
+        nombre_contacto_emergencia = '$nombre_contacto_emergencia',
+        telefono_contacto_emergencia = '$telefono_contacto_emergencia',
+        parentesco_contacto_emergencia = '$parentesco_contacto_emergencia',
+        comentarios = '$comentarios'
         WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
@@ -65,11 +81,11 @@ class Empleados
     }
 
     // Método para mostrar los datos de un registro a modificar
-    public function mostrar($id) 
+    public function mostrar($numero_identificacion) 
     {
         $sql = "SELECT * 
         FROM empleado 
-        WHERE id = '$id'";
+        WHERE numero_identificacion = '$numero_identificacion'";
         return ejecutarConsultaSimpleFila($sql);
     }
 
@@ -104,7 +120,22 @@ class Empleados
         return ejecutarConsultaSimpleFila($sql);
     }
 
+    // Método para cargar los números de cédula
+    public function mostrarCedulas() {
+        $sql = "SELECT *
+        FROM empleado";
+        return ejecutarConsulta($sql);
+    }
+
+
+    //Método de buscar y mostrar empleado
+    public function buscaEmpleado($numero_identificacion)
+    {
+        $sql = "SELECT * 
+        FROM empleado 
+        WHERE numero_identificacion = $numero_identificacion";
+        return ejecutarConsultaSimpleFila($sql);
+    }
+
 
 }
-
-?>

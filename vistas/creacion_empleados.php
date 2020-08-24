@@ -215,7 +215,7 @@ if (!isset($_SESSION['nombre'])) {
                                             <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
                                         </div>
                                     </div>
-                                </div>
+                                </div>  <!-- Fin segunda columna -->
 
                                 <!-- Botones de formulario -->
                                 <div class="col-12">
