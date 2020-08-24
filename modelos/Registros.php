@@ -40,7 +40,7 @@ class Registros
     {
         $sql = "UPDATE registros SET 
         motivo_anulacion = '$motivo_anulacion', 
-        condicion = '0'
+        condicion = '0' 
         WHERE id_registro = '$id_registro'";
         return ejecutarConsulta($sql);
     }

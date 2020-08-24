@@ -41,69 +41,72 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8">
-                <div class="box-formulario mt-1 ml-1 w-100 pr-5">
+                <div class="col-8 ml-n2 pr-3">
+                    <div class="box-formulario formulario-registros container mt-1 p-0 row w-100">
                         <h2 class="text-center title-formularios">Anulación de Registros</h2>
-                        <div class="form-group row">
-                            <label for="rol" class="col-4">Buscar:</label>
-                            <div class="col-8 searchbox">
-                                <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Registro">
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+                        <div class="col-12 container">
+                            <!-- Búsqueda -->
+                            <div class="form-group row mb-0 mt-2 col-6">
+                                <label for="rol" class="col-4">Buscar:</label>
+                                <div class="col-8 searchbox">
+                                    <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Registro">
+                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </div>
                             </div>
+                            <!-- Inicia Formulario -->
+                            <form name="formulario" id="formulario" method="POST">
+                                <!-- Id Registro -->
+                                <div class="form-group row mt-0">
+                                    <label for="id_registro" class="col-4"></label>
+                                    <div class="col-8">
+                                        <input type="hidden" name="id_registro" id="id_registro">
+                                    </div>
+                                </div>
+
+                                <!-- Empleado -->
+                                <div class="form-group row col-6">
+                                    <label for="fo_empleado" class="col-4">Número Identificación Empleado: </label>
+                                    <div class="col-8">
+                                        <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" disabled></select>
+                                    </div>
+                                    <div class="offset-4 col-8">
+                                        <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
+                                    </div>
+                                </div>
+                                <!-- Fecha de Registo e Incidente -->
+                                <div class="form-group row col-6">
+                                    <label for="fecha_registro" class="col-4">Fecha de Registro:</label>
+                                    <div class="col-8">
+                                        <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
+                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" disabled>
+                                    </div>
+                                </div>
+
+                                <!-- Descripción, impresión y generación de PDF -->
+                                <div class="form-group row col-12">
+                                    <div class="col-2">
+                                        <label for="descripcion">Modivo Anulación:*</label>
+
+                                    </div>
+                                    <div class="col-10">
+                                        <textarea name="motivo_anulacion" id="motivo_anulacion" maxlength="512" rows="2" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Botones -->
+                                <div class="col-12">
+                                    <div class="form-group row">
+                                        <div class="offset-4 col-4">
+                                            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-
-                        <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
-
-                            <!-- Id Registro -->
-                            <div class="form-group row">
-                                <label for="id_registro" class="col-4"></label>
-                                <div class="col-8">
-                                    <input type="hidden" name="id_registro" id="id_registro">
-                                </div>
-                            </div>
-
-                            <!-- Empleado -->
-                            <div class="form-group row">
-                                <label for="fo_empleado" class="col-4">Número Identificación Empleado: </label>
-                                <div class="col-8">
-                                    <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" disabled></select>
-                                </div>
-                                <div class="offset-4 col-8">
-                                    <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
-                                </div>
-                            </div>
-
-                            <!-- Fecha de Registo e Incidente -->
-                            <div class="form-group row">
-                                <label for="fecha_incidente" class="col-4">Fecha de Registro:</label>
-                                <div class="col-8">
-                                    <input type="date" class="form-control oculto" name="fecha_registro" id="fecha_registro" disabled>
-                                </div>
-                            </div>
-
-                            <!-- Descripción, impresión y generación de PDF -->
-                            <div class="form-group row">
-                                <div class="col-4">
-                                    <label for="motivo_anulacion">Motivo de Anulación:</label>
-                                    <button class="btn btn-light generadores"><i class="fas fa-print" aria-hidden="true"></i> Imprimir</button>
-                                    <button class="btn btn-light generadores"><i class="far fa-file-pdf"></i> Generar PDF</button>
-                                </div>
-                                <div class="col-8">
-                                    <textarea name="motivo_anulacion" id="motivo_anulacion" maxlength="512" class="form-control"></textarea>
-                                </div>
-                            </div>
-
-                            <!-- Botones de formulario -->
-                            <div class="form-group row">
-                                <div class="offset-4 col-4">
-                                    <button type="submit" class="btn btn-primary" id="btnGuardar">Anular Registro</button>
-                                </div>
-                                <div class="col-4">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>

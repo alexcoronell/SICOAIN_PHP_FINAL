@@ -24,9 +24,6 @@ function init() {
         $('#fo_suceso').selectpicker('refresh');
     })
 
-
-
-
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
 
@@ -38,12 +35,8 @@ function limpiar() {
     $("#fo_empleado").val("");
     $('#fo_empleado').selectpicker('refresh');
     $("#nombresApellidos").val("");
-    $("#fo_suceso").val("");
-    $('#fo_suceso').selectpicker('refresh');
     $("#fecha_registro").val("");
     $("#fecha_incidente").val("");
-    $("#evidencia_digital").val("");
-    $("#descripcion").val("");
     $("#motivo_anulacion").val("");
     $("#buscarId").val("");
 }
@@ -56,23 +49,29 @@ function cancelarFormulario() {
 }
 
 
-// Función para guardar o editar
 function anular(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
     $("btnGuardar").prop("disabled", true);
     var formData = new FormData($("#formulario")[0]);
-    $.ajax({
-        url: "../ajax/registros.php?op=anular",
-        type: "POST",
-        data: formData,
-        contentType: false,
-        processData: false,
+    bootbox.confirm("¿Estas seguro de Anular este Registro?", function(result) {
+        if (result) {
+            console.log(formData);
+            $.ajax({
+                url: "../ajax/registros.php?op=anular",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
 
-        success: function(datos) {
-            bootbox.alert(datos);
+                success: function(datos) {
+                    bootbox.alert(datos);
+                    if (datos == "Registro anulado") {
+                        limpiar();
+                    }
+                }
+            })
         }
     })
-    limpiar();
 }
 
 function mostrar(id_registro) {
@@ -83,9 +82,11 @@ function mostrar(id_registro) {
 
         $("#id_registro").val(data.id_registro);
         $("#fo_empleado").val(data.fo_empleado);
-        $('#fo_empleado').selectpicker('refresh');
+        $("#fo_empleado").selectpicker('refresh');
         let EmpleadoSeleccionado = $('select[name="fo_empleado"] option:selected').text();
         mostrarNombres(EmpleadoSeleccionado);
+        $("#fecha_registro").val(data.fecha_registro);
+        $("#fecha_incidente").val(data.fecha_incidente);
         $("#buscarId").val("");
     })
 }
