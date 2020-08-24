@@ -27,7 +27,7 @@ switch ($_GET["op"]) {
                 move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias/' . $evidencia_digital);
             }
         }
-        $rspta = $registro->insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador);
+        $rspta = $registro->insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital);
         echo $rspta ? "Registro guardado correctamente" : "Registro no se pudo guardar";
         break;
 
@@ -41,7 +41,7 @@ switch ($_GET["op"]) {
                 move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
             }
         }
-        $rspta = $registro->editar($id_registro, $fo_suceso, $fo_empleado, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital, $fo_usuario_creador, $usuario_modificador);
+        $rspta = $registro->editar($id_registro, $fo_empleado, $fo_suceso,  $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital);
         echo $rspta ? "Registro actualizado correctamente" : "Registro no se pudo actualizar";
         break;
 

@@ -72,19 +72,12 @@ if (!isset($_SESSION['nombre'])) {
                                     </div>
                                 </div>
 
-                                <!-- Fecha de Registo -->
-                                <div class="form-group row">
-                                    <label for="fecha_incidente" class="col-3">Fecha de Registro:</label>
-                                    <div class="col-9">
-                                        <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
-                                    </div>
-                                </div>
-
                                 <!-- Fecha de Incidente -->
                                 <div class="form-group row">
                                     <label for="fecha_incidente" class="col-3">Fecha de Incidente:</label>
                                     <div class="col-9">
-                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" disabled>
+                                        <input type="hidden" class="form-control" name="fecha_registro" id="fecha_registro">
+                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente">
                                     </div>
                                 </div>
 
@@ -92,20 +85,12 @@ if (!isset($_SESSION['nombre'])) {
 
                             <div class="col-6">
 
-                                <!-- Usuario Creador -->
-                                <div class="form-group row">
-                                    <div class="offset-3 col-9">
-                                        <input type="hidden" class="form-control" name="usuario_creador" id="usuario_creador" disabled value="<?php echo $_SESSION['nombre']; ?>">
-                                    </div>
-                                </div>
-
-
                                 <!-- Descripción, impresión y generación de PDF  -->
                                 <div class="form-group row">
                                     <div class="col-3">
                                         <label for="descripcion">Descripción:*</label>
-                                        <button class="btn btn-light generadores w-100"><i class="fas fa-print" aria-hidden="true"></i><br>Imprimir</button>
-                                        <button class="btn btn-light generadores w-100"><i class="far fa-file-pdf"></i>Generar PDF</button>
+                                        <!-- <button class="btn btn-light generadores w-100"><i class="fas fa-print" aria-hidden="true"></i><br>Imprimir</button>
+                                        <button class="btn btn-light generadores w-100"><i class="far fa-file-pdf"></i>Generar PDF</button> -->
                                     </div>
                                     <div class="col-9">
                                         <textarea name="descripcion" id="descripcion" maxlength="512" rows="6" class="form-control"></textarea>

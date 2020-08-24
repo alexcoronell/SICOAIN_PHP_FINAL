@@ -37,9 +37,6 @@ function init() {
         $('#fo_suceso').selectpicker('refresh');
     })
 
-
-
-
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
 
@@ -83,9 +80,11 @@ function guardar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Registro guardado correctamente" || datos == "Registro actualizado correctamente") {
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
 function mostrarNombres(numero_identificacion) {

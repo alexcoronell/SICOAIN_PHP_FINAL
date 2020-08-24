@@ -13,27 +13,24 @@ class Registros
     }
 
     // Método para insertar registros
-    public function insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador) 
+    public function insertar($fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital) 
     {
         $sql = "INSERT INTO 
-        registros (fo_empleado, fo_suceso, fecha_registro, fecha_incidente, descripcion, evidencia_digital, usuario_creador, condicion)
+        registros (fo_empleado, fo_suceso, fecha_registro, fecha_incidente, descripcion, evidencia_digital, condicion)
 
-        VALUES ('$fo_empleado', '$fo_suceso', '$fecha_registro', '$fecha_incidente', '$descripcion','$evidencia_digital',  '$usuario_creador', '1')";
+        VALUES ('$fo_empleado', '$fo_suceso', '$fecha_registro', '$fecha_incidente', '$descripcion','$evidencia_digital', '1')";
         return ejecutarConsulta($sql);
     }
 
     // Método para editar registros
-    public function editar($id_registro, $fo_empleado, $fo_suceso, $fecha_registro, $fecha_incidente, $evidencia_digital, $descripcion, $usuario_creador, $usuario_modificador)
+    public function editar($id_registro, $fo_empleado, $fo_suceso, $fecha_incidente, $descripcion, $evidencia_digital)
     {
         $sql = "UPDATE registros SET
         fo_empleado = '$fo_empleado',  
         fo_suceso = '$fo_suceso', 
-        fecha_registro = '$fecha_registro', 
         fecha_incidente = '$fecha_incidente',
-        evidencia_digital = '$evidencia_digital',  
         descripcion = '$descripcion', 
-        usuario_creador = '$usuario_creador', 
-        usuario_modificador = '$usuario_modificador'
+        evidencia_digital = '$evidencia_digital'
         WHERE id_registro = '$id_registro'";
         return ejecutarConsulta($sql);
     }
