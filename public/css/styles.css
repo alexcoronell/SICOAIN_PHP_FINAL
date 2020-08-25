@@ -412,6 +412,10 @@ th {
   min-width: 150px;
 }
 
+table.dataTable .columnaId {
+  width: 20px !important;
+}
+
 /**************************** FOOTER *******************************/
 .Footer {
   width: 100%;

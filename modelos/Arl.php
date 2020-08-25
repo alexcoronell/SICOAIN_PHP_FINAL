@@ -14,7 +14,7 @@ class Arl
     }
 
     // Método para insertar registros
-    public function insertar($nombre, $telefono, $direccion, $email) 
+    public function insertar($nombre_arl, $telefono, $direccion, $email) 
     {
         $sql = "INSERT INTO arl (nombre_arl, telefono, direccion, email, condicion)
         VALUES ('$nombre_arl', '$telefono', '$direccion', '$email', '1')";
