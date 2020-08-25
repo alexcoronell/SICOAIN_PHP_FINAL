@@ -72,10 +72,8 @@ switch ($_GET["op"]) {
                 "6" => $reg->fecha_incidente,
                 "7" => $reg->descripcion,
                 "8" => $reg->evidencia_digital,
-                "9" => $reg->usuario_creador,
-                "10" => $reg->usuario_modificador,
-                "11" => $reg->motivo_anulacion,
-                "12" => $reg->condidion
+                "9" => $reg->motivo_anulacion,
+                "10" => $reg->condicion
             );
         }
         $results = array(

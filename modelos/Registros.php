@@ -57,7 +57,7 @@ class Registros
 
     public function listar()
     {
-        $sql = "SELECT r.id_registro, em.numero_identificacion, em.nombres, em.apellidos, s.nombre, r.fecha_registro, r.fecha_incidente, r.descripcion, r.evidencia_digital, r.usuario_creador, r.usuario_modificador, r.motivo_anulacion, r.condicion
+        $sql = "SELECT r.id_registro, em.numero_identificacion, em.nombres, em.apellidos, s.nombre, r.fecha_registro, r.fecha_incidente, r.descripcion, r.evidencia_digital, r.motivo_anulacion, r.condicion
         FROM registros r
         INNER JOIN empleado em ON r.fo_empleado = em.id
         INNER JOIN suceso s ON r.fo_suceso = s.id";
