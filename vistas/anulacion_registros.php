@@ -38,7 +38,7 @@ if (!isset($_SESSION['nombre'])) {
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8 ml-n2 pr-3">
