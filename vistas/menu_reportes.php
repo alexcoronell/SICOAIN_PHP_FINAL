@@ -9,11 +9,12 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
-    if ($_SESSION['superusuario'] == 1) {
+    if (($_SESSION['superusuario'] == 1) || ($_SESSION['administrador'] == 1) || ($_SESSION['analista'] == 1) || ($_SESSION['asistente'] == 1) || ($_SESSION['consultas'] == 1)) {
 
 ?>
 
         <div class="main-content container-fluid">
+            
             <div class="row">
                 <div class="col-4">
                     <div class="menu-box">

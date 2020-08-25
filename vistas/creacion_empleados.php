@@ -9,7 +9,7 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
-    if ($_SESSION['superusuario'] == 1) {
+    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1)) || (($_SESSION['analista'] == 1))) {
 
 ?>
 
@@ -215,7 +215,7 @@ if (!isset($_SESSION['nombre'])) {
                                             <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
                                         </div>
                                     </div>
-                                </div>  <!-- Fin segunda columna -->
+                                </div> <!-- Fin segunda columna -->
 
                                 <!-- Botones de formulario -->
                                 <div class="col-12">

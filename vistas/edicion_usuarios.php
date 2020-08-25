@@ -76,11 +76,11 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="analista" value="1" name="analista" id="analista" title="Gestion de empleados, EPS, ARL y Gestión de Incidentes y Sucesos">
-                                    <label class="form-check-label" for="analista_asistente" title="Gestion de empleados, EPS, ARL y Gestión de Incidentes y Sucesos">Analista</label>
+                                    <label class="form-check-label" for="analista" title="Gestion de empleados, cargos, EPS, ARL y Gestión de Incidentes y Sucesos">Analista</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="asistente" value="1" name="asistente" id="asistente" title="Gestión de Incidentes y Sucesos">
-                                    <label class="form-check-label" for="analista_asistente" title="Gestión de Incidentes y Sucesos">Asistente</label>
+                                    <label class="form-check-label" for="asistente" title="Gestión de Incidentes y Sucesos">Asistente</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="consultas" value="1" name="consultas" id="consultas" title="Acceso a reportes">

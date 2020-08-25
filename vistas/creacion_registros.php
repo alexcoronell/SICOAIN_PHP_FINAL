@@ -8,7 +8,7 @@ if (!isset($_SESSION['nombre'])) {
     header("location: login.html");
 } else {
     require 'header.php';
-    if ($_SESSION['superusuario'] == 1) {
+    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1)) || (($_SESSION['analista'] == 1)) || (($_SESSION['asistente'] == 1))) {
 
 ?>
         <div class="main-content container-fluid">

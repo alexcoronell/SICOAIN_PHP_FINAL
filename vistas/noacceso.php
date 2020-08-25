@@ -1,14 +1,13 @@
-    <div class="main-content container">
+    <div class="main-content container-fluid">
         <div class="row">
             <div class="col-4">
                 <div class="menu-box">
                     <div class="title-menu">
-                        <h2>Menú Principal</h2>
+                        <h2>Menú</h2>
                     </div>
-                    <h1 class="display-4 text-center">SICOAIN</h1>
                     <nav>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
+                    <button class="btn btn-light salir-menu mt-3"><a href="principal.php">Regresar</a></button>
                 </div>
             </div>
             <div class="col-8">

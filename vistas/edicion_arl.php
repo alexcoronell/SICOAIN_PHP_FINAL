@@ -9,7 +9,7 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
-    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1))) {
+    if (($_SESSION['superusuario'] == 1) || (($_SESSION['administrador'] == 1)) || (($_SESSION['analista'] == 1))) {
 
 ?>
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['nombre'])) {
                                         <li><a href="act_desact_arl.php">Act/Desact de ARL</a></li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-8">

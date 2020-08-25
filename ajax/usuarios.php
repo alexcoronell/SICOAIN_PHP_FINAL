@@ -84,6 +84,7 @@ switch ($_GET["op"]) {
             $_SESSION['superusuario'] = $fetch->superusuario;
             $_SESSION['administrador'] = $fetch->administrador;
             $_SESSION['analista'] = $fetch->analista;
+            $_SESSION['asistente'] = $fetch->asistente;
             $_SESSION['consultas'] = $fetch->consultas;
         }
         echo json_encode($fetch);
