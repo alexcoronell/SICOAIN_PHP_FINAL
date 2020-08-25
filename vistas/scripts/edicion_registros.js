@@ -14,6 +14,8 @@ var hoy = anio + "-" + mes + "-" + dia;
 // Función que se ejecuta al inicio
 function init() {
 
+    const usuarioModificador = $('#usuario_modificador').val();
+
     limpiar();
 
     $("#formulario").on("submit", function(e) {
@@ -55,10 +57,19 @@ function limpiar() {
     $('#fo_suceso').selectpicker('refresh');
     $("#fecha_registro").val("");
     $("#fecha_incidente").val("");
+    $("#usuario_creador").val("");
+    $("#evidencia_actual").val("");
     $("#evidencia_digital").val("");
     $("#descripcion").val("");
     $("#motivo_anulacion").val("");
     $("#buscarId").val("");
+
+    $('#fo_empleado').prop('disabled', true);
+    $('#fo_suceso').prop('disabled', true);
+    $('#fecha_incidente').prop('disabled', true);
+    $('#descripcion').prop('disabled', true);
+    $('#evidencia_actual').prop('disabled', true);
+    $('#evidencia_digital').prop('disabled', true);
 }
 
 // Función para buscar en el formulario de edición de Registros
@@ -110,22 +121,13 @@ function mostrar(id_registro) {
         $("#fecha_registro").val(data.fecha_registro);
         $("#fecha_incidente").val(data.fecha_incidente);
         $("#evidencia_actual").val(data.evidencia_digital);
-        $("#usuario_modificador").val(data.usuario_modificador);
+        $("#usuario_creador").val(data.usuario_creador);
         $("#descripcion").val(data.descripcion);
         $("#buscarId").val("");
+
+        habilitarFormulario();
     })
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 function mostrarNombres(numero_identificacion) {
@@ -137,6 +139,15 @@ function mostrarNombres(numero_identificacion) {
         let nombreCompleto = data.nombres + " " + data.apellidos;
         $("#nombresApellidos").val(nombreCompleto);
     })
+}
+
+function habilitarFormulario() {
+    $('#fo_empleado').prop('disabled', false);
+    $('#fo_suceso').prop('disabled', false);
+    $('#fecha_incidente').prop('disabled', false);
+    $('#descripcion').prop('disabled', false);
+    $('#evidencia_actual').prop('disabled', false);
+    $('#evidencia_digital').prop('disabled', false);
 }
 
 init();

@@ -33,7 +33,7 @@ switch ($_GET["op"]) {
 
     case 'editar':
         if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name'])) {
-            $evidencia_digital = "";
+            $evidencia_digital = $evidencia_actual;
         } else {
             $ext = explode('.', $_FILES['evidencia_digital']['name']);
             if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
@@ -41,7 +41,7 @@ switch ($_GET["op"]) {
                 move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
             }
         }
-        $rspta = $registro->editar($id_registro, $fo_empleado, $fo_suceso,  $fecha_registro, $fecha_incidente, $descripcion, $evidencia_digital);
+        $rspta = $registro->editar($id_registro, $fo_empleado, $fo_suceso, $fecha_incidente, $descripcion, $evidencia_digital);
         echo $rspta ? "Registro actualizado correctamente" : "Registro no se pudo actualizar";
         break;
 
