@@ -39,7 +39,7 @@ if (!isset($_SESSION['nombre'])) {
                 <div class="col-8">
                     <div class="box-reporte-md container mt-1 ml-n2">
                         <h2 class="text-center title-formularios">Reporte de Cargos</h2>
-                        <table class="tabla-md table-striped table-bordered table-condensed table-hover" id="tbllistado">
+                        <table class="dataTable tabla-md table-striped table-bordered table-condensed table-hover" id="tbllistado">
                             <thead>
                                 <th>Id</th>
                                 <th>Cargo</th>
