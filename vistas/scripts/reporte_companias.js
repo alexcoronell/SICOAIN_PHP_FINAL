@@ -25,6 +25,11 @@ function listar() {
                 console.log(e.responseText);
             }
         },
+        "columnDefs": [{
+            "class": 'columnaId',
+            "width": '20px',
+            "targets": 0
+        }],
         "bDestroy": true,
         "iDisplayLength": 5, // Paginación
         "order": [
