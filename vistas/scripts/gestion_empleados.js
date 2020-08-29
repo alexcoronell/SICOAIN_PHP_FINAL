@@ -1,4 +1,5 @@
 var condicionActual;
+var pagina = $('#pagina').text();
 
 // Función que se ejecuta al inicio
 function init() {
@@ -106,26 +107,26 @@ function limpiar() {
     $('#comentarios').val("");
     $("#buscarId").val("");
 
-    $("#fo_tipo_identificacion").prop('disabled', true);
-    $("#nombres").prop('disabled', true);
-    $("#apellidos").prop('disabled', true);
-    $("#fo_departamento").prop('disabled', true);
-    $("#fo_ciudad").prop('disabled', true);
-    $("#direccion").prop('disabled', true);
-    $("#telefono_fijo").prop('disabled', true);
-    $("#telefono_celular").prop('disabled', true);
-    $("#email").prop('disabled', true);
-    $("#fo_compania").prop('disabled', true);
-    $("#fo_sede").prop('disabled', true);
-    $("#fo_cargo").prop('disabled', true);
-    $("#fo_eps").prop('disabled', true);
-    $("#fo_arl").prop('disabled', true);
-    $("#nombre_contacto_emergencia").prop('disabled', true);
-    $("#telefono_contacto_emergencia").prop('disabled', true);
-    $("#parentesco_contacto_emergencia").prop('disabled', true);
-    $("#comentarios").prop('disabled', true);
-
-
+    if (pagina == "Edición de Empleados") {
+        $("#fo_tipo_identificacion").prop('disabled', true);
+        $("#nombres").prop('disabled', true);
+        $("#apellidos").prop('disabled', true);
+        $("#fo_departamento").prop('disabled', true);
+        $("#fo_ciudad").prop('disabled', true);
+        $("#direccion").prop('disabled', true);
+        $("#telefono_fijo").prop('disabled', true);
+        $("#telefono_celular").prop('disabled', true);
+        $("#email").prop('disabled', true);
+        $("#fo_compania").prop('disabled', true);
+        $("#fo_sede").prop('disabled', true);
+        $("#fo_cargo").prop('disabled', true);
+        $("#fo_eps").prop('disabled', true);
+        $("#fo_arl").prop('disabled', true);
+        $("#nombre_contacto_emergencia").prop('disabled', true);
+        $("#telefono_contacto_emergencia").prop('disabled', true);
+        $("#parentesco_contacto_emergencia").prop('disabled', true);
+        $("#comentarios").prop('disabled', true);
+    }
 }
 
 

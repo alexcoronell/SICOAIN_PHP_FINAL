@@ -44,7 +44,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
                 <div class="col-8 ml-n2 pr-3">
                     <div class="box-formulario-empleados container mt-1 p-0">
-                        <h2 class="text-center title-formularios">Edición de Empleados</h2>
+                        <h2 class="text-center title-formularios" id="pagina" >Edición de Empleados</h2>
                         <form name="formulario" id="formulario" method="POST">
                             <input type="hidden" name="id" id="id">
                             <div class="row">
