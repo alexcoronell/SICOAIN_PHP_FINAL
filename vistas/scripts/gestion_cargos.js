@@ -1,10 +1,13 @@
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+
+    cargarCargos()
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -37,9 +40,13 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Cargo registrado correctamente" || datos == "Cargo actualizado correctamente") {
+                cargarCargos();
+                limpiar();
+            }
         }
     })
-    limpiar();
+
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -129,6 +136,14 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function cargarCargos() {
+    // Carga los cargos registrados en el sistema
+    $.post("../ajax/cargo.php?op=selectCargo", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();
