@@ -37,9 +37,9 @@ if (!isset($_SESSION['nombre'])) {
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar:</label>
                             <div class="col-8 searchbox">
-                            <select name="buscarUsuario" id="buscarUsuario" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                            <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
-                            </div>
+                                    <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
+                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                </div>
                         </div>
 
                         <!-- Formulario -->
