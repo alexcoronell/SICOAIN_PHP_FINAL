@@ -22,9 +22,9 @@ if (!isset($_SESSION['nombre'])) {
                         </div>
                         <nav>
                             <ul>
-                                        <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
-                                        <li><a href="edicion_sedes.php">Edición de Sedes</a></li>
-                                        <li><a href="act_desact_sedes.php" class="active">Act/Desact. de Sedes</a></li>
+                                <li><a href="creacion_sedes.php">Creación de Sedes</a></li>
+                                <li><a href="edicion_sedes.php">Edición de Sedes</a></li>
+                                <li><a href="act_desact_sedes.php" class="active">Act/Desact. de Sedes</a></li>
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
@@ -37,8 +37,8 @@ if (!isset($_SESSION['nombre'])) {
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar:</label>
                             <div class="col-8 searchbox">
-                                <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                             </div>
                         </div>
 

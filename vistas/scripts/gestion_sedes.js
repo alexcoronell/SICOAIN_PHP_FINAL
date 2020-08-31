@@ -1,6 +1,5 @@
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
@@ -11,6 +10,10 @@ function init() {
         $('#fo_compania').html(r);
         $('#fo_compania').selectpicker('refresh');
     })
+
+    cargaSedes();
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -47,6 +50,7 @@ function guardaryeditar(e) {
         success: function(datos) {
             bootbox.alert(datos);
             if (datos == "Sede registrada correctamente" || datos == "Sede actualizada correctamente") {
+                cargaSedes();
                 limpiar();
             }
         }
@@ -143,6 +147,14 @@ function MostrarDesactivar() {
     $('#button_default').hide();
     $('#button_activar').hide();
     $('#button_desactivar').show();
+}
+
+function cargaSedes() {
+    // Carga las sedes registrados en el sistema
+    $.post("../ajax/sedes.php?op=selectSede", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();
