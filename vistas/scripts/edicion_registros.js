@@ -22,6 +22,8 @@ function init() {
         editar(e);
     });
 
+    cargarRegistros();
+
     // Carga de opciones en el select Empleado
     $.post("../ajax/empleados.php?op=selectEmpleado", function(r) {
         $('#fo_empleado').html(r);
@@ -148,6 +150,14 @@ function habilitarFormulario() {
     $('#descripcion').prop('disabled', false);
     $('#evidencia_actual').prop('disabled', false);
     $('#evidencia_digital').prop('disabled', false);
+}
+
+function cargarRegistros() {
+    // Carga de opciones en el select Registro
+    $.post("../ajax/registros.php?op=selectRegistro", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();

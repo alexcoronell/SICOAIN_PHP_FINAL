@@ -85,4 +85,13 @@ switch ($_GET["op"]) {
         echo json_encode($results);
 
         break;
+
+        case "selectRegistro":
+            $rspta = $registro -> select();
+    
+            while ($reg = $rspta -> fetch_object())
+            {
+                echo '<option value=' . $reg -> id_registro . '>' . $reg -> id_registro . '</option>';
+            }
+        break;
 }

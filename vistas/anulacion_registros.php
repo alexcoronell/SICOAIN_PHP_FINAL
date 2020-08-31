@@ -41,17 +41,17 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 ml-n2 pr-3">
+                <div class="col-8 ml-n2 pl-0 pr-3">
                     <div class="box-formulario formulario-registros container mt-1 p-0 row w-100">
                         <h2 class="text-center title-formularios">Anulación de Registros</h2>
 
-                        <div class="col-12 container">
+                        <div class="col-12 container row">
                             <!-- Búsqueda -->
                             <div class="form-group row mb-0 mt-2 col-6">
                                 <label for="rol" class="col-4">Buscar:</label>
                                 <div class="col-8 searchbox">
-                                    <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Registro">
-                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
+                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                                 </div>
                             </div>
                             <!-- Inicia Formulario -->
@@ -98,7 +98,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-12">
                                     <div class="form-group row">
                                         <div class="offset-4 col-4">
-                                            <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                                            <button type="submit" class="btn btn-primary" id="btnGuardar">Anular</button>
                                         </div>
                                         <div class="col-4">
                                             <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>

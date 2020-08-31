@@ -63,6 +63,13 @@ class Registros
         INNER JOIN suceso s ON r.fo_suceso = s.id";
         return ejecutarConsulta($sql); 
     }
+
+    public function select() {
+        $sql = "SELECT id_registro
+        FROM registros
+        WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

@@ -1,7 +1,7 @@
 // Función que se ejecuta al inicio
 function init() {
 
-    limpiar();
+    cargarRegistros();
 
     $("#formulario").on("submit", function(e) {
         anular(e);
@@ -23,6 +23,8 @@ function init() {
         $('#fo_suceso').html(r);
         $('#fo_suceso').selectpicker('refresh');
     })
+
+    limpiar();
 
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
@@ -66,6 +68,7 @@ function anular(e) {
                 success: function(datos) {
                     bootbox.alert(datos);
                     if (datos == "Registro anulado") {
+                        cargarRegistros();
                         limpiar();
                     }
                 }
@@ -110,6 +113,14 @@ function mostrarNombres(numero_identificacion) {
 
         let nombreCompleto = data.nombres + " " + data.apellidos;
         $("#nombresApellidos").val(nombreCompleto);
+    })
+}
+
+function cargarRegistros() {
+    // Carga de opciones en el select Registro
+    $.post("../ajax/registros.php?op=selectRegistro", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
     })
 }
 
