@@ -2,11 +2,13 @@ var condicionActual;
 
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+    cargarARL();
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -41,9 +43,12 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "ARL registrada correctamente" || datos == "ARL actualizada correctamente") {
+                cargarARL();
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -68,7 +73,7 @@ function mostrarAct(id) {
     }, function(data, status) {
         data = JSON.parse(data);
         $("#id").val(data.id);
-        $('#nombre').val(data.nombre_arl);
+        $('#nombre_arl').val(data.nombre_arl);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
@@ -136,6 +141,14 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function cargarARL() {
+    // Carga de opciones en el select ARL
+    $.post("../ajax/arl.php?op=selectARL", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();
