@@ -1,10 +1,13 @@
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+
+    cargarCompanias();
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -38,9 +41,12 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Compañía registrada correctamente" || datos == "Compañía actualizada correctamente") {
+                limpiar();
+                cargarCompanias();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -118,8 +124,6 @@ function MostrarDefault() {
     limpiar();
 }
 
-init();
-
 // Función para mostrar boton de activar y ocultar los otros
 function MostrarActivar() {
     $('#button_default').hide();
@@ -132,6 +136,14 @@ function MostrarDesactivar() {
     $('#button_default').hide();
     $('#button_activar').hide();
     $('#button_desactivar').show();
+}
+
+function cargarCompanias() {
+    // Carga las compañías registrados en el sistema
+    $.post("../ajax/companias.php?op=selectCompania", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();

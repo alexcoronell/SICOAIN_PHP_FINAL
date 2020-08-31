@@ -35,13 +35,17 @@ if (!isset($_SESSION['nombre'])) {
                 <div class="col-7">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Compañías</h2>
+                        
+                        <!-- Búsqueda de compañía -->
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar:</label>
                             <div class="col-8 searchbox">
-                                <input type="search" class="form-control" name="buscarId" id="buscarId">
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true"></select>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                             </div>
                         </div>
+
+                        <!-- Formulario -->
                         <form name="formulario" id="formulario" method="POST">
                             <div class="form-group row">
                                 <label for="compania" class="col-4">Compañía:</label>
