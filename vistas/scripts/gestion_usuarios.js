@@ -1,11 +1,7 @@
 // Función que se ejecuta al inicio
 function init() {
 
-    // Carga los usuarios registrados en el sistema
-    $.post("../ajax/usuarios.php?op=selectUsuario", function(r) {
-        $('#buscarId').html(r);
-        $('#buscarId').selectpicker('refresh');
-    })
+    cargarUsuarios()
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
@@ -125,6 +121,10 @@ function desactivar() {
                 id: id
             }, function(e) {
                 bootbox.alert(e);
+                if (datos == "Usuario registrado correctamente" || datos == "Usuario actualizado correctamente") {
+                    cargarUsuarios();
+                    limpiar();
+                }
             })
         }
     })
@@ -150,6 +150,14 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function cargarUsuarios() {
+    // Carga los usuarios registrados en el sistema
+    $.post("../ajax/usuarios.php?op=selectUsuario", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();
