@@ -1,10 +1,13 @@
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+
+    cargarSucesos();
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -36,9 +39,12 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "Suceso registrado correctamente" || datos == "Suceso actualizado correctamente") {
+                cargarSucesos();
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -129,6 +135,14 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function cargarSucesos() {
+    // Carga de opciones en el select Empleado
+    $.post("../ajax/sucesos.php?op=selectSuceso", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();
