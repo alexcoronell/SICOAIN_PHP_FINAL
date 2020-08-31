@@ -1,10 +1,17 @@
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+
+    // Carga los usuarios registrados en el sistema
+    $.post("../ajax/usuarios.php?op=selectUsuario", function(r) {
+        $('#buscarUsuario').html(r);
+        $('#buscarUsuario').selectpicker('refresh');
+    })
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     });
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -75,6 +82,7 @@ function mostrarAct(id) {
         data = JSON.parse(data);
         $("#id").val(data.id);
         $('#usuario').val(data.usuario);
+        $('#nombre').val(data.nombre);
         $('#condicion').val(data.condicion);
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
@@ -82,15 +90,15 @@ function mostrarAct(id) {
 
 // Función para buscar en el formulario de edición de EPS
 function buscar() {
-    id_Buscar = $("#buscarId").val();
-    mostrar(id_Buscar);
-    $('#buscarId').val("");
+    let id = $("#buscarUsuario").val();
+    mostrar(id);
+    $('#buscarUsuario').val("");
 }
 
 // Función para buscar en el formulario de Activación o desactivación de EPS
 function buscarAct() {
-    idBuscar = $("#buscarId").val();
-    mostrarAct(idBuscar);
+    buscarUsuario = $("#buscarUsuario").val();
+    mostrarAct(buscarUsuario);
 }
 
 // Función para activar Usuarios

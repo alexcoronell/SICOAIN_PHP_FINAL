@@ -66,6 +66,13 @@ class Usuarios
         WHERE usuario = '$usuario' AND contrasena = '$contrasena' AND condicion = '1'";
         return ejecutarConsulta($sql);
     }
+
+    public function mostrarUsuarios()
+    {
+        $sql = "SELECT id, usuario
+        FROM usuarios";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

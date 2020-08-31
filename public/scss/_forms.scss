@@ -113,8 +113,14 @@ box-formulario-empleados {
 }
 
 .searchbox {
+
     input {
         width: 85%;
+        float: left;
+    }
+
+    .selectSearch {
+        width: 73% !important;
         float: left;
     }
 

@@ -100,4 +100,12 @@ switch ($_GET["op"]) {
         // Se redirecciona al login
         header("location: ../index.php");
         break;
+
+        case "selectUsuario":
+            $rspta = $usuarios->mostrarUsuarios();
+    
+            while ($reg = $rspta->fetch_object()) {
+                echo '<option value=' . $reg->id . '>' . $reg->usuario . '</option>';
+            }
+            break;
 }

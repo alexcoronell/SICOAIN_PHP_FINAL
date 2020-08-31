@@ -319,6 +319,10 @@ box-formulario-empleados {
   width: 85%;
   float: left;
 }
+.searchbox .selectSearch {
+  width: 73% !important;
+  float: left;
+}
 .searchbox button {
   width: 12%;
   float: right;
