@@ -14,7 +14,7 @@ class Eps
     }
 
     // Método para insertar registros
-    public function insertar($nombre, $telefono, $direccion, $email) 
+    public function insertar($nombre_eps, $telefono, $email, $direccion) 
     {
         $sql = "INSERT INTO eps (nombre_eps, telefono, direccion, email, condicion)
         VALUES ('$nombre_eps', '$telefono', '$direccion', '$email', '1')";
@@ -22,7 +22,7 @@ class Eps
     }
 
     // Método para editar registros
-    public function editar($id, $nombre_eps, $telefono, $direccion, $email)
+    public function editar($id, $nombre_eps, $telefono, $email, $direccion)
     {
         $sql = "UPDATE eps SET nombre_eps = '$nombre_eps', telefono = '$telefono', direccion = '$direccion', email = '$email'
         WHERE id = '$id'";
@@ -66,5 +66,3 @@ class Eps
         return ejecutarConsulta($sql);
     }
 }
-
-?>

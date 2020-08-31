@@ -2,11 +2,14 @@ var condicionActual;
 
 // Función que se ejecuta al inicio
 function init() {
-    limpiar();
+
+    cargarEPS();
 
     $("#formulario").on("submit", function(e) {
         guardaryeditar(e);
     })
+
+    limpiar();
 }
 
 // Función para limpiar el formulario
@@ -41,9 +44,12 @@ function guardaryeditar(e) {
 
         success: function(datos) {
             bootbox.alert(datos);
+            if (datos == "EPS registrada correctamente" || datos == "EPS actualizada correctamente") {
+                cargarEPS();
+                limpiar();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
@@ -136,6 +142,14 @@ function MostrarDefault() {
     $('#button_activar').hide();
     $('#button_desactivar').hide();
     limpiar();
+}
+
+function cargarEPS() {
+    // Carga de opciones en el select EPS
+    $.post("../ajax/eps.php?op=selectEPS", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
 }
 
 init();

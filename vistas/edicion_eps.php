@@ -38,9 +38,10 @@ if (!isset($_SESSION['nombre'])) {
                         <div class="form-group row">
                             <label for="rol" class="col-4">Buscar EPS: *</label>
                             <div class="col-8 searchbox">
-                                <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Nro. de Rol">
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                             </div>
+
                         </div>
 
                         <!-- Formulario -->
@@ -49,7 +50,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <label for="nombre_eps" class="col-4">Nombre:</label>
                                 <div class="col-8">
                                     <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="nombre_eps" id="nombre_eps" maxlength="30">
+                                    <input type="text" class="form-control" name="nombre_eps" id="nombre_eps" maxlength="30" required>
                                 </div>
                             </div>
 
@@ -57,22 +58,21 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="telefono" class="col-4">Teléfono:</label>
                                 <div class="col-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="telefono" id="telefono">
+                                    <input type="text" class="form-control" name="telefono" id="telefono" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="email" class="col-4">email:</label>
                                 <div class="col-8">
-                                    <input type="email" class="form-control" name="email" id="email">
+                                    <input type="email" class="form-control" name="email" id="email" required>
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <label for="direccion" class="col-4">Dirección:</label>
                                 <div class="col-8">
-                                    <textarea name="direccion" id="direccion" maxlength="256" class="form-control"></textarea>
+                                    <textarea name="direccion" id="direccion" maxlength="256" class="form-control" required></textarea>
                                 </div>
                             </div>
 
