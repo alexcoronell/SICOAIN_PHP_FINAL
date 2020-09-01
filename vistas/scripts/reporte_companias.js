@@ -9,14 +9,30 @@ function init() {
 function listar() {
     tabla = $('#tbllistado').dataTable({
         language: {
-            url: '../public/datatables/Spanish.json'
+            url: '../public/DataTables/Spanish.json',
+            buttons: {
+                copyTitle: 'Copiado al portapapeles',
+                copyKeys: 'Use your keyboard or menu to select the copy command',
+                copySuccess: {
+                    1: "Copiada una fila al portapapeles",
+                    _: "Copiadas %d filas al portapapeles"
+                }
+            }
         },
         "aProcessing": true, // Activación del procesamiento del datatables
         "aServerSide": true, // Paginación y filtrado realizado por el servidor
         dom: 'Bfrtip', // Se definen los elementos de contcargo de la tabla
-        buttons: [
-            'pdf'
-        ],
+        buttons: ['colvis', 'copy', 'excel', {
+            extend: 'pdf',
+            orientation: 'portrait',
+            pageSize: 'LETTER',
+            download: 'open',
+            title: 'Reporte de Compañías',
+            exportOptions: {
+                columns: ':visible'
+            },
+            alignment: 'center'
+        }, ],
         "ajax": {
             url: '../ajax/companias.php?op=listar',
             type: "get",
@@ -31,7 +47,7 @@ function listar() {
             "targets": 0
         }],
         "bDestroy": true,
-        "iDisplayLength": 5, // Paginación
+        "iDisplayLength": 8, // Paginación
         "order": [
             [0, "desc"]
         ] // Ordenación (Columna, Orden)
