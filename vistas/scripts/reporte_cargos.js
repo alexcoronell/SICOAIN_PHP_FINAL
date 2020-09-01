@@ -26,14 +26,30 @@ function cancelarFormulario() {
 function listar() {
     tabla = $('#tbllistado').dataTable({
         language: {
-            url: '../public/datatables/Spanish.json'
+            url: '../public/DataTables/Spanish.json',
+            buttons: {
+                copyTitle: 'Copiado al portapapeles',
+                copyKeys: 'Use your keyboard or menu to select the copy command',
+                copySuccess: {
+                    1: "Copiada una fila al portapapeles",
+                    _: "Copiadas %d filas al portapapeles"
+                }
+            }
         },
         "aProcessing": true, // Activación del procesamiento del datatables
         "aServerSide": true, // Paginación y filtrado realizado por el servidor
         dom: 'Bfrtip', // Se definen los elementos de contcargo de la tabla
-        buttons: [
-            'pdf'
-        ],
+        buttons: ['colvis', 'copy', 'excel', {
+            extend: 'pdf',
+            orientation: 'portrait',
+            pageSize: 'LETTER',
+            download: 'open',
+            title: 'Reporte de Cargos',
+            exportOptions: {
+                columns: ':visible'
+            },
+            alignment: 'center'
+        }, ],
         "ajax": {
             url: '../ajax/cargo.php?op=listar',
             type: "get",
@@ -47,6 +63,10 @@ function listar() {
             "width": '20px',
             "targets": 0
         }],
+        keys: true,
+        select: true,
+        colReorder: true,
+        rowReorder: true,
         "bDestroy": true,
         "iDisplayLength": 5, // Paginación
         "order": [
