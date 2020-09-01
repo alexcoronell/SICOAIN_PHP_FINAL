@@ -14,13 +14,15 @@ $asistente = isset($_POST["asistente"]) ? limpiarCadena($_POST["asistente"]) : "
 $consultas = isset($_POST["consultas"]) ? limpiarCadena($_POST["consultas"]) : "";
 $contrasena = isset($_POST["contrasena"]) ? limpiarCadena($_POST["contrasena"]) : "";
 
+$contrasenaHash = hash("SHA256", $contrasena);
+
 switch ($_GET["op"]) {
     case 'guardaryeditar':
         if (empty($id)) {
-            $rspta = $usuarios->insertar($usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasena);
+            $rspta = $usuarios->insertar($usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasenaHash);
             echo $rspta ? "Usuario registrado correctamente" : "Usuario no se pudo registrar";
         } else {
-            $rspta = $usuarios->editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasena);
+            $rspta = $usuarios->editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasenaHash);
             echo $rspta ? "Usuario actualizado correctamente" : "Usuario no se pudo actualizar";
         }
         break;
@@ -73,7 +75,7 @@ switch ($_GET["op"]) {
         $usuario = $_POST['usuario'];
         $contrasena = $_POST['contrasena'];
 
-        $rspta = $usuarios->verificar($usuario, $contrasena);
+        $rspta = $usuarios->verificar($usuario, $contrasenaHash);
 
         $fetch = $rspta->fetch_object();
 

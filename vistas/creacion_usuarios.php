@@ -42,7 +42,7 @@ if (!isset($_SESSION['nombre'])) {
                             <label for="usuario" class="col-4">usuario:</label>
                             <div class="col-8">
                                 <input type="hidden" name="id" id="id">
-                                <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
+                                <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off" required>
                             </div>
                         </div>
 
@@ -85,7 +85,7 @@ if (!isset($_SESSION['nombre'])) {
                         <div class="form-group row">
                             <label for="contrasena" class="col-4">Contraseña: *</label>
                             <div class="col-8">
-                                <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
+                                <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off" required>
                             </div>
                         </div>
 
