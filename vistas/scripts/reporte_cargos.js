@@ -68,7 +68,7 @@ function listar() {
         colReorder: true,
         rowReorder: true,
         "bDestroy": true,
-        "iDisplayLength": 5, // Paginación
+        "iDisplayLength": 8, // Paginación
         "order": [
             [0, "desc"]
         ] // Ordenación (Columna, Orden)
