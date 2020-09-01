@@ -9,25 +9,12 @@ function init() {
 function listar() {
     tabla = $('#tbllistado').dataTable({
         language: {
-            url: '../public/DataTables/Spanish.json'
+            url: '../public/datatables/Spanish.json'
         },
         "aProcessing": true, // Activación del procesamiento del datatables
         "aServerSide": true, // Paginación y filtrado realizado por el servidor
         dom: 'Bfrtip', // Se definen los elementos de contcargo de la tabla
-        buttons: [
-            'copy', 'excel', {
-                extend: 'pdf',
-                orientation: 'portrait',
-                pageSize: 'LETTER',
-                download: 'open',
-                title: 'Reporte de Usuarios',
-                exportOptions: {
-                    columns: ':visible'
-                },
-                alignment: 'center'
-            },
-            'colvis'
-        ],
+        dom: '<"clear">',
         "ajax": {
             url: '../ajax/usuarios.php?op=listar',
             type: "get",
@@ -36,12 +23,8 @@ function listar() {
                 console.log(e.responseText);
             }
         },
-        keys: true,
         select: true,
-        colReorder: true,
-        rowReorder: true,
         "bDestroy": true,
-        "iDisplayLength": 10, // Paginación
         "order": [
             [0, "desc"]
         ] // Ordenación (Columna, Orden)
