@@ -67,8 +67,6 @@ if (!isset($_SESSION['nombre'])) {
 
                             </table>
                         </div>
-                        <button type="button" class="btn btn-light mt-2">Generar PDF</button>
-                        <button type="button" class="btn btn-light float-right mt-2">Imprimir</button>
                     </div>
                 </div>
             </div>

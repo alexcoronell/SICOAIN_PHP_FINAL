@@ -10,6 +10,8 @@
 <script src="../public/DataTables/js/datatables.min.js"></script>
 <script src="../public/DataTables/js/dataTables.buttons.min.js"></script>
 <script src="../public/DataTables/js/buttons.bootstrap4.min.js"></script>
+<script src="../public/DataTables/js/buttons.colVis.min.js"></script>
+<script src="../public/DataTables/js/buttons.print.js"></script>
 <script src="../public/DataTables/js/dataTables.select.min.js"></script>
 <script src="../public/DataTables/js/dataTables.fixedColumns.min.js"></script>
 <script src="../public/DataTables/js/colReorder.dataTables.js"></script>
