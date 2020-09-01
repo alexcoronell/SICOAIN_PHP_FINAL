@@ -9,13 +9,21 @@ function init() {
 function listar() {
     tabla = $('#tbllistado').dataTable({
         language: {
-            url: '../public/DataTables/Spanish.json'
+            url: '../public/DataTables/Spanish.json',
+            buttons: {
+                copyTitle: 'Copiado al portapapeles',
+                copyKeys: 'Use your keyboard or menu to select the copy command',
+                copySuccess: {
+                    1: "Copiada una fila al portapapeles",
+                    _: "Copiadas %d filas al portapapeles"
+                }
+            }
         },
         "aProcessing": true, // Activación del procesamiento del datatables
         "aServerSide": true, // Paginación y filtrado realizado por el servidor
         dom: 'Bfrtip', // Se definen los elementos de contcargo de la tabla
         buttons: [
-            'copy', 'excel', {
+            'colvis', 'copy', 'excel', {
                 extend: 'pdf',
                 orientation: 'portrait',
                 pageSize: 'LETTER',
@@ -26,7 +34,6 @@ function listar() {
                 },
                 alignment: 'center'
             },
-            'colvis'
         ],
         "ajax": {
             url: '../ajax/usuarios.php?op=listar',

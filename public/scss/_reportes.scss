@@ -77,3 +77,16 @@ table.dataTable {
         box-shadow: inset 0 0 1px 2px $secondarycolor;
     }
 }
+
+.dt-button {
+    span {
+        font-size: 0.7rem !important;
+        font-weight: normal;
+    }
+
+    i {
+        font-size: 1.2rem !important;
+        margin-left: .2rem;
+        margin-right: .2rem;
+    }
+}
