@@ -92,6 +92,16 @@ table.dataTable {
     .registroDesactivado {
         background-color: red !important;
     }
+
+    i.permisoAsignado {
+        color: $secondarycolor;
+    }
+
+    .permisoAsignado {
+        font-size: 0.7rem !important;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
+    }
 }
 
 .dt-button {

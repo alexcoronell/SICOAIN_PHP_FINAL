@@ -53,12 +53,12 @@ switch ($_GET["op"]) {
                 "0" => $reg->id,
                 "1" => $reg->usuario,
                 "2" => $reg->nombre,
-                "3" => $reg->superusuario,
-                "4" => $reg->administrador,
-                "5" => $reg->analista,
-                "6" => $reg->asistente,
-                "7" => $reg->consultas,
-                "8" => ($reg -> condicion) ? '<span class=registroActivado>Activado</span' : '<span class="registroDesactivado">Desactivado</span>'
+                "3" => ($reg->superusuario) ? '<i class="fa fa-check-circle-o permisoAsignado" aria-hidden="true"></i><span class="permisoAsignado">Asignado</span>' : '<span></span>',
+                "4" => ($reg->administrador) ? '<i class="fa fa-check-circle-o permisoAsignado" aria-hidden="true"></i><span class="permisoAsignado">Asignado</span>' : '<span></span>',
+                "5" => ($reg->analista) ? '<i class="fa fa-check-circle-o permisoAsignado" aria-hidden="true"></i><span class="permisoAsignado">Asignado</span>' : '<span></span>',
+                "6" => ($reg->asistente) ? '<i class="fa fa-check-circle-o permisoAsignado" aria-hidden="true"></i><span class="permisoAsignado">Asignado</span>' : '<span></span>',
+                "7" => ($reg->consultas) ? '<i class="fa fa-check-circle-o permisoAsignado" aria-hidden="true"></i><span class="permisoAsignado">Asignado</span>' : '<span></span>',
+                "8" => ($reg -> condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Desactivado</span>'
             );
         }
         $results = array(

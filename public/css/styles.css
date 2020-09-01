@@ -439,6 +439,14 @@ table.dataTable .columnaId {
 #tbllistado .registroDesactivado {
   background-color: red !important;
 }
+#tbllistado i.permisoAsignado {
+  color: #004d40;
+}
+#tbllistado .permisoAsignado {
+  font-size: 0.7rem !important;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
 
 .dt-button span {
   font-size: 0.7rem !important;
