@@ -80,7 +80,7 @@ switch ($_GET["op"]) {
                 "17" => $reg->telefono_contacto_emergencia,
                 "18" => $reg->parentesco_contacto_emergencia,
                 "19" => $reg->comentarios,
-                "20" => ($reg -> condicion) ? '<span class=registroActivado>Activado</span' : '<span class="registroDesactivado">Desactivado</span>'
+                "20" => ($reg -> condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Desactivado</span>'
             );
         }
         $results = array(

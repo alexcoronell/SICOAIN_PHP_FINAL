@@ -73,7 +73,7 @@ switch ($_GET["op"]) {
                 "7" => $reg->descripcion,
                 "8" => $reg->evidencia_digital,
                 "9" => $reg->motivo_anulacion,
-                "10" => ($reg -> condicion) ? '<span class=registroActivado>Activado</span' : '<span class="registroDesactivado">Anulado</span>'
+                "10" => ($reg -> condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
             );
         }
         $results = array(
