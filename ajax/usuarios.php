@@ -58,7 +58,7 @@ switch ($_GET["op"]) {
                 "5" => $reg->analista,
                 "6" => $reg->asistente,
                 "7" => $reg->consultas,
-                "8" => $reg->condicion
+                "8" => ($reg -> condicion) ? '<span class=registroActivado>Activado</span' : '<span class="registroDesactivado">Desactivado</span>'
             );
         }
         $results = array(

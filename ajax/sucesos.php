@@ -47,7 +47,7 @@ switch ($_GET["op"])
             $data[] = array(
                 "0" => $reg -> id,
                 "1" => $reg -> nombre, 
-                "2" => $reg -> condicion
+                "2" => ($reg -> condicion) ? '<span class=registroActivado>Activado</span' : '<span class="registroDesactivado">Desactivado</span>'
             );
         }
         $results = array (
