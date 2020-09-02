@@ -87,3 +87,42 @@ h6 {
 .oculto {
     display: none !important;
 }
+
+@media (max-width: 575px) {
+    .logo-principal {
+        display: none !important;
+
+        img {
+            display: none !important;
+        }
+    }
+
+    .mainBackground2 {
+        opacity: 0.2 !important;
+    }
+}
+
+@media (min-width:576px) and (max-width: 767px) {
+    .logo-principal {
+        display: block;
+
+        img {
+            width: 34%;
+            right: 30px;
+        }
+    }
+
+    .mainBackground {
+        height: auto;
+        width: 90%;
+    }
+}
+
+@media (min-width:768px) and (max-width: 880px) {
+    .logo-principal {
+        img {
+            width: 350px !important;
+            left: 360px;
+        }
+    }
+}

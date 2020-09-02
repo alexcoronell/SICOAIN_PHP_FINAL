@@ -34,3 +34,17 @@
     }
 
 }
+
+@media (max-width: 575px) {
+    .title-page {
+        .logo-box {
+            img {
+                width: 120px !important;
+            }
+        }
+
+        p {
+            margin-top: 3rem;
+        }
+    }
+}

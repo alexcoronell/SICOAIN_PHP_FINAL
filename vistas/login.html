@@ -24,7 +24,7 @@
 <body>
     <div class="main-box login-page">
         <div class="title-page-login">
-            <div class="container text-center">
+            <div class="container-fluid text-center">
                 <h1 class="textoSecondaryColor">SICOAIN - Sistema de Control de Accidentes e Incidentes</h1>
             </div>
         </div>
@@ -37,8 +37,8 @@
             </div>
             <form method="POST" id="formularioAcceso" autocomplete="off">
                 <div class="form-inputs">
-                    <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off">
-                    <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" autocomplete="off">
+                    <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off" required>
+                    <input type="password" class="form-control" name="contrasena" id="contrasena" placeholder="Contraseña" autocomplete="off" required>
                     <button type="submit" id="acceder" class="btn btn-primary">Acceder</button>
                     <button type="button" id="salir" class="btn btn-light">Salir</button>
                 </div>

@@ -13,7 +13,7 @@ if (!isset($_SESSION['nombre'])) {
 
     <div class="main-content container-fluid">
         <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-sm-4">
                 <div class="menu-box">
                     <div class="title-menu">
                         <h2>Menú Principal</h2>
@@ -30,10 +30,10 @@ if (!isset($_SESSION['nombre'])) {
                             <li><a href="menu_reportes.php">Reportes</a></li>
                         </ul>
                     </nav>
-                    <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión</a></button>
+                    <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión<i class="fa fa-sign-out ml-1" aria-hidden="true"></i></a></button>
                 </div>
             </div>
-            <div class="col-8 p-5">
+            <div class="col-sm-8 p-sm-5 logo-principal">
                 <img src="../public/images/logo1.png" class="positionFixed">
             </div>
         </div>

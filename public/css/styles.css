@@ -85,6 +85,38 @@ h6 {
   display: none !important;
 }
 
+@media (max-width: 575px) {
+  .logo-principal {
+    display: none !important;
+  }
+  .logo-principal img {
+    display: none !important;
+  }
+
+  .mainBackground2 {
+    opacity: 0.2 !important;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .logo-principal {
+    display: block;
+  }
+  .logo-principal img {
+    width: 34%;
+    right: 30px;
+  }
+
+  .mainBackground {
+    height: auto;
+    width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 880px) {
+  .logo-principal img {
+    width: 350px !important;
+    left: 360px;
+  }
+}
 .title-page-login {
   border-bottom: 3px double #42b983;
   padding: 0.7rem;
@@ -116,6 +148,14 @@ h6 {
   font-size: 0.7rem;
 }
 
+@media (max-width: 575px) {
+  .title-page .logo-box img {
+    width: 120px !important;
+  }
+  .title-page p {
+    margin-top: 3rem;
+  }
+}
 .logo-loginpage {
   position: absolute;
   padding: 0.7rem;
@@ -126,21 +166,55 @@ h6 {
 
 .login-box {
   border: 2px solid #004d40;
-  width: 40%;
+  width: 500px;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 180px;
 }
-
-.title-login {
+.login-box .title-login {
   background-color: #42b983;
   border-bottom: 2px solid #004d40;
 }
-
-.title-login > h2 {
+.login-box .title-login > h2 {
   margin: 0 1em;
   line-height: 2em;
 }
 
+@media (max-width: 575px) {
+  .login-box {
+    width: 320px !important;
+  }
+}
+@media (max-width: 767px) {
+  .logo-loginpage {
+    left: 0px;
+  }
+  .logo-loginpage img {
+    width: 200px;
+  }
+
+  .login-box {
+    margin-top: 150px;
+    width: 400px;
+  }
+  .login-box .form-inputs {
+    width: 85% !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .logo-loginpage img {
+    width: 250px;
+  }
+
+  .login-box {
+    margin-top: 180px;
+    width: 450px;
+  }
+}
+@media (min-width: 1200px) {
+  .login-box {
+    margin-top: 120px;
+  }
+}
 ul > li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -211,6 +285,30 @@ ul {
   padding-right: 2.2em;
 }
 
+@media (max-width: 575px) {
+  .menu-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-box nav {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-box nav ul {
+    padding-left: 1.5rem;
+  }
+  .menu-box nav ul a {
+    font-weight: bold;
+  }
+  .menu-box .salir-menu {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-box .salir-menu span {
+    display: none !important;
+  }
+}
 .box-formulario {
   width: 450px;
 }
