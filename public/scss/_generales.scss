@@ -97,6 +97,10 @@ h6 {
         }
     }
 
+    .titleBig {
+        display: none;
+    }
+
     .mainBackground2 {
         opacity: 0.2 !important;
     }
@@ -112,6 +116,13 @@ h6 {
         }
     }
 
+    .titleBig {
+        h1 {
+            font-size: 2rem !important;
+            left: 350px
+        }
+    }
+
     .mainBackground {
         height: auto;
         width: 90%;
@@ -123,6 +134,15 @@ h6 {
         img {
             width: 350px !important;
             left: 360px;
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width: 991px) {
+    .titleBig {
+        h1 {
+            font-size: 3rem !important;
+            left: 350px
         }
     }
 }

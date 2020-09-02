@@ -38,10 +38,10 @@ if (!isset($_SESSION['nombre'])) {
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 pt-5 pl-0 ml-0">
+                <div class="col-8 pt-5 pl-0 ml-0 titleBig">
                     <h1 class="textoMainColor positionFixed display-4">Administración de Incidentes y Sucesos</h1>
                 </div>
             </div>
