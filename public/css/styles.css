@@ -422,6 +422,10 @@ table.dataTable .columnaId {
 
 #tbllistado .selected {
   background-color: #42b983 !important;
+  color: white;
+}
+#tbllistado .selected .enlaceEvidencia {
+  color: white;
 }
 #tbllistado .focus {
   box-shadow: inset 0 0 1px 2px #004d40;
@@ -446,6 +450,14 @@ table.dataTable .columnaId {
   font-size: 0.7rem !important;
   padding-left: 0.2rem;
   padding-right: 0.2rem;
+}
+#tbllistado .enlaceEvidencia,
+#tbllistado .sinEvidencia {
+  font-size: 0.7rem !important;
+}
+#tbllistado .enlaceEvidencia {
+  text-decoration: none;
+  color: #42b983;
 }
 
 .dt-button span {

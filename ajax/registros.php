@@ -38,7 +38,7 @@ switch ($_GET["op"]) {
             $ext = explode('.', $_FILES['evidencia_digital']['name']);
             if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
                 $evidencia_digital = round(microtime(true)) . '.' . end($ext);
-                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias' . $evidencia_digital);
+                move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias/' . $evidencia_digital);
             }
         }
         $rspta = $registro->editar($id_registro, $fo_empleado, $fo_suceso, $fecha_incidente, $descripcion, $evidencia_digital);
@@ -71,7 +71,7 @@ switch ($_GET["op"]) {
                 "5" => $reg->fecha_registro,
                 "6" => $reg->fecha_incidente,
                 "7" => $reg->descripcion,
-                "8" => $reg->evidencia_digital,
+                "8" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/'.$reg->evidencia_digital.'" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
                 "9" => $reg->motivo_anulacion,
                 "10" => ($reg -> condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
             );

@@ -71,6 +71,11 @@ table.dataTable {
 #tbllistado {
     .selected {
         background-color: $maincolor !important;
+        color: white;
+
+        .enlaceEvidencia {
+            color: white;
+        }
     }
 
     .focus {
@@ -101,6 +106,16 @@ table.dataTable {
         font-size: 0.7rem !important;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
+    }
+
+    .enlaceEvidencia,
+    .sinEvidencia {
+        font-size: 0.7rem !important;
+    }
+
+    .enlaceEvidencia {
+        text-decoration: none;
+        color: $maincolor;
     }
 }
 
