@@ -220,7 +220,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <!-- Botones de formulario -->
                                 <div class="col-12">
                                     <div class="form-group row">
-                                        <div class="col-6 offset-md-4 col-md-4 guardart">
+                                        <div class="col-6 offset-md-4 col-md-4 guardar">
                                             <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                         </div>
                                         <div class="col-6 col-md-4 cancelar text-right text-md-left">
