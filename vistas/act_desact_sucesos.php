@@ -72,7 +72,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
                                 <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
                             </div>
-                            <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                            <div class="col-6 col-md-4 cancelar text-right">
                                 <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
                             </div>
                         </div>

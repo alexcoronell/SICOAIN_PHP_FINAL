@@ -68,7 +68,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                <div class="col-6 col-md-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                 </div>
                             </div>
