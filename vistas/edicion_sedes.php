@@ -15,8 +15,8 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-4">
-                    <div class="menu-box">
+                <div class="col-12 col-md-4">
+                    <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Sedes</h2>
                         </div>
@@ -30,13 +30,13 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8">
+                <div class="col-12 col-md-8">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Sedes</h2>
                         <!-- Busqueda -->
                         <div class="form-group row">
-                            <label for="buscarId" class="col-4">Buscar:</label>
-                            <div class="col-8 searchbox">
+                            <label for="buscarId" class="col-12 col-md-4">Buscar:</label>
+                            <div class="col-12 col-md-8 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
                                 <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                             </div>
@@ -48,8 +48,8 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Compañía -->
                             <div class="form-group row">
-                                <label for="fo_compania" class="col-4">Compañía:</label>
-                                <div class="col-8">
+                                <label for="fo_compania" class="col-12 col-md-4">Compañía:</label>
+                                <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
                                 </div>
@@ -57,32 +57,32 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-4">Nombre:*</label>
-                                <div class="col-8">
+                                <label for="nombre" class="col-12 col-md-4">Nombre:*</label>
+                                <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="nombre" id="nombre">
                                 </div>
                             </div>
 
                             <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono" class="col-4">Teléfono:*</label>
-                                <div class="col-8">
+                                <label for="telefono" class="col-12 col-md-4">Teléfono:*</label>
+                                <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono" id="telefono">
                                 </div>
                             </div>
 
                             <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion" class="col-4">Dirección:</label>
-                                <div class="col-8">
+                                <label for="direccion" class="col-12 col-md-4">Dirección:</label>
+                                <div class="col-12 col-md-8">
                                     <textarea name="direccion" id="direccion" maxlength="256" class="form-control"></textarea>
                                 </div>
                             </div>
 
                             <!-- Notas -->
                             <div class="form-group row">
-                                <label for="notas" class="col-4">Notas:</label>
-                                <div class="col-8">
+                                <label for="notas" class="col-12 col-md-4">Notas:</label>
+                                <div class="col-12 col-md-8">
                                     <textarea name="notas" id="notas" maxlength="256" class="form-control"></textarea>
                                 </div>
                             </div>
@@ -90,21 +90,26 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Botones de formulario -->
                             <div class="form-group row">
-                                <div class="offset-4 col-4">
+                                <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                 </div>
                             </div>
 
                         </form>
+
+                        <!-- Boton regresar en vista mobile -->
+                        <div class="boton-mobile-regresar col-12 row mb-2">
+                            <button class="btn btn-light px-5"><a href="sedes.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-
+        <div class="posicionador-bottom"></div>
     <?php
     } else {
         require 'noacceso.php';
