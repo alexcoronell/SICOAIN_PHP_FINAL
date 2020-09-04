@@ -457,6 +457,11 @@ box-formulario-empleados {
   display: none;
 }
 
+.anular {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
 @media (max-width: 575px) {
   .box-formulario {
     max-width: 320px !important;
@@ -481,6 +486,30 @@ box-formulario-empleados {
 @media (max-width: 767px) {
   .menu-box-modulos {
     display: none;
+  }
+
+  .box-formulario {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .formulario-registros {
+    padding-right: 0 !important;
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .anulacion-box {
+    padding-right: 0;
+  }
+  .anulacion-box .form-group {
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  .nombresApellidos-box {
+    margin-top: 2rem !important;
   }
 }
 @media (min-width: 768px) {

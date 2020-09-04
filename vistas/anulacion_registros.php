@@ -14,8 +14,8 @@ if (!isset($_SESSION['nombre'])) {
 ?>
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-4">
-                    <div class="menu-box">
+                <div class="col-12 col-md-4">
+                    <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Incidentes y Sucesos</h2>
                         </div>
@@ -41,15 +41,16 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 ml-n2 pl-0 pr-3">
+
+                <div class="col-12 col-md-8 ml-n2 pl-0 pr-0 pr-md-3">
                     <div class="box-formulario formulario-registros container mt-1 p-0 row w-100">
                         <h2 class="text-center title-formularios">Anulación de Registros</h2>
 
-                        <div class="col-12 container row">
+                        <div class="col-12 container row anulacion-box">
                             <!-- Búsqueda -->
-                            <div class="form-group row mb-0 mt-2 col-6">
-                                <label for="rol" class="col-4">Buscar:</label>
-                                <div class="col-8 searchbox">
+                            <div class="form-group row mb-0 mt-2 col-12 col-md-6">
+                                <label for="rol" class="col-12 col-md-4">Buscar:</label>
+                                <div class="col-12 col-md-8 searchbox">
                                     <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
                                     <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
                                 </div>
@@ -58,26 +59,26 @@ if (!isset($_SESSION['nombre'])) {
                             <form name="formulario" id="formulario" method="POST">
                                 <!-- Id Registro -->
                                 <div class="form-group row mt-0">
-                                    <label for="id_registro" class="col-4"></label>
+                                    <label for="id_registro" class="col-12 col-md-4"></label>
                                     <div class="col-8">
                                         <input type="hidden" name="id_registro" id="id_registro">
                                     </div>
                                 </div>
 
                                 <!-- Empleado -->
-                                <div class="form-group row col-6">
-                                    <label for="fo_empleado" class="col-4">Número Identificación Empleado: </label>
-                                    <div class="col-8">
+                                <div class="form-group row col-12 col-md-6">
+                                    <label for="fo_empleado" class="col-12 col-md-4">Número Identificación Empleado: </label>
+                                    <div class="col-12 col-md-8">
                                         <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" disabled></select>
                                     </div>
-                                    <div class="offset-4 col-8">
+                                    <div class="col-12 offset-md-4 col-md-8 nombresApellidos-box">
                                         <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
                                     </div>
                                 </div>
                                 <!-- Fecha de Registo e Incidente -->
-                                <div class="form-group row col-6">
-                                    <label for="fecha_registro" class="col-4">Fecha de Registro:</label>
-                                    <div class="col-8">
+                                <div class="form-group row col-12 col-md-6">
+                                    <label for="fecha_registro" class="col-12 col-md-4">Fecha de Registro:</label>
+                                    <div class="col-12 col-md-8">
                                         <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
                                         <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" disabled>
                                     </div>
@@ -85,11 +86,11 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Descripción, impresión y generación de PDF -->
                                 <div class="form-group row col-12">
-                                    <div class="col-2">
+                                    <div class="col-12 col-md-2">
                                         <label for="descripcion">Modivo Anulación:*</label>
 
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-12 col-md-10">
                                         <textarea name="motivo_anulacion" id="motivo_anulacion" maxlength="512" rows="2" class="form-control"></textarea>
                                     </div>
                                 </div>
@@ -97,15 +98,20 @@ if (!isset($_SESSION['nombre'])) {
                                 <!-- Botones -->
                                 <div class="col-12">
                                     <div class="form-group row">
-                                        <div class="offset-4 col-4">
-                                            <button type="submit" class="btn btn-primary" id="btnGuardar">Anular</button>
+                                        <div class="col-6 offset-md-4 col-md-4 guardar">
+                                            <button type="submit" class="btn btn-primary anular" id="btnGuardar">Anular</button>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-6 col-md-4 cancelar text-right">
                                             <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+
+                        <!-- Boton regresar en vista mobile -->
+                        <div class="boton-mobile-regresar col-12 row mb-2">
+                            <button class="btn btn-light px-5"><a href="menu_incidentes.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                         </div>
                     </div>
                 </div>
