@@ -131,3 +131,10 @@ table.dataTable {
         margin-right: .2rem;
     }
 }
+
+@media (max-width: 767px) {
+    .boton-mobile-regresar-reportes {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -138,6 +138,10 @@ h6 {
     .ml-n2 {
         margin-left: -4rem !important;
     }
+
+    .soloMobile {
+        display: none;
+    }
 }
 
 @media (min-width:768px) and (max-width: 991px) {

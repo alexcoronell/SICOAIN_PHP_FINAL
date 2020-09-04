@@ -126,6 +126,10 @@ h6 {
   .ml-n2 {
     margin-left: -4rem !important;
   }
+
+  .soloMobile {
+    display: none;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .titleBig h1 {
@@ -644,6 +648,12 @@ table.dataTable .columnaId {
   margin-right: 0.2rem;
 }
 
+@media (max-width: 767px) {
+  .boton-mobile-regresar-reportes {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /**************************** FOOTER *******************************/
 .Footer {
   width: 100%;
