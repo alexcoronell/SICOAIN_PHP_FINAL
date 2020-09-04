@@ -456,6 +456,37 @@ box-formulario-empleados {
   display: none;
 }
 
+@media (max-width: 575px) {
+  .box-formulario {
+    max-width: 320px !important;
+  }
+  .box-formulario .cancelar {
+    text-align: right;
+  }
+  .box-formulario .cancelar button {
+    text-align: center;
+  }
+
+  .boton-mobile-regresar {
+    max-width: 320px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .boton-mobile-regresar button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 767px) {
+  .menu-box-modulos {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .boton-mobile-regresar {
+    display: none;
+  }
+}
 .formulario-registros label,
 .formulario-registros input {
   font-size: 0.8rem;
