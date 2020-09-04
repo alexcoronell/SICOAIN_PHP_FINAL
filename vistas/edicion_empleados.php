@@ -16,8 +16,8 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-4">
-                    <div class="menu-box">
+                <div class="col-12 col-md-4">
+                    <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Empleados</h2>
                         </div>
@@ -42,90 +42,90 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-8 ml-n2 pr-3">
+                <div class="col-12 col-md-8 ml-n2 pr-3">
                     <div class="box-formulario-empleados container mt-1 p-0">
-                        <h2 class="text-center title-formularios" id="pagina" >Edición de Empleados</h2>
+                        <h2 class="text-center title-formularios" id="pagina">Edición de Empleados</h2>
                         <form name="formulario" id="formulario" method="POST">
                             <input type="hidden" name="id" id="id">
                             <div class="row">
-                                <div class="col-6 empleados-col-1">
+                                <div class="col-12 col-md-6 empleados-col-1">
 
                                     <!-- Tipo de Identificación -->
                                     <div class="form-group row">
-                                        <label for="fo_tipo_identificacion" class="col-4">Tipo identificación:*</label>
-                                        <div class="col-8">
+                                        <label for="fo_tipo_identificacion" class="col-12 col-md-4">Tipo identificación:*</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_tipo_identificacion" id="fo_tipo_identificacion" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- Número de Identificación -->
                                     <div class="form-group row">
-                                        <label for="numero_identificacion" class="col-4 font-weight-bold">Buscar Nro.identificación:</label>
-                                        <div class="col-8">
+                                        <label for="numero_identificacion" class="col-12 col-md-4 font-weight-bold">Buscar Nro.identificación:</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="numero_identificacion" id="numero_identificacion" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- Nombres -->
                                     <div class="form-group row">
-                                        <label for="nombres" class="col-4">Nombres: *</label>
-                                        <div class="col-8">
+                                        <label for="nombres" class="col-12 col-md-4">Nombres: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="nombres" id="nombres" required>
                                         </div>
                                     </div>
 
                                     <!-- Apellidos -->
                                     <div class="form-group row">
-                                        <label for="apellidos" class="col-4">Apellidos: *</label>
-                                        <div class="col-8">
+                                        <label for="apellidos" class="col-12 col-md-4">Apellidos: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="apellidos" id="apellidos" required>
                                         </div>
                                     </div>
 
                                     <!-- Departamento -->
                                     <div class="form-group row">
-                                        <label for="fo_departamento" class="col-4">Departamento: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_departamento" class="col-12 col-md-4">Departamento: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_departamento" id="fo_departamento" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- Ciudad -->
                                     <div class="form-group row">
-                                        <label for="fo_ciudad" class="col-4">Ciudad: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_ciudad" class="col-12 col-md-4">Ciudad: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_ciudad" id="fo_ciudad" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- Dirección -->
                                     <div class="form-group row">
-                                        <label for="direccion" class="col-4">Direccion: *</label>
-                                        <div class="col-8">
+                                        <label for="direccion" class="col-12 col-md-4">Direccion: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="direccion" id="direccion" maxlength="256" required>
                                         </div>
                                     </div>
 
                                     <!-- Teléfono fijo -->
                                     <div class="form-group row">
-                                        <label for="telefono_fijo" class="col-4">Teléfono: *</label>
-                                        <div class="col-8">
+                                        <label for="telefono_fijo" class="col-12 col-md-4">Teléfono: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo" required>
                                         </div>
                                     </div>
 
                                     <!-- Teléfono Celular -->
                                     <div class="form-group row">
-                                        <label for="telefono_celular" class="col-4">Teléfono Celular: *</label>
-                                        <div class="col-8">
+                                        <label for="telefono_celular" class="col-12 col-md-4">Teléfono Celular: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="telefono_celular" id="telefono_celular" required>
                                         </div>
                                     </div>
 
                                     <!-- Email -->
                                     <div class="form-group row">
-                                        <label for="email" class="col-4">email: *</label>
-                                        <div class="col-8">
+                                        <label for="email" class="col-12 col-md-4">email: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="email" class="form-control" name="email" id="email" required>
                                         </div>
                                     </div>
@@ -136,13 +136,13 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Inicia segunda columna -->
 
-                                <div class="col-6 pl-1">
+                                <div class="col-12 col-md-6 pl-1">
 
 
                                     <!-- Compañía -->
                                     <div class="form-group row">
-                                        <label for="fo_compania" class="col-4">Compañía: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_compania" class="col-12 col-md-4">Compañía: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
 
                                             </select>
@@ -151,32 +151,32 @@ if (!isset($_SESSION['nombre'])) {
 
                                     <!-- Sede -->
                                     <div class="form-group row">
-                                        <label for="fo_sede" class="col-4">Sede: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_sede" class="col-12 col-md-4">Sede: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_sede" id="fo_sede" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- Cargo -->
                                     <div class="form-group row">
-                                        <label for="fo_cargo" class="col-4">Cargo: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_cargo" class="col-12 col-md-4">Cargo: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_cargo" id="fo_cargo" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- EPS -->
                                     <div class="form-group row">
-                                        <label for="fo_eps" class="col-4">EPS: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_eps" class="col-12 col-md-4">EPS: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_eps" id="fo_eps" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
 
                                     <!-- ARL -->
                                     <div class="form-group row">
-                                        <label for="fo_arl" class="col-4">ARL: *</label>
-                                        <div class="col-8">
+                                        <label for="fo_arl" class="col-12 col-md-4">ARL: *</label>
+                                        <div class="col-12 col-md-8">
                                             <select name="fo_arl" id="fo_arl" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                         </div>
                                     </div>
@@ -185,24 +185,24 @@ if (!isset($_SESSION['nombre'])) {
 
                                     <!-- Nombre Contacto de Emergencia -->
                                     <div class="form-group row">
-                                        <label for="nombre_contacto_emergencia" class="col-4">Nombre: *</label>
-                                        <div class="col-8">
+                                        <label for="nombre_contacto_emergencia" class="col-12 col-md-4">Nombre: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
                                         </div>
                                     </div>
 
                                     <!-- Teléfono Contacto de Emergencia -->
                                     <div class="form-group row">
-                                        <label for="telefono_contacto_emergencia" class="col-4">Teléfono: *</label>
-                                        <div class="col-8">
+                                        <label for="telefono_contacto_emergencia" class="col-12 col-md-4">Teléfono: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
                                         </div>
                                     </div>
 
                                     <!-- Parentesco Contacto de Emergencia -->
                                     <div class="form-group row">
-                                        <label for="parentesco_contacto_emergencia" class="col-4">Parentesco: *</label>
-                                        <div class="col-8">
+                                        <label for="parentesco_contacto_emergencia" class="col-12 col-md-4">Parentesco: *</label>
+                                        <div class="col-12 col-md-8">
                                             <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
                                         </div>
                                     </div>
@@ -210,8 +210,8 @@ if (!isset($_SESSION['nombre'])) {
 
                                     <!-- Comentarios -->
                                     <div class="form-group row">
-                                        <label for="comentarios" class="col-4">Comentarios: *</label>
-                                        <div class="col-8">
+                                        <label for="comentarios" class="col-12 col-md-4">Comentarios: *</label>
+                                        <div class="col-12 col-md-8">
                                             <textarea name="comentarios" id="comentarios" maxlength="256" class="form-control"></textarea>
                                         </div>
                                     </div>
@@ -220,10 +220,10 @@ if (!isset($_SESSION['nombre'])) {
                                 <!-- Botones de formulario -->
                                 <div class="col-12">
                                     <div class="form-group row">
-                                        <div class="offset-4 col-4">
+                                        <div class="col-6 offset-md-4 col-md-4">
                                             <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-6 col-md-4 text-right text-md-left">
                                             <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                         </div>
                                     </div>
@@ -232,6 +232,9 @@ if (!isset($_SESSION['nombre'])) {
 
                             </div>
                         </form>
+                        <div class="boton-mobile-regresar col-12 row mb-2">
+                            <button class="btn btn-light px-5"><a href="empleados.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
+                        </div>
                     </div>
                 </div>
             </div>

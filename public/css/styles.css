@@ -69,10 +69,6 @@ h6 {
   z-index: -999999999;
 }
 
-.ml-n2 {
-  margin-left: -4rem !important;
-}
-
 .display-4 {
   font-size: 2.5rem !important;
 }
@@ -124,6 +120,11 @@ h6 {
   .logo-principal img {
     width: 350px !important;
     left: 360px;
+  }
+}
+@media (min-width: 768px) {
+  .ml-n2 {
+    margin-left: -4rem !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
