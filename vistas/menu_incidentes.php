@@ -26,7 +26,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <ul>
                                         <li><a href="creacion_registros.php">Creación de Registros</a></li>
                                         <li><a href="edicion_registros.php">Edición de Registros</a></li>
-                                        <li><a href="anulación_registros.php">Anulación de Registros</a></li>
+                                        <li><a href="anulacion_registros.php">Anulación de Registros</a></li>
                                     </ul>
                                 </li>
                                 <li>Administración de Sucesos
