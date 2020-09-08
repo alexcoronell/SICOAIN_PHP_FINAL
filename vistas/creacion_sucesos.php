@@ -47,8 +47,8 @@ if (!isset($_SESSION['nombre'])) {
                         <form name="formulario" id="formulario" method="POST">
 
                             <!-- Nombre -->
-                            <div class="form-group row">
-                                <label for="suceso" class="col-12 col-md-4">Nombre Suceso:</label>
+                            <div class="form-group row mt-3">
+                                <label for="suceso" class="col-12 col-md-4 mt-md-2">Nombre Suceso:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="nombre" id="nombre">

@@ -51,7 +51,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <label for="rol" class="col-12 col-md-3">Buscar:</label>
                                     <div class="col-12 col-md-9 searchbox">
                                         <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                        <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                        <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                                     </div>
 
                                 </div>
@@ -119,7 +119,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <label for="evidencia_digital" class="col-12 col-md-3">Evidencia digital:</label>
                                     <div class="col-12 col-md-9">
                                         <input type="text" class="form-control" name="evidencia_actual" id="evidencia_actual">
-                                        <input type="file" class="form-control inputFile" name="evidencia_digital" id="evidencia_digital">
+                                        <input type="file" class="form-control inputFile py-1" name="evidencia_digital" id="evidencia_digital">
                                     </div>
                                 </div>
                             </div>
@@ -127,10 +127,10 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Botones -->
                             <div class="col-12">
                                 <div class="form-group row">
-                                    <div class="col-6 offset-md-4 col-md-4 guardar">
+                                    <div class="col-6 offset-md-4 col-md-4 text-md-right guardar">
                                         <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                     </div>
-                                    <div class="col-6 col-md-4 cancelar text-right">
+                                    <div class="col-6 col-md-4 cancelar text-right text-md-left">
                                         <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                     </div>
                                 </div>

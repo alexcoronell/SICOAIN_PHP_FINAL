@@ -34,19 +34,18 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de ARL</h2>
                         <!-- Busqueda -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar ARL: *</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-12 col-md-3 mt-md-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
-
                         </div>
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <form name="formulario" class="formularioEditActDesact mt-3" id="formulario" method="POST">
                             <div class="form-group row">
-                                <label for="nombre_arl" class="col-12 col-md-4">Nombre:</label>
+                                <label for="nombre_arl" class="col-12 col-md-4 mt-md-2">Nombre:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="nombre_arl" id="nombre_arl" maxlength="30">
@@ -56,7 +55,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono" class="col-12 col-md-4">Teléfono:</label>
+                                <label for="telefono" class="col-12 col-md-4 mt-md-2">Teléfono:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono" id="telefono">
                                 </div>
@@ -64,7 +63,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Email -->
                             <div class="form-group row">
-                                <label for="email" class="col-12 col-md-4">email:</label>
+                                <label for="email" class="col-12 col-md-4 mt-md-2">email:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="email" class="form-control" name="email" id="email">
                                 </div>
@@ -72,7 +71,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion" class="col-12 col-md-4">Dirección:</label>
+                                <label for="direccion" class="col-12 col-md-4 mt-md-2">Dirección:</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="direccion" id="direccion" maxlength="256" class="form-control"></textarea>
                                 </div>
@@ -83,8 +82,8 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

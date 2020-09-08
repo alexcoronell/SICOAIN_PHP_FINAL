@@ -332,14 +332,14 @@ ul {
 .box-formulario {
   width: 450px;
 }
+.box-formulario input,
+.box-formulario textarea {
+  border: 1px solid #42b983;
+}
 
 .title-formularios {
   font-size: 1.8em;
   color: #004d40;
-}
-
-box-formulario-empleados {
-  width: 100%;
 }
 
 .box-formulario-empleados .col-6 {
@@ -368,15 +368,12 @@ box-formulario-empleados {
   text-align: center;
 }
 
-.bootstrap-select .filter-option-inner-inner {
-  font-size: 0.8em !important;
+#buscarId {
+  opacity: 1;
 }
 
-.dropdown-menu .bs-searchbox input {
-  font-size: 0.8em !important;
-}
-.dropdown-menu .text {
-  font-size: 0.8em !important;
+.formularioEditActDesact {
+  display: none;
 }
 
 .empleados-col-1 label {
@@ -433,8 +430,51 @@ box-formulario-empleados {
   border-color: #42b983;
 }
 
+.bootstrap-select .filter-option-inner-inner {
+  font-size: 0.8em !important;
+  color: black;
+  padding-left: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  opacity: 1 !important;
+}
+
+.dropdown-menu {
+  border: 1px solid #004d40;
+}
+.dropdown-menu .bs-searchbox input {
+  font-size: 0.8em !important;
+  border: 1px solid #004d40 !important;
+  box-shadow: 1px 1px 3px #42b983;
+}
+.dropdown-menu .text {
+  font-size: 0.8em !important;
+}
+
+.searchbox .dropdown-toggle {
+  border-radius: 0.3rem 0 0 0.3rem !important;
+}
+.searchbox .dropdown-toggle:hover {
+  background-color: rgba(66, 185, 131, 0.3);
+}
+.searchbox .dropdown-toggle .filter-option {
+  border: none;
+}
+.searchbox .dropdown-toggle .filter-option:active, .searchbox .dropdown-toggle .filter-option:focus {
+  border: none !important;
+}
+.searchbox .dropdown-toggle .filter-option .filter-option-inner {
+  border: none !important;
+}
+.searchbox .dropdown-toggle .filter-option .filter-option-inner:active, .searchbox .dropdown-toggle .filter-option .filter-option-inner:focus {
+  border: none !important;
+}
+.searchbox #buscarId {
+  position: relative;
+  left: 0;
+}
 .searchbox input {
-  width: 85%;
+  width: 73%;
   float: left;
 }
 .searchbox .selectSearch {
@@ -442,18 +482,29 @@ box-formulario-empleados {
   float: left;
 }
 .searchbox button {
-  width: 12%;
+  width: 27%;
   float: right;
   line-height: 2rem;
-  border: none;
-  font-size: 1.2rem;
-  color: #ced4da;
-  background-color: transparent;
+  font-size: 0.9rem;
   padding: 0.2rem;
   cursor: pointer;
 }
 .searchbox button:focus, .searchbox button:active {
   border: none;
+}
+.searchbox .btnBusqueda {
+  background-color: rgba(66, 185, 131, 0.7);
+  color: #004d40;
+  border-radius: 0 0.3rem 0.3rem 0;
+  border: 1px solid rgba(66, 185, 131, 0.7);
+  transition: all 0.3s ease;
+}
+.searchbox .btnBusqueda i {
+  margin-right: 0.2rem;
+  font-size: 1rem;
+}
+.searchbox .btnBusqueda:hover {
+  background-color: #42b983;
 }
 
 #button_activar,

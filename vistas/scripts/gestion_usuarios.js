@@ -3,7 +3,7 @@ function init() {
 
     cargarUsuarios()
 
-    $("#formulario").on("submit", function(e) {
+    $("#formulario").on("submit", function (e) {
         guardaryeditar(e);
     });
 
@@ -26,11 +26,6 @@ function limpiar() {
 }
 
 
-// Función para cancelar el formulario
-function cancelarFormulario() {
-    limpiar();
-}
-
 // Función para guardar o editar
 function guardaryeditar(e) {
     e.preventDefault(); // Evita que se ejecute la acción predeterminada del evento
@@ -44,18 +39,22 @@ function guardaryeditar(e) {
         contentType: false,
         processData: false,
 
-        success: function(datos) {
+        success: function (datos) {
             bootbox.alert(datos);
+            if (datos == "Usuario registrado correctamente" || datos == "Usuario actualizado correctamente") {
+                limpiar();
+                $('.grupoBusqueda').show();
+                $('.formularioEditActDesact').hide();
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición
 function mostrar(id) {
     $.post("../ajax/usuarios.php?op=mostrar", {
         id: id
-    }, function(data, status) {
+    }, function (data, status) {
         data = JSON.parse(data);
 
         $("#id").val(data.id);
@@ -67,6 +66,8 @@ function mostrar(id) {
         data.asistente == 1 ? $('#asistente').prop("checked", true) : $('#asistente').prop("checked", false);
         data.consultas == 1 ? $('#consultas').prop("checked", true) : $('#consultas').prop("checked", false);
         $('#contrasena').val(data.contrasena);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
     })
 }
 
@@ -74,12 +75,14 @@ function mostrar(id) {
 function mostrarAct(id) {
     $.post("../ajax/usuarios.php?op=mostrar", {
         id: id
-    }, function(data, status) {
+    }, function (data, status) {
         data = JSON.parse(data);
         $("#id").val(data.id);
         $('#usuario').val(data.usuario);
         $('#nombre').val(data.nombre);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -100,10 +103,10 @@ function buscarAct() {
 // Función para activar Usuarios
 function activar() {
     let id = $('#id').val();
-    bootbox.confirm("¿Estas seguro de activar este Usuario?", function(result) {
+    bootbox.confirm("¿Estas seguro de activar este Usuario?", function (result) {
         $.post("../ajax/usuarios.php?op=activar", {
             id: id
-        }, function(e) {
+        }, function (e) {
             bootbox.alert(e);
         })
     })
@@ -115,11 +118,11 @@ function activar() {
 function desactivar() {
     let id = $('#id').val();
     console.log(id);
-    bootbox.confirm("¿Estas seguro de desactivar est Usuario?", function(result) {
+    bootbox.confirm("¿Estas seguro de desactivar est Usuario?", function (result) {
         if (result) {
             $.post("../ajax/usuarios.php?op=desactivar", {
                 id: id
-            }, function(e) {
+            }, function (e) {
                 bootbox.alert(e);
                 if (datos == "Usuario registrado correctamente" || datos == "Usuario actualizado correctamente") {
                     cargarUsuarios();
@@ -149,15 +152,23 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
     limpiar();
 }
 
 function cargarUsuarios() {
     // Carga los usuarios registrados en el sistema
-    $.post("../ajax/usuarios.php?op=selectUsuario", function(r) {
+    $.post("../ajax/usuarios.php?op=selectUsuario", function (r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
 }
 
 init();

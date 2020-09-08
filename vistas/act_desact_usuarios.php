@@ -34,16 +34,17 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Activación/Desactivación de Usuarios</h2>
                         <!-- Busqueda -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-4">Buscar:</label>
-                            <div class="col-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-3 mt-2">Buscar:</label>
+                            <div class="col-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
-                        <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <!-- Formulario --> 
+                        <div class="formularioEditActDesact mt-3">
+                        <form name="formulario"  id="formulario" method="POST">
 
                             <!-- Usuario -->
                             <div class="form-group row">
@@ -64,7 +65,6 @@ if (!isset($_SESSION['nombre'])) {
                             </div>
 
                         </form>
-
                         <!-- Área de botones -->
                         <div class="form-group row">
                             <div class="offset-md-4 col-6 col-md-4 guardar">
@@ -76,6 +76,9 @@ if (!isset($_SESSION['nombre'])) {
                                 <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
                             </div>
                         </div>
+                        </div>
+
+                        
                         <div class="boton-mobile-regresar col-12 row mb-2">
                             <button class="btn btn-light px-5"><a href="principal.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                         </div>

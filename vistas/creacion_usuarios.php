@@ -35,11 +35,11 @@ if (!isset($_SESSION['nombre'])) {
 
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST" autocomplete="off">
+                        <form name="formulario" id="formulario" class="mt-3" method="POST" autocomplete="off">
 
                             <!-- Usuario -->
                             <div class="form-group row">
-                                <label for="usuario" class="col-md-4">usuario:</label>
+                                <label for="usuario" class="col-md-4 mt-md-2">usuario:</label>
                                 <div class="col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off" required>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-md-4">Nombres:</label>
+                                <label for="nombre" class="col-md-4 mt-md-2">Nombres:</label>
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
                                 </div>
@@ -56,7 +56,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Asignaciones de roles -->
                             <div class="form-group row">
-                                <label class="col-md-4">Roles: *</label>
+                                <label class="col-md-4 mt-md-2">Roles: *</label>
                                 <div class="col-md-8">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="superusuario" value="1" name="superusuario" id="superusuario" title="Acceso total">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Contraseña -->
                             <div class="form-group row">
-                                <label for="contrasena" class="col-md-4">Contraseña: *</label>
+                                <label for="contrasena" class="col-md-4 mt-md-2">Contraseña: *</label>
                                 <div class="col-md-8">
                                     <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off" required>
                                 </div>
@@ -95,8 +95,8 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="offset-md-4 col-6 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                 </div>
                             </div>
 

@@ -45,19 +45,14 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario formulario-registros container mt-1 p-0 row w-100">
                         <h2 class="text-center title-formularios">Creación de Registros</h2>
                         <form name="formulario" id="formulario" method="POST" class="col-12 container row">
+
                             <div class="col-12 col-md-6">
-                                <!-- Id Registro -->
-                                <div class="form-group row">
-                                    <label for="id_registro" class="col-12 col-md-4"></label>
-                                    <div class="col-12 col-md-8">
-                                        <input type="hidden" name="id_registro" id="id_registro">
-                                    </div>
-                                </div>
 
                                 <!-- Empleado -->
-                                <div class="form-group row">
+                                <div class="form-group row mt-md-3">
                                     <label for="fo_empleado" class="col-12 col-md-3">Número Identificación Empleado:</label>
                                     <div class="col-12 col-md-9">
+                                        <input type="hidden" name="id_registro" id="id_registro">
                                         <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                     </div>
                                     <div class="col-12 offset-md-3 col-md-9 nombresApellidos-box">
@@ -67,7 +62,7 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Suceso -->
                                 <div class="form-group row">
-                                    <label for="fo_suceso" class="col-12 col-md-3">Suceso: </label>
+                                    <label for="fo_suceso" class="col-12 col-md-3 mt-md-2">Suceso: </label>
                                     <div class="col-12 col-md-9">
                                         <select name="fo_suceso" id="fo_suceso" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                     </div>
@@ -87,11 +82,9 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="col-12 col-md-6">
 
                                 <!-- Descripción, impresión y generación de PDF  -->
-                                <div class="form-group row">
+                                <div class="form-group row mt-md-3">
                                     <div class="col-12 col-md-3">
                                         <label for="descripcion">Descripción:*</label>
-                                        <!-- <button class="btn btn-light generadores w-100"><i class="fas fa-print" aria-hidden="true"></i><br>Imprimir</button>
-                                        <button class="btn btn-light generadores w-100"><i class="far fa-file-pdf"></i>Generar PDF</button> -->
                                     </div>
                                     <div class="col-12 col-md-9">
                                         <textarea name="descripcion" id="descripcion" maxlength="512" rows="6" class="form-control"></textarea>
@@ -102,7 +95,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="form-group row">
                                     <label for="evidencia_digital" class="col-12 col-md-3">Evidencia digital:</label>
                                     <div class="col-12 col-md-9">
-                                        <input type="file" class="form-control inputFile" name="evidencia_digital" id="evidencia_digital">
+                                        <input type="file" class="form-control inputFile py-1" name="evidencia_digital" id="evidencia_digital">
                                     </div>
                                 </div>
                             </div>
@@ -110,11 +103,11 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Botones -->
                             <div class="col-12">
                                 <div class="form-group row">
-                                    <div class="col-6 offset-md-4 col-md-4 guardar">
+                                    <div class="col-6 offset-md-4 col-md-4 text-md-right guardar">
                                         <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                     </div>
-                                    <div class="col-6 col-md-4 cancelar text-right">
-                                        <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                    <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                        <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                     </div>
                                 </div>
                             </div>

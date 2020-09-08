@@ -41,6 +41,8 @@ function guardaryeditar(e) {
         success: function(datos) {
             bootbox.alert(datos);
             if (datos == "Cargo registrado correctamente" || datos == "Cargo actualizado correctamente") {
+                $('.grupoBusqueda').show();
+                $('.formularioEditActDesact').hide();
                 cargarCargos();
                 limpiar();
             }
@@ -59,6 +61,8 @@ function mostrar(id) {
         $("#id").val(data.id);
         $('#cargo').val(data.cargo);
         $('#descripcion').val(data.descripcion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
     })
 }
 
@@ -71,6 +75,8 @@ function mostrarAct(id) {
         $("#id").val(data.id);
         $('#cargo').val(data.cargo);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -96,6 +102,7 @@ function activar() {
             id: id
         }, function(e) {
             bootbox.alert(e);
+            cargarCargos();
         })
     })
     MostrarDefault();
@@ -111,6 +118,7 @@ function desactivar() {
                 id: id
             }, function(e) {
                 bootbox.alert(e);
+                cargarCargos();
             })
         }
     })
@@ -135,6 +143,9 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    cargarCargos();
     limpiar();
 }
 
@@ -144,6 +155,13 @@ function cargarCargos() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
+    cargarCargos();
 }
 
 init();

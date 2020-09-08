@@ -41,6 +41,8 @@ function guardaryeditar(e) {
             bootbox.alert(datos);
             if (datos == "Suceso registrado correctamente" || datos == "Suceso actualizado correctamente") {
                 cargarSucesos();
+                $('.grupoBusqueda').show();
+                $('.formularioEditActDesact').hide();
                 limpiar();
             }
         }
@@ -57,6 +59,8 @@ function mostrar(id) {
         $("#id").val(data.id);
         $('#nombre').val(data.nombre);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
     })
 }
 
@@ -69,6 +73,8 @@ function mostrarAct(id) {
         $("#id").val(data.id);
         $('#nombre').val(data.nombre);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -134,6 +140,8 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
     limpiar();
 }
 
@@ -143,6 +151,12 @@ function cargarSucesos() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
 }
 
 init();

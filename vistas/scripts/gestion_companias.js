@@ -43,6 +43,8 @@ function guardaryeditar(e) {
             bootbox.alert(datos);
             if (datos == "Compañía registrada correctamente" || datos == "Compañía actualizada correctamente") {
                 limpiar();
+                $('.grupoBusqueda').show();
+                $('.formularioEditActDesact').hide();
                 cargarCompanias();
             }
         }
@@ -60,6 +62,8 @@ function mostrar(id) {
         $('#compania').val(data.compania);
         $('#telefono_compania').val(data.telefono_compania);
         $('#direccion_compania').val(data.direccion_compania);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
     })
 }
 
@@ -72,6 +76,8 @@ function mostrarAct(id) {
         $("#id").val(data.id);
         $('#compania').val(data.compania);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -121,6 +127,9 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    cargarCompanias()
     limpiar();
 }
 
@@ -144,6 +153,12 @@ function cargarCompanias() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
 }
 
 init();

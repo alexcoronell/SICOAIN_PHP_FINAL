@@ -38,28 +38,29 @@ if (!isset($_SESSION['nombre'])) {
                                 </li>
                             </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.html">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
                 <div class="col-12 col-md-8 p-0">
                     <div class="box-formulario-empleados box-formulario container mt-1 p-0 ml-0">
                         <h2 class="text-center title-formularios">Activación/Desactivación de Empleados</h2>
                         <!-- Búsqueda -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar:</label>
-                            <div class="col-12 col-md-8 searchbox">
-                                <input type="search" class="form-control" name="buscarId" id="buscarId" placeholder="Buscar...">
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <div class="form-group row grupoBusqueda mt-5">
+                            <label for="rol" class="col-12 col-md-3 mt-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
+                                <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-search" aria-hidden="true"></i>Cargar</button>
                             </div>
                         </div>
 
-                        <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <div class="formularioEditActDesact mt-2">
+<!-- Formulario -->
+<form name="formulario" id="formulario" method="POST">
                             <input type="hidden" name="id" id="id">
 
                             <!-- Tipo de Identificación -->
                             <div class="form-group row">
-                                <label for="fo_tipo_identificacion" class="col-12 col-md-4">Tipo identificación:*</label>
+                                <label for="fo_tipo_identificacion" class="col-12 col-md-4 mt-2">Tipo identificación:*</label>
                                 <div class="col-12 col-md-8">
                                     <select name="fo_tipo_identificacion" id="fo_tipo_identificacion" class="form-control selectpicker" title="Seleccione..." data-live-search="true" disabled></select>
                                 </div>
@@ -67,29 +68,28 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Número de Identificación -->
                             <div class="form-group row">
-                                <label for="numero_identificacion" class="col-12 col-md-4">Nro. identificación:*</label>
+                                <label for="numero_identificacion" class="col-12 col-md-4 mt-2">Nro. identificación:*</label>
                                 <div class="col-12 col-md-8">
-                                    <input type="text" class="form-control" name="numero_identificacion" id="numero_identificacion" disabled>
+                                    <input type="text" class="form-control pl-3" name="numero_identificacion" id="numero_identificacion" disabled>
                                 </div>
                             </div>
 
                             <!-- Nombres -->
                             <div class="form-group row">
-                                <label for="nombres" class="col-12 col-md-4">Nombres: *</label>
+                                <label for="nombres" class="col-12 col-md-4 mt-2">Nombres: *</label>
                                 <div class="col-12 col-md-8">
-                                    <input type="text" class="form-control" name="nombres" id="nombres" disabled>
+                                    <input type="text" class="form-control pl-3" name="nombres" id="nombres" disabled>
                                 </div>
                             </div>
 
                             <!-- Apellidos -->
                             <div class="form-group row">
-                                <label for="apellidos" class="col-12 col-md-4">Apellidos: *</label>
+                                <label for="apellidos" class="col-12 col-md-4 mt-2">Apellidos: *</label>
                                 <div class="col-12 col-md-8">
-                                    <input type="text" class="form-control" name="apellidos" id="apellidos" disabled>
+                                    <input type="text" class="form-control pl-3" name="apellidos" id="apellidos" disabled>
                                 </div>
                             </div>
                         </form>
-
                         <div class="col-12">
                             <!-- Área de botones -->
                             <div class="form-group row">
@@ -103,6 +103,10 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        
+
+                        
                         <div class="boton-mobile-regresar col-12 row mb-2">
                             <button class="btn btn-light px-5"><a href="empleados.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                         </div>

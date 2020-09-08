@@ -46,7 +46,7 @@ if (!isset($_SESSION['nombre'])) {
                         <h2 class="text-center title-formularios">Creación de Cargos</h2>
                         <form name="formulario" id="formulario" method="POST">
 
-                            <div class="form-group row">
+                            <div class="form-group row mt-3">
                                 <label for="cargo" class="col-12 col-md-4">Nombre Cargo:*</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">

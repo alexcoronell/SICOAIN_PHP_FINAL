@@ -34,20 +34,20 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Usuarios</h2>
                         <!-- Busqueda -->
-                        <div class="form-group row">
-                            <label for="buscarId" class="col-4">Buscar:</label>
-                            <div class="col-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="buscarId" class="col-3 mt-2">Buscar:</label>
+                            <div class="col-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <form name="formulario" class="formularioEditActDesact mt-3" id="formulario" method="POST">
 
                             <!-- Usuario -->
                             <div class="form-group row">
-                                <label for="usuario" class="col-4">usuario:</label>
+                                <label for="usuario" class="col-4 mt-md-2">usuario:</label>
                                 <div class="col-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
@@ -56,7 +56,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-4">Nombres:</label>
+                                <label for="nombre" class="col-4 mt-md-2">Nombres:</label>
                                 <div class="col-8">
                                     <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
                                 </div>
@@ -64,7 +64,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Asignaciones de roles -->
                             <div class="form-group row">
-                                <label class="col-4">Roles: *</label>
+                                <label class="col-4 mt-md-2">Roles: *</label>
                                 <div class="col-8">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="superusuario" value="1" name="superusuario" id="superusuario" title="Acceso total">
@@ -91,7 +91,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Contraseña -->
                             <div class="form-group row">
-                                <label for="contrasena" class="col-4">Contraseña: *</label>
+                                <label for="contrasena" class="col-4 mt-md-2">Contraseña: *</label>
                                 <div class="col-8">
                                     <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
                                 </div>
@@ -103,8 +103,8 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="offset-md-4 col-6 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

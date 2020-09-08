@@ -44,19 +44,19 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Sucesos</h2>
                         <!-- Busqueda -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar Suceso:</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-12 col-md-3 mt-md-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <form name="formulario" id="formulario" class="formularioEditActDesact mt-3" method="POST" autocomplete="off">
 
                             <div class="form-group row">
-                                <label for="nombre" class="col-12 col-md-4">Nombre Suceso:</label>
+                                <label for="nombre" class="col-12 col-md-4 mt-md-2">Nombre Suceso:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="nombre" id="nombre">
@@ -69,7 +69,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
                                 <div class="col-6 col-md-4 cancelar text-right">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

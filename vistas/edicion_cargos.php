@@ -46,21 +46,25 @@ if (!isset($_SESSION['nombre'])) {
                         <h2 class="text-center title-formularios">Edición de Cargos</h2>
 
                         <!-- Búsqueda -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar cargo:</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-12 col-md-3 mt-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
-                        <form name="formulario" id="formulario" method="POST">
-                            <div class="form-group row">
+                        <form name="formulario" class="formularioEditActDesact mt-5" id="formulario" method="POST">
+                        
+                        <!-- Nombre Cargo -->
+                        <div class="form-group row">
                                 <label for="cargo" class="col-12 col-md-4">Nombre Cargo:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="cargo" id="cargo" required>
                                 </div>
                             </div>
+
+                            <!-- Descripción -->
                             <div class="form-group row">
                                 <label for="descripcion" class="col-12 col-md-4">Descripción:</label>
                                 <div class="col-12 col-md-8">
@@ -74,7 +78,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
                                 <div class="col-6 col-md-4 cancelar text-right text-md-left">
-                                    <button type="button" class="btn btn-light" onclick="limpiar()">Cancelar</button>
+                                    <button type="button" class="btn btn-light" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

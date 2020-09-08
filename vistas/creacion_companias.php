@@ -34,24 +34,26 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Creación de Compañías</h2>
                         <form name="formulario" id="formulario" method="POST">
-                            <div class="form-group row">
-                                <label for="compania" class="col-12 col-md-4">Compañía: *</label>
+                            <!-- Nombre compañía -->
+                            <div class="form-group row mt-3">
+                                <label for="compania" class="col-12 col-md-4 mt-md-2">Compañía: *</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="compania" id="compania">
                                 </div>
                             </div>
 
-
+                            <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="compania_telefono" class="col-12 col-md-4">Teléfono:*</label>
+                                <label for="compania_telefono" class="col-12 col-md-4 mt-md-2">Teléfono:*</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono_compania" id="telefono_compania">
                                 </div>
                             </div>
 
+                            <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="compania_direccion" class="col-12 col-md-4">Dirección: *</label>
+                                <label for="compania_direccion" class="col-12 col-md-4 mt-md-2">Dirección: *</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="direccion_compania" id="direccion_compania" maxlength="256" class="form-control"></textarea>
                                 </div>
@@ -62,7 +64,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                <div class="col-6 col-md-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                 </div>
                             </div>

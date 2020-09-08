@@ -35,34 +35,37 @@ if (!isset($_SESSION['nombre'])) {
                 <div class="col-12 col-md-8">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Activación/Desactivación de Compañías</h2>
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar:</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-12 col-md-3 mt-md-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar<Cbutton>
                             </div>
                         </div>
-                        <form name="formulario" id="formulario" method="POST">
+                        <div class="formularioEditActDesact mt-3">
+                            <form name="formulario" id="formulario" method="POST">
+                                <div class="form-group row">
+                                    <label for="compania" class="col-12 col-md-4">Compañía:</label>
+                                    <div class="col-12 col-md-8">
+                                        <input type="hidden" name="id" id="id">
+                                        <input type="text" class="form-control" name="compania" id="compania">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- Área de botones -->
                             <div class="form-group row">
-                                <label for="compania" class="col-12 col-md-4">Compañía:</label>
-                                <div class="col-12 col-md-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="compania" id="compania">
+                                <div class="col-6 offset-md-4 col-md-4 guardar">
+                                    <button type="submit" id="button_default" class="btn btn-light" disabled>Act/Desact</button>
+                                    <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
+                                    <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
+                                </div>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
                                 </div>
                             </div>
-                        </form>
-
-                        <!-- Área de botones -->
-                        <div class="form-group row">
-                            <div class="col-6 offset-md-4 col-md-4 guardar">
-                                <button type="submit" id="button_default" class="btn btn-light" disabled>Act/Desact</button>
-                                <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
-                                <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
-                            </div>
-                            <div class="col-6 col-md-4 cancelar text-right text-md-left">
-                                <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
-                            </div>
                         </div>
+
                         <!-- Boton regresar en vista mobile -->
                         <div class="boton-mobile-regresar col-12 row mb-2">
                             <button class="btn btn-light px-5"><a href="companias.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>

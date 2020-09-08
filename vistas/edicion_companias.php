@@ -37,45 +37,47 @@ if (!isset($_SESSION['nombre'])) {
                         <h2 class="text-center title-formularios">Edición de Compañías</h2>
 
                         <!-- Búsqueda de compañía -->
-                        <div class="form-group row">
-                            <label for="rol" class="col-12 col-md-4">Buscar:</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="rol" class="col-12 col-md-3 mt-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true"></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar formularioEditActDesact mt-5Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST">
+                        <form name="formulario" id="formulario" class="formularioEditActDesact mt-3" method="POST">
                             <div class="form-group row">
-                                <label for="compania" class="col-12 col-md-4">Compañía:</label>
+                                <label for="compania" class="col-12 col-md-4 mt-md-2">Compañía:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="compania" id="compania">
                                 </div>
                             </div>
 
-
+                            <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono_compania" class="col-12 col-md-4">Teléfono:</label>
+                                <label for="telefono_compania" class="col-12 col-md-4 mt-md-2">Teléfono:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono_compania" id="telefono_compania">
                                 </div>
                             </div>
 
+                            <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion_compania" class="col-12 col-md-4">Dirección:</label>
+                                <label for="direccion_compania" class="col-12 col-md-4 mt-md-2">Dirección:</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="direccion_compania" id="direccion_compania" maxlength="256" class="form-control"></textarea>
                                 </div>
                             </div>
 
+                            <!-- Botones -->
                             <div class="form-group row">
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
-                                    <button type="button" class="btn btn-light">Cancelar</button>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

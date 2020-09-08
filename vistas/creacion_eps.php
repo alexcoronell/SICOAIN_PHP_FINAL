@@ -37,8 +37,8 @@ if (!isset($_SESSION['nombre'])) {
                         <form name="formulario" id="formulario" method="POST">
 
                             <!-- Id - Nombre -->
-                            <div class="form-group row">
-                                <label for="nombre_eps" class="col-12 col-md-4">Nombre:*</label>
+                            <div class="form-group row mt-md-3">
+                                <label for="nombre_eps" class="col-12 col-md-4 mt-md-2">Nombre:*</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="nombre_eps" id="nombre_eps" maxlength="30" required>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono" class="col-12 col-md-4">Teléfono:</label>
+                                <label for="telefono" class="col-12 col-md-4 mt-md-2">Teléfono:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono" id="telefono" maxlength="12">
                                 </div>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion" class="col-12 col-md-4">Dirección:</label>
+                                <label for="direccion" class="col-12 col-md-4 mt-md-2">Dirección:</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="direccion" id="direccion" maxlength="256" class="form-control"></textarea>
                                 </div>
@@ -66,7 +66,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Email -->
                             <div class="form-group row">
-                                <label for="email" class="col-12 col-md-4">email:</label>
+                                <label for="email" class="col-12 col-md-4 mt-md-2">email:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="email" class="form-control" name="email" id="email" maxlength="50">
                                 </div>
@@ -78,7 +78,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                <div class="col-6 col-md-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                 </div>
                             </div>

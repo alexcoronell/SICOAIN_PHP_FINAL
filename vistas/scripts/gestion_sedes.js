@@ -71,6 +71,8 @@ function mostrar(id) {
         $('#telefono').val(data.telefono);
         $('#direccion').val(data.direccion);
         $('#notas').val(data.notas);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
     })
 }
 
@@ -83,6 +85,8 @@ function mostrarAct(id) {
         $("#id").val(data.id);
         $('#nombre').val(data.nombre);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -132,6 +136,8 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
     limpiar();
 }
 
@@ -155,6 +161,12 @@ function cargaSedes() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
 }
 
 init();

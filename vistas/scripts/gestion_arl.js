@@ -46,6 +46,8 @@ function guardaryeditar(e) {
             if (datos == "ARL registrada correctamente" || datos == "ARL actualizada correctamente") {
                 cargarARL();
                 limpiar();
+                $(".grupoBusqueda").show();
+                $(".formularioEditActDesact").hide();
             }
         }
     })
@@ -63,6 +65,8 @@ function mostrar(id) {
         $('#telefono').val(data.telefono);
         $('#direccion').val(data.direccion);
         $('#email').val(data.email);
+        $(".grupoBusqueda").hide();
+        $(".formularioEditActDesact").show();
     })
 }
 
@@ -75,6 +79,8 @@ function mostrarAct(id) {
         $("#id").val(data.id);
         $('#nombre_arl').val(data.nombre_arl);
         $('#condicion').val(data.condicion);
+        $(".grupoBusqueda").hide();
+        $(".formularioEditActDesact").show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
     })
 }
@@ -140,6 +146,8 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
+    $(".grupoBusqueda").show();
+    $(".formularioEditActDesact").hide();
     limpiar();
 }
 
@@ -149,6 +157,12 @@ function cargarARL() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function cancelar() {
+    $(".grupoBusqueda").show();
+    $(".formularioEditActDesact").hide();
+    limpiar();
 }
 
 init();

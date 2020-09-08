@@ -34,21 +34,21 @@ if (!isset($_SESSION['nombre'])) {
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Sedes</h2>
                         <!-- Busqueda -->
-                        <div class="form-group row">
-                            <label for="buscarId" class="col-12 col-md-4">Buscar:</label>
-                            <div class="col-12 col-md-8 searchbox">
+                        <div class="form-group row grupoBusqueda mt-3">
+                            <label for="buscarId" class="col-12 col-md-3 mt-md-2">Buscar:</label>
+                            <div class="col-12 col-md-9 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
 
                         </div>
 
                         <!-- Formulario -->
-                        <form name="formulario" id="formulario" method="POST" autocomplete="off">
+                        <form name="formulario" id="formulario" class="formularioEditActDesact mt-3" method="POST" autocomplete="off">
 
                             <!-- Compañía -->
                             <div class="form-group row">
-                                <label for="fo_compania" class="col-12 col-md-4">Compañía:</label>
+                                <label for="fo_compania" class="col-12 col-md-4 mt-md-2">Compañía:</label>
                                 <div class="col-12 col-md-8">
                                     <input type="hidden" name="id" id="id">
                                     <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..."></select>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-12 col-md-4">Nombre:*</label>
+                                <label for="nombre" class="col-12 col-md-4 mt-md-2">Nombre:*</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="nombre" id="nombre">
                                 </div>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono" class="col-12 col-md-4">Teléfono:*</label>
+                                <label for="telefono" class="col-12 col-md-4 mt-md-2">Teléfono:*</label>
                                 <div class="col-12 col-md-8">
                                     <input type="text" class="form-control" name="telefono" id="telefono">
                                 </div>
@@ -73,7 +73,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion" class="col-12 col-md-4">Dirección:</label>
+                                <label for="direccion" class="col-12 col-md-4 mt-md-2">Dirección:</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="direccion" id="direccion" maxlength="256" class="form-control"></textarea>
                                 </div>
@@ -81,7 +81,7 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Notas -->
                             <div class="form-group row">
-                                <label for="notas" class="col-12 col-md-4">Notas:</label>
+                                <label for="notas" class="col-12 col-md-4 mt-md-2">Notas:</label>
                                 <div class="col-12 col-md-8">
                                     <textarea name="notas" id="notas" maxlength="256" class="form-control"></textarea>
                                 </div>
@@ -93,8 +93,8 @@ if (!isset($_SESSION['nombre'])) {
                                 <div class="col-6 offset-md-4 col-md-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right text-md-left">
-                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
+                                <div class="col-6 col-md-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
 

@@ -57,10 +57,16 @@ function init() {
         $('#fo_arl').selectpicker('refresh');
     })
 
-    // Carga los números de cédula de Empleados
+    // Carga los números de cédula de Empleados en la página Edición de empleados
     $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
         $('#numero_identificacion').html(r);
         $('#numero_identificacion').selectpicker('refresh');
+    })
+
+    // Carga los números de cédula de Empleados en la página Act/Desact de empleados
+    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
     })
 
     // Carga la información del empleado
@@ -197,9 +203,9 @@ function mostrar(numero_identificacion) {
 }
 
 // Función para mostrar los datos en el formulario de activación o desactivación de Empleados
-function mostrarAct(id) {
+function mostrarAct(numero_identificacion) {
     $.post("../ajax/empleados.php?op=mostrar", {
-        id: id
+        numero_identificacion: numero_identificacion
     }, function(data, status) {
         data = JSON.parse(data);
         $("#id").val(data.id);
@@ -209,7 +215,10 @@ function mostrarAct(id) {
         $("#nombres").val(data.nombres);
         $("#apellidos").val(data.apellidos);
         $('#condicion').val(data.condicion);
+        $('.grupoBusqueda').hide();
+        $('.formularioEditActDesact').show();
         data.condicion == 1 ? MostrarDesactivar() : MostrarActivar();
+
     })
 }
 
@@ -222,8 +231,9 @@ function buscar() {
 
 // Función para buscar en el formulario de Activación o desactivación de Compañías
 function buscarAct() {
-    id_Buscar = $("#buscarId").val();
-    mostrarAct(id_Buscar);
+    let numero_identificacion = $('select[name="buscarId"] option:selected').text();
+    console.log(numero_identificacion);
+    mostrarAct(numero_identificacion);
 }
 
 
@@ -274,7 +284,9 @@ function MostrarDefault() {
     $('#button_default').show();
     $('#button_activar').hide();
     $('#button_desactivar').hide();
-    limpiar();
+    $('.grupoBusqueda').show();
+    $('.formularioEditActDesact').hide();
+    limpiar()
 }
 
 function habilitarFormulario() {

@@ -70,7 +70,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="nombres" class="col-12 col-md-4">Nombres: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="nombres" id="nombres" required>
+                                            <input type="text" class="form-control pl-3" name="nombres" id="nombres" required>
                                         </div>
                                     </div>
 
@@ -78,7 +78,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="apellidos" class="col-12 col-md-4">Apellidos: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                                            <input type="text" class="form-control pl-3" name="apellidos" id="apellidos" required>
                                         </div>
                                     </div>
 
@@ -102,7 +102,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="direccion" class="col-12 col-md-4">Direccion: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="direccion" id="direccion" maxlength="256" required>
+                                            <input type="text" class="form-control pl-3" name="direccion" id="direccion" maxlength="256" required>
                                         </div>
                                     </div>
 
@@ -110,7 +110,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_fijo" class="col-12 col-md-4">Teléfono: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo" required>
+                                            <input type="text" class="form-control pl-3" name="telefono_fijo" id="telefono_fijo" required>
                                         </div>
                                     </div>
 
@@ -118,7 +118,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_celular" class="col-12 col-md-4">Teléfono Celular: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="telefono_celular" id="telefono_celular" required>
+                                            <input type="text" class="form-control pl-3" name="telefono_celular" id="telefono_celular" required>
                                         </div>
                                     </div>
 
@@ -126,26 +126,19 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="email" class="col-12 col-md-4">email: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="email" class="form-control" name="email" id="email" required>
+                                            <input type="email" class="form-control pl-3" name="email" id="email" required>
                                         </div>
                                     </div>
                                 </div>
 
-
-
-
                                 <!-- Inicia segunda columna -->
 
                                 <div class="col-12 col-md-6 pl-1">
-
-
                                     <!-- Compañía -->
                                     <div class="form-group row">
                                         <label for="fo_compania" class="col-12 col-md-4">Compañía: *</label>
                                         <div class="col-12 col-md-8">
                                             <select name="fo_compania" id="fo_compania" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
-
-                                            </select>
                                         </div>
                                     </div>
 
@@ -187,7 +180,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="nombre_contacto_emergencia" class="col-12 col-md-4">Nombre: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
+                                            <input type="text" class="form-control pl-3" name="nombre_contacto_emergencia" id="nombre_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -195,7 +188,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="telefono_contacto_emergencia" class="col-12 col-md-4">Teléfono: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
+                                            <input type="text" class="form-control pl-3" name="telefono_contacto_emergencia" id="telefono_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -203,7 +196,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="form-group row">
                                         <label for="parentesco_contacto_emergencia" class="col-12 col-md-4">Parentesco: *</label>
                                         <div class="col-12 col-md-8">
-                                            <input type="text" class="form-control" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
+                                            <input type="text" class="form-control pl-3" name="parentesco_contacto_emergencia" id="parentesco_contacto_emergencia" required>
                                         </div>
                                     </div>
 
@@ -224,12 +217,10 @@ if (!isset($_SESSION['nombre'])) {
                                             <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                         </div>
                                         <div class="col-6 col-md-4 text-right text-md-left">
-                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
+                                            <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </form>
                         <div class="boton-mobile-regresar col-12 row mb-2">

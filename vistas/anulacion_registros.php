@@ -49,38 +49,33 @@ if (!isset($_SESSION['nombre'])) {
                         <div class="col-12 container row anulacion-box">
                             <!-- Búsqueda -->
                             <div class="form-group row mb-0 mt-2 col-12 col-md-6">
-                                <label for="rol" class="col-12 col-md-4">Buscar:</label>
-                                <div class="col-12 col-md-8 searchbox">
+                                <label for="rol" class="col-12 col-md-3">Buscar:</label>
+                                <div class="col-12 col-md-9 searchbox">
                                     <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i></button>
+                                    <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                                 </div>
                             </div>
                             <!-- Inicia Formulario -->
                             <form name="formulario" id="formulario" method="POST">
-                                <!-- Id Registro -->
-                                <div class="form-group row mt-0">
-                                    <label for="id_registro" class="col-12 col-md-4"></label>
-                                    <div class="col-8">
-                                        <input type="hidden" name="id_registro" id="id_registro">
-                                    </div>
-                                </div>
 
                                 <!-- Empleado -->
-                                <div class="form-group row col-12 col-md-6">
+                                <div class="form-group row col-12 col-md-6 mt-3">
                                     <label for="fo_empleado" class="col-12 col-md-4">Número Identificación Empleado: </label>
+                                    <!-- Id Registro -->
+                                    <input type="hidden" name="id_registro" id="id_registro">
                                     <div class="col-12 col-md-8">
-                                        <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" disabled></select>
+                                        <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker text-left ml-md-2" title="Seleccione..." data-live-search="true" disabled></select>
                                     </div>
                                     <div class="col-12 offset-md-4 col-md-8 nombresApellidos-box">
-                                        <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
+                                        <input type="text" class="form-control pl-2 ml-md-2" name="nombresApellidos" id="nombresApellidos" disabled>
                                     </div>
                                 </div>
                                 <!-- Fecha de Registo e Incidente -->
                                 <div class="form-group row col-12 col-md-6">
                                     <label for="fecha_registro" class="col-12 col-md-4">Fecha de Registro:</label>
                                     <div class="col-12 col-md-8">
-                                        <input type="date" class="form-control" name="fecha_registro" id="fecha_registro" disabled>
-                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" disabled>
+                                        <input type="date" class="form-control ml-md-2" name="fecha_registro" id="fecha_registro" disabled>
+                                        <input type="date" class="form-control ml-md-2" name="fecha_incidente" id="fecha_incidente" disabled>
                                     </div>
                                 </div>
 
@@ -98,10 +93,10 @@ if (!isset($_SESSION['nombre'])) {
                                 <!-- Botones -->
                                 <div class="col-12">
                                     <div class="form-group row">
-                                        <div class="col-6 offset-md-4 col-md-4 guardar">
+                                        <div class="col-6 offset-md-4 col-md-4 text.text-md-right guardar">
                                             <button type="submit" class="btn btn-primary anular" id="btnGuardar">Anular</button>
                                         </div>
-                                        <div class="col-6 col-md-4 cancelar text-right">
+                                        <div class="col-6 col-md-4 cancelar text-right text-md-left">
                                             <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                         </div>
                                     </div>
