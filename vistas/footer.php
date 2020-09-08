@@ -30,9 +30,6 @@
 <!-- Bootstrap Select -->
 <script src="../public/js/bootstrap-select.min.js"></script>
 
-<!-- Latest compiled and minified JavaScript -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script> -->
-
 <!-- Librería Bootbox (Para los alert) -->
 <script src="../public/js/bootbox.min.js"></script>
 
