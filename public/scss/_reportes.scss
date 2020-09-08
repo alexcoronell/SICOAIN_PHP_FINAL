@@ -33,7 +33,7 @@ td {
 .tabla-md td {
     text-align: center;
     line-height: 1.7em;
-    padding: .2rem 0.9rem !important;
+    padding: 0.2rem 0.9rem !important;
 }
 
 .tabla-md td {
@@ -58,7 +58,7 @@ th {
 
 #tabla-empleados th,
 #tabla-incidentes th {
-    font-size: .8em;
+    font-size: 0.8em;
     min-width: 150px;
 }
 
@@ -120,6 +120,8 @@ table.dataTable {
 }
 
 .dt-button {
+    background-color: rgba($color: $maincolor, $alpha: 0.2) !important;
+
     span {
         font-size: 0.7rem !important;
         font-weight: normal;
@@ -127,8 +129,20 @@ table.dataTable {
 
     i {
         font-size: 1.2rem !important;
-        margin-left: .2rem;
-        margin-right: .2rem;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+
+        &.fa-files-o {
+            color: blue;
+        }
+
+        &.fa-file-excel-o {
+            color: green;
+        }
+
+        &.fa-file-pdf-o {
+            color: red;
+        }
     }
 }
 

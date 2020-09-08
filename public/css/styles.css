@@ -689,6 +689,9 @@ table.dataTable .columnaId {
   color: #42b983;
 }
 
+.dt-button {
+  background-color: rgba(66, 185, 131, 0.2) !important;
+}
 .dt-button span {
   font-size: 0.7rem !important;
   font-weight: normal;
@@ -697,6 +700,15 @@ table.dataTable .columnaId {
   font-size: 1.2rem !important;
   margin-left: 0.2rem;
   margin-right: 0.2rem;
+}
+.dt-button i.fa-files-o {
+  color: blue;
+}
+.dt-button i.fa-file-excel-o {
+  color: green;
+}
+.dt-button i.fa-file-pdf-o {
+  color: red;
 }
 
 @media (max-width: 767px) {
