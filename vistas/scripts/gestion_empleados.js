@@ -9,75 +9,31 @@ function init() {
         guardaryeditar(e);
     });
 
-    // Carga de opciones en el select Tipo de Identificación
-    $.post("../ajax/tipo_identificacion.php?op=selectIdentificacion", function(r) {
-        $('#fo_tipo_identificacion').html(r);
-        $('#fo_tipo_identificacion').selectpicker('refresh');
-    })
+    cargarTipoIdentificacion();
 
-    // Carga de opciones en el select Departamentos
-    $.post("../ajax/departamentos.php?op=selectDepartamento", function(r) {
-        $('#fo_departamento').html(r);
-        $('#fo_departamento').selectpicker('refresh');
-    })
+    cargarDepartamentos();
 
-    // Carga de opciones en el select Ciudad (Todas las ciudades)
-    $.post("../ajax/ciudades.php?op=selectAll", function(r) {
-        $('#fo_ciudad').html(r);
-        $('#fo_ciudad').selectpicker('refresh');
-    })
+    cargarCiudades();
 
-    // Carga de opciones en el select Compañías
-    $.post("../ajax/companias.php?op=selectCompania", function(r) {
-        $('#fo_compania').html(r);
-        $('#fo_compania').selectpicker('refresh');
-    })
+    cargarCompanias();
 
-    // Carga de opciones en el select Sedes
-    $.post("../ajax/sedes.php?op=selectSede", function(r) {
-        $('#fo_sede').html(r);
-        $('#fo_sede').selectpicker('refresh');
-    })
+    cargarSedes();
 
-    // Carga de opciones en el select Cargos
-    $.post("../ajax/cargo.php?op=selectCargo", function(r) {
-        $('#fo_cargo').html(r);
-        $('#fo_cargo').selectpicker('refresh');
-    })
+    cargarCargos();
 
-    // Carga de opciones en el select EPS
-    $.post("../ajax/eps.php?op=selectEPS", function(r) {
-        $('#fo_eps').html(r);
-        $('#fo_eps').selectpicker('refresh');
-    })
+    cargarEPS();
 
-    // Carga de opciones en el select ARL
-    $.post("../ajax/arl.php?op=selectARL", function(r) {
-        $('#fo_arl').html(r);
-        $('#fo_arl').selectpicker('refresh');
-    })
+    cargarARL();
 
-    // Carga los números de cédula de Empleados en la página Edición de empleados
-    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
-        $('#numero_identificacion').html(r);
-        $('#numero_identificacion').selectpicker('refresh');
-    })
+    cargarCedulasEmpleados();
 
-    // Carga los números de cédula de Empleados en la página Act/Desact de empleados
-    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
-        $('#buscarId').html(r);
-        $('#buscarId').selectpicker('refresh');
-    })
+    cargarCedulasActivacion();
 
-    // Carga la información del empleado
-    $('#numero_identificacion').on('changed.bs.select', function(e) {
-        let numero_identificacion = $('select[name="numero_identificacion"] option:selected').text();
-        habilitarFormulario();
-        mostrar(numero_identificacion);
-    })
+    cargarInformacionEmpleado();
+
+    //filtrarCiudades();
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
-
 
 
 // Función para limpiar el formulario
@@ -308,6 +264,121 @@ function habilitarFormulario() {
     $("#telefono_contacto_emergencia").prop('disabled', false);
     $("#parentesco_contacto_emergencia").prop('disabled', false);
     $("#comentarios").prop('disabled', false);
+}
+
+// Carga de opciones en el select Tipo de Identificación
+function cargarTipoIdentificacion() {
+    $.post("../ajax/tipo_identificacion.php?op=selectIdentificacion", function(r) {
+        $('#fo_tipo_identificacion').html(r);
+        $('#fo_tipo_identificacion').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select Departamentos
+function cargarDepartamentos() {
+    $.post("../ajax/departamentos.php?op=selectDepartamento", function(r) {
+        $('#fo_departamento').html(r);
+        $('#fo_departamento').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select Ciudad (Todas las ciudades)
+function cargarCiudades() {
+    $.post("../ajax/ciudades.php?op=selectAll", function(r) {
+        $('#fo_ciudad').html(r);
+        $('#fo_ciudad').selectpicker('refresh');
+    })
+}
+
+// Filtrado de ciudades por departamento
+function filtrarCiudades() {
+    $('#fo_departamento').on('changed.bs.select', function(e) {
+        let fo_departamento = $('select[name="fo_departamento"] option:selected').val();
+        filtrar(fo_departamento);
+    })
+}
+
+function filtrar(fo_departamento) {
+    console.log(fo_departamento);
+    $.ajax({
+        type: "POST",
+        url: "../ajax/ciudades.php?op=selectCiudad",
+        data: {
+            fo_departamento: fo_departamento
+        },
+        dataType: 'json',
+        function(r) {
+            $('#fo_ciudad').html(r);
+            $('#fo_ciudad').selectpicker('refresh');
+        },
+    });
+
+}
+
+
+// Carga de opciones en el select Compañías
+function cargarCompanias() {
+    $.post("../ajax/companias.php?op=selectCompania", function(r) {
+        $('#fo_compania').html(r);
+        $('#fo_compania').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select Sedes
+function cargarSedes() {
+    $.post("../ajax/sedes.php?op=selectSede", function(r) {
+        $('#fo_sede').html(r);
+        $('#fo_sede').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select Cargos
+function cargarCargos() {
+    $.post("../ajax/cargo.php?op=selectCargo", function(r) {
+        $('#fo_cargo').html(r);
+        $('#fo_cargo').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select EPS
+function cargarEPS() {
+    $.post("../ajax/eps.php?op=selectEPS", function(r) {
+        $('#fo_eps').html(r);
+        $('#fo_eps').selectpicker('refresh');
+    })
+}
+
+// Carga de opciones en el select ARL
+function cargarARL() {
+    $.post("../ajax/arl.php?op=selectARL", function(r) {
+        $('#fo_arl').html(r);
+        $('#fo_arl').selectpicker('refresh');
+    })
+}
+
+// Carga los números de cédula de Empleados en la página Edición de empleados
+function cargarCedulasEmpleados() {
+    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
+        $('#numero_identificacion').html(r);
+        $('#numero_identificacion').selectpicker('refresh');
+    })
+}
+
+// Carga los números de cédula de Empleados en la página Act/Desact de empleados
+function cargarCedulasActivacion() {
+    $.post("../ajax/empleados.php?op=selectNumeroIdentificacion", function(r) {
+        $('#buscarId').html(r);
+        $('#buscarId').selectpicker('refresh');
+    })
+}
+
+function cargarInformacionEmpleado() {
+    // Carga la información del empleado
+    $('#numero_identificacion').on('changed.bs.select', function(e) {
+        let numero_identificacion = $('select[name="numero_identificacion"] option:selected').text();
+        habilitarFormulario();
+        mostrar(numero_identificacion);
+    })
 }
 
 init();

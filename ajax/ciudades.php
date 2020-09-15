@@ -5,26 +5,20 @@ require_once "../modelos/Ciudades.php";
 $ciudadS = new Ciudades();
 
 
-switch ($_GET["op"])
-{
+switch ($_GET["op"]) {
     case "selectAll":
-        $rspta = $ciudadS -> selectAll();
+        $rspta = $ciudadS->selectAll();
 
-        while ($reg = $rspta -> fetch_object())
-        {
-            echo '<option value=' . $reg -> id_ciudad . '>' . $reg -> ciudad . '</option>';
+        while ($reg = $rspta->fetch_object()) {
+            echo '<option value=' . $reg->id_ciudad . '>' . $reg->ciudad . '</option>';
         }
-    break;
+        break;
 
     case "selectCiudad":
-        $rspta = $ciudadS -> select($idDepartamento);
+        $rspta = $ciudadS->select($fo_departamento);
 
-        while ($reg = $rspta -> fetch_object())
-        {
-            echo '<option data='. $reg -> Departamento .' value=' . $reg -> id_ciudad . '>' . $reg -> ciudad . '</option>';
+        while ($reg = $rspta->fetch_object()) {
+            echo '<option value=' . $reg->id_ciudad . '>' . $reg->ciudad . ' Coño </option>';
         }
-    break;
-
+        break;
 }
-
-?>

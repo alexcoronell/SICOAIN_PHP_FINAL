@@ -10,21 +10,19 @@ class Ciudades
 
     public function __construct()
     {
-        
     }
-   
+
     public function selectAll()
     {
         $sql = "SELECT * FROM ciudad";
         return ejecutarConsulta($sql);
     }
 
-    public function select($idDepartamento)
+    public function select($fo_departamento)
     {
         $sql = "SELECT * FROM ciudad
-        WHERE Departamento = '$idDepartamento'
+        WHERE Departamento = '$fo_departamento'
         ";
         return ejecutarConsulta($sql);
     }
-
 }
