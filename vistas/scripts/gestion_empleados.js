@@ -13,7 +13,7 @@ function init() {
 
     cargarDepartamentos();
 
-    cargarCiudades();
+    //cargarCiudades();
 
     cargarCompanias();
 
@@ -307,6 +307,7 @@ function filtrarCiudades(fo_departamento) {
         },
         dataType: 'json',
         function(data) {
+            data = JSON.parse(data);
             console.log(data);
             $('#fo_ciudad').html(data);
             $('#fo_ciudad').selectpicker('refresh');
