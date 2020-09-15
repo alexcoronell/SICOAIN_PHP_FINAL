@@ -31,7 +31,14 @@ function init() {
 
     cargarInformacionEmpleado();
 
-    //filtrarCiudades();
+    // Filtrado de ciudades por departamento
+    $('#fo_departamento').on('changed.bs.select', function(e) {
+        let fo_departamento = $('select[name="fo_departamento"] option:selected').val();
+        console.log(fo_departamento);
+        console.log("Antes de la función filtrar");
+        filtrarCiudades(fo_departamento);
+        console.log("Después de la función filtrar");
+    })
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
 
@@ -290,16 +297,8 @@ function cargarCiudades() {
     })
 }
 
-// Filtrado de ciudades por departamento
-function filtrarCiudades() {
-    $('#fo_departamento').on('changed.bs.select', function(e) {
-        let fo_departamento = $('select[name="fo_departamento"] option:selected').val();
-        filtrar(fo_departamento);
-    })
-}
 
-function filtrar(fo_departamento) {
-    console.log(fo_departamento);
+function filtrarCiudades(fo_departamento) {
     $.ajax({
         type: "POST",
         url: "../ajax/ciudades.php?op=selectCiudad",
@@ -307,8 +306,9 @@ function filtrar(fo_departamento) {
             fo_departamento: fo_departamento
         },
         dataType: 'json',
-        function(r) {
-            $('#fo_ciudad').html(r);
+        function(data) {
+            console.log(data);
+            $('#fo_ciudad').html(data);
             $('#fo_ciudad').selectpicker('refresh');
         },
     });
