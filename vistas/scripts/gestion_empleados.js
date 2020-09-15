@@ -13,7 +13,7 @@ function init() {
 
     cargarDepartamentos();
 
-    //cargarCiudades();
+    cargarCiudades();
 
     cargarCompanias();
 
@@ -299,21 +299,13 @@ function cargarCiudades() {
 
 
 function filtrarCiudades(fo_departamento) {
-    $.ajax({
-        type: "POST",
-        url: "../ajax/ciudades.php?op=selectCiudad",
-        data: {
-            fo_departamento: fo_departamento
-        },
-        dataType: 'json',
-        function(data) {
-            data = JSON.parse(data);
-            console.log(data);
-            $('#fo_ciudad').html(data);
-            $('#fo_ciudad').selectpicker('refresh');
-        },
+    console.log("Antes de Ajax");
+    let urlConsulta = "../ajax/ciudades.php?dpto=" + fo_departamento;
+    console.log(urlConsulta);
+    $.get(urlConsulta, function(r) {
+        $('#fo_ciudad').html(r);
+        $('#fo_ciudad').selectpicker('refresh');
     });
-
 }
 
 
@@ -383,3 +375,22 @@ function cargarInformacionEmpleado() {
 }
 
 init();
+
+/* function filtrarCiudades(fo_departamento) {
+    console.log("Antes de Ajax");
+    $.ajax({
+        type: "POST",
+        url: "../ajax/ciudades.php?op=selectCiudad?dpto=" + fo_departamento,
+        data: {
+            fo_departamento: fo_departamento
+        },
+        dataType: 'json',
+        function(data) {
+            data = JSON.parse(data);
+            console.log(data);
+            $('#fo_ciudad').html(data);
+            $('#fo_ciudad').selectpicker('refresh');
+        },
+    });
+
+} */

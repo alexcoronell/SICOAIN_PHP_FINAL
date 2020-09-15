@@ -114,7 +114,8 @@
 
 .dropdown-menu {
     border: 1px solid $secondarycolor;
-    max-height: 100px !important;
+    min-height: 100px !important;
+    max-height: 220px !important;
 
     .bs-searchbox {
         input {

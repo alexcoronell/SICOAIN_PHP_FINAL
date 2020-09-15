@@ -441,7 +441,8 @@ ul {
 
 .dropdown-menu {
   border: 1px solid #004d40;
-  max-height: 100px !important;
+  min-height: 100px !important;
+  max-height: 220px !important;
 }
 .dropdown-menu .bs-searchbox input {
   font-size: 0.8em !important;

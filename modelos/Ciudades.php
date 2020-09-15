@@ -22,6 +22,7 @@ class Ciudades
     {
         $sql = "SELECT * FROM ciudad
         WHERE Departamento = '$fo_departamento'
+        ORDER BY ciudad ASC
         ";
         return ejecutarConsulta($sql);
     }
