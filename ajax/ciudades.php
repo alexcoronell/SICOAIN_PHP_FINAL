@@ -4,9 +4,16 @@ require_once "../modelos/Ciudades.php";
 
 $ciudadS = new Ciudades();
 
-$dptorecibido = $_GET["dpto"];
+switch ($_GET["op"])
+{
 
-$rspta = $ciudadS->select($dptorecibido);
-while ($reg = $rspta->fetch_object()) {
-    echo '<option value=' . $reg->id_ciudad . '>' . $reg->ciudad . '</option>';
+    case "selectAll":
+        $rspta = $ciudadS -> selectAll();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg->id_ciudad . '>' . $reg->ciudad . '</option>';
+        }
+    break;
+
 }

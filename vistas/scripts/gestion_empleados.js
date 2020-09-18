@@ -300,7 +300,7 @@ function cargarCiudades() {
 
 function filtrarCiudades(fo_departamento) {
     console.log("Antes de Ajax");
-    let urlConsulta = "../ajax/ciudades.php?dpto=" + fo_departamento;
+    let urlConsulta = "../ajax/ciudadesFiltro.php?dpto=" + fo_departamento;
     console.log(urlConsulta);
     $.get(urlConsulta, function(r) {
         $('#fo_ciudad').html(r);
