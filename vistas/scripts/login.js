@@ -1,3 +1,10 @@
+function init() {
+    limpiar();
+    $('#limpiar').click(function() {
+        limpiar();
+    })
+}
+
 $('#formularioAcceso').on('submit', function(e) {
     e.preventDefault();
     usuario = $('#usuario').val();
@@ -14,3 +21,12 @@ $('#formularioAcceso').on('submit', function(e) {
         }
     });
 })
+
+
+// Función Limpiar
+function limpiar() {
+    $('#usuario').val("");
+    $('#contrasena').val("");
+}
+
+init();
