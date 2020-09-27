@@ -1,5 +1,15 @@
 <?php
 
+ini_set('display_errors', 1);
+
+ini_set('display_startup_errors', 1);
+
+error_reporting(E_ALL);
+
+?>
+
+<?php
+
 // Se activa almacenamiento de la sesión
 ob_start();
 session_start();
@@ -10,8 +20,9 @@ if (!isset($_SESSION['nombre'])) {
     require_once "../modelos/Registros.php";
     require_once '../public/fpdf/fpdf.php';
 
+    $id_registro = $_GET["id_registro"];
     $registroPrint = new Registros();
-    $rspta = $registroPrint->ultimoRegistro();
+    $rspta = $registroPrint->RegistroIndividual($id_registro);
     $dateRegistro = new DateTime($rspta['fecha_registro']);
     $dateIncidente = new DateTime($rspta['fecha_incidente']);
 

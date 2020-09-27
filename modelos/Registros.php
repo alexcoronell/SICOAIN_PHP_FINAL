@@ -79,4 +79,14 @@ class Registros
         INNER JOIN suceso s ON r.fo_suceso = s.id ORDER BY id_registro DESC LIMIT 1";
         return ejecutarConsultaSimpleFila($sql);
     }
+
+    public function RegistroIndividual($id_registro)
+    {
+        $sql = "SELECT r.id_registro, em.numero_identificacion, em.nombres, em.apellidos, s.nombre, r.fecha_registro, r.fecha_incidente, r.descripcion, r.evidencia_digital, r.motivo_anulacion, r.condicion
+        FROM registros r
+        INNER JOIN empleado em ON r.fo_empleado = em.id
+        INNER JOIN suceso s ON r.fo_suceso = s.id
+        WHERE id_registro = '$id_registro'";
+        return ejecutarConsultaSimpleFila($sql);
+    }
 }

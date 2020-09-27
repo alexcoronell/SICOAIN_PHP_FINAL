@@ -104,7 +104,6 @@ function editar(e) {
             if (datos == "Registro actualizado correctamente") {
                 let generar = confirm(datos + "\n¿Desea generar e imprimir este Registro?");
                 if (confirm) {
-                    bootbox.alert("Se abrirá un pdf en nueva ventana");
                     generarReporte();
                     limpiar();
                 }
@@ -167,6 +166,11 @@ function cargarRegistros() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function generarReporte() {
+    let id_registro = $("#id_registro").val();
+    window.open('reporte_registro_individual.php?id_registro=' + id_registro, '_blank');
 }
 
 init();
