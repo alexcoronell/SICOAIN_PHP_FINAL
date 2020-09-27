@@ -105,7 +105,7 @@ function mostrarNombres(numero_identificacion) {
 }
 
 function generarReporte() {
-    window.open('reporte_registro_individual.php', '_blank');
+    window.open('reporte_registro_individual_ultimo.php', '_blank');
 }
 
 init();
