@@ -96,6 +96,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <label for="evidencia_digital" class="col-12 col-md-3">Evidencia digital:</label>
                                     <div class="col-12 col-md-9">
                                         <input type="file" class="form-control inputFile py-1" name="evidencia_digital" id="evidencia_digital">
+                                        <span class="mensaje_tipo_archivos">Solo Archivos: (jpg, jpeg, bmp, png, pdf)</span>
                                     </div>
                                 </div>
                             </div>

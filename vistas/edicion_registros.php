@@ -120,7 +120,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <div class="col-12 col-md-9">
                                         <input type="text" class="form-control" name="evidencia_actual" id="evidencia_actual">
                                         <input type="file" class="form-control inputFile py-1" name="evidencia_digital" id="evidencia_digital">
-                                        <span class="mensaje_tipo_archivos">Solo Archivos: (jpg, jpeg, bmp, png)</span>
+                                        <span class="mensaje_tipo_archivos">Solo Archivos: (jpg, jpeg, bmp, png, pdf)</span>
                                     </div>
                                 </div>
                             </div>

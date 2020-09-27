@@ -37,6 +37,24 @@ function init() {
         $('#fo_suceso').selectpicker('refresh');
     })
 
+    // Validación de la Evidencia Digital
+    $('#evidencia_digital').change(function() {
+        let fileName = this.files[0].name;
+        let fileSize = this.files[0].size;
+
+        if (fileSize > 3000000) {
+            bootbox.alert("El archivo no debe superar los 3Mb");
+            $("#evidencia_digital").val("");
+        } else {
+            let extension = fileName.split('.').pop();
+            extension = extension.toLowerCase();
+            if (extension != 'pdf' && extension != 'jpg' && extension != 'jpeg' && extension != 'png' && extension != 'bmp') {
+                bootbox.alert("Tipo de Archivo Inválido");
+                $("#evidencia_digital").val("");
+            }
+        }
+    })
+
 }
 /************************************************FIN DE LA FUNCION INIT **********************************************/
 
