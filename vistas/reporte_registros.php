@@ -65,7 +65,7 @@ if (!isset($_SESSION['nombre'])) {
         <div class="boton-mobile-regresar boton-mobile-regresar-reportes col-12 px-0 pt-4 w-100 text-center">
             <button class="btn btn-light px-5"><a href="menu_reportes.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
         </div>
-        <div class="posicionador-bottom soloMobile"></div>
+        <div class="posicionador-bottom"></div>
     <?php
 
     } else {
