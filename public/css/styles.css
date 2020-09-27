@@ -430,6 +430,11 @@ ul {
   border-color: #42b983;
 }
 
+.mensaje_tipo_archivos {
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
 .bootstrap-select .filter-option-inner-inner {
   font-size: 0.8em !important;
   color: black;

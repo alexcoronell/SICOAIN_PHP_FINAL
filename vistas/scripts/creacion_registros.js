@@ -84,6 +84,8 @@ function guardar(e) {
                     if (result) {
                         generarReporte();
                         limpiar();
+                    } else {
+                        bootbox.alert(datos);
                     }
                 })
             } else {

@@ -51,6 +51,7 @@ function init() {
 
 // Función para limpiar el formulario
 function limpiar() {
+    deshabilitarFormulario();
     $("#id_registro").val("");
     $("#fo_empleado").val("");
     $('#fo_empleado').selectpicker('refresh');
@@ -65,13 +66,7 @@ function limpiar() {
     $("#descripcion").val("");
     $("#motivo_anulacion").val("");
     $("#buscarId").val("");
-
-    $('#fo_empleado').prop('disabled', true);
-    $('#fo_suceso').prop('disabled', true);
-    $('#fecha_incidente').prop('disabled', true);
-    $('#descripcion').prop('disabled', true);
-    $('#evidencia_actual').prop('disabled', true);
-    $('#evidencia_digital').prop('disabled', true);
+    $('#buscarId').selectpicker('refresh');
 }
 
 // Función para buscar en el formulario de edición de Registros
@@ -105,6 +100,8 @@ function editar(e) {
                     if (result) {
                         generarReporte();
                         limpiar();
+                    } else {
+                        bootbox.alert(datos);
                     }
                 })
             } else {
@@ -121,6 +118,7 @@ function mostrar(id_registro) {
     }, function(data, status) {
         data = JSON.parse(data);
 
+        habilitarFormulario();
         $("#id_registro").val(data.id_registro);
         $("#fo_empleado").val(data.fo_empleado);
         $('#fo_empleado').selectpicker('refresh');
@@ -134,8 +132,6 @@ function mostrar(id_registro) {
         $("#usuario_creador").val(data.usuario_creador);
         $("#descripcion").val(data.descripcion);
         $("#buscarId").val("");
-
-        habilitarFormulario();
     })
 }
 
@@ -158,6 +154,15 @@ function habilitarFormulario() {
     $('#descripcion').prop('disabled', false);
     $('#evidencia_actual').prop('disabled', false);
     $('#evidencia_digital').prop('disabled', false);
+}
+
+function deshabilitarFormulario() {
+    $('#fo_empleado').prop('disabled', true);
+    $('#fo_suceso').prop('disabled', true);
+    $('#fecha_incidente').prop('disabled', true);
+    $('#descripcion').prop('disabled', true);
+    $('#evidencia_actual').prop('disabled', true);
+    $('#evidencia_digital').prop('disabled', true);
 }
 
 function cargarRegistros() {

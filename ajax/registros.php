@@ -19,7 +19,7 @@ $motivo_anulacion = isset($_POST["motivo_anulacion"]) ? limpiarCadena($_POST["mo
 switch ($_GET["op"]) {
     case 'guardar':
         if (!file_exists($_FILES['evidencia_digital']['tmp_name']) || !is_uploaded_file($_FILES['evidencia_digital']['tmp_name'])) {
-            $evidencia_digital = $evidencia_actual;
+            $evidencia_digital = "";
         } else {
             $ext = explode('.', $_FILES['evidencia_digital']['name']);
             if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
@@ -39,6 +39,9 @@ switch ($_GET["op"]) {
             if ($_FILES['evidencia_digital']['type'] == 'image/jpg' || $_FILES['evidencia_digital']['type'] == 'image/jpeg' || $_FILES['evidencia_digital']['type'] == 'image/png' || $_FILES['evidencia_digital']['type'] == 'image/bmp' || $_FILES['evidencia_digital']['type'] == 'application/pdf') {
                 $evidencia_digital = round(microtime(true)) . '.' . end($ext);
                 move_uploaded_file($_FILES['evidencia_digital']['tmp_name'], '../archivos/evidencias/' . $evidencia_digital);
+                unlink('../archivos/evidencias/' . $evidencia_actual);
+            } else {
+                $evidencia_digital = $evidencia_actual;
             }
         }
         $rspta = $registro->editar($id_registro, $fo_empleado, $fo_suceso, $fecha_incidente, $descripcion, $evidencia_digital);
