@@ -64,16 +64,17 @@ switch ($_GET["op"]) {
         while ($reg = $rspta->fetch_object()) {
             $data[] = array(
                 "0" => $reg->id_registro,
-                "1" => $reg->numero_identificacion,
-                "2" => $reg->nombres,
-                "3" => $reg->apellidos,
-                "4" => $reg->nombre,
-                "5" => $reg->fecha_registro,
-                "6" => $reg->fecha_incidente,
-                "7" => $reg->descripcion,
-                "8" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/' . $reg->evidencia_digital . '" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
-                "9" => $reg->motivo_anulacion,
-                "10" => ($reg->condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
+                "1" => ($reg->condicion) ? '<a href="reporte_registro_individual.php?id_registro=' . $reg->id_registro . '" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>' : '<a href="reporte_registro_individual_anulado.php?id_registro=' . $reg->id_registro . '" target="_blank"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a>',
+                "2" => $reg->numero_identificacion,
+                "3" => $reg->nombres,
+                "4" => $reg->apellidos,
+                "5" => $reg->nombre,
+                "6" => $reg->fecha_registro,
+                "7" => $reg->fecha_incidente,
+                "8" => $reg->descripcion,
+                "9" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/' . $reg->evidencia_digital . '" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
+                "10" => $reg->motivo_anulacion,
+                "11" => ($reg->condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
             );
         }
         $results = array(

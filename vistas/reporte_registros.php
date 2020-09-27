@@ -43,6 +43,7 @@ if (!isset($_SESSION['nombre'])) {
                             <table class="tabla-md table-striped table-bordered table-condensed table-hover" id="tbllistado">
                                 <thead>
                                     <th>Id.</th>
+                                    <th>Reportes</th>
                                     <th>Nro. Identificación</th>
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
