@@ -105,7 +105,7 @@ if (!isset($_SESSION['nombre'])) {
         $pdf->SetFont('Arial', '', 11);
         $pdf->MultiCell(165, 7, utf8_decode($rspta['motivo_anulacion']));
 
-        $pdf->Output('I', 'registro_incidente_' . $rspta['id_registro'], true);
+        $pdf->Output('I', 'registro_incidente_' . $rspta['id_registro'] . '.pdf', true);
     } else {
         require 'noacceso.php';
     }
