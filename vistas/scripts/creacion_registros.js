@@ -79,9 +79,15 @@ function guardar(e) {
         processData: false,
 
         success: function(datos) {
-            bootbox.alert(datos);
-            if (datos == "Registro guardado correctamente" || datos == "Registro actualizado correctamente") {
-                limpiar();
+            //bootbox.alert(datos);
+            if (datos == "Registro guardado correctamente") {
+                let generar = confirm(datos + "\n¿Desea generar e imprimir este Registro?");
+                if (confirm) {
+                    generarReporte();
+                    limpiar();
+                }
+            } else {
+                bootbox.alert(datos);
             }
         }
     })
@@ -96,6 +102,10 @@ function mostrarNombres(numero_identificacion) {
         let nombreCompleto = data.nombres + " " + data.apellidos;
         $("#nombresApellidos").val(nombreCompleto);
     })
+}
+
+function generarReporte() {
+    window.open('reporte_registro_individual.php', '_blank');
 }
 
 init();

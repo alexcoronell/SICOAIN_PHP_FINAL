@@ -100,10 +100,19 @@ function editar(e) {
         processData: false,
 
         success: function(datos) {
-            bootbox.alert(datos);
+            //bootbox.alert(datos);
+            if (datos == "Registro actualizado correctamente") {
+                let generar = confirm(datos + "\n¿Desea generar e imprimir este Registro?");
+                if (confirm) {
+                    bootbox.alert("Se abrirá un pdf en nueva ventana");
+                    generarReporte();
+                    limpiar();
+                }
+            } else {
+                bootbox.alert(datos);
+            }
         }
     })
-    limpiar();
 }
 
 // Función para mostrar los datos en la tabla de reportes y en formulario de edición

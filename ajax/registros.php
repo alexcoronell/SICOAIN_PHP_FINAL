@@ -71,9 +71,9 @@ switch ($_GET["op"]) {
                 "5" => $reg->fecha_registro,
                 "6" => $reg->fecha_incidente,
                 "7" => $reg->descripcion,
-                "8" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/'.$reg->evidencia_digital.'" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
+                "8" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/' . $reg->evidencia_digital . '" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
                 "9" => $reg->motivo_anulacion,
-                "10" => ($reg -> condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
+                "10" => ($reg->condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
             );
         }
         $results = array(
@@ -86,12 +86,17 @@ switch ($_GET["op"]) {
 
         break;
 
-        case "selectRegistro":
-            $rspta = $registro -> select();
-    
-            while ($reg = $rspta -> fetch_object())
-            {
-                echo '<option value=' . $reg -> id_registro . '>' . $reg -> id_registro . '</option>';
-            }
+    case "selectRegistro":
+        $rspta = $registro->select();
+
+        while ($reg = $rspta->fetch_object()) {
+            echo '<option value=' . $reg->id_registro . '>' . $reg->id_registro . '</option>';
+        }
+        break;
+
+    case "ultimoRegistro":
+        $rspta = $registro->ultimoRegistro();
+        // Codificación del resultado usando Json
+        echo json_encode($rspta);
         break;
 }
