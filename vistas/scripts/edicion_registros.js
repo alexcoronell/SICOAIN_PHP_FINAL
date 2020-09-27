@@ -100,13 +100,13 @@ function editar(e) {
         processData: false,
 
         success: function(datos) {
-            //bootbox.alert(datos);
             if (datos == "Registro actualizado correctamente") {
-                let generar = confirm(datos + "\n¿Desea generar e imprimir este Registro?");
-                if (confirm) {
-                    generarReporte();
-                    limpiar();
-                }
+                bootbox.confirm(datos + " ¿Desea generar e imprimir este Registro?", function(result) {
+                    if (result) {
+                        generarReporte();
+                        limpiar();
+                    }
+                })
             } else {
                 bootbox.alert(datos);
             }
