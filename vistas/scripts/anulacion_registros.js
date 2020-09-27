@@ -66,10 +66,15 @@ function anular(e) {
                 processData: false,
 
                 success: function(datos) {
-                    bootbox.alert(datos);
+                    //bootbox.alert(datos);
                     if (datos == "Registro anulado") {
-                        cargarRegistros();
-                        limpiar();
+                        let generar = confirm(datos + "\n¿Desea generar e imprimir este Registro?");
+                        if (confirm) {
+                            generarReporte();
+                            limpiar();
+                        }
+                    } else {
+                        bootbox.alert(datos);
                     }
                 }
             })
@@ -122,6 +127,11 @@ function cargarRegistros() {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })
+}
+
+function generarReporte() {
+    let id_registro = $("#id_registro").val();
+    window.open('reporte_registro_individual_anulado.php?id_registro=' + id_registro, '_blank');
 }
 
 init();
