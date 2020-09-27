@@ -50,9 +50,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <th>Suceso</th>
                                     <th>Fecha de registro</th>
                                     <th>Fecha de Incidente</th>
-                                    <th>Descripción</th>
                                     <th>Evidencia Digital</th>
-                                    <th>Motivo de anulación</th>
                                     <th>Cóndición</th>
                                 </thead>
 

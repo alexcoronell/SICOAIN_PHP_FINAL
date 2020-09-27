@@ -71,10 +71,8 @@ switch ($_GET["op"]) {
                 "5" => $reg->nombre,
                 "6" => $reg->fecha_registro,
                 "7" => $reg->fecha_incidente,
-                "8" => $reg->descripcion,
-                "9" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/' . $reg->evidencia_digital . '" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
-                "10" => $reg->motivo_anulacion,
-                "11" => ($reg->condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
+                "8" => ($reg->evidencia_digital) ? '<a href="../archivos/evidencias/' . $reg->evidencia_digital . '" class="enlaceEvidencia" target="_blank"><i class="fa fa-link" aria-hidden="true"></i> Ver Evidencia</a>' : '<span class="sinEvidencia">Sin Evidencia</span>',
+                "9" => ($reg->condicion) ? '<span class="registroActivado">Activado</span>' : '<span class="registroDesactivado">Anulado</span>'
             );
         }
         $results = array(
