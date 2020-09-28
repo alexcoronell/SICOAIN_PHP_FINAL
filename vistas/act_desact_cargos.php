@@ -16,7 +16,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Empleados</h2>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-8">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Activación y Desactivación de Cargos</h2>
 
