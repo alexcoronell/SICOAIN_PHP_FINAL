@@ -154,6 +154,12 @@ h6 {
     .boton-mobile-regresar {
         display: none;
     }
+
+    .titleBig {
+        h1 {
+            font-size: 3rem !important;
+        }
+    }
 }
 
 @media (min-width:768px) and (max-width: 991px) {
@@ -168,6 +174,15 @@ h6 {
 @media (max-width: 991px) {
     .min992 {
         display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .titleBig {
+        h1 {
+            font-size: 3.5rem !important;
+            left: 360px
+        }
     }
 }
 

@@ -140,6 +140,10 @@ h6 {
   .boton-mobile-regresar {
     display: none;
   }
+
+  .titleBig h1 {
+    font-size: 3rem !important;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .titleBig h1 {
@@ -150,6 +154,12 @@ h6 {
 @media (max-width: 991px) {
   .min992 {
     display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .titleBig h1 {
+    font-size: 3.5rem !important;
+    left: 360px;
   }
 }
 @media (max-width: 1200px) {
@@ -335,6 +345,7 @@ ul {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    position: static;
   }
   .menu-box nav {
     margin-left: auto;
@@ -352,11 +363,6 @@ ul {
   }
   .menu-box .salir-menu span {
     display: none !important;
-  }
-}
-@media (max-width: 991px) {
-  .menu-box {
-    position: static;
   }
 }
 .box-formulario {
