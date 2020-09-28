@@ -132,10 +132,6 @@ h6 {
   }
 }
 @media (min-width: 768px) {
-  .ml-n2 {
-    margin-left: -4rem !important;
-  }
-
   .soloMobile {
     display: none;
   }
@@ -148,6 +144,11 @@ h6 {
   .titleBig h1 {
     font-size: 3rem !important;
     left: 350px;
+  }
+}
+@media (min-width: 1251px) {
+  .ml-n2 {
+    margin-left: -4rem !important;
   }
 }
 .title-page-login {
@@ -394,13 +395,6 @@ ul {
   display: none;
 }
 
-.empleados-col-1 label {
-  padding-left: 0;
-  padding-right: 0;
-  margin-right: 0 !important;
-  margin-left: 0 !important;
-}
-
 .box-formulario-registros {
   width: 600px;
 }
@@ -544,7 +538,7 @@ ul {
 
 @media (max-width: 575px) {
   .box-formulario {
-    max-width: 320px !important;
+    max-width: 360px !important;
     padding-left: 0;
     padding-right: 0;
   }
@@ -553,6 +547,10 @@ ul {
   }
   .box-formulario .cancelar button {
     text-align: center;
+  }
+
+  .box-formulario-empleados {
+    max-width: 360px;
   }
 }
 @media (max-width: 767px) {
@@ -563,6 +561,23 @@ ul {
   .box-formulario {
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: 460px;
+  }
+
+  .box-formulario-empleados {
+    max-width: 460px;
+  }
+  .box-formulario-empleados .empleados-col-1,
+.box-formulario-empleados .empleados-col-2 {
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .box-formulario-empleados .form-group {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .formulario-registros {
@@ -584,15 +599,36 @@ ul {
     margin-top: 2rem !important;
   }
 
+  .boton-mobile-regresar {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .boton-mobile-regresar button {
     display: inline;
     margin-left: auto;
     margin-right: auto;
   }
 }
+@media (min-width: 768px) {
+  .box-formulario-empleados {
+    width: 100%;
+  }
+
+  .empleados-col-1 label {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+}
 @media (max-width: 991px) {
   .box-formulario {
     width: 100%;
+  }
+
+  .box-formulario-empleados {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .min992 {
@@ -611,6 +647,11 @@ ul {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media (min-width: 992px) and (max-width: 1250px) {
+  .box-formulario-empleados {
+    margin-left: 2rem !important;
   }
 }
 .formulario-registros label,

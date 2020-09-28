@@ -16,7 +16,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 w-100">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Empleados</h2>
@@ -42,13 +42,15 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-8 ml-n2 pr-3">
+
+
+                <div class="col-12 col-md-6 col-lg-8 ml-n2 pr-3">
                     <div class="box-formulario-empleados container mt-1 p-0">
                         <h2 class="text-center title-formularios" id="pagina">Creación de Empleados</h2>
                         <form name="formulario" id="formulario" method="POST">
                             <input type="hidden" name="id" id="id">
                             <div class="row">
-                                <div class="col-12 col-md-6 empleados-col-1">
+                                <div class="col-12 col-lg-6 empleados-col-1 pl-1">
 
                                     <!-- Tipo de Identificación -->
                                     <div class="form-group row">
@@ -136,7 +138,7 @@ if (!isset($_SESSION['nombre'])) {
 
                                 <!-- Inicia segunda columna -->
 
-                                <div class="col-12 col-md-6 pl-1">
+                                <div class="col-12 col-lg-6 empleados-col-2 pl-1">
 
 
                                     <!-- Compañía -->
@@ -223,7 +225,7 @@ if (!isset($_SESSION['nombre'])) {
                                         <div class="col-6 offset-md-4 col-md-4 guardar">
                                             <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                         </div>
-                                        <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                        <div class="col-6 col-md-4 cancelar text-right text-md-left pr-0">
                                             <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                         </div>
                                     </div>
