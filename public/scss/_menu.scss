@@ -99,3 +99,9 @@ ul {
         }
     }
 }
+
+@media (max-width: 991px) {
+    .menu-box {
+        position: static;
+    }
+}

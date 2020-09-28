@@ -96,6 +96,10 @@ h6 {
   .mainBackground2 {
     opacity: 0.2 !important;
   }
+
+  .soloDesktop {
+    display: none;
+  }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .logo-principal {
@@ -122,12 +126,21 @@ h6 {
     left: 360px;
   }
 }
+@media (max-width: 768px) {
+  .soloDesktop {
+    display: none;
+  }
+}
 @media (min-width: 768px) {
   .ml-n2 {
     margin-left: -4rem !important;
   }
 
   .soloMobile {
+    display: none;
+  }
+
+  .boton-mobile-regresar {
     display: none;
   }
 }
@@ -329,6 +342,11 @@ ul {
     display: none !important;
   }
 }
+@media (max-width: 991px) {
+  .menu-box {
+    position: static;
+  }
+}
 .box-formulario {
   width: 450px;
 }
@@ -527,22 +545,14 @@ ul {
 @media (max-width: 575px) {
   .box-formulario {
     max-width: 320px !important;
+    padding-left: 0;
+    padding-right: 0;
   }
   .box-formulario .cancelar {
     text-align: right;
   }
   .box-formulario .cancelar button {
     text-align: center;
-  }
-
-  .boton-mobile-regresar {
-    max-width: 320px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .boton-mobile-regresar button {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 @media (max-width: 767px) {
@@ -551,8 +561,8 @@ ul {
   }
 
   .box-formulario {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .formulario-registros {
@@ -573,10 +583,34 @@ ul {
   .nombresApellidos-box {
     margin-top: 2rem !important;
   }
+
+  .boton-mobile-regresar button {
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
-@media (min-width: 768px) {
-  .boton-mobile-regresar {
-    display: none;
+@media (max-width: 991px) {
+  .box-formulario {
+    width: 100%;
+  }
+
+  .min992 {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .box-formulario {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .title-formularios {
+    white-space: nowrap;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .formulario-registros label,

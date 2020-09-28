@@ -103,7 +103,7 @@
 
 .mensaje_tipo_archivos {
     font-style: italic;
-    font-size: .7rem;
+    font-size: 0.7rem;
 }
 
 .bootstrap-select {
@@ -222,6 +222,8 @@
 @media (max-width: 575px) {
     .box-formulario {
         max-width: 320px !important;
+        padding-left: 0;
+        padding-right: 0;
 
         .cancelar {
             text-align: right;
@@ -229,17 +231,6 @@
             button {
                 text-align: center;
             }
-        }
-    }
-
-    .boton-mobile-regresar {
-        max-width: 320px;
-        margin-left: 0;
-        margin-right: 0;
-
-        button {
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 }
@@ -250,8 +241,8 @@
     }
 
     .box-formulario {
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .formulario-registros {
@@ -273,10 +264,38 @@
     .nombresApellidos-box {
         margin-top: 2rem !important;
     }
+
+    .boton-mobile-regresar {
+        button {
+            display: inline;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
-@media (min-width: 768px) {
-    .boton-mobile-regresar {
-        display: none;
+@media (max-width: 991px) {
+    .box-formulario {
+        width: 100%;
+    }
+
+    .min992 {
+        display: none !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .box-formulario {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .title-formularios {
+        //overflow-x: visible !important;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

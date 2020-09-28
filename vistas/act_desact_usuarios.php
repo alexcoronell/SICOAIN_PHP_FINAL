@@ -15,7 +15,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Usuarios</h2>
@@ -30,57 +30,57 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-0 pr-xl-5">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Activación/Desactivación de Usuarios</h2>
                         <!-- Busqueda -->
                         <div class="form-group row grupoBusqueda mt-3">
-                            <label for="rol" class="col-3 mt-2">Buscar:</label>
-                            <div class="col-9 searchbox">
+                            <label for="rol" class="col-2 col-lg-4 mt-2">Buscar<span class="soloDesktop"> Usuario</span>:</label>
+                            <div class="col-10 col-lg-8 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
-                        <!-- Formulario --> 
+                        <!-- Formulario -->
                         <div class="formularioEditActDesact mt-3">
-                        <form name="formulario"  id="formulario" method="POST">
+                            <form name="formulario" id="formulario" method="POST">
 
-                            <!-- Usuario -->
+                                <!-- Usuario -->
+                                <div class="form-group row">
+                                    <label for="usuario" class="col-lg-4">Usuario:</label>
+                                    <div class="col-lg-8">
+                                        <input type="hidden" name="id" id="id">
+                                        <input type="text" class="form-control" name="usuario" id="usuario" disabled autocomplete="off">
+                                    </div>
+                                </div>
+
+                                <!-- Usuario -->
+                                <div class="form-group row">
+                                    <label for="nombre" class="col-lg-4">Nombre:</label>
+                                    <div class="col-lg-8">
+                                        <input type="hidden" name="id" id="id">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" disabled autocomplete="off">
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!-- Área de botones -->
                             <div class="form-group row">
-                                <label for="usuario" class="col-4">usuario:</label>
-                                <div class="col-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="usuario" id="usuario" disabled autocomplete="off">
+                                <div class="offset-lg-4 col-6 col-lg-4 guardar">
+                                    <button type="submit" id="button_default" class="btn btn-light" disabled>Act/Desact</button>
+                                    <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
+                                    <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
+                                </div>
+                                <div class="col-6 col-lg-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
                                 </div>
                             </div>
-
-                            <!-- Usuario -->
-                            <div class="form-group row">
-                                <label for="nombre" class="col-4">Nombre:</label>
-                                <div class="col-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="nombre" id="nombre" disabled autocomplete="off">
-                                </div>
-                            </div>
-
-                        </form>
-                        <!-- Área de botones -->
-                        <div class="form-group row">
-                            <div class="offset-md-4 col-6 col-md-4 guardar">
-                                <button type="submit" id="button_default" class="btn btn-light" disabled>Act/Desact</button>
-                                <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
-                                <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
-                            </div>
-                            <div class="col-6 col-md-4 cancelar text-right">
-                                <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
-                            </div>
-                        </div>
                         </div>
 
-                        
+
                         <div class="boton-mobile-regresar col-12 row mb-2">
-                            <button class="btn btn-light px-5"><a href="principal.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
+                            <button class="btn btn-light px-5"><a href="usuarios.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                         </div>
                     </div>
                 </div>

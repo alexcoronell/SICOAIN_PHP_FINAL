@@ -15,7 +15,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Usuarios</h2>
@@ -30,15 +30,15 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-0 pr-xl-5">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Usuarios</h2>
                         <!-- Busqueda -->
                         <div class="form-group row grupoBusqueda mt-3">
-                            <label for="buscarId" class="col-3 mt-2">Buscar:</label>
-                            <div class="col-9 searchbox">
+                            <label for="buscarId" class="col-2 col-lg-4 mt-2">Buscar<span class="soloDesktop"> Usuario</span>:</label>
+                            <div class="col-10 col-lg-8 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
@@ -47,8 +47,8 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Usuario -->
                             <div class="form-group row">
-                                <label for="usuario" class="col-4 mt-md-2">usuario:</label>
-                                <div class="col-8">
+                                <label for="usuario" class="col-lg-4 mt-md-2">Usuario:</label>
+                                <div class="col-lg-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
                                 </div>
@@ -56,8 +56,8 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Nombre -->
                             <div class="form-group row">
-                                <label for="nombre" class="col-4 mt-md-2">Nombres:</label>
-                                <div class="col-8">
+                                <label for="nombre" class="col-lg-4 mt-md-2">Nombres:</label>
+                                <div class="col-lg-8">
                                     <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
                                 </div>
                             </div>
@@ -91,8 +91,8 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Contraseña -->
                             <div class="form-group row">
-                                <label for="contrasena" class="col-4 mt-md-2">Contraseña: *</label>
-                                <div class="col-8">
+                                <label for="contrasena" class="col-lg-4 mt-md-2">Contraseña: *</label>
+                                <div class="col-lg-8">
                                     <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
                                 </div>
                             </div>
@@ -100,10 +100,10 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Botones de formulario -->
                             <div class="form-group row">
-                                <div class="offset-md-4 col-6 col-md-4 guardar">
+                                <div class="offset-lg-4 col-6 col-lg-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right">
+                                <div class="col-6 col-lg-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
@@ -116,6 +116,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
         </div>
+        <div class="posicionador-bottom"></div>
         </div>
 
     <?php
