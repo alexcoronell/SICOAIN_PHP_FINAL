@@ -113,6 +113,7 @@ h6 {
   .titleBig h1 {
     font-size: 2rem !important;
     left: 350px;
+    top: 120px;
   }
 
   .mainBackground {
@@ -144,6 +145,16 @@ h6 {
   .titleBig h1 {
     font-size: 3rem !important;
     left: 350px;
+  }
+}
+@media (max-width: 991px) {
+  .min992 {
+    display: none !important;
+  }
+}
+@media (max-width: 1200px) {
+  .min1200 {
+    display: none !important;
   }
 }
 @media (min-width: 1251px) {
@@ -629,10 +640,6 @@ ul {
   .box-formulario-empleados {
     margin-left: auto !important;
     margin-right: auto !important;
-  }
-
-  .min992 {
-    display: none !important;
   }
 }
 @media (min-width: 992px) {

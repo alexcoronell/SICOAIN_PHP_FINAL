@@ -15,7 +15,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Compañías</h2>
@@ -32,24 +32,24 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Edición de Compañías</h2>
 
                         <!-- Búsqueda de compañía -->
                         <div class="form-group row grupoBusqueda mt-3">
-                            <label for="rol" class="col-12 col-md-3 mt-2">Buscar:</label>
-                            <div class="col-12 col-md-9 searchbox">
+                            <label for="buscarId" class="col-2 col-lg-4 mt-2">Buscar<span class="min1200"> Compañía</span>:</label>
+                            <div class="col-10 col-lg-8 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true"></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up" aria-hidden="true" title="Cargar formularioEditActDesact mt-5Información" alt="Cargar Información"></i>Cargar</button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar formularioEditActDesact mt-5Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
                         <!-- Formulario -->
                         <form name="formulario" id="formulario" class="formularioEditActDesact mt-3" method="POST">
                             <div class="form-group row">
-                                <label for="compania" class="col-12 col-md-4 mt-md-2">Compañía:</label>
-                                <div class="col-12 col-md-8">
+                                <label for="compania" class="col-12 col-lg-4 mt-md-2">Compañía:</label>
+                                <div class="col-12 col-lg-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="compania" id="compania">
                                 </div>
@@ -57,26 +57,26 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Teléfono -->
                             <div class="form-group row">
-                                <label for="telefono_compania" class="col-12 col-md-4 mt-md-2">Teléfono:</label>
-                                <div class="col-12 col-md-8">
+                                <label for="telefono_compania" class="col-12 col-lg-4 mt-md-2">Teléfono:</label>
+                                <div class="col-12 col-lg-8">
                                     <input type="text" class="form-control" name="telefono_compania" id="telefono_compania">
                                 </div>
                             </div>
 
                             <!-- Dirección -->
                             <div class="form-group row">
-                                <label for="direccion_compania" class="col-12 col-md-4 mt-md-2">Dirección:</label>
-                                <div class="col-12 col-md-8">
+                                <label for="direccion_compania" class="col-12 col-lg-4 mt-md-2">Dirección:</label>
+                                <div class="col-12 col-lg-8">
                                     <textarea name="direccion_compania" id="direccion_compania" maxlength="256" class="form-control"></textarea>
                                 </div>
                             </div>
 
                             <!-- Botones -->
                             <div class="form-group row">
-                                <div class="col-6 offset-md-4 col-md-4 guardar">
+                                <div class="col-6 offset-lg-4 col-lg-4 guardar">
                                     <button type="submit" class="btn btn-primary">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right">
+                                <div class="col-6 col-lg-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" onclick="cancelar()">Cancelar</button>
                                 </div>
                             </div>
