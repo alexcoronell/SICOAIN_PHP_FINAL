@@ -13,7 +13,7 @@ if (!isset($_SESSION['nombre'])) {
 ?>
         <div class="main-content container-fluid">
             <div class="row pr-md-5">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Incidentes y Sucesos</h2>
@@ -41,37 +41,37 @@ if (!isset($_SESSION['nombre'])) {
                     </div>
                 </div>
 
-                <div class="col-12 col-md-8 ml-n2 pr-0 pr-md-3">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9 pr-0 pr-md-3">
                     <div class="box-formulario formulario-registros container mt-1 p-0 row w-100">
                         <h2 class="text-center title-formularios">Creación de Registros</h2>
                         <form name="formulario" id="formulario" method="POST" class="col-12 container row">
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-lg-6">
 
                                 <!-- Empleado -->
-                                <div class="form-group row mt-md-3">
-                                    <label for="fo_empleado" class="col-12 col-md-3">Número Identificación Empleado:</label>
-                                    <div class="col-12 col-md-9">
+                                <div class="form-group row mt-xl-3">
+                                    <label for="fo_empleado" class="col-12 col-xl-3">Número Identificación Empleado:</label>
+                                    <div class="col-12 col-xl-9">
                                         <input type="hidden" name="id_registro" id="id_registro">
                                         <select name="fo_empleado" id="fo_empleado" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                     </div>
-                                    <div class="col-12 offset-md-3 col-md-9 nombresApellidos-box">
+                                    <div class="col-12 offset-xl-3 col-xl-9 nombresApellidos-box">
                                         <input type="text" class="form-control" name="nombresApellidos" id="nombresApellidos" disabled>
                                     </div>
                                 </div>
 
                                 <!-- Suceso -->
                                 <div class="form-group row">
-                                    <label for="fo_suceso" class="col-12 col-md-3 mt-md-2">Suceso: </label>
-                                    <div class="col-12 col-md-9">
+                                    <label for="fo_suceso" class="col-12 col-xl-3 mt-xl-2">Suceso: </label>
+                                    <div class="col-12 col-xl-9">
                                         <select name="fo_suceso" id="fo_suceso" class="form-control selectpicker" title="Seleccione..." data-live-search="true" required></select>
                                     </div>
                                 </div>
 
                                 <!-- Fecha de Incidente -->
                                 <div class="form-group row">
-                                    <label for="fecha_incidente" class="col-12 col-md-3">Fecha de Incidente:</label>
-                                    <div class="col-12 col-md-9">
+                                    <label for="fecha_incidente" class="col-12 col-xl-3">Fecha de Incidente:</label>
+                                    <div class="col-12 col-xl-9">
                                         <input type="hidden" class="form-control" name="fecha_registro" id="fecha_registro">
                                         <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente">
                                     </div>
@@ -79,22 +79,22 @@ if (!isset($_SESSION['nombre'])) {
 
                             </div>
 
-                            <div class="col-12 col-md-6">
+                            <div class="col-12 col-lg-6">
 
                                 <!-- Descripción, impresión y generación de PDF  -->
-                                <div class="form-group row mt-md-3">
-                                    <div class="col-12 col-md-3">
+                                <div class="form-group row mt-xl-3">
+                                    <div class="col-12 col-xl-3">
                                         <label for="descripcion">Descripción:*</label>
                                     </div>
-                                    <div class="col-12 col-md-9">
+                                    <div class="col-12 col-xl-9">
                                         <textarea name="descripcion" id="descripcion" maxlength="512" rows="6" class="form-control"></textarea>
                                     </div>
                                 </div>
 
                                 <!-- Evidencia Digital -->
                                 <div class="form-group row">
-                                    <label for="evidencia_digital" class="col-12 col-md-3">Evidencia digital:</label>
-                                    <div class="col-12 col-md-9">
+                                    <label for="evidencia_digital" class="col-12 col-xl-3">Evidencia digital:</label>
+                                    <div class="col-12 col-xl-9">
                                         <input type="file" class="form-control inputFile py-1" name="evidencia_digital" id="evidencia_digital">
                                         <span class="mensaje_tipo_archivos">Solo Archivos: (jpg, jpeg, bmp, png, pdf)</span>
                                     </div>
@@ -104,10 +104,10 @@ if (!isset($_SESSION['nombre'])) {
                             <!-- Botones -->
                             <div class="col-12">
                                 <div class="form-group row">
-                                    <div class="col-6 offset-md-4 col-md-4 text-md-right guardar">
+                                    <div class="col-6 offset-xl-4 col-xl-4 text-md-right guardar">
                                         <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                     </div>
-                                    <div class="col-6 col-md-4 cancelar text-right text-md-left">
+                                    <div class="col-6 col-xl-4 cancelar text-right text-md-left">
                                         <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Limpiar</button>
                                     </div>
                                 </div>

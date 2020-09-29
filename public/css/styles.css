@@ -154,6 +154,7 @@ h6 {
 @media (max-width: 991px) {
   .min992 {
     display: none !important;
+    font-size: inherit;
   }
 }
 @media (min-width: 992px) {
@@ -162,7 +163,7 @@ h6 {
     left: 360px;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .min1200 {
     display: none !important;
   }
@@ -376,6 +377,8 @@ ul {
 .title-formularios {
   font-size: 1.8em;
   color: #004d40;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .box-formulario-empleados .col-6 {
@@ -413,7 +416,8 @@ ul {
 }
 
 .box-formulario-registros {
-  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .generadores {
@@ -553,6 +557,16 @@ ul {
   padding-left: 1.5rem;
 }
 
+.formulario-registros-anulacion {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-right: 0;
+  padding-left: 0;
+}
+.formulario-registros-anulacion:only-child {
+  margin-left: 0;
+}
+
 @media (max-width: 575px) {
   .box-formulario {
     max-width: 360px !important;
@@ -597,23 +611,14 @@ ul {
     margin-right: auto;
   }
 
-  .formulario-registros {
-    padding-right: 0 !important;
-    width: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   .anulacion-box {
     padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   .anulacion-box .form-group {
     padding-right: 0;
     margin-left: 0;
-  }
-
-  .nombresApellidos-box {
-    margin-top: 2rem !important;
   }
 
   .boton-mobile-regresar {
@@ -658,8 +663,11 @@ ul {
     white-space: nowrap;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+  }
+}
+@media (max-width: 1199px) {
+  .nombresApellidos-box {
+    margin-top: 2rem !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1250px) {

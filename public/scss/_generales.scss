@@ -174,6 +174,7 @@ h6 {
 @media (max-width: 991px) {
     .min992 {
         display: none !important;
+        font-size: inherit;
     }
 }
 
@@ -186,7 +187,7 @@ h6 {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
     .min1200 {
         display: none !important;
     }
