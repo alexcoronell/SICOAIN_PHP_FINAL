@@ -16,7 +16,7 @@ if (!isset($_SESSION['nombre'])) {
         <div class="main-content container-fluid">
 
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-md-4">
                     <div class="menu-box">
                         <div class="title-menu">
                             <h2>Menú de Reportes</h2>

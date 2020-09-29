@@ -15,10 +15,14 @@ td {
 
 .box-reporte-md {
     width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .box-reporte-xs {
-    width: 400px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .box-reporte {
@@ -148,6 +152,43 @@ table.dataTable {
             color: red;
         }
     }
+}
+
+@media (min-width: 576px) {
+    .box-reporte-xs {
+        width: 90%;
+        max-width: 550px;
+
+        .dt-buttons {
+            display: inline;
+        }
+
+        .tbllistado_filter {
+            display: inline;
+        }
+
+        table {
+            max-width: 400px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .box-reporte-xs {
+        width: 100%;
+
+        .dt-buttons {
+            display: block;
+        }
+
+        .tbllistado_filter {
+            display: block;
+        }
+    }
+
 }
 
 @media (max-width: 767px) {
