@@ -125,6 +125,7 @@ function editar(e) {
                 bootbox.alert(datos);
             }
         }
+
     })
 }
 

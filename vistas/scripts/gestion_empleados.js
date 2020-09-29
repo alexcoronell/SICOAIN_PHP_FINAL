@@ -119,9 +119,28 @@ function guardaryeditar(e) {
         processData: false,
 
         success: function(datos) {
-            bootbox.alert(datos);
-            if (datos == "Empleado actualizado correctamente" || datos == "Empleado registrado correctamente") {
-                limpiar();
+            if (datos == "Empleado registrado correctamente") {
+                bootbox.confirm(datos + " ¿Desea generar e imprimir este Registro?", function(result) {
+                    if (result) {
+                        generarReporteUltimoEmpleado();
+                        limpiar()
+                    } else {
+                        bootbox.alert(datos);
+                        limpiar();
+                    }
+                })
+            } else if (datos == "Empleado actualizado correctamente") {
+                bootbox.confirm(datos + " ¿Desea generar e imprimir este Registro?", function(result) {
+                    if (result) {
+                        generarReporteEmpleado()
+                        limpiar();
+                    } else {
+                        bootbox.alert(datos);
+                        limpiar();
+                    }
+                })
+            } else {
+                bootbox.alert(datos);
             }
         }
     })
@@ -374,23 +393,13 @@ function cargarInformacionEmpleado() {
     })
 }
 
+function generarReporteUltimoEmpleado() {
+    window.open('reporte_empleado_individual_ultimo.php', '_blank');
+}
+
+function generarReporteEmpleado() {
+    let id = $("#id").val();
+    window.open('reporte_empleado_individual.php?id=' + id, '_blank');
+}
+
 init();
-
-/* function filtrarCiudades(fo_departamento) {
-    console.log("Antes de Ajax");
-    $.ajax({
-        type: "POST",
-        url: "../ajax/ciudades.php?op=selectCiudad?dpto=" + fo_departamento,
-        data: {
-            fo_departamento: fo_departamento
-        },
-        dataType: 'json',
-        function(data) {
-            data = JSON.parse(data);
-            console.log(data);
-            $('#fo_ciudad').html(data);
-            $('#fo_ciudad').selectpicker('refresh');
-        },
-    });
-
-} */

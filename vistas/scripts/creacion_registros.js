@@ -104,6 +104,7 @@ function guardar(e) {
                         limpiar();
                     } else {
                         bootbox.alert(datos);
+                        limpiar();
                     }
                 })
             } else {
