@@ -14,7 +14,7 @@ if (!isset($_SESSION['nombre'])) {
 
         <div class="main-content container-fluid">
             <div class="row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3">
                     <div class="menu-box menu-box-modulos">
                         <div class="title-menu">
                             <h2>Menú de Incidentes y Sucesos</h2>
@@ -41,15 +41,15 @@ if (!isset($_SESSION['nombre'])) {
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
                     </div>
                 </div>
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-0 px-md-1 pr-xl-5">
                     <div class="box-formulario container mt-1 ml-1">
                         <h2 class="text-center title-formularios">Creación de Sucesos</h2>
                         <form name="formulario" id="formulario" method="POST">
 
                             <!-- Nombre -->
                             <div class="form-group row mt-3">
-                                <label for="suceso" class="col-12 col-md-4 mt-md-2">Nombre Suceso:</label>
-                                <div class="col-12 col-md-8">
+                                <label for="suceso" class="col-12 col-lg-4 mt-lg-2">Nombre Suceso:</label>
+                                <div class="col-12 col-lg-8">
                                     <input type="hidden" name="id" id="id">
                                     <input type="text" class="form-control" name="nombre" id="nombre">
                                 </div>
@@ -58,10 +58,10 @@ if (!isset($_SESSION['nombre'])) {
 
                             <!-- Botones de formulario -->
                             <div class="form-group row">
-                                <div class="col-6 offset-md-4 col-md-4 guardar">
+                                <div class="col-6 offset-lg-4 col-lg-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
-                                <div class="col-6 col-md-4 cancelar text-right">
+                                <div class="col-6 col-lg-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="limpiar()">Cancelar</button>
                                 </div>
                             </div>
