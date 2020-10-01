@@ -13,19 +13,16 @@ ul>li>ul>li:last-child {
 
 /* MENU PRINCIPAL */
 
-.menu-box,
-.menu-box-noacceso {
+.menu-box {
     margin-left: 2em;
     width: 280px !important;
     width: 75%;
     margin-top: 1.5em;
     border: 2px solid $secondarycolor;
     padding: 0;
-}
-
-.menu-box {
     position: fixed;
 }
+
 
 .title-menu {
     background-color: $maincolor;
@@ -71,12 +68,9 @@ ul {
 }
 
 @media (max-width: 575px) {
+
     .menu-box {
         position: static;
-    }
-
-    .menu-box,
-    .menu-box-noacceso {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
