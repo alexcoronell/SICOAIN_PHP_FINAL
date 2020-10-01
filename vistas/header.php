@@ -1,15 +1,5 @@
 <?php
 
-ini_set('display_errors', 1);
-
-ini_set('display_startup_errors', 1);
-
-error_reporting(E_ALL);
-
-?>
-
-<?php
-
 if (strlen(session_id()) < 1)
     session_start();
 ?>
@@ -34,7 +24,6 @@ if (strlen(session_id()) < 1)
     <link rel="stylesheet" href="../public/DataTables/css/colReorder.dataTables.min.css">
     <link rel="stylesheet" href="../public/DataTables/css/scroller.dataTables.min.css">
     <link rel="stylesheet" href="../public/DataTables/css/rowReorder.dataTables.min.css">
-    <link rel="stylesheet" href="../public/DataTables/css/editor.dataTables.min.css">
     <link rel="stylesheet" href="../public/DataTables/css/fixedColumns.dataTables.min.css">
 
 

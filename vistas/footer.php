@@ -17,7 +17,6 @@
 <script src="../public/DataTables/js/colReorder.dataTables.js"></script>
 <script src="../public/DataTables/js/scroller.dataTables.js"></script>
 <script src="../public/DataTables/js/dataTables.rowReorder.min.js"></script>
-<script src="../public/DataTables/js/dataTables.editor.min.js"></script>
 <script src="../public/DataTables/js/pdfmake.min.js"></script>
 <script src="../public/DataTables/js/vfs_fonts.js"></script>
 <script src="../public/DataTables/js/jszip.min.js"></script>
