@@ -84,6 +84,11 @@ h6 {
     display: none !important;
 }
 
+.titleNoAcceso {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (max-width: 575px) {
     .logo-principal {
         display: none !important;
@@ -95,6 +100,10 @@ h6 {
 
     .titleBig {
         display: none;
+    }
+
+    .titleNoAcceso {
+        display: block !important;
     }
 
     .mainBackground2 {
@@ -116,7 +125,8 @@ h6 {
         }
     }
 
-    .titleBig {
+    .titleBig,
+    .titleNoAcceso {
         h1 {
             font-size: 2rem !important;
             left: 350px;
@@ -155,7 +165,8 @@ h6 {
         display: none;
     }
 
-    .titleBig {
+    .titleBig,
+    .titleNoAcceso {
         h1 {
             font-size: 3rem !important;
         }
@@ -163,7 +174,9 @@ h6 {
 }
 
 @media (min-width:768px) and (max-width: 991px) {
-    .titleBig {
+
+    .titleBig,
+    .titleNoAcceso {
         h1 {
             font-size: 3rem !important;
             left: 350px
@@ -179,7 +192,9 @@ h6 {
 }
 
 @media (min-width: 992px) {
-    .titleBig {
+
+    .titleBig,
+    .titleNoAcceso {
         h1 {
             font-size: 3.5rem !important;
             left: 360px

@@ -72,7 +72,7 @@ if (!isset($_SESSION['nombre'])) {
     <?php
 
     } else {
-        require 'noacceso.php';
+        require 'noacceso-reportes.php';
     }
 
     require 'footer.php';

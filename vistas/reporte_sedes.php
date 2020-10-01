@@ -22,7 +22,7 @@ if (!isset($_SESSION['nombre'])) {
                         <nav>
                             <ul>
                                 <li><a href="reporte_usuarios.php">Usuarios</a></li>
-                                <li><a href="reporte-empleados.php">Empleados</a></li>
+                                <li><a href="reporte_empleados.php">Empleados</a></li>
                                 <li><a href="reporte_cargos.php">Cargos</a></li>
                                 <li><a href="reporte_companias.php">Compañías</a></li>
                                 <li><a href="reporte_sedes.php" class="active">Sedes</a></li>

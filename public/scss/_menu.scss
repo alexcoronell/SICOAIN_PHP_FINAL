@@ -1,23 +1,30 @@
 ul>li {
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 ul>li>ul {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 }
 
 ul>li>ul>li:last-child {
     margin-bottom: 1em;
 }
 
-
 /* MENU PRINCIPAL */
 
-.menu-box {
+.menu-box,
+.menu-box-noacceso {
     margin-left: 2em;
-    position: fixed;
     width: 280px !important;
+    width: 75%;
+    margin-top: 1.5em;
+    border: 2px solid $secondarycolor;
+    padding: 0;
+}
+
+.menu-box {
+    position: fixed;
 }
 
 .title-menu {
@@ -28,13 +35,6 @@ ul>li>ul>li:last-child {
 .title-menu>h2 {
     margin: 0 1em;
     line-height: 2em;
-}
-
-.menu-box {
-    width: 75%;
-    margin-top: 1.5em;
-    border: 2px solid $secondarycolor;
-    padding: 0;
 }
 
 nav>ul>li>ul>li>a,
@@ -63,8 +63,8 @@ ul {
     display: block;
     margin-left: auto;
     margin-top: auto;
-    margin-right: .8em;
-    margin-bottom: .8em;
+    margin-right: 0.8em;
+    margin-bottom: 0.8em;
     border-color: $maincolor;
     padding-left: 2.2em;
     padding-right: 2.2em;
@@ -72,10 +72,14 @@ ul {
 
 @media (max-width: 575px) {
     .menu-box {
+        position: static;
+    }
+
+    .menu-box,
+    .menu-box-noacceso {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
-        position: static;
 
         nav {
             margin-left: auto;
