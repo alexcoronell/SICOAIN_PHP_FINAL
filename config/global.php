@@ -4,7 +4,7 @@
 define("DB_HOST", "localhost");
 
 //Nombre de la base de datos
-define("DB_NAME", "SICOAIN");
+define("DB_NAME", "Sicoain");
 
 // Usuario de la base de datos
 define("DB_USENAME", "Sicoain");
