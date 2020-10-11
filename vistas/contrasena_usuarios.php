@@ -24,8 +24,8 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
                                 <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
-                                <li><a href="contrasena_usuarios.php">Contraseña de Usuarios</a></li>
-                                <li><a href="act_desact_usuarios.php" class="active">Act/Desact. de Usuarios</a></li>
+                                <li><a href="contrasena_usuarios.php" class="active">Contraseña de Usuarios</a></li>
+                                <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
                             </ul>
                         </nav>
                         <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
@@ -33,51 +33,54 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
                 <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-0 pr-xl-5">
                     <div class="box-formulario container mt-1 ml-1">
-                        <h2 class="text-center title-formularios">Activación/Desactivación de Usuarios</h2>
+                        <h2 class="text-center title-formularios">Contraseña de Usuarios</h2>
                         <!-- Busqueda -->
                         <div class="form-group row grupoBusqueda mt-3">
-                            <label for="rol" class="col-2 col-lg-4 mt-2">Buscar<span class="soloDesktop"> Usuario</span>:</label>
+                            <label for="buscarId" class="col-2 col-lg-4 mt-2">Buscar<span class="soloDesktop"> Usuario</span>:</label>
                             <div class="col-10 col-lg-8 searchbox">
                                 <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscarAct()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
+                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
                             </div>
                         </div>
 
                         <!-- Formulario -->
-                        <div class="formularioEditActDesact mt-3">
-                            <form name="formulario" id="formulario" method="POST">
+                        <form name="formulario" class="formularioEditActDesact mt-3" id="formulario" method="POST">
 
-                                <!-- Usuario -->
-                                <div class="form-group row">
-                                    <label for="usuario" class="col-lg-4">Usuario:</label>
-                                    <div class="col-lg-8">
-                                        <input type="hidden" name="id" id="id">
-                                        <input type="text" class="form-control" name="usuario" id="usuario" disabled autocomplete="off">
-                                    </div>
-                                </div>
-
-                                <!-- Usuario -->
-                                <div class="form-group row">
-                                    <label for="nombre" class="col-lg-4">Nombre:</label>
-                                    <div class="col-lg-8">
-                                        <input type="hidden" name="id" id="id">
-                                        <input type="text" class="form-control" name="nombre" id="nombre" disabled autocomplete="off">
-                                    </div>
-                                </div>
-
-                            </form>
-                            <!-- Área de botones -->
+                            <!-- Usuario -->
                             <div class="form-group row">
-                                <div class="offset-lg-4 col-6 col-lg-4 guardar">
-                                    <button type="submit" id="button_default" class="btn btn-light" disabled>Act/Desact</button>
-                                    <button type="submit" id="button_activar" class="btn btn-primary" onclick="activar()">Activar</button>
-                                    <button type="submit" id="button_desactivar" class="btn btn-danger" onclick="desactivar()">Desactivar</button>
-                                </div>
-                                <div class="col-6 col-lg-4 cancelar text-right">
-                                    <button type="button" class="btn btn-light" onclick="MostrarDefault()">Cancelar</button>
+                                <label for="usuario" class="col-lg-4 mt-md-2">Usuario:</label>
+                                <div class="col-lg-8">
+                                    <input type="hidden" name="id" id="id">
+                                    <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off" disabled>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Nombre -->
+                            <div class="form-group row">
+                                <label for="nombre" class="col-lg-4 mt-md-2">Nombres:</label>
+                                <div class="col-lg-8">
+                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" disabled>
+                                </div>
+                            </div>
+
+                            <!-- Contraseña -->
+                            <div class="form-group row">
+                                <label for="contrasena" class="col-lg-4 mt-md-2">Contraseña: *</label>
+                                <div class="col-lg-8">
+                                    <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
+                                </div>
+                            </div>
+                        </form>
+
+                         <!-- Botones de formulario -->
+                         <div class="form-group row">
+                                <div class="offset-lg-4 col-6 col-lg-4 guardar">
+                                    <button type="submit" class="btn btn-primary" id="btnContrasena" onclick="actualizarContrasena()">Guardar</button>
+                                </div>
+                                <div class="col-6 col-lg-4 cancelar text-right">
+                                    <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
+                                </div>
+                            </div>
 
 
                         <div class="boton-mobile-regresar col-12 row mb-2">
@@ -87,6 +90,7 @@ if (!isset($_SESSION['nombre'])) {
                 </div>
             </div>
         </div>
+        <div class="posicionador-bottom"></div>
         </div>
 
     <?php

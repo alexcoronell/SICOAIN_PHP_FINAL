@@ -45,6 +45,7 @@ function guardaryeditar(e) {
                 limpiar();
                 $('.grupoBusqueda').show();
                 $('.formularioEditActDesact').hide();
+                cargarUsuarios();
             }
         }
     })
@@ -114,6 +115,17 @@ function activar() {
 
 }
 
+function actualizarContrasena() {
+    let id = $('#id').val();
+    bootbox.confirm("Estas seguro de actualizar esta contraseña?", function(result) {
+        $.post("../ajax/usuarios.php?op=actualizarContrasena", {
+            id: id
+        }, function(e) {
+            bootbox.alert(e);
+        })
+    })
+}
+
 // Función para desactivar Usuarios
 function desactivar() {
     let id = $('#id').val();
@@ -168,6 +180,7 @@ function cargarUsuarios() {
 function cancelar() {
     $('.grupoBusqueda').show();
     $('.formularioEditActDesact').hide();
+    $('#buscarId').selectpicker('refresh')
     limpiar()
 }
 

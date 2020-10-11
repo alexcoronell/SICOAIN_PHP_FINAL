@@ -24,6 +24,7 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
                                 <li><a href="edicion_usuarios.php" class="active">Edición de Usuarios</a></li>
+                                <li><a href="contrasena_usuarios.php">Contraseña de Usuarios</a></li>
                                 <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
                             </ul>
                         </nav>
@@ -88,15 +89,6 @@ if (!isset($_SESSION['nombre'])) {
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Contraseña -->
-                            <div class="form-group row">
-                                <label for="contrasena" class="col-lg-4 mt-md-2">Contraseña: *</label>
-                                <div class="col-lg-8">
-                                    <input type="password" class="form-control" name="contrasena" id="contrasena" autocomplete="off">
-                                </div>
-                            </div>
-
 
                             <!-- Botones de formulario -->
                             <div class="form-group row">

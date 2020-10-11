@@ -23,6 +23,7 @@ if (!isset($_SESSION['nombre'])) {
                             <ul>
                                 <li><a href="creacion_usuarios.php" class="active">Creación de Usuarios</a></li>
                                 <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
+                                <li><a href="contrasena_usuarios.php">Contraseña de Usuarios</a></li>
                                 <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
                             </ul>
                         </nav>

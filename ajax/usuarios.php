@@ -22,7 +22,7 @@ switch ($_GET["op"]) {
             $rspta = $usuarios->insertar($usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasenaHash);
             echo $rspta ? "Usuario registrado correctamente" : "Usuario no se pudo registrar";
         } else {
-            $rspta = $usuarios->editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasenaHash);
+            $rspta = $usuarios->editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas);
             echo $rspta ? "Usuario actualizado correctamente" : "Usuario no se pudo actualizar";
         }
         break;
@@ -36,6 +36,11 @@ switch ($_GET["op"]) {
         $rspta = $usuarios->activar($id);
         echo $rspta ? "Usuario Activado" : "Usuario no se pudo Activar";
         break;
+
+    case 'actualizarContrasena':
+        $rspta = $usuarios->actualizarContrasena($id, $contrasenaHash);
+        echo $rspta ? "Contraseña Actualizada Correctamente" : "Contraseña no se pudo actualizar";
+    break;
 
     case 'mostrar':
         $rspta = $usuarios->mostrar($id);

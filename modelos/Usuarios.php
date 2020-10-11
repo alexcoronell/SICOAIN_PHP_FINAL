@@ -21,9 +21,9 @@ class Usuarios
     }
 
     // Método para editar registros
-    public function editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas,  $contrasena)
+    public function editar($id, $usuario, $nombre, $superusuario, $administrador, $analista, $asistente, $consultas)
     {
-        $sql = "UPDATE usuarios SET usuario = '$usuario', nombre = '$nombre', superusuario = '$superusuario', administrador = '$administrador', analista = '$analista', asistente = '$asistente', consultas = '$consultas', contrasena = '$contrasena'
+        $sql = "UPDATE usuarios SET usuario = '$usuario', nombre = '$nombre', superusuario = '$superusuario', administrador = '$administrador', analista = '$analista', asistente = '$asistente', consultas = '$consultas'
         WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
@@ -40,6 +40,14 @@ class Usuarios
     public function activar($id)
     {
         $sql = "UPDATE usuarios SET condicion = '1'
+        WHERE id = '$id'";
+        return ejecutarConsulta($sql);
+    }
+
+    // Actualizar contraseña
+    public function actualizarContrasena($id, $contrasena)
+    {
+        $sql = "UPDATE usuarios SET contrasena = '$contrasena'
         WHERE id = '$id'";
         return ejecutarConsulta($sql);
     }
