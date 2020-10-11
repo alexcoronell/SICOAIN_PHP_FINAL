@@ -117,11 +117,18 @@ function activar() {
 
 function actualizarContrasena() {
     let id = $('#id').val();
+    let contrasena = $('#contrasena').val();
     bootbox.confirm("Estas seguro de actualizar esta contraseña?", function(result) {
         $.post("../ajax/usuarios.php?op=actualizarContrasena", {
-            id: id
+            id: id, contrasena: contrasena
         }, function(e) {
             bootbox.alert(e);
+            if (e == "Contraseña Actualizada Correctamente") {
+                limpiar();
+                $('.grupoBusqueda').show();
+                $('.formularioEditActDesact').hide();
+                cargarUsuarios();
+            }
         })
     })
 }

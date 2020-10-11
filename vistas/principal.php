@@ -28,6 +28,7 @@ if (!isset($_SESSION['nombre'])) {
                             <li><a href="arl.php">ARL</a></li>
                             <li><a href="menu_incidentes.php">Administración de Incidentes</a></li>
                             <li><a href="menu_reportes.php">Reportes</a></li>
+                            <li><a href="cambiar_contrasena.php">Cambiar Contraseña</a></li>
                         </ul>
                     </nav>
                     <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión<i class="fa fa-sign-out ml-1" aria-hidden="true"></i></a></button>

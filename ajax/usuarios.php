@@ -37,7 +37,7 @@ switch ($_GET["op"]) {
         echo $rspta ? "Usuario Activado" : "Usuario no se pudo Activar";
         break;
 
-    case 'actualizarContrasena':
+    case 'actualizarcontrasena':
         $rspta = $usuarios->actualizarContrasena($id, $contrasenaHash);
         echo $rspta ? "Contraseña Actualizada Correctamente" : "Contraseña no se pudo actualizar";
     break;
@@ -108,11 +108,11 @@ switch ($_GET["op"]) {
         header("location: ../index.php");
         break;
 
-        case "selectUsuario":
-            $rspta = $usuarios->mostrarUsuarios();
+    case "selectUsuario":
+        $rspta = $usuarios->mostrarUsuarios();
     
-            while ($reg = $rspta->fetch_object()) {
-                echo '<option value=' . $reg->id . '>' . $reg->usuario . '</option>';
-            }
-            break;
+        while ($reg = $rspta->fetch_object()) {
+            echo '<option value=' . $reg->id . '>' . $reg->usuario . '</option>';
+        }
+        break;
 }

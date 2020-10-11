@@ -9,7 +9,7 @@ if (!isset($_SESSION['nombre'])) {
 } else {
     require 'header.php';
 
-    if ($_SESSION['superusuario'] == 1) {
+    if (($_SESSION['superusuario'] == 1) || ($_SESSION['administrador'] == 1) || ($_SESSION['analista'] == 1) || ($_SESSION['asistente'] == 1) || ($_SESSION['consultas'] == 1)) {
 
 ?>
 
@@ -21,45 +21,34 @@ if (!isset($_SESSION['nombre'])) {
                             <h2>Menú de Usuarios</h2>
                         </div>
                         <nav>
-                            <ul>
-                                <li><a href="creacion_usuarios.php">Creación de Usuarios</a></li>
-                                <li><a href="edicion_usuarios.php">Edición de Usuarios</a></li>
-                                <li><a href="contrasena_usuarios.php" class="active">Contraseña de Usuarios</a></li>
-                                <li><a href="act_desact_usuarios.php">Act/Desact. de Usuarios</a></li>
-                            </ul>
+                        <ul>
+                            <li><a href="usuarios.php">Usuarios</a></li>
+                            <li><a href="empleados.php">Empleados y Cargos</a></li>
+                            <li><a href="companias.php">Compañías</a></li>
+                            <li><a href="sedes.php">Sedes</a></li>
+                            <li><a href="eps.php">EPS</a></li>
+                            <li><a href="arl.php">ARL</a></li>
+                            <li><a href="menu_incidentes.php">Administración de Incidentes</a></li>
+                            <li><a href="menu_reportes.php">Reportes</a></li>
+                            <li><a href="cambiarcontrasena.php">Cambiar Contraseña</a></li>
+                        </ul>
                         </nav>
-                        <button class="btn btn-light salir-menu"><a href="principal.php">Regresar</a></button>
+                        <button class="btn btn-light salir-menu"><a href="../ajax/usuarios.php?op=salir">Cerrar Sessión<i class="fa fa-sign-out ml-1" aria-hidden="true"></i></a></button>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-8 col-xl-9 px-0 pr-xl-5">
                     <div class="box-formulario container mt-1 ml-1">
-                        <h2 class="text-center title-formularios">Contraseña de Usuarios</h2>
-                        <!-- Busqueda -->
-                        <div class="form-group row grupoBusqueda mt-3">
-                            <label for="buscarId" class="col-2 col-lg-4 mt-2">Buscar<span class="soloDesktop"> Usuario</span>:</label>
-                            <div class="col-10 col-lg-8 searchbox">
-                                <select name="buscarId" id="buscarId" class="form-control selectpicker selectSearch" title="Seleccione..." data-live-search="true" required></select>
-                                <button type="button" class="btnBusqueda" id="btnBusqueda" onclick="buscar()"><i class="fa fa-arrow-circle-o-up min992" aria-hidden="true" title="Cargar Información" alt="Cargar Información"></i>Cargar</button>
-                            </div>
-                        </div>
+                        <h2 class="text-center title-formularios">Cambiar Contraseña</h2>
 
                         <!-- Formulario -->
-                        <form name="formulario" class="formularioEditActDesact mt-3" id="formulario" method="POST">
-
-                            <!-- Usuario -->
-                            <div class="form-group row">
-                                <label for="usuario" class="col-lg-4 mt-md-2">Usuario:</label>
-                                <div class="col-lg-8">
-                                    <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
-                                </div>
-                            </div>
+                        <form name="formulario" class="cambiodecontrasena mt-3" id="formulario" method="POST">
 
                             <!-- Nombre -->
                             <div class="form-group row">
                                 <label for="nombre" class="col-lg-4 mt-md-2">Nombres:</label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
+                                    <input type="hidden" value="<?php echo $_SESSION['id']; ?>" name="id" id="id">
+                                    <input type="text" value="<?php echo $_SESSION['nombre']; ?>" class="form-control" name="nombre" id="nombre" maxlength="30" disabled>
                                 </div>
                             </div>
 
@@ -71,17 +60,16 @@ if (!isset($_SESSION['nombre'])) {
                                 </div>
                             </div>
 
-                             <!-- Botones de formulario -->
-                             <div class="form-group row">
+                            <!-- Botones de formulario -->
+                            <div class="form-group row">
                                 <div class="offset-lg-4 col-6 col-lg-4 guardar">
                                     <button type="submit" class="btn btn-primary" id="btnGuardar">Guardar</button>
                                 </div>
                                 <div class="col-6 col-lg-4 cancelar text-right">
                                     <button type="button" class="btn btn-light" id="btnCancelar" onclick="cancelar()">Cancelar</button>
                                 </div>
-                            </div>
-
                         </form>
+
                         <div class="boton-mobile-regresar col-12 row mb-2">
                             <button class="btn btn-light px-5"><a href="usuarios.php"><i class="fa fa-arrow-left pr-2" aria-hidden="true"></i>Regresar</a></button>
                         </div>
@@ -101,7 +89,7 @@ if (!isset($_SESSION['nombre'])) {
 
     ?>
 
-    <script src="scripts/contrasena_usuarios.js"></script>
+    <script src="scripts/cambiar_contrasena.js"></script>
 
 <?php
 }
