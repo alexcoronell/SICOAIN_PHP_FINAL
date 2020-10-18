@@ -51,7 +51,7 @@ if (!isset($_SESSION['nombre'])) {
                                 <label for="usuario" class="col-lg-4 mt-md-2">Usuario:</label>
                                 <div class="col-lg-8">
                                     <input type="hidden" name="id" id="id">
-                                    <input type="text" class="form-control" name="usuario" id="usuario" autocomplete="off">
+                                    <input type="text" class="form-control" name="usuario" id="usuario" disabled>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@ if (!isset($_SESSION['nombre'])) {
                             <div class="form-group row">
                                 <label for="nombre" class="col-lg-4 mt-md-2">Nombres:</label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" required>
+                                    <input type="text" class="form-control" name="nombre" id="nombre" maxlength="30" disabled>
                                 </div>
                             </div>
 
