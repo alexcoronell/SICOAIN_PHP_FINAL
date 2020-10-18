@@ -79,6 +79,8 @@ function anular(e) {
 
                 }
             })
+        } else {
+            bootbox.alert("Registro no anulado");
         }
     })
 }

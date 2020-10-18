@@ -214,7 +214,6 @@ function buscar() {
 // Función para buscar en el formulario de Activación o desactivación de Compañías
 function buscarAct() {
     let numero_identificacion = $('select[name="buscarId"] option:selected').text();
-    console.log(numero_identificacion);
     mostrarAct(numero_identificacion);
 }
 
@@ -223,11 +222,15 @@ function buscarAct() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este Usuario?", function(result) {
-        $.post("../ajax/empleados.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-        })
+        if (result) {
+            $.post("../ajax/empleados.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+            })
+        } else {
+            bootbox.alert("Empleado no activado");
+        }
     })
     MostrarDefault();
 }
@@ -243,6 +246,8 @@ function desactivar() {
             }, function(e) {
                 bootbox.alert(e);
             })
+        } else {
+            bootbox.alert("Empleado no desactivado");
         }
     })
     MostrarDefault();
@@ -268,7 +273,8 @@ function MostrarDefault() {
     $('#button_desactivar').hide();
     $('.grupoBusqueda').show();
     $('.formularioEditActDesact').hide();
-    limpiar()
+    cargarCedulasActivacion();
+    limpiar();
 }
 
 function habilitarFormulario() {
@@ -318,7 +324,6 @@ function cargarCiudades() {
 
 
 function filtrarCiudades(fo_departamento) {
-    console.log("Antes de Ajax");
     let urlConsulta = "../ajax/ciudadesFiltro.php?dpto=" + fo_departamento;
     console.log(urlConsulta);
     $.get(urlConsulta, function(r) {
