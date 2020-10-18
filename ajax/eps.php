@@ -74,4 +74,13 @@ switch ($_GET["op"])
         }
     break;
 
+    case "selectEPSAll":
+        $rspta = $eps -> listar();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> nombre_eps . '</option>';
+        }
+    break;
+
 }

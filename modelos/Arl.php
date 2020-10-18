@@ -59,12 +59,12 @@ class Arl
         return ejecutarConsulta($sql);
     }
 
-        // Metodo para listar las ARL activas (Condición = 1)
-        public function select()
-        {
-            $sql = "SELECT * FROM arl WHERE condicion = 1";
-            return ejecutarConsulta($sql);
-        }
+    // Metodo para listar las ARL activas (Condición = 1)
+    public function select()
+    {
+        $sql = "SELECT * FROM arl WHERE condicion = 1";
+        return ejecutarConsulta($sql);
+    }
 }
 
 ?>

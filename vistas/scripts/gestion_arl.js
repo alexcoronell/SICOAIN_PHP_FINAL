@@ -102,11 +102,15 @@ function buscarAct() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar esta ARL?", function(result) {
-        $.post("../ajax/arl.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-        })
+        if (result) {
+            $.post("../ajax/arl.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+            })
+        } else {
+            bootbox.alert("ARL no activada");
+        }
     })
     MostrarDefault();
 
@@ -123,6 +127,8 @@ function desactivar() {
             }, function(e) {
                 bootbox.alert(e);
             })
+        } else {
+            bootbox.alert("ARL no desactivada");
         }
     })
     MostrarDefault();
@@ -148,12 +154,13 @@ function MostrarDefault() {
     $('#button_desactivar').hide();
     $(".grupoBusqueda").show();
     $(".formularioEditActDesact").hide();
+    cargarARL();
     limpiar();
 }
 
 function cargarARL() {
     // Carga de opciones en el select ARL
-    $.post("../ajax/arl.php?op=selectARL", function(r) {
+    $.post("../ajax/arl.php?op=selectARLAll", function(r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })

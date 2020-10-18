@@ -96,13 +96,18 @@ function buscarAct() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este suceso?", function(result) {
-        $.post("../ajax/sucesos.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-        })
+        if (result) {
+            $.post("../ajax/sucesos.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+            })
+        } else {
+            bootbox.alert("Suceso no activado");
+        }
     })
     MostrarDefault();
+    cargarSucesos();
 
 }
 
@@ -117,9 +122,12 @@ function desactivar() {
             }, function(e) {
                 bootbox.alert(e);
             })
+        } else {
+            bootbox.alert("Suceso no desactivado");
         }
     })
     MostrarDefault();
+    cargarSucesos();
 }
 
 // Función para mostrar boton de activar y ocultar los otros
@@ -147,7 +155,7 @@ function MostrarDefault() {
 
 function cargarSucesos() {
     // Carga de opciones en el select Empleado
-    $.post("../ajax/sucesos.php?op=selectSuceso", function(r) {
+    $.post("../ajax/sucesos.php?op=selectSucesoAll", function(r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })

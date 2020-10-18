@@ -107,12 +107,16 @@ function buscarAct() {
 // Función para activar Compañías
 function activar() {
     let id = $('#id').val();
-    bootbox.confirm("¿Estas seguro de activar esta sede?", function(result) {
-        $.post("../ajax/sedes.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-        })
+    bootbox.confirm("¿Estas seguro de activar esta Sede?", function(result) {
+        if (result) {
+            $.post("../ajax/sedes.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+            })
+        } else {
+            bootbox.alert("Sede no activada");
+        }
     })
     MostrarDefault();
 }
@@ -127,6 +131,8 @@ function desactivar() {
             }, function(e) {
                 bootbox.alert(e);
             })
+        } else {
+            bootbox.alert("Sede no desactivada");
         }
     })
     MostrarDefault();
@@ -138,6 +144,7 @@ function MostrarDefault() {
     $('#button_desactivar').hide();
     $('.grupoBusqueda').show();
     $('.formularioEditActDesact').hide();
+    cargaSedes();
     limpiar();
 }
 
@@ -157,7 +164,7 @@ function MostrarDesactivar() {
 
 function cargaSedes() {
     // Carga las sedes registrados en el sistema
-    $.post("../ajax/sedes.php?op=selectSede", function(r) {
+    $.post("../ajax/sedes.php?op=selectSedeAll", function(r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })

@@ -72,6 +72,15 @@ switch ($_GET["op"])
         }
     break;
 
+    case "selectCompaniaAll":
+        $rspta = $companias -> listar();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> compania . '</option>';
+        }
+    break;
+
 }
 
 ?>

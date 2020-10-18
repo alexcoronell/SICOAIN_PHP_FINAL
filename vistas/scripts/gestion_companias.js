@@ -99,11 +99,15 @@ function buscarAct() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar esta compañía?", function(result) {
-        $.post("../ajax/companias.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-        })
+        if (result) {
+            $.post("../ajax/companias.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+            })
+        } else {
+            bootbox.alert("Compañía no activada")
+        }
     })
     MostrarDefault();
 }
@@ -118,6 +122,8 @@ function desactivar() {
             }, function(e) {
                 bootbox.alert(e);
             })
+        } else {
+            bootbox.alert("Compañía no desactivada")
         }
     })
     MostrarDefault();
@@ -149,7 +155,7 @@ function MostrarDesactivar() {
 
 function cargarCompanias() {
     // Carga las compañías registrados en el sistema
-    $.post("../ajax/companias.php?op=selectCompania", function(r) {
+    $.post("../ajax/companias.php?op=selectCompaniaAll", function(r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })

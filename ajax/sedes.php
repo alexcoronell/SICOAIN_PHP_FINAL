@@ -75,5 +75,14 @@ switch ($_GET["op"]) {
             }
         break;
 
+        case "selectSedeAll":
+            $rspta = $sede -> listar();
+    
+            while ($reg = $rspta -> fetch_object())
+            {
+                echo '<option value=' . $reg -> id . '>' . $reg -> nombre . '</option>';
+            }
+        break;
+
 
 }

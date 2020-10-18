@@ -74,6 +74,15 @@ switch ($_GET["op"])
         }
     break;
 
+    case "selectARLAll":
+        $rspta = $arl -> listar();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> nombre_arl . '</option>';
+        }
+    break;
+
 }
 
 ?>

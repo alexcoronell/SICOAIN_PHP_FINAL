@@ -98,15 +98,19 @@ function buscarAct() {
 function activar() {
     let id = $('#id').val();
     bootbox.confirm("¿Estas seguro de activar este cargo?", function(result) {
-        $.post("../ajax/cargo.php?op=activar", {
-            id: id
-        }, function(e) {
-            bootbox.alert(e);
-            cargarCargos();
-        })
+        if (result) {
+            $.post("../ajax/cargo.php?op=activar", {
+                id: id
+            }, function(e) {
+                bootbox.alert(e);
+                cargarCargos();
+            })
+        } else {
+            bootbox.alert("Cargo no activado");
+        }
     })
+    cargarCargos();
     MostrarDefault();
-    $("#buscarId").val("");
 }
 
 // Función para desactivar Cargos
@@ -118,11 +122,13 @@ function desactivar() {
                 id: id
             }, function(e) {
                 bootbox.alert(e);
-                cargarCargos();
             })
+        } else {
+            bootbox.alert("Cargo no desactivado");
         }
     })
-    $("#buscarId").val("");
+    cargarCargos();
+    MostrarDefault();
 }
 
 // Función para mostrar boton de activar y ocultar los otros
@@ -151,7 +157,7 @@ function MostrarDefault() {
 
 function cargarCargos() {
     // Carga los cargos registrados en el sistema
-    $.post("../ajax/cargo.php?op=selectCargo", function(r) {
+    $.post("../ajax/cargo.php?op=selectCargoAll", function(r) {
         $('#buscarId').html(r);
         $('#buscarId').selectpicker('refresh');
     })

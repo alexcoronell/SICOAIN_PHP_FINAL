@@ -110,14 +110,18 @@ function buscarAct() {
 function activar() {
     let id = $("#id").val();
     bootbox.confirm("¿Estas seguro de activar esta EPS?", function(result) {
-        $.post(
-            "../ajax/eps.php?op=activar", {
-                id: id,
-            },
-            function(e) {
-                bootbox.alert(e);
-            }
-        );
+        if (result) {
+            $.post(
+                "../ajax/eps.php?op=activar", {
+                    id: id,
+                },
+                function(e) {
+                    bootbox.alert(e);
+                }
+            );
+        } else {
+            bootbox.alert("EPS no activada");
+        }
     });
     MostrarDefault();
 }
@@ -136,6 +140,8 @@ function desactivar() {
                     bootbox.alert(e);
                 }
             );
+        } else {
+            bootbox.alert("EPS no desactivada");
         }
     });
     MostrarDefault();
@@ -162,11 +168,13 @@ function MostrarDefault() {
     $(".grupoBusqueda").show();
     $(".formularioEditActDesact").hide();
     limpiar();
+    cargarEPS();
+
 }
 
 function cargarEPS() {
     // Carga de opciones en el select EPS
-    $.post("../ajax/eps.php?op=selectEPS", function(r) {
+    $.post("../ajax/eps.php?op=selectEPSAll", function(r) {
         $("#buscarId").html(r);
         $("#buscarId").selectpicker("refresh");
     });

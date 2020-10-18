@@ -70,6 +70,15 @@ switch ($_GET["op"])
         }
     break;
 
+    case "selectCargoAll":
+        $rspta = $cargos -> listar();
+
+        while ($reg = $rspta -> fetch_object())
+        {
+            echo '<option value=' . $reg -> id . '>' . $reg -> cargo . '</option>';
+        }
+    break;
+
 }
 
 ?>
