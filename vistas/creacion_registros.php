@@ -32,7 +32,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <ul>
                                         <li><a href="creacion_sucesos.php">Creación de Sucesos</a></li>
                                         <li><a href="edicion_sucesos.php">Edición de Sucesos</a></li>
-                                        <li><a href="eliminacion_sucesos.php">Eliminación de Sucesos</a></li>
+                                        <li><a href="act_desact_sucesos.php">Act/Desact. de Sucesos</a></li>
                                     </ul>
                                 </li>
                             </ul>
