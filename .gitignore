@@ -1,6 +1,9 @@
 # Archivos subidos por el sistema
 /archivos
 
+#Datos de acceso a base de datos
+/config/global.php
+
 # System Files
 .DS_Store
 Thumbs.db
