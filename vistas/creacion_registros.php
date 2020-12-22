@@ -73,7 +73,7 @@ if (!isset($_SESSION['nombre'])) {
                                     <label for="fecha_incidente" class="col-12 col-xl-3">Fecha de Incidente:</label>
                                     <div class="col-12 col-xl-9">
                                         <input type="hidden" class="form-control" name="fecha_registro" id="fecha_registro">
-                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente">
+                                        <input type="date" class="form-control" name="fecha_incidente" id="fecha_incidente" required>
                                     </div>
                                 </div>
 
@@ -87,7 +87,7 @@ if (!isset($_SESSION['nombre'])) {
                                         <label for="descripcion">Descripción:*</label>
                                     </div>
                                     <div class="col-12 col-xl-9">
-                                        <textarea name="descripcion" id="descripcion" maxlength="512" rows="6" class="form-control"></textarea>
+                                        <textarea name="descripcion" id="descripcion" maxlength="512" rows="6" class="form-control" required></textarea>
                                     </div>
                                 </div>
 
